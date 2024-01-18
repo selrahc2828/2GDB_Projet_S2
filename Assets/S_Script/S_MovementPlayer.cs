@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_MovementPlayer : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class S_MovementPlayer : MonoBehaviour
 
     [Header("Mouvement")]
     [SerializeField] public float m_WalkSpeed;
+
+
+    [Header("DebugHelper")]
+    [SerializeField] public Text m_SpeedText;
 
 
     // Permet de récupéré les Inputs ET la direction du joueur
@@ -35,6 +40,9 @@ public class S_MovementPlayer : MonoBehaviour
         // Activer la fonction qui va faire bouger le player
         MovementPlayer();
 
+        // Appeler la fonction Debug 
+        DebugHelper();
+
         // Récupéré les Inputs de mouvement 
         m_HorizontalInput = Input.GetAxisRaw("Horizontal");
         m_VerticalInput = Input.GetAxisRaw("Vertical");
@@ -50,5 +58,14 @@ public class S_MovementPlayer : MonoBehaviour
         rb.AddForce(m_MoveDirection.normalized * m_WalkSpeed, ForceMode.Force);
         // J'ai appliquer cette force au rigidbody en ForceMode.Force en Fonction de la direction m_MoveDirection, si d'autre comportement son désiré changer la méthode "Force"
 
+    }
+
+
+
+    // Ici la parti du script DebugHelper n'est utiliser que pour la conception et l'aide a la fabrication du script
+    public void DebugHelper()
+    {
+        // ------ Debug Speed Player ------
+        m_SpeedText.text = "Speed : " + rb.velocity.magnitude.ToString("0.0") + " m/s";
     }
 }
