@@ -17,7 +17,8 @@ public class S_JaugeScript : MonoBehaviour
 
     [Header("DebugHelper")]
     [SerializeField] public Text m_JaugeLevelText;
-    [SerializeField] private Image m_JaugeFillImage;
+    
+    
 
 
     private void Start()
@@ -43,6 +44,8 @@ public class S_JaugeScript : MonoBehaviour
     {
         // appelle de la fonction qui diminue la jauge avec le temps
         DecreaseJaugeOverTime();
+
+        m_JaugeLevelText.text = " Jauge : " + m_JaugeLevel;
     }
 
     private void DecreaseJaugeOverTime()
