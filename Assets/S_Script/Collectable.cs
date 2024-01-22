@@ -7,7 +7,6 @@ public class Collectable : MonoBehaviour
     public jauge jaugeScript;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ok");
         if (other.gameObject.CompareTag("Player"))
         {
             if (jaugeScript.actualJauge + 30 <= 100)

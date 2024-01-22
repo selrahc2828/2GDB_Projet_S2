@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool criticalState;
+    public jauge jaugeScript;
+    private float actualJauge;
+
     [SerializeField]
     private float maximumSpeed;
 
@@ -17,19 +21,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform cameraTransform;
 
-    private Animator animator;
     private CharacterController characterController;
     private float ySpeed;
-    private float originalStepOffset;
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
-        originalStepOffset = characterController.stepOffset;
     }
 
     // Update is called once per frame
@@ -44,6 +44,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             inputMagnitude /= 2;
+        }
+        
+        if (CriticalState_Boost())
+        {
+            inputMagnitude *= 2;
         }
 
         float speed = inputMagnitude * maximumSpeed;
@@ -64,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
         {
-            characterController.stepOffset = originalStepOffset;
             ySpeed = -0.5f;
 
             if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
@@ -89,6 +93,18 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+    private bool CriticalState_Boost()
+    {
+        actualJauge = jaugeScript.actualJauge;
+        if(actualJauge <= 30)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

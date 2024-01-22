@@ -23,7 +23,6 @@ public class jauge : MonoBehaviour
         {
             actualJauge -= Time.deltaTime * 30;
             transform.localScale = new Vector3(transform.localScale.x, originalScale * (actualJauge / 100), transform.localScale.z);
-        }
-        
+        }        
     }
 }
