@@ -17,7 +17,7 @@ public class S_JaugeScript : MonoBehaviour
 
     [Header("DebugHelper")]
     [SerializeField] public Text m_JaugeLevelText;
-    
+    [SerializeField] public Slider m_SliderForJauge;
     
 
 
@@ -46,6 +46,8 @@ public class S_JaugeScript : MonoBehaviour
         DecreaseJaugeOverTime();
 
         m_JaugeLevelText.text = " Jauge : " + m_JaugeLevel;
+
+        JaugeBar();
     }
 
     private void DecreaseJaugeOverTime()
@@ -56,6 +58,12 @@ public class S_JaugeScript : MonoBehaviour
         // jauge ne descend pas en dessous de zéro
         m_JaugeLevel = Mathf.Clamp(m_JaugeLevel, 0, m_MaxJaugeLevel);
 
+    }
+
+
+    public void JaugeBar()
+    {
+        m_SliderForJauge.value = m_JaugeLevel;
     }
 
 }
