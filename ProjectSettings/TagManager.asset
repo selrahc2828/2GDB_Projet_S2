@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cube
-  - Cachette
+  - objects
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Floor
+  - 
   - Water
   - UI
   - 
