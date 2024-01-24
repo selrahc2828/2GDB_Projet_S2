@@ -22,7 +22,7 @@ public class jauge : MonoBehaviour
     {
         if (actualJauge >= 0)
         {
-            //actualJauge -= Time.deltaTime * 100/_time;
+            actualJauge -= Time.deltaTime * 100/_time;
             transform.localScale = new Vector3(transform.localScale.x, originalScale * (actualJauge / 100), transform.localScale.z);
         }        
     }
