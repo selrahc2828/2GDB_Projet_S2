@@ -5,14 +5,15 @@ using UnityEngine.UI;
 
 public class S_JaugeScript : MonoBehaviour
 {
+
     [Header("Jauge")]
     [SerializeField] public float m_JaugeLevel;
     [SerializeField] private float m_MaxJaugeLevel;
 
 
     [Header("Paramètres de la jauge")]
-    [SerializeField] private float m_JaugeDecreaseRate = 1f;
-    [SerializeField] private float m_JaugeIncreaseAmount = 1f;
+    [SerializeField] public float m_JaugeDecreaseRate = 1f;
+    [SerializeField] public float m_JaugeIncreaseAmount = 1f;
 
 
     [Header("DebugHelper")]
@@ -24,6 +25,7 @@ public class S_JaugeScript : MonoBehaviour
     private void Start()
     {
         m_JaugeLevel = m_MaxJaugeLevel;
+        m_JaugeDecreaseRate = 0;
     }
 
     // Fonction qui permet de choper les cubes 
@@ -48,6 +50,7 @@ public class S_JaugeScript : MonoBehaviour
         m_JaugeLevelText.text = " Jauge : " + m_JaugeLevel;
 
         JaugeBar();
+
     }
 
     private void DecreaseJaugeOverTime()
@@ -63,7 +66,9 @@ public class S_JaugeScript : MonoBehaviour
 
     public void JaugeBar()
     {
-        m_SliderForJauge.value = m_JaugeLevel;
+        m_SliderForJauge.value = 100 - m_JaugeLevel;
     }
+
+   
 
 }

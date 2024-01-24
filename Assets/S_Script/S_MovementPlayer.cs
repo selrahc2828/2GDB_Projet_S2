@@ -8,10 +8,12 @@ public class S_MovementPlayer : MonoBehaviour
     [Header("Reference")]
     [SerializeField] public Transform m_Orientation;
     private Rigidbody rb;
+    [SerializeField] public S_JaugeScript m_JaugeScript;
 
 
     [Header("Mouvement")]
     [SerializeField] public float m_WalkSpeed;
+    [SerializeField] public float m_Forcepush;
 
 
     [Header("DebugHelper")]
@@ -46,6 +48,7 @@ public class S_MovementPlayer : MonoBehaviour
         // Récupéré les Inputs de mouvement 
         m_HorizontalInput = Input.GetAxisRaw("Horizontal");
         m_VerticalInput = Input.GetAxisRaw("Vertical");
+
     }
 
 
@@ -67,5 +70,31 @@ public class S_MovementPlayer : MonoBehaviour
     {
         // ------ Debug Speed Player ------
         m_SpeedText.text = "Speed : " + rb.velocity.magnitude.ToString("0.0") + " m/s";
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+       if (other.CompareTag("Cachette"))
+       {
+            m_JaugeScript.m_JaugeDecreaseRate = 5f;
+            Debug.Log("Decrease rate to 5");
+       }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Cachette"))
+        {
+            m_JaugeScript.m_JaugeDecreaseRate = 0f;
+            Debug.Log("Decrase rate to 0");
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (m_JaugeScript.m_JaugeLevel <= 0)
+        {
+            rb.AddForce(m_Forcepush * transform.forward, ForceMode.Impulse);
+        }
     }
 }
