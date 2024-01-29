@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Agent
   - objects
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - 
