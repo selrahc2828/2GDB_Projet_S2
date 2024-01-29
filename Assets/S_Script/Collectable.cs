@@ -19,51 +19,38 @@ public class Collectable : MonoBehaviour
             //test for each collectibleType (would probably better to make it a better)
             switch (_collectibleType)
             {
-                //small projectile
+                //small collectable
                 case 1:
-                    //if the jauge + the value is still less that a full jauge
-                    if (_jaugeScript.actualJauge + _smallValue <= 100)
-                    {
-                        //add the value to the jauge
-                        _jaugeScript.actualJauge += _smallValue;
-                    }
-                    else
-                    {
-                        //make the jauge to max
-                        _jaugeScript.actualJauge = 100;
-                    }
+                    AddToJauge(_smallValue);
                     break;
+                //medium collectable
                 case 2:
-                    //if the jauge + the value is still less that a full jauge
-                    if (_jaugeScript.actualJauge + _mediumValue <= 100)
-                    {
-                        //add the value to the jauge
-                        _jaugeScript.actualJauge += _mediumValue;
-                    }
-                    else
-                    {
-                        //make the jauge to max
-                        _jaugeScript.actualJauge = 100;
-                    }
+                    AddToJauge(_mediumValue);
                     break;
+                //large collectable
                 case 3:
-                    //if the jauge + the value is still less that a full jauge
-                    if (_jaugeScript.actualJauge + _largeValue <= 100)
-                    {
-                        //add the value to the jauge
-                        _jaugeScript.actualJauge += _largeValue;
-                    }
-                    else
-                    {
-                        //make the jauge to max
-                        _jaugeScript.actualJauge = 100;
-                    }
+                    AddToJauge(_largeValue);
                     break;
                 default:
                     //normally you can't go here
                     Debug.Log("Invalid number.");
                     break;
             }
+        }
+    }
+
+    void AddToJauge(int _value)
+    {
+        //if the jauge + the value is still less that a full jauge
+        if (_jaugeScript.actualJauge + _value <= 100)
+        {
+            //add the value to the jauge
+            _jaugeScript.actualJauge += _value;
+        }
+        else
+        {
+            //make the jauge to max
+            _jaugeScript.actualJauge = 100;
         }
     }
 }
