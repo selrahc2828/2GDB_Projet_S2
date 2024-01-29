@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public jauge jaugeScript; //script jauge, on s'en sert pour mesurer la jauge et attribuer un boost au joueur en fonction
     private float actualJauge; // variable dans laquelle on va mettre le niveau de la jeuge
-
+    private Rigidbody rb;
     public List <GameObject> aDesactiver;
 
     [SerializeField]
@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         originalStepOffset = characterController.stepOffset;
+        rb = GetComponent<Rigidbody>();
 
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("objects");
         foreach (GameObject obj in objectsWithTag)
@@ -137,6 +138,11 @@ public class PlayerMovement : MonoBehaviour
 
             //On fais rotate le player pour qu'il se tourne dans la direction ou il avance
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        if (jaugeScript.actualJauge <= 0)
+        {
+            rb.constraints &= ~RigidbodyConstraints.FreezeRotation;
         }
     }
 
