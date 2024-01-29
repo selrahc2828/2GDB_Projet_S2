@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -5,8 +7,11 @@ public class PlayerMovement : MonoBehaviour
     public jauge jaugeScript; //script jauge, on s'en sert pour mesurer la jauge et attribuer un boost au joueur en fonction
     private float actualJauge; // variable dans laquelle on va mettre le niveau de la jeuge
 
+    public List <GameObject> aDesactiver;
+
     [SerializeField]
     private float maximumSpeed; //variable de vitesse maximum de base (hors boost)
+    
 
     [SerializeField]
     private float rotationSpeed; //vitesse de rotation du personnage
@@ -31,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         originalStepOffset = characterController.stepOffset;
+
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("objects");
+        foreach (GameObject obj in objectsWithTag)
+        {
+            aDesactiver.Add(obj);
+        }
     }
 
     // Update is called once per frame
@@ -157,5 +168,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("objects"))
+        {
+            other.gameObject.SetActive(false);
+        }
+
     }
 }
