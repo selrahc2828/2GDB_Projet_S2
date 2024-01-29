@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
 {
     public jauge jaugeScript;
     public float m_JaugeAdd;
+
   
 
     private void OnTriggerEnter(Collider other)

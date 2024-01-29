@@ -140,10 +140,10 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
-        if (jaugeScript.actualJauge <= 0)
-        {
-            rb.constraints &= ~RigidbodyConstraints.FreezeRotation;
-        }
+        //if (jaugeScript.actualJauge <= 0)
+        //{
+        //    rb.constraints &= ~RigidbodyConstraints.FreezeRotation;
+        //}
     }
 
     //fonction qui retourne un booleen, en fonction de la jauge
