@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 886929201170788524}
   - component: {fileID: 1065454770472123384}
   - component: {fileID: 4015784367619444752}
-  - component: {fileID: 843060665779892135}
+  - component: {fileID: 1396236426992931010}
   m_Layer: 0
   m_Name: Influence Tower 2
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 150, y: 12, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &843060665779892135
+--- !u!114 &1396236426992931010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 980757567821160386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b34c51bae77ba42b02b1ebc309608e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f73f9c696cca0a4b936a03a71336e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PushAndPull: 1
-  _LifeAndDeath: 0
-  _GregAndMaggie: 0
+  _Push: 0
+  _Pull: 0
+  _Greg: 0
+  _Maggie: 0

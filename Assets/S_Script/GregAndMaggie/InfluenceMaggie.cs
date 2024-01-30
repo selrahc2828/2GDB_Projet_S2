@@ -3,38 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class InfluenceZone2 : MonoBehaviour
+public class InfluenceMaggie : MonoBehaviour
 {
     private Vector3 _boxSize;
 
     [Header("BoolToMovement")]
     public bool _PushAndPull;
     public bool _LifeAndDeath;
-    public bool _GregAndMaggie;
+    public bool _Greg;
+    public bool _Maggie;
 
     void Start()
     {
         //Check if there are already agents in the triggerZone and change their destination if there is
         if (_PushAndPull)
         {
-            PushObjectToPosition();
+            PullObjectToPosition();
         }
 
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
         //If the object that trigger is tagged "Agent"
         if (other.CompareTag("Agent") && _PushAndPull == true)
         {
-            Vector3 pushDirection = other.transform.position - transform.position;
-
-            // Change the agent's destination to move away from the trigger
-            other.GetComponent<NavMeshAgent>().SetDestination(other.transform.position + pushDirection);
+            //Change the agent's destination to the Influence Tower
+            other.GetComponent<NavMeshAgent>().SetDestination(transform.position);
         }
     }
 
-    void PushObjectToPosition()
+    void PullObjectToPosition()
     {
         //The size of detection is the same as the size of the triggerZone
         _boxSize = GetComponent<BoxCollider>().size;
@@ -50,10 +50,8 @@ public class InfluenceZone2 : MonoBehaviour
             {
                 if (collider.CompareTag("Agent"))
                 {
-                    Vector3 pushDirection = collider.transform.position - transform.position;
-
-                    // Change the agent's destination to move away from the trigger
-                    collider.GetComponent<NavMeshAgent>().SetDestination(collider.transform.position + pushDirection);
+                    // Change their destination to be the Influence Tower
+                    collider.GetComponent<NavMeshAgent>().SetDestination(transform.position);
                 }
             }
         }

@@ -3,37 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class InfluenceZone : MonoBehaviour
+public class InfluenceZone2 : MonoBehaviour
 {
     private Vector3 _boxSize;
 
     [Header("BoolToMovement")]
-    public bool _PushAndPull;
+    public bool _Push;
+    public bool _Pull;
     public bool _LifeAndDeath;
-    public bool _GregAndMaggie;
+    public bool _Greg;
+    public bool _Maggie;
 
     void Start()
     {
         //Check if there are already agents in the triggerZone and change their destination if there is
-        if (_PushAndPull)
+        if (_Push == true)
         {
-            PullObjectToPosition();
+            PushObjectToPosition();
         }
 
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
-        //If the object that trigger is tagged "Agent"
-        if (other.CompareTag("Agent") && _PushAndPull == true)
-        {
-            //Change the agent's destination to the Influence Tower
-            other.GetComponent<NavMeshAgent>().SetDestination(transform.position);
-        }
+       
     }
 
-    void PullObjectToPosition()
+    void PushObjectToPosition()
     {
         //The size of detection is the same as the size of the triggerZone
         _boxSize = GetComponent<BoxCollider>().size;
@@ -49,8 +45,10 @@ public class InfluenceZone : MonoBehaviour
             {
                 if (collider.CompareTag("Agent"))
                 {
-                    // Change their destination to be the Influence Tower
-                    collider.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+                    Vector3 pushDirection = collider.transform.position - transform.position;
+
+                    // Change the agent's destination to move away from the trigger
+                    collider.GetComponent<NavMeshAgent>().SetDestination(collider.transform.position + pushDirection);
                 }
             }
         }
