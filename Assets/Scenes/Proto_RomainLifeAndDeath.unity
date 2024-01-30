@@ -199,9 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f4bfeb642267e4c886c465015a58dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabCube1: {fileID: 980757567821160386, guid: 6a9a652ee2c45a34398b0e289c157afa,
+  _prefabCube1: {fileID: 980757567821160386, guid: 090fe0e858c47bd4ab62bc095ac50bd7,
     type: 3}
-  _prefabCube2: {fileID: 980757567821160386, guid: 27f5533680e750340be1720cf97df061,
+  _prefabCube2: {fileID: 980757567821160386, guid: 090fe0e858c47bd4ab62bc095ac50bd7,
     type: 3}
   _affectedLayer:
     serializedVersion: 2
@@ -292,13 +292,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043113278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.34632024, y: -0, z: -0, w: 0.9381164}
-  m_LocalPosition: {x: 48.8, y: 124.4, z: -212}
+  m_LocalRotation: {x: 0.40968534, y: -0, z: -0, w: 0.9122269}
+  m_LocalPosition: {x: 32.4, y: 95.5, z: -150.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 40.525, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.37, y: 0, z: 0}
 --- !u!114 &1043113282
 MonoBehaviour:
   m_ObjectHideFlags: 0
