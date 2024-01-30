@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 886929201170788524}
   - component: {fileID: 1065454770472123384}
   - component: {fileID: 4015784367619444752}
-  - component: {fileID: 1396236426992931010}
-  - component: {fileID: -3933711747966247960}
+  - component: {fileID: -14940000062398421}
   m_Layer: 0
-  m_Name: Influence Tower 2
+  m_Name: InfluanceMaggie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c89372b7589cbea4cb459847933742b6, type: 2}
+  - {fileID: 2100000, guid: 0100f875be0a1874aa7a300b68973597, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,23 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 150, y: 12, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1396236426992931010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980757567821160386}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f73f9c696cca0a4b936a03a71336e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Push: 0
-  _Pull: 0
-  _Greg: 0
-  _Maggie: 0
---- !u!114 &-3933711747966247960
+--- !u!114 &-14940000062398421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,5 +118,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc0285f5fc4a554a8a72a151209682b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Greg: 1
-  _Maggie: 0
+  _Greg: 0
+  _Maggie: 1

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1065454770472123384}
   - component: {fileID: 4015784367619444752}
   - component: {fileID: -5355734466396554957}
+  - component: {fileID: -14940000062398421}
   m_Layer: 0
   m_Name: Influence Tower 1
   m_TagString: Untagged
@@ -113,11 +114,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980757567821160386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f73f9c696cca0a4b936a03a71336e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PushAndPull: 1
-  _LifeAndDeath: 0
-  _GregAndMaggie: 0
+  _Push: 0
+  _Pull: 0
+  _Greg: 0
+  _Maggie: 0
+--- !u!114 &-14940000062398421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980757567821160386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc0285f5fc4a554a8a72a151209682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Greg: 0
+  _Maggie: 1
