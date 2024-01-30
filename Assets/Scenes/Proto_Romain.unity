@@ -1054,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jaugeScript: {fileID: 680237013}
+  aDesactiver: []
   maximumSpeed: 15
   rotationSpeed: 400
   jumpSpeed: 5
@@ -1813,6 +1814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0e66f342255094f8349fb5839135dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _RandomMovement: 0
+  _PushAndPull: 0
+  _LifeAndDeath: 0
+  _GregAndMaggie: 0
   _randomDestination: {x: 0, y: 0, z: 0}
 --- !u!114 &293928677
 MonoBehaviour:
@@ -2265,7 +2270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048066743, y: -0.0000000037209849, z: 1.7906258e-10, w: 0.99884415}
+  m_LocalRotation: {x: 0.048066746, y: 0.0000000037209849, z: -1.790626e-10, w: 0.99884415}
   m_LocalPosition: {x: 3.59, y: 4.21, z: -16.546778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9723,7 +9728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531567653}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.048066746, y: -0.0000000037209846, z: 1.790626e-10, w: 0.99884415}
+  m_LocalRotation: {x: 0.04806675, y: 2.215313e-16, z: 6.4096518e-18, w: 0.99884415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
