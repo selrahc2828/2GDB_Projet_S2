@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class RandomMouvement : MonoBehaviour
 {
+
+    [Header("RandomMovementParameter")]
     private float _maxRangeX;
     private float _maxRangeZ;
     private float _minRangeX;
@@ -42,6 +44,7 @@ public class RandomMouvement : MonoBehaviour
         }
     }
 
+    // Move Agent Randomly
     void CreateRandomDestination()
     {
         //Create 2 variables, ont to later store the exact destination point and the other to use the SamplePosition function
