@@ -188,4 +188,4 @@ MonoBehaviour:
   agentPrefab: {fileID: 7086990296516066630}
   _NumberOfCollision: 4
   _TimeBeforeDeath: 10
-  maxOffsetDistance: 3
+  maxOffsetDistance: 2
