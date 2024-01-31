@@ -61,4 +61,24 @@ public class RandomMouvement : MonoBehaviour
             _agent.SetDestination(_randomDestinationPoint);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Greg"))
+        {
+            Vector3 newDestination = transform.position + (transform.position - other.transform.position);
+            _agent.destination = newDestination;
+        }
+        if(other.CompareTag("Maggie"))
+        {
+            Vector3 distanceBetweenUs = transform.position - other.transform.position;
+            Vector3 newDestination = other.GetComponent<NavMeshAgent>().destination + distanceBetweenUs;
+        }
+        
+        if (other.CompareTag("Maggie"))
+        {
+            Vector3 distanceBetweenUs = transform.position - other.transform.position;
+            Vector3 newDestination = other.GetComponent<NavMeshAgent>().destination + distanceBetweenUs;
+        }
+    }
 }
