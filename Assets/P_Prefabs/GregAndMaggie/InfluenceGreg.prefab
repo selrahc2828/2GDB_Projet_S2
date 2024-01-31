@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4015784367619444752}
   - component: {fileID: -3933711747966247960}
   - component: {fileID: -7771342314695245435}
+  - component: {fileID: 6693430624589092967}
   m_Layer: 0
   m_Name: InfluenceGreg
   m_TagString: Untagged
@@ -103,7 +104,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 150, y: 12, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
@@ -133,3 +134,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6ae3c3a91e4dd49acc4774105cc840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &6693430624589092967
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980757567821160386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10.59
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
