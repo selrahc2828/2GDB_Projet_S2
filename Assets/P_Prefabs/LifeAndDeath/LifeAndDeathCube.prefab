@@ -120,4 +120,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 7086990296516066630, guid: 76be796df39717a4ea547cac0d3021ee,
     type: 3}
-  spawnInterval: 1
+  spawnInterval: 2
