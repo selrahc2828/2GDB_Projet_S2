@@ -6,7 +6,7 @@ public class CollisionSpawner : MonoBehaviour
 {
     [Header("référence")]
     public GameObject agentPrefab;
-    public GameObject _CubeToLife;
+    
 
     [Header("Paramètre")]
     public float _NumberOfCollision;
@@ -35,7 +35,7 @@ public class CollisionSpawner : MonoBehaviour
             Vector3 deathPosition = transform.position;
             // destroy the GameObject if the timer is > than our value 
             Destroy(gameObject);
-            Instantiate(_CubeToLife, deathPosition, Quaternion.identity);
+            
         }
     }
 
@@ -53,7 +53,7 @@ public class CollisionSpawner : MonoBehaviour
             Vector3 deathPosition = transform.position;
             // Détruire l'agent
             Destroy(gameObject);
-            Instantiate(_CubeToLife, deathPosition, Quaternion.identity);
+            
         }
 
         if (!hasSpawned && collision.gameObject.CompareTag("Agent"))

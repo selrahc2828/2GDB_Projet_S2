@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabCube1: {fileID: 980757567821160386, guid: 090fe0e858c47bd4ab62bc095ac50bd7,
     type: 3}
-  _prefabCube2: {fileID: 980757567821160386, guid: 090fe0e858c47bd4ab62bc095ac50bd7,
+  _prefabCube2: {fileID: 980757567821160386, guid: c41a113806f740c4d9a25e021675b2a4,
     type: 3}
   _affectedLayer:
     serializedVersion: 2
