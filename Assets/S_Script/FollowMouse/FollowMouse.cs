@@ -10,18 +10,22 @@ public class FollowMouse : MonoBehaviour
     
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
+        if (Input.GetMouseButton(1))
         {
-            
-            NavMeshAgent[] agents = FindObjectsOfType<NavMeshAgent>();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            foreach (NavMeshAgent agent in agents)
+            if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
             {
-                agent.SetDestination(hit.point);
+
+                NavMeshAgent[] agents = FindObjectsOfType<NavMeshAgent>();
+
+                foreach (NavMeshAgent agent in agents)
+                {
+                    agent.SetDestination(hit.point);
+                }
             }
         }
+        
     }
 }
