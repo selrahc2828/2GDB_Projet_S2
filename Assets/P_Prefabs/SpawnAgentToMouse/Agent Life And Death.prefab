@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 3167649932413595886}
   - component: {fileID: 313256603838193173}
   - component: {fileID: 3901414477671127009}
+  - component: {fileID: -8849545292662205370}
   m_Layer: 0
-  m_Name: Agent
+  m_Name: Agent Life And Death
   m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086990296516066630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b0e66f342255094f8349fb5839135dc, type: 3}
   m_Name: 
@@ -172,3 +173,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8849545292662205370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086990296516066630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4366b7d54ab5f4c8910fe9752d11a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 7086990296516066630}
+  _NumberOfCollision: 0
+  _MaxTimeBeforeDeath: 5
+  _TimeBeforeDeath: 0
+  maxOffsetDistance: 2
