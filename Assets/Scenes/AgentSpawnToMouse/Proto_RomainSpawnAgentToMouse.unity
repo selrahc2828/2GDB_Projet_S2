@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 179187610}
   - component: {fileID: 179187609}
-  - component: {fileID: 179187611}
   - component: {fileID: 179187612}
   - component: {fileID: 179187613}
   m_Layer: 0
@@ -189,25 +188,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &179187611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179187608}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f4bfeb642267e4c886c465015a58dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabCube1: {fileID: 980757567821160386, guid: 090fe0e858c47bd4ab62bc095ac50bd7,
-    type: 3}
-  _prefabCube2: {fileID: 980757567821160386, guid: c41a113806f740c4d9a25e021675b2a4,
-    type: 3}
-  _affectedLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &179187612
 MonoBehaviour:
   m_ObjectHideFlags: 0
