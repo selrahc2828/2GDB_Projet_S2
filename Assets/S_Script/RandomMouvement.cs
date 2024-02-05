@@ -15,7 +15,8 @@ public class RandomMouvement : MonoBehaviour
     private NavMeshAgent _agent;
     private float _distanceAgentDestination;
 
-    public Vector3 _randomDestination;
+    public Vector3 newDestination;
+    public Vector3 _randomDestinationPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -73,12 +74,14 @@ public class RandomMouvement : MonoBehaviour
         {
             Vector3 distanceBetweenUs = transform.position - other.transform.position;
             Vector3 newDestination = other.GetComponent<NavMeshAgent>().destination + distanceBetweenUs;
+            _agent.destination = newDestination;
         }
-        
-        if (other.CompareTag("Maggie"))
-        {
-            Vector3 distanceBetweenUs = transform.position - other.transform.position;
-            Vector3 newDestination = other.GetComponent<NavMeshAgent>().destination + distanceBetweenUs;
-        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(_randomDestinationPoint, 10);
+        Gizmos.DrawWireSphere(newDestination, 10);
     }
 }
