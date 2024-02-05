@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class InfluenceGregAndMaggie : MonoBehaviour
 {
-    private Vector3 _boxSize;
+    private float _capsuleRadius;
+    private float _capsuleHeight;
 
     [Header("BoolToMovement")]
     public bool _Greg;
@@ -16,7 +17,11 @@ public class InfluenceGregAndMaggie : MonoBehaviour
         //Check if there are already agents in the triggerZone and change their destination if there is
         PullObjectToPosition();
         PushObjectToPosition();
-        
+
+        //The size of detection is the same as the size of the triggerZone
+        _capsuleRadius = GetComponent<CapsuleCollider>().radius;
+        _capsuleRadius = GetComponent<CapsuleCollider>().height;
+
     }
 
 
@@ -54,11 +59,8 @@ public class InfluenceGregAndMaggie : MonoBehaviour
 
     void PullObjectToPosition()
     {
-        //The size of detection is the same as the size of the triggerZone
-        _boxSize = GetComponent<BoxCollider>().size;
-
         // Use Physics.OverlapBox to check for objects within the Box and put them in an array
-        Collider[] colliders = Physics.OverlapBox(transform.position, _boxSize, Quaternion.identity);
+        Collider[] colliders = Physics.OverlapCapsule(transform.position, transform.position + (Vector3.up * _capsuleHeight), _capsuleRadius);
 
         //If the array isn't empty
         if (colliders.Length > 0)
@@ -82,11 +84,8 @@ public class InfluenceGregAndMaggie : MonoBehaviour
 
     void PushObjectToPosition()
     {
-        //The size of detection is the same as the size of the triggerZone
-        _boxSize = GetComponent<BoxCollider>().size;
-
         // Use Physics.OverlapBox to check for objects within the Box and put them in an array
-        Collider[] colliders = Physics.OverlapBox(transform.position, _boxSize, Quaternion.identity);
+        Collider[] colliders = Physics.OverlapCapsule(transform.position, transform.position + (Vector3.up * _capsuleHeight), _capsuleRadius);
 
         //If the array isn't empty
         if (colliders.Length > 0)
@@ -96,10 +95,10 @@ public class InfluenceGregAndMaggie : MonoBehaviour
             {
                 if (collider.CompareTag("Greg") && _Maggie == true || collider.CompareTag("Maggie") && _Greg == true)
                 {
-                    Vector3 pushDirection = collider.transform.position - transform.position;
+                    Vector3 newDestination = collider.transform.position - 2*(transform.position);
 
                     // Change the agent's destination to move away from the trigger
-                    collider.GetComponent<NavMeshAgent>().SetDestination(collider.transform.position + pushDirection);
+                    collider.GetComponent<NavMeshAgent>().SetDestination(newDestination);
                 }
             }
         }
