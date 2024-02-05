@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Proto_Romain.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/PushAnDPull/Proto_Romain_NotFirstPersonne 1.unity
+    guid: 63b8ec30e4d154244adaa32a4c87f95b
+  - enabled: 1
+    path: Assets/Scenes/GregAndMaggies/Proto_RomainGregAndMaggie.unity
+    guid: 5b5bfc93ed7d3004fa4bb96898aff484
+  - enabled: 1
+    path: Assets/Scenes/GottaGoFast/Proto_RomainGottaGoFast.unity
+    guid: 84a870c2e6a37c741a0978af11d72901
+  - enabled: 1
+    path: Assets/Scenes/FollowMouse/Proto_RomainFollowMouse.unity
+    guid: 5980636c0ba47ad43bee7f3608bb0584
+  - enabled: 1
+    path: Assets/Scenes/AgentSpawnToMouse/Proto_RomainSpawnAgentToMouse.unity
+    guid: e907bf449eba64a4ebe415890ee1b3df
   m_configObjects: {}
