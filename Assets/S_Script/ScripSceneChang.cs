@@ -25,6 +25,10 @@ public class ScriptSceneChang : MonoBehaviour
         {
             ChangeScene(4);
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            ChangeScene(5);
+        }
     }
 
     void ChangeScene(int sceneIndex)
