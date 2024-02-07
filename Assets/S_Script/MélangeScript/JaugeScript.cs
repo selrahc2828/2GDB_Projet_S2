@@ -21,7 +21,7 @@ public class JaugeScript : MonoBehaviour
         //Mettre pour le slider 
         UpdateJaugeValue();
 
-        if (_SliderJauge.value >= _NumberMax)
+        if (_SliderJauge.value <= 0f)
         {
             _Panel.SetActive(true);
         }
