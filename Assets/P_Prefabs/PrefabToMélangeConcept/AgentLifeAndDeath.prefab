@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3841970586150772680}
   - component: {fileID: 5444051248712278846}
   - component: {fileID: 7832934860235179200}
-  - component: {fileID: -7112559280290012942}
+  - component: {fileID: 3054212264539894773}
   - component: {fileID: 1659073581724347116}
   - component: {fileID: 3167649932413595886}
   - component: {fileID: 313256603838193173}
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-7112559280290012942
+--- !u!54 &3054212264539894773
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,9 +149,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 15
-  m_Acceleration: 8
+  m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0e66f342255094f8349fb5839135dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _randomDestination: {x: 0, y: 0, z: 0}
+  newDestination: {x: 0, y: 0, z: 0}
+  _randomDestinationPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &-5249344780558286124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,9 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 7086990296516066630}
-  _CubeToLife: {fileID: 980757567821160386, guid: c41a113806f740c4d9a25e021675b2a4,
-    type: 3}
   _NumberOfCollision: 4
-  _MaxTimeBeforeDeath: 10
-  _TimeBeforeDeath: 10
+  _MaxTimeBeforeDeath: 5
+  _TimeBeforeDeath: 5
   maxOffsetDistance: 2

@@ -10,8 +10,7 @@ public class InfluenceZone : MonoBehaviour
     [Header("BoolToMovement")]
     public bool _Push;
     public bool _Pull;
-    public bool _Greg;
-    public bool _Maggie;
+
 
     void Start()
     {

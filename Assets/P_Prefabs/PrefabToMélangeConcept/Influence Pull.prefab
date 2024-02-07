@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4015784367619444752}
   - component: {fileID: -5355734466396554957}
   m_Layer: 0
-  m_Name: Influence Tower 1
+  m_Name: Influence Pull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0100f875be0a1874aa7a300b68973597, type: 2}
+  - {fileID: 2100000, guid: b016241923838704ab0022c640679ee8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,5 +120,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Push: 0
   _Pull: 1
-  _Greg: 0
-  _Maggie: 0
