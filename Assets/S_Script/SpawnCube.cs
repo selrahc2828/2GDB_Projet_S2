@@ -28,6 +28,7 @@ public class SpawnCube : MonoBehaviour
         // Check for left mouse button click
         if (Input.GetMouseButtonDown(0) && _Pull == true) 
         {
+            // Instancie un prefab
             GameObject newCube = Instantiate(_prefabPull, transform.position, Quaternion.identity);
             InfluenceZone influenceScript = newCube.GetComponent<InfluenceZone>();
 
@@ -37,6 +38,7 @@ public class SpawnCube : MonoBehaviour
                 influenceScript._Push = false;
             }
 
+            // Instancie le cube a la position de la souris 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -46,8 +48,10 @@ public class SpawnCube : MonoBehaviour
             }
         }
 
+        // Check for left mouse button click
         if (Input.GetMouseButtonDown(0) && _Push == true)
         {
+            // Instancie un prefab
             GameObject newCube = Instantiate(_prefabPush, transform.position, Quaternion.identity);
             InfluenceZone influenceScript = newCube.GetComponent<InfluenceZone>();
 
@@ -57,6 +61,7 @@ public class SpawnCube : MonoBehaviour
                 influenceScript._Push = true;
             }
 
+            // Instancie le cube a la position de la souris 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -66,8 +71,11 @@ public class SpawnCube : MonoBehaviour
             }
         }
 
+
+        // Check for left mouse button click
         if (Input.GetMouseButtonDown(0) && _AgentSpawn == true)
         {
+            // Instancie un prefab
             GameObject newCube = Instantiate(_prefabAgentSpawn, transform.position, Quaternion.identity);
             InfluenceZone influenceScript = newCube.GetComponent<InfluenceZone>();
 
@@ -77,6 +85,7 @@ public class SpawnCube : MonoBehaviour
                 influenceScript._Push = true;
             }
 
+            // Instancie le cube a la position de la souris 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -87,6 +96,7 @@ public class SpawnCube : MonoBehaviour
         }
     }
 
+    // Permet de changer les cubes a spawn 
     public void _PushInput()
     {
         _Push = true;
