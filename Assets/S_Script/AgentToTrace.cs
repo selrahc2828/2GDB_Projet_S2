@@ -45,13 +45,10 @@ public class AgentToTrace : MonoBehaviour
     void Update()
     {
         MakeTrace();
-
         if (Input.GetMouseButtonUp(0))
         {
-            ComeToPoint();  
+            ComeToPoint();
         }
-
-
     }
 
     private void OnDrawGizmos()
@@ -97,30 +94,36 @@ public class AgentToTrace : MonoBehaviour
     }
     void ComeToPoint()
     {
-        Debug.Log("ok");
-        foreach (KeyValuePair<Vector3, bool> _position in _listePositionTrace)
+        List<Vector3> _keysPosition = new List<Vector3>(_listePositionTrace.Keys);
+        List<NavMeshAgent> _keysAgent = new List<NavMeshAgent>(_listeAgent.Keys);
+
+        for (int i = 0; i < _keysPosition.Count; i++)
         {
-            if (_position.Value)
+            Vector3 _position = _keysPosition[i];
+            bool _value = _listePositionTrace[_position];
+            if (_value)
             {
                 float _distanceMin = 0;
-                foreach (KeyValuePair<NavMeshAgent, bool> _agentPosition in _listeAgent)
+                for (int j = 0; j < _keysAgent.Count; j++)
                 {
-                    if (_agentPosition.Value)
+                    NavMeshAgent _agentPosition = _keysAgent[j];
+                    bool _agentValue = _listeAgent[_agentPosition];
+                    if (_agentValue)
                     {
                         if (_distanceMin != 0)
                         {
-                            if (Vector3.Distance(_position.Key, _agentPosition.Key.transform.position) < _distanceMin)
+                            if (Vector3.Distance(_position, _agentPosition.transform.position) < _distanceMin)
                             {
-                                _distanceMin = Vector3.Distance(_position.Key, _agentPosition.Key.transform.position);
-                                _chosenAgent = _agentPosition.Key;
-                                _chosenPosition = _position.Key;
+                                _distanceMin = Vector3.Distance(_position, _agentPosition.transform.position);
+                                _chosenAgent = _agentPosition;
+                                _chosenPosition = _position;
                             }
                         }
                         else
                         {
-                            _distanceMin = Vector3.Distance(_position.Key, _agentPosition.Key.transform.position);
-                            _chosenAgent = _agentPosition.Key;
-                            _chosenPosition = _position.Key;
+                            _distanceMin = Vector3.Distance(_position, _agentPosition.transform.position);
+                            _chosenAgent = _agentPosition;
+                            _chosenPosition = _position;
                         }
                     }
                 }
