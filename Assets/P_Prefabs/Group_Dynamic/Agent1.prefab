@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 313256603838193173}
   - component: {fileID: 3901414477671127009}
   m_Layer: 0
-  m_Name: Agent
-  m_TagString: objects
+  m_Name: Agent1
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68aabc116a2bb174a8fcb2454f5bdd31, type: 2}
+  - {fileID: 2100000, guid: 105139d566804a5478746ca892b11ed0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,8 +120,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
-  m_Acceleration: 32
+  m_Speed: 12
+  m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 180
   m_StoppingDistance: 0

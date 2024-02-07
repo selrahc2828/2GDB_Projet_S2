@@ -12,6 +12,8 @@ public class RandomMouvement : MonoBehaviour
     private float _minRangeX;
     private float _minRangeZ;
 
+    public bool _activatePath = true;
+
     private NavMeshAgent _agent;
     private float _distanceAgentDestination;
 
@@ -21,14 +23,15 @@ public class RandomMouvement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Create the Agent variable
+        _agent = GetComponent<NavMeshAgent>();
+
         //We determine the coordinate of the Spawn plane of the destination point (could be donner better but i was bored)
         _minRangeZ = -110f;
         _minRangeX = -40f;
         _maxRangeX = 110f;
         _maxRangeZ = 40f;
 
-        //Create the Agent variable
-        _agent = GetComponent<NavMeshAgent>();
 
         CreateRandomDestination();
     }
@@ -37,6 +40,10 @@ public class RandomMouvement : MonoBehaviour
     {
         //This variable is the distance between the agent and his destination
         _distanceAgentDestination = Vector3.Distance(_agent.destination, _agent.transform.position);
+        if(_activatePath )
+        {
+            Debug.DrawLine(_agent.transform.position, _agent.destination);
+        }
 
         //if the distance is less than 5 units
         if (_distanceAgentDestination <= 5)
@@ -77,11 +84,12 @@ public class RandomMouvement : MonoBehaviour
             _agent.destination = newDestination;
         }
     }
-
+    /*
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(_randomDestinationPoint, 10);
-        Gizmos.DrawWireSphere(newDestination, 10);
-    }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(_agent.destination, 5);
+        //Gizmos.DrawWireSphere(_randomDestinationPoint, 10);
+        //Gizmos.DrawWireSphere(newDestination, 10);
+    }*/
 }
