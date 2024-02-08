@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -270,6 +275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -287,6 +297,86 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 720942865}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &46567047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1115029161}
+    m_Modifications:
+    - target: {fileID: 313256603838193173, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.640003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.1963334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -60.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962188664587321945, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: _Maggie
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_Name
+      value: Maggie (36)
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
+    - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
 --- !u!4 &59396351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: ad541b56883538d41ad7aea523606724,
@@ -365,6 +455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -446,6 +541,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -519,90 +619,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
---- !u!1 &86136422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 86136423}
-  - component: {fileID: 86136425}
-  - component: {fileID: 86136424}
-  m_Layer: 5
-  m_Name: Text (Legacy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &86136423
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86136422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9264, y: 2.9264, z: 2.9264}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 565508900}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -706, y: 472}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &86136424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86136422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Greg And Maggie
---- !u!222 &86136425
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86136422}
-  m_CullTransparentMesh: 1
 --- !u!1001 &88664794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -670,6 +696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -761,6 +792,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -815,7 +851,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 5b92baa029dd6db48a059a8ab85be218, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e2bbd21be7a1433459d9630132ed7f31, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &179187610
 Transform:
@@ -919,6 +955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -997,6 +1038,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -1071,6 +1117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1143,6 +1194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1223,6 +1279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1301,6 +1362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1393,6 +1459,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1465,6 +1536,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1544,6 +1620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -1618,6 +1699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1691,6 +1777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1763,6 +1854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1842,6 +1938,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -1916,6 +2017,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1988,6 +2094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2066,6 +2177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -2147,6 +2263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2219,6 +2340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2297,6 +2423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -2397,79 +2528,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad541b56883538d41ad7aea523606724, type: 3}
---- !u!1 &501422580
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 501422583}
-  - component: {fileID: 501422582}
-  - component: {fileID: 501422581}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &501422581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501422580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &501422582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501422580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &501422583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501422580}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &517183087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2537,6 +2605,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2616,6 +2689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -2690,6 +2768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2701,108 +2784,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 380201921}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &565508896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 565508900}
-  - component: {fileID: 565508899}
-  - component: {fileID: 565508898}
-  - component: {fileID: 565508897}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &565508897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565508896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &565508898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565508896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &565508899
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565508896}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!224 &565508900
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565508896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 86136423}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &568079681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2870,6 +2851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2943,6 +2929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3022,6 +3013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3108,6 +3104,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3181,6 +3182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3253,6 +3259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3332,6 +3343,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -3406,6 +3422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3503,6 +3524,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -3583,6 +3609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3674,6 +3705,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -3748,6 +3784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3851,6 +3892,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -3897,7 +3943,7 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.1
+      value: 36.9
       objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
         type: 3}
@@ -3907,7 +3953,7 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -66.4
+      value: -60.9
       objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
         type: 3}
@@ -4058,6 +4104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4318,6 +4369,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1081982542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+    type: 3}
+  m_PrefabInstance: {fileID: 46567047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1086763732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,6 +4442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4458,6 +4520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4538,6 +4605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4574,6 +4646,7 @@ Transform:
   m_Children:
   - {fileID: 1013166231}
   - {fileID: 1832845424}
+  - {fileID: 1081982542}
   - {fileID: 1418182127}
   - {fileID: 1153774597}
   - {fileID: 59396351}
@@ -4689,7 +4762,7 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: ad541b56883538d41ad7aea523606724,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: 25.8
       objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: ad541b56883538d41ad7aea523606724,
         type: 3}
@@ -4699,7 +4772,7 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: ad541b56883538d41ad7aea523606724,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.4
+      value: -63
       objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: ad541b56883538d41ad7aea523606724,
         type: 3}
@@ -4740,6 +4813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4813,6 +4891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5005,6 +5088,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5084,6 +5172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5157,6 +5250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5229,6 +5327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5309,6 +5412,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5387,6 +5495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5473,6 +5586,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5545,6 +5663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5630,6 +5753,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -5703,6 +5831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5782,6 +5915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -5789,50 +5927,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
---- !u!1 &1302622460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1302622462}
-  - component: {fileID: 1302622461}
-  m_Layer: 0
-  m_Name: ------ Game Manager ------
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1302622461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302622460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a356813bb0ee523459dbfc3c614d2d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1302622462
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302622460}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 387.00977, y: 795.9667, z: 132.86658}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1306099913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5900,6 +5994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5985,6 +6084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6077,6 +6181,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6150,6 +6259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6222,6 +6336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6300,6 +6419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -6394,6 +6518,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6478,6 +6607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6582,6 +6716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6677,6 +6816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -6775,6 +6919,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -6854,6 +7003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6939,6 +7093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -7013,6 +7172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7085,6 +7249,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7164,6 +7333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7262,6 +7436,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7341,6 +7520,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7413,6 +7597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7504,6 +7693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7602,6 +7796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7680,6 +7879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     - {fileID: 8380597195232417917, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -7754,6 +7958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7832,6 +8041,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
@@ -7918,6 +8132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8009,6 +8228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -8082,6 +8306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Greg (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8167,6 +8396,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8258,6 +8492,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7431414293101132172, guid: ba5564cd14b4e8b43b13e59a168b3e49, type: 3}
     m_RemovedGameObjects: []
@@ -8332,6 +8571,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Greg (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ad541b56883538d41ad7aea523606724,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8404,6 +8648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Maggie (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8478,6 +8727,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maggie
       objectReference: {fileID: 0}
+    - target: {fileID: 7086990296516066630, guid: ba5564cd14b4e8b43b13e59a168b3e49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8492,6 +8746,3 @@ SceneRoots:
   - {fileID: 1077758950}
   - {fileID: 179187610}
   - {fileID: 1115029161}
-  - {fileID: 565508900}
-  - {fileID: 501422583}
-  - {fileID: 1302622462}
