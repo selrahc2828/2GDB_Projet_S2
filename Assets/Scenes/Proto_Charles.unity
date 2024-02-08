@@ -4826,6 +4826,7 @@ GameObject:
   - component: {fileID: 179187609}
   - component: {fileID: 179187611}
   - component: {fileID: 179187612}
+  - component: {fileID: 179187613}
   m_Layer: 0
   m_Name: Surface Navmesh
   m_TagString: Untagged
@@ -4891,13 +4892,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f4bfeb642267e4c886c465015a58dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabCube1: {fileID: 980757567821160386, guid: f55e1950b80582c43a097d1e9c5d40b4,
-    type: 3}
-  _prefabCube2: {fileID: 980757567821160386, guid: e615cad3a79c59449bda7fb8f2b13aae,
-    type: 3}
+  _prefabPull: {fileID: 0}
+  _prefabPush: {fileID: 0}
+  _prefabAgentSpawn: {fileID: 0}
   _affectedLayer:
     serializedVersion: 2
     m_Bits: 8
+  _Pull: 0
+  _Push: 0
+  _AgentSpawn: 0
 --- !u!114 &179187612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4914,6 +4917,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _parentAgent: {fileID: 1115029160}
+--- !u!114 &179187613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179187608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db40155be3c9e134b9b2822f6bc947d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &179586399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26114,7 +26129,7 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.335716
+      value: -10.28
       objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
         type: 3}
@@ -26154,6 +26169,11 @@ PrefabInstance:
     - target: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901414477671127009, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7086990296516066630, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
