@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class AgentToTrace : MonoBehaviour
 {
@@ -18,10 +21,12 @@ public class AgentToTrace : MonoBehaviour
 
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
+    private float _sizeAgent;
 
     // Start is called before the first frame update
     void Start()
     {
+        _sizeAgent = 1.2f;
         _listePositionTrace = new Dictionary<Vector3, bool>();
         _listeAgent = new Dictionary<NavMeshAgent, bool>();
         _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
@@ -82,6 +87,7 @@ public class AgentToTrace : MonoBehaviour
                 {
                     if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
                     {
+                        InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
                         _listePositionTrace.Add(hit.point, true);
                     }
                 }
@@ -101,7 +107,7 @@ public class AgentToTrace : MonoBehaviour
             {
                 foreach (KeyValuePair<Vector3, bool> _oldPoint in _oldDictionary)
                 {
-                    if (Vector3.Distance(_newPoint, _oldPoint.Key) <= 0.5)
+                    if (Vector3.Distance(_newPoint, _oldPoint.Key) <= _sizeAgent)
                     {
                         return true;
                     }
@@ -110,12 +116,32 @@ public class AgentToTrace : MonoBehaviour
         }
         foreach(KeyValuePair<Vector3, bool> _newPointInNewDictionary in _newDictionary)
         {
-            if (Vector3.Distance(_newPoint, _newPointInNewDictionary.Key) <= 0.5)
+            if (Vector3.Distance(_newPoint, _newPointInNewDictionary.Key) <= _sizeAgent)
             {
                 return true;
             }
         }
         return false;
+    }
+
+    void InterpolateNewPointInBetween(Vector3 _newPoint, KeyValuePair<Vector3, bool> _lastPoint)
+    {
+        float _distanceBetweenNewAndLast = Vector3.Distance(_newPoint, _lastPoint.Key);
+        if (_distanceBetweenNewAndLast > _sizeAgent)
+        {
+            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / _sizeAgent);
+            float _remainingDistance = _distanceBetweenNewAndLast - (_numberOfPossiblePosition * _sizeAgent);
+            if (_numberOfPossiblePosition > 0)
+            {
+                Vector3 _direction = (_newPoint - _lastPoint.Key).normalized;
+                float _distanceBetweenPoints = _sizeAgent + (_remainingDistance / _numberOfPossiblePosition+1);
+                for (int i = 1; i < _numberOfPossiblePosition; i++)
+                {
+                    Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
+                    _listePositionTrace.Add(_interpolatedPosition, true);
+                }
+            }
+        }
     }
 
     void ComeToPoint()
