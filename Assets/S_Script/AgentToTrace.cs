@@ -17,6 +17,7 @@ public class AgentToTrace : MonoBehaviour
     Dictionary<NavMeshAgent, bool> _listeAgent;
 
     List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
+    public int _numberAgentAviable;
     public GameObject _parentAgent;
 
     private NavMeshAgent _chosenAgent;
@@ -50,6 +51,7 @@ public class AgentToTrace : MonoBehaviour
         {
             Debug.LogError("Objet parent non défini !");
         }
+        CountNumberAgentAviable();
     }
 
     // Update is called once per frame
@@ -70,6 +72,18 @@ public class AgentToTrace : MonoBehaviour
         foreach (Vector3 _position in _listePositionTrace.Keys)
         {
             Gizmos.DrawWireSphere(_position, 5);
+        }
+    }
+
+    void CountNumberAgentAviable()
+    {
+        _numberAgentAviable = 0;
+        foreach (KeyValuePair<NavMeshAgent, bool> _agent in _listeAgent)
+        {
+            if (_agent.Value)
+            {
+                _numberAgentAviable++;
+            }
         }
     }
 
@@ -185,5 +199,6 @@ public class AgentToTrace : MonoBehaviour
                 _listePositionTrace[_chosenPosition] = false;
             }
         }
+        CountNumberAgentAviable();
     }
 }
