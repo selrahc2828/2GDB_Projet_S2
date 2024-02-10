@@ -10,6 +10,7 @@ TagManager:
   - Cube
   - Greg
   - Maggie
+  - AgentMechant
   layers:
   - Default
   - TransparentFX
@@ -18,10 +19,10 @@ TagManager:
   - Water
   - UI
   - triggerKiller
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Patrol
+  - Objectif
+  - Agent
   - 
   - 
   - 
