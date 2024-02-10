@@ -1,7 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
+using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class AgentToTrace : MonoBehaviour
 {
@@ -9,16 +15,22 @@ public class AgentToTrace : MonoBehaviour
 
     Dictionary<Vector3, bool> _listePositionTrace;
     Dictionary<NavMeshAgent, bool> _listeAgent;
+
+    List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
+    public int _numberAgentAviable;
     public GameObject _parentAgent;
 
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
+    private float _sizeAgent;
 
     // Start is called before the first frame update
     void Start()
     {
+        _sizeAgent = 1f;
         _listePositionTrace = new Dictionary<Vector3, bool>();
         _listeAgent = new Dictionary<NavMeshAgent, bool>();
+        _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
 
         // Vérifier si l'objet parent a été attribué
         if (_parentAgent != null)
@@ -39,6 +51,7 @@ public class AgentToTrace : MonoBehaviour
         {
             Debug.LogError("Objet parent non défini !");
         }
+        CountNumberAgentAviable();
     }
 
     // Update is called once per frame
@@ -47,7 +60,9 @@ public class AgentToTrace : MonoBehaviour
         MakeTrace();
         if (Input.GetMouseButtonUp(0))
         {
+            _listeOfListePositionTrace.Add(_listePositionTrace);
             ComeToPoint();
+            _listePositionTrace.Clear();
         }
     }
 
@@ -57,6 +72,18 @@ public class AgentToTrace : MonoBehaviour
         foreach (Vector3 _position in _listePositionTrace.Keys)
         {
             Gizmos.DrawWireSphere(_position, 5);
+        }
+    }
+
+    void CountNumberAgentAviable()
+    {
+        _numberAgentAviable = 0;
+        foreach (KeyValuePair<NavMeshAgent, bool> _agent in _listeAgent)
+        {
+            if (_agent.Value)
+            {
+                _numberAgentAviable++;
+            }
         }
     }
 
@@ -72,16 +99,9 @@ public class AgentToTrace : MonoBehaviour
             {
                 if (_listePositionTrace.Count > 0)
                 {
-                    bool _alreadyOneHere = false;
-                    foreach (Vector3 _position in _listePositionTrace.Keys)
+                    if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
                     {
-                        if (Vector3.Distance(hit.point, _position) <= 0.5)
-                        {
-                            _alreadyOneHere = true;      
-                        }
-                    }
-                    if (!_alreadyOneHere)
-                    {
+                        InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
                         _listePositionTrace.Add(hit.point, true);
                     }
                 }
@@ -92,6 +112,53 @@ public class AgentToTrace : MonoBehaviour
             }
         }
     }
+
+    bool CheckIfPointAlreadyExistHere(Vector3 _newPoint, Dictionary<Vector3, bool> _newDictionary)
+    {
+        if(_listeOfListePositionTrace.Count > 0)
+        {
+            foreach (Dictionary<Vector3, bool> _oldDictionary in _listeOfListePositionTrace)
+            {
+                foreach (KeyValuePair<Vector3, bool> _oldPoint in _oldDictionary)
+                {
+                    if (Vector3.Distance(_newPoint, _oldPoint.Key) <= _sizeAgent)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        foreach(KeyValuePair<Vector3, bool> _newPointInNewDictionary in _newDictionary)
+        {
+            if (Vector3.Distance(_newPoint, _newPointInNewDictionary.Key) <= _sizeAgent)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void InterpolateNewPointInBetween(Vector3 _newPoint, KeyValuePair<Vector3, bool> _lastPoint)
+    {
+        float _distanceBetweenNewAndLast = Vector3.Distance(_newPoint, _lastPoint.Key);
+        if (_distanceBetweenNewAndLast > _sizeAgent)
+        {
+            //On calcul combien d'agent pourrais rentrer entre les 2 points avec Distance/taille
+            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / _sizeAgent)/2;
+            float _remainingDistance = _distanceBetweenNewAndLast - (_numberOfPossiblePosition * _sizeAgent);
+            if (_numberOfPossiblePosition > 0)
+            {
+                Vector3 _direction = (_newPoint - _lastPoint.Key).normalized;
+                float _distanceBetweenPoints = _sizeAgent + (_remainingDistance / _numberOfPossiblePosition+1);
+                for (int i = 1; i < _numberOfPossiblePosition; i++)
+                {
+                    Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
+                    _listePositionTrace.Add(_interpolatedPosition, true);
+                }
+            }
+        }
+    }
+
     void ComeToPoint()
     {
         List<Vector3> _keysPosition = new List<Vector3>(_listePositionTrace.Keys);
@@ -132,5 +199,6 @@ public class AgentToTrace : MonoBehaviour
                 _listePositionTrace[_chosenPosition] = false;
             }
         }
+        CountNumberAgentAviable();
     }
 }
