@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class AgentToTrace : MonoBehaviour
 {
@@ -9,6 +12,8 @@ public class AgentToTrace : MonoBehaviour
 
     Dictionary<Vector3, bool> _listePositionTrace;
     Dictionary<NavMeshAgent, bool> _listeAgent;
+
+    List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
     public GameObject _parentAgent;
 
     private NavMeshAgent _chosenAgent;
@@ -19,6 +24,7 @@ public class AgentToTrace : MonoBehaviour
     {
         _listePositionTrace = new Dictionary<Vector3, bool>();
         _listeAgent = new Dictionary<NavMeshAgent, bool>();
+        _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
 
         // Vérifier si l'objet parent a été attribué
         if (_parentAgent != null)
@@ -47,7 +53,9 @@ public class AgentToTrace : MonoBehaviour
         MakeTrace();
         if (Input.GetMouseButtonUp(0))
         {
+            _listeOfListePositionTrace.Add(_listePositionTrace);
             ComeToPoint();
+            _listePositionTrace.Clear();
         }
     }
 
@@ -72,15 +80,7 @@ public class AgentToTrace : MonoBehaviour
             {
                 if (_listePositionTrace.Count > 0)
                 {
-                    bool _alreadyOneHere = false;
-                    foreach (Vector3 _position in _listePositionTrace.Keys)
-                    {
-                        if (Vector3.Distance(hit.point, _position) <= 0.5)
-                        {
-                            _alreadyOneHere = true;      
-                        }
-                    }
-                    if (!_alreadyOneHere)
+                    if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
                     {
                         _listePositionTrace.Add(hit.point, true);
                     }
@@ -92,6 +92,32 @@ public class AgentToTrace : MonoBehaviour
             }
         }
     }
+
+    bool CheckIfPointAlreadyExistHere(Vector3 _newPoint, Dictionary<Vector3, bool> _newDictionary)
+    {
+        if(_listeOfListePositionTrace.Count > 0)
+        {
+            foreach (Dictionary<Vector3, bool> _oldDictionary in _listeOfListePositionTrace)
+            {
+                foreach (KeyValuePair<Vector3, bool> _oldPoint in _oldDictionary)
+                {
+                    if (Vector3.Distance(_newPoint, _oldPoint.Key) <= 0.5)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        foreach(KeyValuePair<Vector3, bool> _newPointInNewDictionary in _newDictionary)
+        {
+            if (Vector3.Distance(_newPoint, _newPointInNewDictionary.Key) <= 0.5)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     void ComeToPoint()
     {
         List<Vector3> _keysPosition = new List<Vector3>(_listePositionTrace.Keys);
