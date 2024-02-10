@@ -26,7 +26,7 @@ public class AgentToTrace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _sizeAgent = 1.2f;
+        _sizeAgent = 1f;
         _listePositionTrace = new Dictionary<Vector3, bool>();
         _listeAgent = new Dictionary<NavMeshAgent, bool>();
         _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
@@ -59,8 +59,8 @@ public class AgentToTrace : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _listeOfListePositionTrace.Add(_listePositionTrace);
-            ComeToPoint();
-            _listePositionTrace.Clear();
+            //ComeToPoint();
+            //_listePositionTrace.Clear();
         }
     }
 
@@ -129,7 +129,8 @@ public class AgentToTrace : MonoBehaviour
         float _distanceBetweenNewAndLast = Vector3.Distance(_newPoint, _lastPoint.Key);
         if (_distanceBetweenNewAndLast > _sizeAgent)
         {
-            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / _sizeAgent);
+            //On calcul combien d'agent pourrais rentrer entre les 2 points avec Distance/taille
+            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / _sizeAgent)/2;
             float _remainingDistance = _distanceBetweenNewAndLast - (_numberOfPossiblePosition * _sizeAgent);
             if (_numberOfPossiblePosition > 0)
             {
