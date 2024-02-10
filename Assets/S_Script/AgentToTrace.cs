@@ -59,8 +59,8 @@ public class AgentToTrace : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _listeOfListePositionTrace.Add(_listePositionTrace);
-            //ComeToPoint();
-            //_listePositionTrace.Clear();
+            ComeToPoint();
+            _listePositionTrace.Clear();
         }
     }
 
