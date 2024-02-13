@@ -14,10 +14,11 @@ public class AgentToTrace : MonoBehaviour
     public LayerMask _affectedLayer;
 
     Dictionary<Vector3, bool> _listePositionTrace;
-    Dictionary<NavMeshAgent, bool> _listeAgent;
+    public  Dictionary<NavMeshAgent, bool> _listeAgent;
 
     List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
-    public int _numberAgentAviable;
+    Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
+    public int _numberAgentAvailable;
     public GameObject _parentAgent;
 
     private NavMeshAgent _chosenAgent;
@@ -35,6 +36,7 @@ public class AgentToTrace : MonoBehaviour
         _listeAgent = new Dictionary<NavMeshAgent, bool>();
         //Liste dans laquelle je stoque les dictionnaires de position
         _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
+        _dictionnaireOfListeAgent = new Dictionary<List<NavMeshAgent>, int>();
 
         // Vérifier si l'objet parent a été attribué
         if (_parentAgent != null)
@@ -56,14 +58,18 @@ public class AgentToTrace : MonoBehaviour
             Debug.LogError("Objet parent non défini !");
         }
         //Appel de la fonction pour créer la variable du nombre d'agent disponible à un instant T
-        CountNumberAgentAviable();
+        CountNumberAgentAvailable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Appel de la fonction pour créer les points de position sur le tracé de la souris
-        MakeTrace();
+        // Check du click gauche de la souris
+        if (Input.GetMouseButton(0))
+        {
+            //Appel de la fonction pour créer les points de position sur le tracé de la souris
+            MakeTrace();
+        }
         //Test si le bouton gauche de la souris est relevé
         if (Input.GetMouseButtonUp(0))
         {
@@ -87,10 +93,10 @@ public class AgentToTrace : MonoBehaviour
         }
     }
 
-    void CountNumberAgentAviable()
+    void CountNumberAgentAvailable()
     {
         //initialisation de la variable a 0
-        _numberAgentAviable = 0;
+        _numberAgentAvailable = 0;
         //Parcour du dictionnaire d'agent
         foreach (KeyValuePair<NavMeshAgent, bool> _agent in _listeAgent)
         {
@@ -98,42 +104,38 @@ public class AgentToTrace : MonoBehaviour
             if (_agent.Value)
             {
                 //on incrémente la variable du nombre d'agent disponible
-                _numberAgentAviable++;
+                _numberAgentAvailable++;
             }
         }
     }
 
     void MakeTrace()
     {
-        // Check du click gauche de la souris
-        if (Input.GetMouseButton(0))
-        {
-            //on tire le raycast là ou pointe la souris
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //on crée la variable hit
-            RaycastHit hit;
+        //on tire le raycast là ou pointe la souris
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //on crée la variable hit
+        RaycastHit hit;
            
-            //si le raycast a touché quelque chose dans le layer _affectedLayer (ici le terrain)
-            if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
+        //si le raycast a touché quelque chose dans le layer _affectedLayer (ici le terrain)
+        if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
+        {
+            //Si le dictionnaire de position n'est pas vide
+            if (_listePositionTrace.Count > 0)
             {
-                //Si le dictionnaire de position n'est pas vide
-                if (_listePositionTrace.Count > 0)
+                //Si il n'existe pas de point déja présent à cet emplacement
+                if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
                 {
-                    //Si il n'existe pas de point déja présent à cet emplacement
-                    if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
-                    {
-                        //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
-                        InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
-                        //On ajoute le point trouvé par le raycast dans le dictionnaire de points avec le booléen en true
-                        _listePositionTrace.Add(hit.point, true);
-                    }
-                }
-                //Si le dictionnaire de position est vide
-                else
-                {
-                    //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
+                    //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
+                    InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
+                    //On ajoute le point trouvé par le raycast dans le dictionnaire de points avec le booléen en true
                     _listePositionTrace.Add(hit.point, true);
                 }
+            }
+            //Si le dictionnaire de position est vide
+            else
+            {
+                //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
+                _listePositionTrace.Add(hit.point, true);
             }
         }
     }
@@ -214,7 +216,7 @@ public class AgentToTrace : MonoBehaviour
         List<Vector3> _keysPosition = new List<Vector3>(_listePositionTrace.Keys);
         //on initialise une liste d'agent basé sur le dictionnaire d'agents
         List<NavMeshAgent> _keysAgent = new List<NavMeshAgent>(_listeAgent.Keys);
-
+        List<NavMeshAgent> _chosenAgentsList = new List<NavMeshAgent>();
         //pour chaque élément de la liste de position
         for (int i = 0; i < _keysPosition.Count; i++)
         {
@@ -267,13 +269,26 @@ public class AgentToTrace : MonoBehaviour
                 //Une fois tout les test effectué, la variable distance est la plus petite possible et l'agent choisi est
                 //le plus proche de cette position. Du coup on change la destination de l'agent
                 _chosenAgent.SetDestination(_chosenPosition);
+                _chosenAgent.GetComponent<RandomMouvement>().enabled = false;
+                _chosenAgent.GetComponent<NavMeshObstacle>().enabled = true;
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _listeAgent[_chosenAgent] = false;
+                _chosenAgentsList.Add(_chosenAgent);
                 //on passe aussi le booléen de la position en false, ce qui signifie qu'il n'est plus disponible
                 _listePositionTrace[_chosenPosition] = false;
             }
         }
         //on appelle la fonction de comptage d'agent disponible pour mettre à jour la variable
-        CountNumberAgentAviable();
+        CountNumberAgentAvailable();
+        _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_chosenAgentsList));
+    }
+
+    int TestShape(List<NavMeshAgent> _liste)
+    {
+        foreach(NavMeshAgent _agent in _liste)
+        { 
+            
+        }
+        return 0;
     }
 }
