@@ -57,6 +57,7 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //TestDistance();
         MakeTrace();
         if (Input.GetMouseButtonUp(0))
         {
@@ -72,6 +73,7 @@ public class AgentToTrace : MonoBehaviour
         foreach (Vector3 _position in _listePositionTrace.Keys)
         {
             Gizmos.DrawWireSphere(_position, 5);
+            Gizmos.DrawWireSphere(_position, 0.5f);
         }
     }
 
@@ -144,12 +146,13 @@ public class AgentToTrace : MonoBehaviour
         if (_distanceBetweenNewAndLast > _sizeAgent)
         {
             //On calcul combien d'agent pourrais rentrer entre les 2 points avec Distance/taille
-            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / _sizeAgent)/2;
+            int _numberOfPossiblePosition = Mathf.FloorToInt(_distanceBetweenNewAndLast / (_sizeAgent));
             float _remainingDistance = _distanceBetweenNewAndLast - (_numberOfPossiblePosition * _sizeAgent);
+
             if (_numberOfPossiblePosition > 0)
             {
                 Vector3 _direction = (_newPoint - _lastPoint.Key).normalized;
-                float _distanceBetweenPoints = _sizeAgent + (_remainingDistance / _numberOfPossiblePosition+1);
+                float _distanceBetweenPoints = (_sizeAgent) + (_remainingDistance / (_numberOfPossiblePosition+1));
                 for (int i = 1; i < _numberOfPossiblePosition; i++)
                 {
                     Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
@@ -201,4 +204,5 @@ public class AgentToTrace : MonoBehaviour
         }
         CountNumberAgentAviable();
     }
+
 }
