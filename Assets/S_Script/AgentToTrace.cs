@@ -83,6 +83,7 @@ public class AgentToTrace : MonoBehaviour
     }
 
     //outil de debug
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -91,7 +92,7 @@ public class AgentToTrace : MonoBehaviour
             Gizmos.DrawWireSphere(_position, 5);
             Gizmos.DrawWireSphere(_position, 0.5f);
         }
-    }
+    }*/
 
     void CountNumberAgentAvailable()
     {
@@ -119,23 +120,24 @@ public class AgentToTrace : MonoBehaviour
         //si le raycast a touché quelque chose dans le layer _affectedLayer (ici le terrain)
         if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
         {
-            //Si le dictionnaire de position n'est pas vide
-            if (_listePositionTrace.Count > 0)
+            Debug.Log(CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace));
+            //Si il n'existe pas de point déja présent à cet emplacement
+            if (!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
             {
-                //Si il n'existe pas de point déja présent à cet emplacement
-                if(!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
+                //Si le dictionnaire de position n'est pas vide
+                if (_listePositionTrace.Count > 0)
                 {
                     //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
                     InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
                     //On ajoute le point trouvé par le raycast dans le dictionnaire de points avec le booléen en true
                     _listePositionTrace.Add(hit.point, true);
                 }
-            }
-            //Si le dictionnaire de position est vide
-            else
-            {
-                //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
-                _listePositionTrace.Add(hit.point, true);
+                //Si le dictionnaire de position est vide
+                else
+                {
+                    //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
+                    _listePositionTrace.Add(hit.point, true);
+                }
             }
         }
     }
@@ -269,8 +271,6 @@ public class AgentToTrace : MonoBehaviour
                 //Une fois tout les test effectué, la variable distance est la plus petite possible et l'agent choisi est
                 //le plus proche de cette position. Du coup on change la destination de l'agent
                 _chosenAgent.SetDestination(_chosenPosition);
-                _chosenAgent.GetComponent<RandomMouvement>().enabled = false;
-                _chosenAgent.GetComponent<NavMeshObstacle>().enabled = true;
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _listeAgent[_chosenAgent] = false;
                 _chosenAgentsList.Add(_chosenAgent);
