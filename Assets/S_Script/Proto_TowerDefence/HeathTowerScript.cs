@@ -10,7 +10,7 @@ public class HeathTowerScript : MonoBehaviour
     public Text _HealtHp;
 
     [Header("HealthSystem")]
-    public int _MaxHealth = 100;
+    public int _MaxHealth;
     public int _CurrentHealth;
 
 
@@ -23,8 +23,13 @@ public class HeathTowerScript : MonoBehaviour
     private void Update()
     {
         GetCurrentHealth();
-
+        
         _HealtHp.text = "HP : " + _CurrentHealth;
+
+        if (_CurrentHealth <= 0 )
+        {
+            Debug.Log("Defeat");
+        }
     }
 
     
@@ -32,22 +37,13 @@ public class HeathTowerScript : MonoBehaviour
     {
         _CurrentHealth -= damageAmount;
         Debug.Log(gameObject.name + " took damage: " + damageAmount);
-
-        if (_CurrentHealth <= 0)
-        {
-            Die();
-        }
     }
 
-    public void Die()
-    {
-        Debug.Log(gameObject.name + " died");
-        Destroy(gameObject);
-    }
 
 
     public int GetCurrentHealth()
     {
+        Debug.Log(_CurrentHealth);
         return _CurrentHealth;
     }
 }

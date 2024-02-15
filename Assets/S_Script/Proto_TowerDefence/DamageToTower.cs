@@ -13,16 +13,17 @@ public class DamageToTower : MonoBehaviour
     private bool _canDamage = true;
 
 
-    private void Awake()
+    private void Start()
     {
+        _Tower = GameObject.Find("Tower");
         _HealtTower = _Tower.GetComponent<HeathTowerScript>();
     }
+    
 
     private void OnTriggerStay(Collider other)
     {
-        if (_canDamage)
+        if (other.CompareTag("Tower") &&_canDamage)
         {
-            Debug.Log("DamageDeal");
             _HealtTower.TakeDamage(_damageAmount);
             _canDamage = false; 
             StartCoroutine(CooldownCoroutine());
