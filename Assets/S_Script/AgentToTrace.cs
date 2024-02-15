@@ -85,7 +85,7 @@ public class AgentToTrace : MonoBehaviour
             _listePositionTrace.Clear();
         }
 
-        _AgentDispo.text = "Agent Disponible : " + _numberAgentAviable;
+        _AgentDispo.text = "Agent Disponible : " + _numberAgentAvailable;
     }
 
     //outil de debug
