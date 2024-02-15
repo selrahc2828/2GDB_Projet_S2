@@ -11,6 +11,7 @@ public class SpawnerEnnemy : MonoBehaviour
 
     void Start()
     {
+        // Call the IEnumerator
         StartCoroutine(SpawnEnemies());
     }
 
@@ -18,10 +19,14 @@ public class SpawnerEnnemy : MonoBehaviour
     {
         while (true)
         {
+            // if canSpawn
             if (canSpawn)
             {
+                // Call Spawn Enemy
                 SpawnEnemy();
+                // change bool
                 canSpawn = false;
+                // Return to have a cooldown
                 yield return new WaitForSeconds(_spawnCooldown);
                 canSpawn = true;
             }
@@ -31,10 +36,10 @@ public class SpawnerEnnemy : MonoBehaviour
 
     void SpawnEnemy()
     {
-        // Choisir un spawner aléatoire
+        // Spawn to a random SpawnPoint
         int randomIndex = Random.Range(0, _spawnPoints.Length);
 
-        // Instantier un ennemi à partir d'un préfab aléatoire
+        // instantiate the enemy to the spawn position 
         GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
         Instantiate(enemyPrefab, _spawnPoints[randomIndex].position, Quaternion.identity);
     }

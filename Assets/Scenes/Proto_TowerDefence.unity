@@ -39367,6 +39367,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1485144753}
     m_Modifications:
+    - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _HealtHp
+      value: 
+      objectReference: {fileID: 1518415294}
+    - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _MaxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39417,9 +39427,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4425344866148554605, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _HealtHp
+      value: 
+      objectReference: {fileID: 1518415294}
+    - target: {fileID: 4425344866148554605, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _MaxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4425344866148554605, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _CurrentHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8758404073540868529, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: m_Name
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758404073540868529, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: m_TagString
       value: Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []

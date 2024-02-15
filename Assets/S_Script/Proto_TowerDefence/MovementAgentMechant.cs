@@ -13,12 +13,14 @@ public class MovementAgentMechant : MonoBehaviour
 
     void Start()
     {
+        // take the NavMeshagent
         _NavMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     
     void Update()
     {
+        // Set Destination to the tranform tower
         _NavMeshAgent.SetDestination(_TowerToDestroy.position);
     }
 }
