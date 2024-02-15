@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 8567408447776537908}
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 9073641381630960508}
+  - component: {fileID: 2463424206290343736}
   m_Layer: 0
   m_Name: AgentMechant
   m_TagString: AgentMechant
@@ -252,3 +253,19 @@ MonoBehaviour:
   _NavMeshAgent: {fileID: 2756122981986454792}
   _TowerToDestroy: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
+--- !u!114 &2463424206290343736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf170324c518814da742c1a65145b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HealtTower: {fileID: 0}
+  _Tower: {fileID: 8758404073540868529, guid: 344e29f43c65e0148902c1b96ae2317e, type: 3}
+  _damageAmount: 10
+  _cooldown: 1
