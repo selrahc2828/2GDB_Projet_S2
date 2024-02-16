@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 7832934860235179200}
   - component: {fileID: 1659073581724347116}
   - component: {fileID: 3167649932413595886}
-  - component: {fileID: 313256603838193173}
   - component: {fileID: 3901414477671127009}
+  - component: {fileID: 8227076938818039178}
   m_Layer: 0
   m_Name: Agent
-  m_TagString: objects
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,21 +132,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &313256603838193173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086990296516066630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b0e66f342255094f8349fb5839135dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _activatePath: 1
-  newDestination: {x: 0, y: 0, z: 0}
-  _randomDestinationPoint: {x: 0, y: 0, z: 0}
 --- !u!54 &3901414477671127009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,3 +159,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8227076938818039178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086990296516066630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff6ec2809dc3064f840458e0139b2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SlowEnemy: 0
+  _ShootEnemy: 0
