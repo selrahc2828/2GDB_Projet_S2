@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class AgentChoise : MonoBehaviour
 {
     [Header("Reference")]
     private GameObject[] _agents; 
-    private AgentFonction[] _AgentComportements; 
+    private AgentFonction[] _AgentComportements;
+    public AgentToTrace _TraceScript; 
 
     public Image _Shoot;
     public Image _Slow;
@@ -39,10 +41,27 @@ public class AgentChoise : MonoBehaviour
 
             if (_scroll < 0f)
             {
-                _AgentComportements[i]._SlowEnemy = true;
-                _AgentComportements[i]._ShootEnemy = false;
-                Debug.Log(_AgentComportements[i]._SlowEnemy);
+                if (IsAgentUsable(_AgentComportements[i].GetComponent<NavMeshAgent>()))
+                {
+                    _AgentComportements[i]._SlowEnemy = true;
+                    _AgentComportements[i]._ShootEnemy = false;
+                    Debug.Log(_AgentComportements[i]._SlowEnemy);
+                }
+               
             }
+        }
+    }
+
+
+    public bool IsAgentUsable(NavMeshAgent agent)
+    {
+        if (_TraceScript._listeAgent.ContainsKey(agent))
+        {
+            return _TraceScript._listeAgent[agent];
+        }
+        else
+        {
+            return false;
         }
     }
 
