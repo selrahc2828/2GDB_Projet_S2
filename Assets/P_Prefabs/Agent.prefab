@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5444051248712278846}
   - component: {fileID: 7832934860235179200}
   - component: {fileID: 1659073581724347116}
+  - component: {fileID: -4672201891972919910}
   - component: {fileID: 3167649932413595886}
   - component: {fileID: 3901414477671127009}
   - component: {fileID: 8227076938818039178}
@@ -110,6 +111,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &-4672201891972919910
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086990296516066630}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &3167649932413595886
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -171,5 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff6ec2809dc3064f840458e0139b2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SlowEnemy: 0
   _ShootEnemy: 0
+  _SlowEnemy: 0
+  _slowdownSpeed: 2
+  _InitialSpeed: 5

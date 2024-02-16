@@ -8721,6 +8721,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent (489)
       objectReference: {fileID: 0}
+    - target: {fileID: 8227076938818039178, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: _InitialSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227076938818039178, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: _slowdownSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
