@@ -40,7 +40,7 @@ public class AgentFonction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
      
-        if (!_SlowEnemy|| other.CompareTag("AgentMechant"))
+        if (!_SlowEnemy && other.CompareTag("AgentMechant"))
         {
      
             NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
