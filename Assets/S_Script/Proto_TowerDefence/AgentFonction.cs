@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class AgentFonction : MonoBehaviour
 {
+    [Header("Reference")]
+    public AgentToTrace _AgentDispo;
+    public AgentChoise _AgentUsable;
+
     [Header("Choise Comportement")]
     public bool _ShootEnemy;
     public bool _SlowEnemy;
@@ -13,23 +17,38 @@ public class AgentFonction : MonoBehaviour
     public float _slowdownSpeed;
     public float _InitialSpeed;
 
+    [Header("Weapon Reference")]
+    public GameObject _gun;
+    public Transform _BulletSpawnPosition;
+    public Transform _TowerPosition;
 
-    public SphereCollider _slowSphereCollider;
+    [Header("Weapon Parameter")]
+    public int _damageAmount = 10;
+    public float _fireRate = 0.5f;
+    public float _shootDistance = 50f;
+    public LayerMask _shootableLayer;
+    private float nextFireTime = 0f;
+
+    private void Start()
+    {
+        _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
+        _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
+    }
 
 
     private void Update()
     {
-        ShootToEnemy();
+        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy)
+        {
+            ShootToEnemy();
+        }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
-  
-        if (_SlowEnemy == true && other.CompareTag("AgentMechant"))
+        if (_SlowEnemy && other.CompareTag("AgentMechant"))
         {
             NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-
             if (enemyAgent != null)
             {
                 enemyAgent.speed = _slowdownSpeed;
@@ -39,13 +58,9 @@ public class AgentFonction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-     
         if (!_SlowEnemy && other.CompareTag("AgentMechant"))
         {
-     
             NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-
-      
             if (enemyAgent != null)
             {
                 enemyAgent.speed = _InitialSpeed;
@@ -55,7 +70,37 @@ public class AgentFonction : MonoBehaviour
 
     public void ShootToEnemy()
     {
+        RaycastHit hit;
+        Vector3 _directionOpposer = transform.position - _TowerPosition.position;
 
+        if (Physics.Raycast(_BulletSpawnPosition.position, _directionOpposer, out hit, _shootDistance))
+        {
+            HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
+            
+            if (_EnemyHealth != null)
+            {
+                _EnemyHealth.TakeDamage(_damageAmount);
+                Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
+                if (_EnemyHealth.GetCurrentHealth() <= 0)
+                {
+                    _EnemyHealth.Die();
+                }
+            }
+            
+        }
 
+        
+    }
+
+    public bool IsAgentUsable(NavMeshAgent agent)
+    {
+        if (_AgentDispo._listeAgent.ContainsKey(agent))
+        {
+            return _AgentDispo._listeAgent[agent];
+        }
+        else
+        {
+            return false;
+        }
     }
 }

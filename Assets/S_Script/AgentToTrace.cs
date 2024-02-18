@@ -22,7 +22,7 @@ public class AgentToTrace : MonoBehaviour
     public int _numberAgentAvailable;
     public GameObject _parentAgent;
 
-    private NavMeshAgent _chosenAgent;
+    public NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
 

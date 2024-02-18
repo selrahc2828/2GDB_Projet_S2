@@ -834,6 +834,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 8227076938818039178, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: _shootDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9366,6 +9371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcea3087383198e41b3374fb54d07f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _AgentComportements: []
   _TraceScript: {fileID: 179187612}
   _Shoot: {fileID: 1902220191}
   _Slow: {fileID: 585886636}

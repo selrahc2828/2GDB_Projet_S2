@@ -9,7 +9,7 @@ public class AgentChoise : MonoBehaviour
 {
     [Header("Reference")]
     private GameObject[] _agents;
-    private AgentFonction[] _AgentComportements;
+    public AgentFonction[] _AgentComportements;
     public AgentToTrace _TraceScript;
 
     public Image _Shoot;
