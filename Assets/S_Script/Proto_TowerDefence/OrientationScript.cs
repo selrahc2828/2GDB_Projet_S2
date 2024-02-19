@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class OrientationScript : MonoBehaviour
 {
+
+    [Header("Reference")]
     public Transform _towerTransform;
+    public AgentToTrace _AgentTraceScript;
+
 
     void Update()
     {
-        if (_towerTransform != null)
-        {
-            Vector3 oppositeDirection = transform.position - _towerTransform.position;
-            oppositeDirection.y = 0;
-            transform.rotation = Quaternion.LookRotation(oppositeDirection);
-        }
+
+
+
     }
 }
