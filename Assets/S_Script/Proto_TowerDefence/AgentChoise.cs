@@ -85,9 +85,9 @@ public class AgentChoise : MonoBehaviour
 
     public bool IsAgentUsable(NavMeshAgent agent)
     {
-        if (_TraceScript._listeAgent.ContainsKey(agent))
+        if (_TraceScript._dictionnaireAgent.ContainsKey(agent))
         {
-            return _TraceScript._listeAgent[agent];
+            return _TraceScript._dictionnaireAgent[agent];
         }
         else
         {

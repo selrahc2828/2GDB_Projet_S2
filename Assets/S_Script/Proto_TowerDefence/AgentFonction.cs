@@ -96,9 +96,9 @@ public class AgentFonction : MonoBehaviour
 
     public bool IsAgentUsable(NavMeshAgent agent)
     {
-        if (_AgentDispo._listeAgent.ContainsKey(agent))
+        if (_AgentDispo._dictionnaireAgent.ContainsKey(agent))
         {
-            return _AgentDispo._listeAgent[agent];
+            return _AgentDispo._dictionnaireAgent[agent];
         }
         else
         {
