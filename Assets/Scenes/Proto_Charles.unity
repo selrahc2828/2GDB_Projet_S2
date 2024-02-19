@@ -4895,6 +4895,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _numberAgentAvailable: 0
+  espaceEntreAgentPourCercle: 5
   _parentAgent: {fileID: 1115029160}
 --- !u!114 &179187613
 MonoBehaviour:
