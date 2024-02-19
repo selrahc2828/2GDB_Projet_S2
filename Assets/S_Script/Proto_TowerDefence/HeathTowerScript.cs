@@ -46,7 +46,6 @@ public class HeathTowerScript : MonoBehaviour
     // call update to Current Health
     public int GetCurrentHealth()
     {
-        Debug.Log(_CurrentHealth);
         return _CurrentHealth;
     }
 }

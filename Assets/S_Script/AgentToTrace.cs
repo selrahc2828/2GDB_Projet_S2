@@ -17,7 +17,7 @@ public class AgentToTrace : MonoBehaviour
     Dictionary<Vector3, bool> _dictionnairePositionTrace;
     public  Dictionary<NavMeshAgent, bool> _dictionnaireAgent;
 
-    List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
+    public List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
     Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
     public int _numberAgentAvailable;
     public GameObject _parentAgent;
@@ -123,23 +123,23 @@ public class AgentToTrace : MonoBehaviour
         //si le raycast a touché quelque chose dans le layer _affectedLayer (ici le terrain)
         if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
         {
-            Debug.Log(CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace));
+            Debug.Log(CheckIfPointAlreadyExistHere(hit.point, _dictionnairePositionTrace));
             //test sur le booleen de la fonction qui check s'il n'existe pas de point déja présent à cet emplacement
-            if (!CheckIfPointAlreadyExistHere(hit.point, _listePositionTrace))
+            if (!CheckIfPointAlreadyExistHere(hit.point, _dictionnairePositionTrace))
             {
                 //Si le dictionnaire de position n'est pas vide
-                if (_listePositionTrace.Count > 0)
+                if (_dictionnairePositionTrace.Count > 0)
                 {
                     //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
-                    InterpolateNewPointInBetween(hit.point, _listePositionTrace.Last());
+                    InterpolateNewPointInBetween(hit.point, _dictionnairePositionTrace.Last());
                     //On ajoute le point trouvé par le raycast dans le dictionnaire de points avec le booléen en true
-                    _listePositionTrace.Add(hit.point, true);
+                    _dictionnairePositionTrace.Add(hit.point, true);
                 }
                 //Si le dictionnaire de position est vide
                 else
                 {
                     //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
-                    _listePositionTrace.Add(hit.point, true);
+                    _dictionnairePositionTrace.Add(hit.point, true);
                 }
             }
         }
@@ -206,7 +206,7 @@ public class AgentToTrace : MonoBehaviour
                     //dernière position + la direction x la distance entre les points x le nombre de la boucle
                     Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
                     //on ajoute la nouvelle position dans le dictionnaire de position avec le booléen a True
-                    _listePositionTrace.Add(_interpolatedPosition, true);
+                    _dictionnairePositionTrace.Add(_interpolatedPosition, true);
                 }
             }
         }
