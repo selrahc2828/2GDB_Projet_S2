@@ -27,7 +27,7 @@ public class AgentFonction : MonoBehaviour
     public float _fireRate = 0.5f;
     public float _shootDistance = 50f;
     public LayerMask _shootableLayer;
-    private float nextFireTime = 0f;
+    private float _nextFireTime = 0f;
 
     private void Start()
     {
@@ -38,9 +38,11 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy)
+        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy && Time.time >= _nextFireTime)
         {
             ShootToEnemy();
+
+            _nextFireTime = Time.time + 1f / _fireRate;
         }
     }
 
