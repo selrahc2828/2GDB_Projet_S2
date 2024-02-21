@@ -23,19 +23,19 @@ public class RecognizeItsSelf : MonoBehaviour
     public void IsInList()
     {
         
-        List<Dictionary<Vector3, bool>> allAgentLists = _TraceScript._listeOfListePositionTrace;
+        List<List<Vector3>> allAgentLists = _TraceScript._listeOfListePositionTrace;
 
       
         for (int i = 0; i < allAgentLists.Count; i++)
         {
-            Dictionary<Vector3, bool> agentList = allAgentLists[i];
+            List<Vector3> agentList = allAgentLists[i];
 
             Debug.Log("DictionaryFound");
-            foreach (KeyValuePair<Vector3, bool> kvp in agentList)
+            foreach (Vector3 position in agentList)
             {
                 Debug.Log("RecupListDic");
 
-                if (Vector3.Distance(_selfAgent.transform.position, kvp.Key) < 0.1f)
+                if (Vector3.Distance(_selfAgent.transform.position, position) < 0.1f)
                 {
                     Debug.Log("ListeIndex " + i);
                     return;
