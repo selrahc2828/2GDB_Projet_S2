@@ -82,7 +82,7 @@ public class AgentToTrace : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
-            _listeOfListePositionTrace.Add(_listePositionTrace);
+            _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
             //Appel de la fonction pour changer la destination des agents
             ComeToPoint();
             //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
@@ -251,6 +251,7 @@ public class AgentToTrace : MonoBehaviour
                                 _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                                 //on remplace la variable de l'agent choisis par l'agent actuel
                                 _chosenAgent = _agentPosition;
+                                _chosenPosition = _agentPosition.transform.position;
                             }
                         }
                         //si la variable de distance est 0
@@ -260,6 +261,7 @@ public class AgentToTrace : MonoBehaviour
                             _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                             //on remplace la variable de l'agent choisis par l'agent actuel
                             _chosenAgent = _agentPosition;
+                            _chosenPosition = _agentPosition.transform.position;
                         }
                     }
                 }
@@ -275,7 +277,10 @@ public class AgentToTrace : MonoBehaviour
         }
         //on appelle la fonction de comptage d'agent disponible pour mettre à jour la variable
         CountNumberAgentAvailable();
-        _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_listePositionTrace));
+        if(_listePositionTrace.Count > 0)
+        {
+            _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_listePositionTrace));
+        }
     }
     
     //détecte la forme que le groupe d'agent a pris, 0 pour un trait et 1 pour un cercle

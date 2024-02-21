@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class RecognizeItsSelf : MonoBehaviour
 {
+    public Vector3 _basePosition;
     public AgentToTrace _TraceScript;
     public NavMeshAgent _selfAgent;
     public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
@@ -13,6 +14,10 @@ public class RecognizeItsSelf : MonoBehaviour
     private void Awake()
     {
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
+    }
+    private void Start()
+    {
+        _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -40,6 +45,21 @@ public class RecognizeItsSelf : MonoBehaviour
         }
     }
 
+    public List<NavMeshAgent> WitchListIsIt()
+    {
+        if (!IsAvailable())
+        {
+            foreach (KeyValuePair<List<NavMeshAgent>, int> _listAgent in _TraceScript._dictionnaireOfListeAgent)
+            {
+                if (_listAgent.Key.Contains(_selfAgent))
+                {
+                    return _listAgent.Key;
+                }
+            }
+        }
+        return null;
+        
+    }
 
     public bool IsAvailable()
     {
