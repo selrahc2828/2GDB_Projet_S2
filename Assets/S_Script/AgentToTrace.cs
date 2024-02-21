@@ -17,7 +17,7 @@ public class AgentToTrace : MonoBehaviour
     [Header("Dictionnaires")]
     Dictionary<Vector3, bool> _dictionnairePositionTrace;
     public  Dictionary<NavMeshAgent, bool> _dictionnaireAgent;
-    Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
+    public Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
 
     [Header("Listes")]
     public List<List<Vector3>> _listeOfListePositionTrace;
@@ -100,7 +100,7 @@ public class AgentToTrace : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        foreach (Vector3 _position in _listePositionTrace.Keys)
+        foreach (Vector3 _position in _listePositionTrace)
         {
             Gizmos.DrawWireSphere(_position, 5);
             Gizmos.DrawWireSphere(_position, 0.5f);

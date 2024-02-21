@@ -7,41 +7,62 @@ public class RecognizeItsSelf : MonoBehaviour
 {
     public AgentToTrace _TraceScript;
     public NavMeshAgent _selfAgent;
+    public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
 
 
     private void Awake()
     {
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
+        _selfAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        //IsInList();
-    }
-
-
-    public void IsInList()
-    {
-        
-        List<List<Vector3>> allAgentLists = _TraceScript._listeOfListePositionTrace;
-
-      
-        for (int i = 0; i < allAgentLists.Count; i++)
+        if (Input.GetMouseButtonDown(1))
         {
-            List<Vector3> agentList = allAgentLists[i];
+            // Create a ray from the mouse cursor position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            Debug.Log("DictionaryFound");
-            foreach (Vector3 position in agentList)
+            // Create a RaycastHit variable to store information about the raycast hit
+            RaycastHit hit;
+
+            // Perform the raycast
+            if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("RecupListDic");
-
-                if (Vector3.Distance(_selfAgent.transform.position, position) < 0.1f)
+                // Check if the collider hit is attached to the object you're interested in
+                if (hit.collider.gameObject == gameObject)
                 {
-                    Debug.Log("ListeIndex " + i);
-                    return;
+                    // The object is clicked
+                    Debug.Log(IsAvailable());
+                    Debug.Log(IsInShape());
                 }
             }
         }
-        Debug.Log("L'agent n'est pas présent dans les listes.");
+    }
+
+
+    public bool IsAvailable()
+    {
+        _dictionnaireAgents = _TraceScript._dictionnaireAgent;
+        return _dictionnaireAgents[_selfAgent];
+    }
+
+    public int IsInShape()
+    {
+        if (!IsAvailable())
+        {
+            foreach (KeyValuePair<List<NavMeshAgent>, int> _listAgent in _TraceScript._dictionnaireOfListeAgent)
+            {
+                if (_listAgent.Key.Contains(_selfAgent))
+                {
+                    return _listAgent.Value;
+                }
+            }
+            return -1;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
