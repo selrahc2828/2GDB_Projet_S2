@@ -11,6 +11,7 @@ TagManager:
   - Greg
   - Maggie
   - AgentMechant
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -22,9 +23,9 @@ TagManager:
   - Ground
   - Patrol
   - Objectif
-  - Agent
-  - 
-  - 
+  - AgentGentil
+  - "AgentM\xE9chant"
+  - BulletLayer
   - 
   - 
   - 
