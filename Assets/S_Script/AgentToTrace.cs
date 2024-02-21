@@ -20,7 +20,7 @@ public class AgentToTrace : MonoBehaviour
     Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
 
     [Header("Listes")]
-    List<List<Vector3>> _listeOfListePositionTrace;
+    public List<List<Vector3>> _listeOfListePositionTrace;
     List<Vector3> _listePositionTrace;
 
     [Header("Variables utiles")]
