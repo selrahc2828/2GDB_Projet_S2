@@ -16,7 +16,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        IsInList();
+        //IsInList();
     }
 
 
@@ -42,8 +42,6 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
         }
-
         Debug.Log("L'agent n'est pas présent dans les listes.");
-        
     }
 }

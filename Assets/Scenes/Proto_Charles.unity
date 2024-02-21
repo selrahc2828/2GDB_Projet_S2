@@ -4851,7 +4851,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7167
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -4897,7 +4897,6 @@ MonoBehaviour:
   _numberAgentAvailable: 0
   espaceEntreAgentPourCercle: 5
   _parentAgent: {fileID: 1115029160}
-  _AgentDispo: {fileID: 0}
 --- !u!114 &179187613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40322,6 +40321,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1115029161}
     m_Modifications:
+    - target: {fileID: 711642153816123362, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565522453470937995, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
         type: 3}
       propertyPath: m_LocalPosition.x
