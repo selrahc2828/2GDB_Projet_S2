@@ -26,15 +26,19 @@ public class AgentFonction : MonoBehaviour
     public int _damageAmount = 10;
     public float _fireRate = 0.5f;
     public float _shootDistance = 50f;
-    public LayerMask _shootableLayer;
     private float _nextFireTime = 0f;
+
+    [Header("Particle System")]
+    public ParticleSystem _projectileParticleSystem;
 
     private void Start()
     {
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
-    }
+        _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
 
+        _projectileParticleSystem.Stop();
+    }
 
     private void Update()
     {
@@ -72,26 +76,27 @@ public class AgentFonction : MonoBehaviour
 
     public void ShootToEnemy()
     {
-        RaycastHit hit;
-        Vector3 _directionOpposer = transform.position - _TowerPosition.position;
-
-        if (Physics.Raycast(_BulletSpawnPosition.position, _directionOpposer, out hit, _shootDistance))
+        if (_ShootEnemy == true)
         {
-            HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
-            
-            if (_EnemyHealth != null)
-            {
-                _EnemyHealth.TakeDamage(_damageAmount);
-                Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
-                if (_EnemyHealth.GetCurrentHealth() <= 0)
-                {
-                    _EnemyHealth.Die();
-                }
-            }
-            
+            _projectileParticleSystem.Play();
         }
+        else
+        {
+            _projectileParticleSystem.Stop();
+        }
+  
+                //HeathEnemy enemyHealth = collisionEvents[i].colliderComponent.GetComponent<HeathEnemy>();
 
-        
+                //if (enemyHealth != null)
+                //{
+                //    enemyHealth.TakeDamage(_damageAmount);
+                //    if (enemyHealth.GetCurrentHealth() <= 0)
+                //    {
+                //        enemyHealth.Die();
+                //    }
+                //}
+            
+   
     }
 
     public bool IsAgentUsable(NavMeshAgent agent)
