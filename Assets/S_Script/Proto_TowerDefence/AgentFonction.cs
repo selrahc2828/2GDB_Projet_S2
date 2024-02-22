@@ -8,7 +8,16 @@ public class AgentFonction : MonoBehaviour
     [Header("Reference")]
     public AgentToTrace _AgentDispo;
     public AgentChoise _AgentUsable;
-    
+    public SphereCollider _ColliderTrigger;
+    private GameObject currentTargetEnemy;
+
+    [Header("Layer")]
+    public LayerMask _BulletLayer;
+
+    [Header("RangeShoot And Slow")]
+    public float _SlowRange;
+    public float _ShootRange; 
+
 
     [Header("Choise Comportement")]
     public bool _ShootEnemy;
@@ -43,11 +52,21 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy)
+
+        if (_ShootEnemy)
         {
-            ShootToEnemy();
+            _ColliderTrigger.radius = _ShootRange;
         }
+        
+
+        if (_SlowEnemy)
+        {
+            _ColliderTrigger.radius = _SlowRange;
+        }
+       
     }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,6 +80,16 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()))
+        {
+            currentTargetEnemy = other.gameObject;
+            ShootToEnemy();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (!_SlowEnemy && other.CompareTag("AgentMechant"))
@@ -71,35 +100,46 @@ public class AgentFonction : MonoBehaviour
                 enemyAgent.speed = _InitialSpeed;
             }
         }
+
+        if (other.gameObject == currentTargetEnemy)
+        {
+            currentTargetEnemy = null;
+        }
     }
 
-   public void ShootToEnemy()
-   {
+    public void ShootToEnemy()
+    {
         RaycastHit hit;
-        Vector3 _directionOpposer = transform.position - _TowerPosition.position;
 
-        if (Physics.Raycast(_BulletSpawnPosition.position, _directionOpposer, out hit, _shootDistance))
+        if (currentTargetEnemy != null)
         {
-            TrailRenderer _Trail = Instantiate(_TrailBullet, _BulletSpawnPosition.position, Quaternion.identity);
+            Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
-            StartCoroutine(SpawnTrail(_Trail, hit));
+            _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
-            HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
-            
-            if (_EnemyHealth != null)
+            if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
-                _EnemyHealth.TakeDamage(_damageAmount);
-                
-                if (_EnemyHealth.GetCurrentHealth() <= 0)
+                TrailRenderer _Trail = Instantiate(_TrailBullet, _BulletSpawnPosition.position, Quaternion.identity);
+
+                StartCoroutine(SpawnTrail(_Trail, hit));
+
+                HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
+
+                Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
+
+                if (_EnemyHealth != null)
                 {
-                    _EnemyHealth.Die();
+                    _EnemyHealth.TakeDamage(_damageAmount);
+
+                    if (_EnemyHealth.GetCurrentHealth() <= 0)
+                    {
+                        _EnemyHealth.Die();
+                        currentTargetEnemy = null; 
+                    }
                 }
             }
-
-            //Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
-
         }
-   }
+    }
 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
     {

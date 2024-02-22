@@ -281,6 +281,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AgentDispo: {fileID: 0}
   _AgentUsable: {fileID: 0}
+  _ColliderTrigger: {fileID: -4672201891972919910}
+  _BulletLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _SlowRange: 12
+  _ShootRange: 10
   _ShootEnemy: 0
   _SlowEnemy: 0
   _slowdownSpeed: 2
@@ -290,7 +296,7 @@ MonoBehaviour:
   _TowerPosition: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
   _damageAmount: 1
-  _fireRate: 50
+  _fireRate: 20.7
   _shootDistance: 10
   _projectileParticleSystem: {fileID: 0}
   _TrailBullet: {fileID: 2733999121644330633, guid: 013d00decf436e14cba9bf6b1dc0ef43,
@@ -318,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4903651047573105786}
-  m_Layer: 1
+  m_Layer: 12
   m_Name: 'Bullet Spawn Position '
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -352,7 +358,7 @@ GameObject:
   - component: {fileID: 7751690302755953310}
   - component: {fileID: 2954567161030461148}
   - component: {fileID: 1957853533612951038}
-  m_Layer: 1
+  m_Layer: 12
   m_Name: ParticuleEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}

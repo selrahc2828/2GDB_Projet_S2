@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8550090030828026068}
   - component: {fileID: 2733999121644330633}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.29360133
+    widthMultiplier: 0.09633872
     widthCurve:
       serializedVersion: 2
       m_Curve:
