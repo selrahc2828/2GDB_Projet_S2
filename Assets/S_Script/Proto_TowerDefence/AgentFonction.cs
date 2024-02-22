@@ -45,6 +45,7 @@ public class AgentFonction : MonoBehaviour
 
     private void Start()
     {
+        // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
@@ -52,13 +53,12 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-
+        // change de range of the collider in fonction with booléen 
         if (_ShootEnemy)
         {
             _ColliderTrigger.radius = _ShootRange;
         }
         
-
         if (_SlowEnemy)
         {
             _ColliderTrigger.radius = _SlowRange;
@@ -70,6 +70,7 @@ public class AgentFonction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // slow Enemy en trigger enter and fix it to _SlowSpeed
         if (_SlowEnemy && other.CompareTag("AgentMechant"))
         {
             NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
@@ -83,8 +84,10 @@ public class AgentFonction : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        // Shoot Enemy if the agent is used with _ShootEnemy active 
         if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()))
         {
+            // Change the target Enemy
             currentTargetEnemy = other.gameObject;
             ShootToEnemy();
         }
@@ -92,6 +95,7 @@ public class AgentFonction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        // reset Agent Speed when exit the trigger when _SlowEnemy is true
         if (!_SlowEnemy && other.CompareTag("AgentMechant"))
         {
             NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
@@ -101,28 +105,37 @@ public class AgentFonction : MonoBehaviour
             }
         }
 
+        // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
         {
             currentTargetEnemy = null;
         }
     }
 
+
+    // Shoot Fonction  | Called Line 93 OnTriggerStay
     public void ShootToEnemy()
     {
         RaycastHit hit;
 
         if (currentTargetEnemy != null)
         {
+            // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
+            // Look AT enemy
             _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
+            // Raycast to bulletSpawnPoint to enemy
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
+                // Instanciate Trail for feedback 
                 TrailRenderer _Trail = Instantiate(_TrailBullet, _BulletSpawnPosition.position, Quaternion.identity);
-
+                // Start Coroutine to lerp the position of the trail 
                 StartCoroutine(SpawnTrail(_Trail, hit));
 
+
+                // ------ All this part to damage the enemy ------
                 HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
 
                 Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
@@ -137,10 +150,12 @@ public class AgentFonction : MonoBehaviour
                         currentTargetEnemy = null; 
                     }
                 }
+                // ------- ------
             }
         }
     }
 
+    // Lerp the trail position | Called Line 136 in the Shoot fonction 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
     {
 
@@ -165,6 +180,7 @@ public class AgentFonction : MonoBehaviour
     // Agent Usable or not
     public bool IsAgentUsable(NavMeshAgent agent)
     {
+        // This check if the agent are usable or not 
         if (_AgentDispo._dictionnaireAgent.ContainsKey(agent))
         {
             return _AgentDispo._dictionnaireAgent[agent];
