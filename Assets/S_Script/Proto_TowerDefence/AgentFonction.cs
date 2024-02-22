@@ -8,6 +8,7 @@ public class AgentFonction : MonoBehaviour
     [Header("Reference")]
     public AgentToTrace _AgentDispo;
     public AgentChoise _AgentUsable;
+    
 
     [Header("Choise Comportement")]
     public bool _ShootEnemy;
@@ -23,30 +24,28 @@ public class AgentFonction : MonoBehaviour
     public Transform _TowerPosition;
 
     [Header("Weapon Parameter")]
-    public int _damageAmount = 10;
-    public float _fireRate = 0.5f;
-    public float _shootDistance = 50f;
-    private float _nextFireTime = 0f;
+    public int _damageAmount;
+    public float _fireRate;
+    public float _shootDistance;
+    
 
-    [Header("Particle System")]
+    [Header("Particle System & Trail Renderer")]
     public ParticleSystem _projectileParticleSystem;
+    public TrailRenderer _TrailBullet;
+    
 
     private void Start()
     {
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
-
-        _projectileParticleSystem.Stop();
     }
 
     private void Update()
     {
-        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy && Time.time >= _nextFireTime)
+        if (!IsAgentUsable(GetComponent<NavMeshAgent>()) && _ShootEnemy)
         {
             ShootToEnemy();
-
-            _nextFireTime = Time.time + 1f / _fireRate;
         }
     }
 
@@ -74,31 +73,56 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-    public void ShootToEnemy()
-    {
-        if (_ShootEnemy == true)
-        {
-            _projectileParticleSystem.Play();
-        }
-        else
-        {
-            _projectileParticleSystem.Stop();
-        }
-  
-                //HeathEnemy enemyHealth = collisionEvents[i].colliderComponent.GetComponent<HeathEnemy>();
+   public void ShootToEnemy()
+   {
+        RaycastHit hit;
+        Vector3 _directionOpposer = transform.position - _TowerPosition.position;
 
-                //if (enemyHealth != null)
-                //{
-                //    enemyHealth.TakeDamage(_damageAmount);
-                //    if (enemyHealth.GetCurrentHealth() <= 0)
-                //    {
-                //        enemyHealth.Die();
-                //    }
-                //}
+        if (Physics.Raycast(_BulletSpawnPosition.position, _directionOpposer, out hit, _shootDistance))
+        {
+            TrailRenderer _Trail = Instantiate(_TrailBullet, _BulletSpawnPosition.position, Quaternion.identity);
+
+            StartCoroutine(SpawnTrail(_Trail, hit));
+
+            HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
             
-   
+            if (_EnemyHealth != null)
+            {
+                _EnemyHealth.TakeDamage(_damageAmount);
+                
+                if (_EnemyHealth.GetCurrentHealth() <= 0)
+                {
+                    _EnemyHealth.Die();
+                }
+            }
+
+            //Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
+
+        }
+   }
+
+    private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
+    {
+
+        float time = 0;
+        Vector3 startPosition = Trail.transform.position;
+
+        while (time < 1)
+        {
+            Trail.transform.position = Vector3.Lerp(startPosition, hit.point, time);
+
+            time += Time.deltaTime / Trail.time;
+
+            yield return null;
+        }
+        Trail.transform.position = hit.point;
+
+        Destroy(Trail.gameObject, Trail.time);
+
     }
 
+
+    // Agent Usable or not
     public bool IsAgentUsable(NavMeshAgent agent)
     {
         if (_AgentDispo._dictionnaireAgent.ContainsKey(agent))
