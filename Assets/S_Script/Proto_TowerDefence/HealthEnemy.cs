@@ -6,14 +6,27 @@ using UnityEngine.UI;
 
 public class HeathEnemy : MonoBehaviour
 {
+    [Header("Reference")]
+    public GameManager _GameManagerScript;
+
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
 
 
 
+    public void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
+
+
     void Start()
     {
+        
+
+        _MaxHealth = _GameManagerScript._HeathEnemy;
+
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
     }

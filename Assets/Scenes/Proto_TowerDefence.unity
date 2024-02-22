@@ -3721,6 +3721,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 426007158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &436205467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436205469}
+  - component: {fileID: 436205468}
+  m_Layer: 0
+  m_Name: ------ Game Manager ------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &436205468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436205467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4ee61505d45cd4abe7c84fa63714d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SlowRangeGameManager: 13
+  _SlowdownSpeedGameManager: 2
+  _ShootRangeGameManager: 10
+  _DamageAmount: 10
+  _FireRate: 2
+  _SpeedAgent: 15
+  _AngularSpeedAgent: 180
+  _AccelerationAgent: 32
+  _HeathEnemy: 50
+  _SpawnRate: 2
+  _SpeedEnemy: 5
+  _AngularSpeedEnemy: 180
+  _AccelerationEnemy: 30
+  _HeathTower: 500
+--- !u!4 &436205469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436205467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2909815, y: -56.34017, z: 11.978823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &439223213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
@@ -9909,6 +9967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d167b59a18828844ca777b4ccb32e421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GameManagerScript: {fileID: 0}
   _enemyPrefabs:
   - {fileID: 4308968867366325615, guid: db551d0b751431c4ba3ac12984e183e0, type: 3}
   _spawnPoints:
@@ -15510,6 +15569,11 @@ PrefabInstance:
       propertyPath: _MaxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
+      propertyPath: _GameManagerScript
+      value: 
+      objectReference: {fileID: 436205468}
     - target: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15603,3 +15667,4 @@ SceneRoots:
   - {fileID: 281303529}
   - {fileID: 1485144753}
   - {fileID: 1264166572}
+  - {fileID: 436205469}

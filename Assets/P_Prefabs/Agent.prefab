@@ -281,7 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AgentDispo: {fileID: 0}
   _AgentUsable: {fileID: 0}
+  _GameManagerScript: {fileID: 0}
   _ColliderTrigger: {fileID: -4672201891972919910}
+  _NavMeshAgent: {fileID: 3167649932413595886}
   _BulletLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -297,7 +299,6 @@ MonoBehaviour:
     type: 3}
   _damageAmount: 1
   _fireRate: 20.7
-  _shootDistance: 10
   _projectileParticleSystem: {fileID: 0}
   _TrailBullet: {fileID: 2733999121644330633, guid: 013d00decf436e14cba9bf6b1dc0ef43,
     type: 3}

@@ -3,14 +3,28 @@ using System.Collections;
 
 public class SpawnerEnnemy : MonoBehaviour
 {
+    [Header("Reference")]
+    public GameManager _GameManagerScript;
+
     public GameObject[] _enemyPrefabs;
     public Transform[] _spawnPoints;
     public float _spawnCooldown = 2f;
 
     private bool canSpawn = true;
 
+
+    public void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
+
+
     void Start()
     {
+       
+
+        _spawnCooldown = _GameManagerScript._SpawnRate;
+
         // Call the IEnumerator
         StartCoroutine(SpawnEnemies());
     }

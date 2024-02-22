@@ -8,8 +8,10 @@ public class AgentFonction : MonoBehaviour
     [Header("Reference")]
     public AgentToTrace _AgentDispo;
     public AgentChoise _AgentUsable;
+    public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
     private GameObject currentTargetEnemy;
+    public NavMeshAgent _NavMeshAgent;
 
     [Header("Layer")]
     public LayerMask _BulletLayer;
@@ -35,20 +37,45 @@ public class AgentFonction : MonoBehaviour
     [Header("Weapon Parameter")]
     public int _damageAmount;
     public float _fireRate;
-    public float _shootDistance;
+    private float time;
     
 
     [Header("Particle System & Trail Renderer")]
     public ParticleSystem _projectileParticleSystem;
     public TrailRenderer _TrailBullet;
-    
+
+
+
+    public void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
+
 
     private void Start()
     {
+        time = 0f;
+
         // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
+
+        // Game Manager Value for Slow
+        _SlowRange = _GameManagerScript._SlowRangeGameManager;
+        _slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
+
+        // Game Manager Value for Shoot
+        _ShootRange = _GameManagerScript._ShootRangeGameManager;
+        _damageAmount = _GameManagerScript._DamageAmount;
+        _fireRate = _GameManagerScript._FireRate;
+
+        // Game Manager Value For Mouvement 
+        _NavMeshAgent.speed = _GameManagerScript._SpeedAgent;
+        _NavMeshAgent.angularSpeed = _GameManagerScript._AngularSpeedAgent;
+        _NavMeshAgent.acceleration = _GameManagerScript._AccelerationAgent;
+
+
     }
 
     private void Update()
@@ -63,6 +90,8 @@ public class AgentFonction : MonoBehaviour
         {
             _ColliderTrigger.radius = _SlowRange;
         }
+
+        time += Time.deltaTime;
        
     }
 
@@ -85,12 +114,15 @@ public class AgentFonction : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         // Shoot Enemy if the agent is used with _ShootEnemy active 
-        if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()))
+        if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
         {
             // Change the target Enemy
             currentTargetEnemy = other.gameObject;
             ShootToEnemy();
+
+            time = 0;
         }
+
     }
 
     private void OnTriggerExit(Collider other)
