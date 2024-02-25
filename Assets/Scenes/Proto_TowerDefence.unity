@@ -3753,11 +3753,11 @@ MonoBehaviour:
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
   _DamageAmount: 10
-  _FireRate: 2
+  _FireRate: 3
   _SpeedAgent: 15
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
-  _HeathEnemy: 50
+  _HeathEnemy: 100
   _SpawnRate: 2
   _SpeedEnemy: 5
   _AngularSpeedEnemy: 180
