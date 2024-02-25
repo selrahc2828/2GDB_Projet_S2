@@ -9,6 +9,9 @@ public class RecognizeItsSelf : MonoBehaviour
     public AgentToTrace _TraceScript;
     public NavMeshAgent _selfAgent;
     public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
+    public float _resetTimer;
+    public bool _launchTimer;
+    private float _timer;
 
 
     private void Awake()
@@ -17,6 +20,9 @@ public class RecognizeItsSelf : MonoBehaviour
     }
     private void Start()
     {
+        _timer = 0f;
+        _resetTimer = 10f;
+        _launchTimer = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
     }
@@ -43,6 +49,14 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
         }
+
+        if(_launchTimer)
+        {
+            if(_selfAgent.remainingDistance < 5)
+            {
+                ResetPositionInTimer();
+            }
+        }
     }
 
     public List<NavMeshAgent> WitchListIsIt()
@@ -58,7 +72,6 @@ public class RecognizeItsSelf : MonoBehaviour
             }
         }
         return null;
-        
     }
 
     public bool IsAvailable()
@@ -83,6 +96,23 @@ public class RecognizeItsSelf : MonoBehaviour
         else
         {
             return -1;
+        }
+    }
+
+    public void ResetPositionInTimer()
+    {
+        if(_timer >= _resetTimer)
+        {
+            _selfAgent.SetDestination(_basePosition);
+            _launchTimer = false;
+            _timer = 0;
+            _dictionnaireAgents = _TraceScript._dictionnaireAgent;
+            _dictionnaireAgents[_selfAgent] = true;
+
+        }
+        else
+        {
+            _timer += Time.deltaTime;
         }
     }
 }

@@ -270,6 +270,7 @@ public class AgentToTrace : MonoBehaviour
                 _chosenAgent.SetDestination(_pointPosition);
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _dictionnaireAgent[_chosenAgent] = false;
+                _chosenAgent.GetComponent<RecognizeItsSelf>()._launchTimer = true;
                 _chosenAgentsList.Add(_chosenAgent);
                 //on passe aussi le booléen de la position en false, ce qui signifie qu'il n'est plus disponible
                 _dictionnairePositionTrace[_chosenPosition] = false;
