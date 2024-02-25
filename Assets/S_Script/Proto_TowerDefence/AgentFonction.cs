@@ -105,6 +105,8 @@ public class AgentFonction : MonoBehaviour
             time = 0;
         }
 
+
+        // Call A physics OverlapSphere to update list of agent 
         Collider[] colliders = Physics.OverlapSphere(transform.position, _ColliderTrigger.radius, LayerMask.GetMask("AgentMechant"));
 
         // Add agent in the overlaps Sphere
@@ -114,6 +116,7 @@ public class AgentFonction : MonoBehaviour
             if (!_EnemiesInRange.Contains(enemy))
             {
                 _EnemiesInRange.Add(enemy);
+                // Remove all missing component when an other enemy overlap
                 _EnemiesInRange.RemoveAll(item => item == null);
 
                 // if first enemys list set it to enemy to aim 
@@ -178,10 +181,10 @@ public class AgentFonction : MonoBehaviour
             // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
-            // Look AT enemy
+            
             _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
-            // Raycast to bulletSpawnPoint to enemy
+            
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
                 // Instanciate Trail for feedback 
@@ -197,10 +200,12 @@ public class AgentFonction : MonoBehaviour
 
                 if (_EnemyHealth != null)
                 {
+                    // inflic Damage 
                     _EnemyHealth.TakeDamage(_damageAmount);
 
                     if (_EnemyHealth.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
+                        // kill the enemy if his current hp is <= to 0
                         _EnemyHealth.Die();
                         _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
@@ -261,6 +266,17 @@ public class AgentFonction : MonoBehaviour
             return false;
         }
     }
+
+    // Gizmo Feedback 
+    //private void OnDrawGizmos()
+    //{
+      
+    //    if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
+    //    {
+    //        Gizmos.color = Color.yellow;
+    //        Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
+    //    }
+    //}
 
 
 }
