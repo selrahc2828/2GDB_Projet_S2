@@ -10,8 +10,11 @@ public class AgentFonction : MonoBehaviour
     public AgentChoise _AgentUsable;
     public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
-    private GameObject currentTargetEnemy;
     public NavMeshAgent _NavMeshAgent;
+
+    private GameObject currentTargetEnemy;
+    [SerializeField] private List<GameObject> _EnemiesInRange = new List<GameObject>();
+
 
     [Header("Layer")]
     public LayerMask _BulletLayer;
@@ -92,7 +95,35 @@ public class AgentFonction : MonoBehaviour
         }
 
         time += Time.deltaTime;
-       
+
+
+        if (currentTargetEnemy != null && time >= _fireRate)
+        {
+
+            ShootToEnemy();
+
+            time = 0;
+        }
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _ColliderTrigger.radius, LayerMask.GetMask("AgentMechant"));
+
+        // Add agent in the overlaps Sphere
+        foreach (Collider collider in colliders)
+        {
+            GameObject enemy = collider.gameObject;
+            if (!_EnemiesInRange.Contains(enemy))
+            {
+                _EnemiesInRange.Add(enemy);
+                _EnemiesInRange.RemoveAll(item => item == null);
+
+                // if first enemys list set it to enemy to aim 
+                if (currentTargetEnemy == null)
+                {
+                    currentTargetEnemy = enemy;
+                }
+            }
+        }
+
     }
 
 
@@ -111,20 +142,6 @@ public class AgentFonction : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
-    {
-        // Shoot Enemy if the agent is used with _ShootEnemy active 
-        if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
-        {
-            // Change the target Enemy
-            currentTargetEnemy = other.gameObject;
-            ShootToEnemy();
-
-            time = 0;
-        }
-
-    }
-
     private void OnTriggerExit(Collider other)
     {
         // reset Agent Speed when exit the trigger when _SlowEnemy is true
@@ -140,7 +157,13 @@ public class AgentFonction : MonoBehaviour
         // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
         {
-            currentTargetEnemy = null;
+            _EnemiesInRange.Remove(other.gameObject);
+
+            // If enemy exit trigger change target 
+            if (currentTargetEnemy == other.gameObject)
+            {
+                currentTargetEnemy = GetNextTarget();
+            }
         }
     }
 
@@ -176,16 +199,32 @@ public class AgentFonction : MonoBehaviour
                 {
                     _EnemyHealth.TakeDamage(_damageAmount);
 
-                    if (_EnemyHealth.GetCurrentHealth() <= 0)
+                    if (_EnemyHealth.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
                         _EnemyHealth.Die();
-                        currentTargetEnemy = null; 
+                        _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
                 }
                 // ------- ------
             }
         }
     }
+
+    // Get the next target
+    private GameObject GetNextTarget()
+    {
+        // Return actual enemy
+        if (_EnemiesInRange.Count > 0)
+        {
+            return _EnemiesInRange[0];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
 
     // Lerp the trail position | Called Line 136 in the Shoot fonction 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
