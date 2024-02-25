@@ -97,7 +97,7 @@ public class AgentFonction : MonoBehaviour
         time += Time.deltaTime;
 
 
-        if (currentTargetEnemy != null && time >= _fireRate)
+        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
         {
 
             ShootToEnemy();
@@ -267,16 +267,17 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-    // Gizmo Feedback 
-    //private void OnDrawGizmos()
-    //{
-      
-    //    if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
-    //    {
-    //        Gizmos.color = Color.yellow;
-    //        Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
-    //    }
-    //}
+    //Gizmo Feedback
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
+        }
+    }
 
 
 }
