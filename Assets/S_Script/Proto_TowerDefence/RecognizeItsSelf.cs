@@ -106,13 +106,21 @@ public class RecognizeItsSelf : MonoBehaviour
             _selfAgent.SetDestination(_basePosition);
             _launchTimer = false;
             _timer = 0;
-            _dictionnaireAgents = _TraceScript._dictionnaireAgent;
-            _dictionnaireAgents[_selfAgent] = true;
-
+            ResetAllAgentData();
         }
         else
         {
             _timer += Time.deltaTime;
         }
+    }
+
+    public void ResetAllAgentData()
+    {
+        List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
+        _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
+
+        _dictionnaireAgents = _TraceScript._dictionnaireAgent;
+        _dictionnaireAgents[_selfAgent] = true;
+
     }
 }

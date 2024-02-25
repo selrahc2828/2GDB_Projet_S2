@@ -83,6 +83,7 @@ public class AgentToTrace : MonoBehaviour
         {
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
             _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
+            StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
             //Appel de la fonction pour changer la destination des agents
             ComeToPoint();
             //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
@@ -106,6 +107,14 @@ public class AgentToTrace : MonoBehaviour
             Gizmos.DrawWireSphere(_position, 0.5f);
         }
     }*/
+
+
+    IEnumerator DeleteWithDelay(List<Vector3> _liste)
+    {
+        yield return new WaitForSeconds(10f);
+
+        _listeOfListePositionTrace.Remove(_liste);
+    }
 
     void CountNumberAgentAvailable()
     {
@@ -320,5 +329,10 @@ public class AgentToTrace : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void DeleteTimerForThis(List<Vector3> _liste)
+    {
+        
     }
 }
