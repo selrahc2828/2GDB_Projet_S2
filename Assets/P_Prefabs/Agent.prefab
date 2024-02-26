@@ -288,12 +288,9 @@ MonoBehaviour:
   _BulletLayer:
     serializedVersion: 2
     m_Bits: 2048
-  _SlowRange: 12
   _ShootRange: 10
   _ShootEnemy: 1
   _SlowEnemy: 0
-  _slowdownSpeed: 2
-  _InitialSpeed: 5
   _gun: {fileID: 1255936642878277159}
   _BulletSpawnPosition: {fileID: 4903651047573105786}
   _TowerPosition: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
@@ -320,6 +317,7 @@ MonoBehaviour:
   _selfAgent: {fileID: 3167649932413595886}
   _resetTimer: 0
   _launchTimer: 0
+  _gameManager: {fileID: 0}
 --- !u!1 &8691348546057371621
 GameObject:
   m_ObjectHideFlags: 0
