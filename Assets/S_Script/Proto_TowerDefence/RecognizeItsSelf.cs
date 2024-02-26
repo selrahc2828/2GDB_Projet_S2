@@ -116,8 +116,11 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void ResetAllAgentData()
     {
-        List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
-        _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
+        if(WitchListIsIt() != null)
+        {
+            List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
+            _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
+        }
 
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;

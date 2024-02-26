@@ -330,9 +330,4 @@ public class AgentToTrace : MonoBehaviour
             }
         }
     }
-
-    private void DeleteTimerForThis(List<Vector3> _liste)
-    {
-        
-    }
 }
