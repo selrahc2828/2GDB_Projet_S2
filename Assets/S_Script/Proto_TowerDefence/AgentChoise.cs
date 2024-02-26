@@ -38,9 +38,13 @@ public class AgentChoise : MonoBehaviour
         {
             if (_scroll > 0f)
             {
-                _AgentComportements[i]._ShootEnemy = true;
-                _AgentComportements[i]._SlowEnemy = false;
-                Debug.Log(_AgentComportements[i]._ShootEnemy);
+                if (IsAgentUsable(_AgentComportements[i].GetComponent<NavMeshAgent>()))
+                {
+                    _AgentComportements[i]._ShootEnemy = true;
+                    _AgentComportements[i]._SlowEnemy = false;
+                    Debug.Log(_AgentComportements[i]._ShootEnemy);
+                }
+               
             }
 
             if (_scroll < 0f)

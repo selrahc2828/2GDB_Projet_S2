@@ -8,6 +8,7 @@ public class HeathTowerScript : MonoBehaviour
 {
     [Header("Reference")]
     public Text _HealtHp;
+    public GameManager _GameManagerScript; 
     
 
     [Header("HealthSystem")]
@@ -15,8 +16,16 @@ public class HeathTowerScript : MonoBehaviour
     public int _CurrentHealth;
 
 
+    public void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
+
     void Start()
     {
+
+        _MaxHealth = _GameManagerScript._HeathTower;
+
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
     }
