@@ -11,6 +11,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
     public float _resetTimer;
     public bool _launchTimer;
+    public GameManager _gameManager;
     private float _timer;
 
 
@@ -21,7 +22,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private void Start()
     {
         _timer = 0f;
-        _resetTimer = 10f;
+        _resetTimer = _gameManager._resetTime;
         _launchTimer = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();

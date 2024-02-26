@@ -4896,7 +4896,9 @@ MonoBehaviour:
     m_Bits: 8
   _numberAgentAvailable: 0
   espaceEntreAgentPourCercle: 5
+  _slowMo: 0
   _parentAgent: {fileID: 1115029160}
+  _gameManager: {fileID: 0}
 --- !u!114 &179187613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50386,12 +50388,14 @@ MonoBehaviour:
   _SpeedAgent: 15
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
+  _resetTime: 15
   _HeathEnemy: 100
   _SpawnRate: 2
   _SpeedEnemy: 5
   _AngularSpeedEnemy: 180
   _AccelerationEnemy: 30
   _HeathTower: 500
+  _slowMo: 0.5
 --- !u!4 &1719475781
 Transform:
   m_ObjectHideFlags: 0

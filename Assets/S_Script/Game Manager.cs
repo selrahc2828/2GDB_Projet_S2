@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public float _SpeedAgent;
     public float _AngularSpeedAgent;
     public float _AccelerationAgent;
+    public float _resetTime;
 
 
     [Header("Enemy Heath Parameter")]
@@ -37,5 +38,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
+
+
+    [Header("Game Parameter")]
+    public float _slowMo;
 
 }
