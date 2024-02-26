@@ -290,7 +290,7 @@ MonoBehaviour:
     m_Bits: 2048
   _SlowRange: 12
   _ShootRange: 10
-  _ShootEnemy: 0
+  _ShootEnemy: 1
   _SlowEnemy: 0
   _slowdownSpeed: 2
   _InitialSpeed: 5
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086990296516066630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d91e11b7e2f07324686b3d1871f8b2b4, type: 3}
   m_Name: 
@@ -318,6 +318,8 @@ MonoBehaviour:
   _basePosition: {x: 0, y: 0, z: 0}
   _TraceScript: {fileID: 0}
   _selfAgent: {fileID: 3167649932413595886}
+  _resetTimer: 0
+  _launchTimer: 0
 --- !u!1 &8691348546057371621
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,9 +28,9 @@ public class AgentFonction : MonoBehaviour
     public bool _ShootEnemy;
     public bool _SlowEnemy;
 
-    [Header("Slow Parameters")]
-    public float _slowdownSpeed;
-    public float _InitialSpeed;
+    //[Header("Slow Parameters")]
+    //public float _slowdownSpeed;
+    //public float _InitialSpeed;
 
     [Header("Weapon Reference")]
     public GameObject _gun;
@@ -64,9 +64,9 @@ public class AgentFonction : MonoBehaviour
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
 
-        // Game Manager Value for Slow
-        _SlowRange = _GameManagerScript._SlowRangeGameManager;
-        _slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
+        //// Game Manager Value for Slow
+        //_SlowRange = _GameManagerScript._SlowRangeGameManager;
+        //_slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
 
         // Game Manager Value for Shoot
         _ShootRange = _GameManagerScript._ShootRangeGameManager;
@@ -89,10 +89,10 @@ public class AgentFonction : MonoBehaviour
             _ColliderTrigger.radius = _ShootRange;
         }
         
-        if (_SlowEnemy)
-        {
-            _ColliderTrigger.radius = _SlowRange;
-        }
+        //if (_SlowEnemy)
+        //{
+        //    _ColliderTrigger.radius = _SlowRange;
+        //}
 
         time += Time.deltaTime;
 
@@ -131,31 +131,31 @@ public class AgentFonction : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // slow Enemy en trigger enter and fix it to _SlowSpeed
-        if (_SlowEnemy && other.CompareTag("AgentMechant"))
-        {
-            NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-            if (enemyAgent != null)
-            {
-                enemyAgent.speed = _slowdownSpeed;
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    // slow Enemy en trigger enter and fix it to _SlowSpeed
+    //    if (_SlowEnemy && other.CompareTag("AgentMechant"))
+    //    {
+    //        NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
+    //        if (enemyAgent != null)
+    //        {
+    //            enemyAgent.speed = _slowdownSpeed;
+    //        }
+    //    }
+    //}
 
 
     private void OnTriggerExit(Collider other)
     {
-        // reset Agent Speed when exit the trigger when _SlowEnemy is true
-        if (!_SlowEnemy && other.CompareTag("AgentMechant"))
-        {
-            NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-            if (enemyAgent != null)
-            {
-                enemyAgent.speed = _InitialSpeed;
-            }
-        }
+        //// reset Agent Speed when exit the trigger when _SlowEnemy is true
+        //if (!_SlowEnemy && other.CompareTag("AgentMechant"))
+        //{
+        //    NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
+        //    if (enemyAgent != null)
+        //    {
+        //        enemyAgent.speed = _InitialSpeed;
+        //    }
+        //}
 
         // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
