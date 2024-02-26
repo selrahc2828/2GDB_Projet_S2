@@ -4898,7 +4898,7 @@ MonoBehaviour:
   espaceEntreAgentPourCercle: 5
   _slowMo: 0
   _parentAgent: {fileID: 1115029160}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 1719475780}
 --- !u!114 &179187613
 MonoBehaviour:
   m_ObjectHideFlags: 0
