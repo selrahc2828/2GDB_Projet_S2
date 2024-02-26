@@ -18,6 +18,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private void Awake()
     {
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
+        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
     private void Start()
     {
