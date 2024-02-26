@@ -6,14 +6,20 @@ public class CameraRotation : MonoBehaviour
     [SerializeField] public Transform target;
 
     [Header("Rotation")]
-    [SerializeField] public float rotationSpeed = 5f;
-    [SerializeField] public float distanceFromTarget = 20.0f;
-    [SerializeField] public float rotationSmoothTime = 0.12f;
+    [SerializeField] public float rotationSpeed;
+    [SerializeField] public float distanceFromTarget;
+    [SerializeField] public float rotationSmoothTime;
 
     [Header("RotationClamp")]
     //[SerializeField] public float minRotationY = 0f;
     //[SerializeField] public float maxRotationY = 180f;
     [SerializeField] public Vector2 pitchMinMax = new Vector2(-40, 85);
+
+
+    [Header("Zoom")]
+    [SerializeField] public float zoomSpeed;
+    [SerializeField] public float minZoomDistance;
+    [SerializeField] public float maxZoomDistance;
 
     Vector3 currentRotation;
 
@@ -23,6 +29,9 @@ public class CameraRotation : MonoBehaviour
         {
             RotateCamera();
         }
+
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        distanceFromTarget = Mathf.Clamp(distanceFromTarget - scrollInput * zoomSpeed, minZoomDistance, maxZoomDistance);
 
         Vector3 desiredPosition = target.position - transform.forward * distanceFromTarget;
         transform.position = Vector3.Lerp(transform.position, desiredPosition, rotationSmoothTime);
