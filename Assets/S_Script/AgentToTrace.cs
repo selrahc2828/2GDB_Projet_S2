@@ -72,6 +72,12 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Reset the time scale to normal
+            Time.timeScale = 0.5f;
+        }
+
         // Check du click gauche de la souris
         if (Input.GetMouseButton(0))
         {
@@ -81,6 +87,8 @@ public class AgentToTrace : MonoBehaviour
         //Test si le bouton gauche de la souris est relevé
         if (Input.GetMouseButtonUp(0))
         {
+            // Reset the time scale to normal
+            Time.timeScale = 1f;
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
             _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
             StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
