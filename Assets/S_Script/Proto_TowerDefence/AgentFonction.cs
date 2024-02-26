@@ -10,14 +10,17 @@ public class AgentFonction : MonoBehaviour
     public AgentChoise _AgentUsable;
     public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
-    private GameObject currentTargetEnemy;
     public NavMeshAgent _NavMeshAgent;
+
+    private GameObject currentTargetEnemy;
+    [SerializeField] private List<GameObject> _EnemiesInRange = new List<GameObject>();
+
 
     [Header("Layer")]
     public LayerMask _BulletLayer;
 
     [Header("RangeShoot And Slow")]
-    public float _SlowRange;
+    //public float _SlowRange;
     public float _ShootRange; 
 
 
@@ -25,9 +28,9 @@ public class AgentFonction : MonoBehaviour
     public bool _ShootEnemy;
     public bool _SlowEnemy;
 
-    [Header("Slow Parameters")]
-    public float _slowdownSpeed;
-    public float _InitialSpeed;
+    //[Header("Slow Parameters")]
+    //public float _slowdownSpeed;
+    //public float _InitialSpeed;
 
     [Header("Weapon Reference")]
     public GameObject _gun;
@@ -61,9 +64,9 @@ public class AgentFonction : MonoBehaviour
         _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
 
-        // Game Manager Value for Slow
-        _SlowRange = _GameManagerScript._SlowRangeGameManager;
-        _slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
+        //// Game Manager Value for Slow
+        //_SlowRange = _GameManagerScript._SlowRangeGameManager;
+        //_slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
 
         // Game Manager Value for Shoot
         _ShootRange = _GameManagerScript._ShootRangeGameManager;
@@ -86,61 +89,84 @@ public class AgentFonction : MonoBehaviour
             _ColliderTrigger.radius = _ShootRange;
         }
         
-        if (_SlowEnemy)
-        {
-            _ColliderTrigger.radius = _SlowRange;
-        }
+        //if (_SlowEnemy)
+        //{
+        //    _ColliderTrigger.radius = _SlowRange;
+        //}
 
         time += Time.deltaTime;
-       
-    }
 
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // slow Enemy en trigger enter and fix it to _SlowSpeed
-        if (_SlowEnemy && other.CompareTag("AgentMechant"))
+        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
         {
-            NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-            if (enemyAgent != null)
-            {
-                enemyAgent.speed = _slowdownSpeed;
-            }
-        }
-    }
 
-
-    private void OnTriggerStay(Collider other)
-    {
-        // Shoot Enemy if the agent is used with _ShootEnemy active 
-        if (_ShootEnemy && other.CompareTag("AgentMechant") && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
-        {
-            // Change the target Enemy
-            currentTargetEnemy = other.gameObject;
             ShootToEnemy();
 
             time = 0;
         }
 
+
+        // Call A physics OverlapSphere to update list of agent 
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _ColliderTrigger.radius, LayerMask.GetMask("AgentMechant"));
+
+        // Add agent in the overlaps Sphere
+        foreach (Collider collider in colliders)
+        {
+            GameObject enemy = collider.gameObject;
+            if (!_EnemiesInRange.Contains(enemy))
+            {
+                _EnemiesInRange.Add(enemy);
+                // Remove all missing component when an other enemy overlap
+                _EnemiesInRange.RemoveAll(item => item == null);
+
+                // if first enemys list set it to enemy to aim 
+                if (currentTargetEnemy == null)
+                {
+                    currentTargetEnemy = enemy;
+                }
+            }
+        }
+
     }
+
+
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    // slow Enemy en trigger enter and fix it to _SlowSpeed
+    //    if (_SlowEnemy && other.CompareTag("AgentMechant"))
+    //    {
+    //        NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
+    //        if (enemyAgent != null)
+    //        {
+    //            enemyAgent.speed = _slowdownSpeed;
+    //        }
+    //    }
+    //}
+
 
     private void OnTriggerExit(Collider other)
     {
-        // reset Agent Speed when exit the trigger when _SlowEnemy is true
-        if (!_SlowEnemy && other.CompareTag("AgentMechant"))
-        {
-            NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-            if (enemyAgent != null)
-            {
-                enemyAgent.speed = _InitialSpeed;
-            }
-        }
+        //// reset Agent Speed when exit the trigger when _SlowEnemy is true
+        //if (!_SlowEnemy && other.CompareTag("AgentMechant"))
+        //{
+        //    NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
+        //    if (enemyAgent != null)
+        //    {
+        //        enemyAgent.speed = _InitialSpeed;
+        //    }
+        //}
 
         // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
         {
-            currentTargetEnemy = null;
+            _EnemiesInRange.Remove(other.gameObject);
+
+            // If enemy exit trigger change target 
+            if (currentTargetEnemy == other.gameObject)
+            {
+                currentTargetEnemy = GetNextTarget();
+            }
         }
     }
 
@@ -155,10 +181,10 @@ public class AgentFonction : MonoBehaviour
             // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
-            // Look AT enemy
+            
             _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
-            // Raycast to bulletSpawnPoint to enemy
+            
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
                 // Instanciate Trail for feedback 
@@ -174,18 +200,36 @@ public class AgentFonction : MonoBehaviour
 
                 if (_EnemyHealth != null)
                 {
+                    // inflic Damage 
                     _EnemyHealth.TakeDamage(_damageAmount);
 
-                    if (_EnemyHealth.GetCurrentHealth() <= 0)
+                    if (_EnemyHealth.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
+                        // kill the enemy if his current hp is <= to 0
                         _EnemyHealth.Die();
-                        currentTargetEnemy = null; 
+                        _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
                 }
                 // ------- ------
             }
         }
     }
+
+    // Get the next target
+    private GameObject GetNextTarget()
+    {
+        // Return actual enemy
+        if (_EnemiesInRange.Count > 0)
+        {
+            return _EnemiesInRange[0];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
 
     // Lerp the trail position | Called Line 136 in the Shoot fonction 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
@@ -222,4 +266,18 @@ public class AgentFonction : MonoBehaviour
             return false;
         }
     }
+
+    //Gizmo Feedback
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
+        }
+    }
+
+
 }
