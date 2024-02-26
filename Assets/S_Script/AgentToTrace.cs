@@ -26,8 +26,10 @@ public class AgentToTrace : MonoBehaviour
     [Header("Variables utiles")]
     public int _numberAgentAvailable;
     public float espaceEntreAgentPourCercle;
+    public float _slowMo;
 
     public GameObject _parentAgent;
+    public GameManager _gameManager;
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
@@ -35,6 +37,7 @@ public class AgentToTrace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _slowMo = _gameManager._slowMo;
         // taille de l'agennt (diametre)
         _sizeAgent = 1f;
         //Dictionnaire dans lequel je stoque des position et un booléen par position
@@ -75,7 +78,7 @@ public class AgentToTrace : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Reset the time scale to normal
-            Time.timeScale = 0.5f;
+            Time.timeScale = _slowMo;
         }
 
         // Check du click gauche de la souris
