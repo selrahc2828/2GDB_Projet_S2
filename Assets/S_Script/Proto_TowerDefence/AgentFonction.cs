@@ -20,7 +20,7 @@ public class AgentFonction : MonoBehaviour
     public LayerMask _BulletLayer;
 
     [Header("RangeShoot And Slow")]
-    public float _SlowRange;
+    //public float _SlowRange;
     public float _ShootRange; 
 
 
