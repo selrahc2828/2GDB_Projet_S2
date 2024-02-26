@@ -26,7 +26,6 @@ public class AgentToTrace : MonoBehaviour
     [Header("Variables utiles")]
     public int _numberAgentAvailable;
     public float espaceEntreAgentPourCercle;
-    public float _slowMo;
 
     public GameObject _parentAgent;
     public GameManager _gameManager;
@@ -37,7 +36,6 @@ public class AgentToTrace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _slowMo = _gameManager._slowMo;
         // taille de l'agennt (diametre)
         _sizeAgent = 1f;
         //Dictionnaire dans lequel je stoque des position et un booléen par position
@@ -75,11 +73,6 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Reset the time scale to normal
-            Time.timeScale = _slowMo;
-        }
 
         // Check du click gauche de la souris
         if (Input.GetMouseButton(0))
@@ -90,8 +83,6 @@ public class AgentToTrace : MonoBehaviour
         //Test si le bouton gauche de la souris est relevé
         if (Input.GetMouseButtonUp(0))
         {
-            // Reset the time scale to normal
-            Time.timeScale = 1f;
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
             _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
             StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
