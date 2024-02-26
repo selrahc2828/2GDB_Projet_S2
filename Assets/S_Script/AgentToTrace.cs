@@ -17,7 +17,7 @@ public class AgentToTrace : MonoBehaviour
     [Header("Dictionnaires")]
     Dictionary<Vector3, bool> _dictionnairePositionTrace;
     public  Dictionary<NavMeshAgent, bool> _dictionnaireAgent;
-    Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
+    public Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
 
     [Header("Listes")]
     public List<List<Vector3>> _listeOfListePositionTrace;
@@ -82,7 +82,8 @@ public class AgentToTrace : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
-            _listeOfListePositionTrace.Add(_listePositionTrace);
+            _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
+            StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
             //Appel de la fonction pour changer la destination des agents
             ComeToPoint();
             //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
@@ -100,12 +101,20 @@ public class AgentToTrace : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        foreach (Vector3 _position in _listePositionTrace.Keys)
+        foreach (Vector3 _position in _listePositionTrace)
         {
             Gizmos.DrawWireSphere(_position, 5);
             Gizmos.DrawWireSphere(_position, 0.5f);
         }
     }*/
+
+
+    IEnumerator DeleteWithDelay(List<Vector3> _liste)
+    {
+        yield return new WaitForSeconds(10f);
+
+        _listeOfListePositionTrace.Remove(_liste);
+    }
 
     void CountNumberAgentAvailable()
     {
@@ -251,6 +260,7 @@ public class AgentToTrace : MonoBehaviour
                                 _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                                 //on remplace la variable de l'agent choisis par l'agent actuel
                                 _chosenAgent = _agentPosition;
+                                _chosenPosition = _agentPosition.transform.position;
                             }
                         }
                         //si la variable de distance est 0
@@ -260,6 +270,7 @@ public class AgentToTrace : MonoBehaviour
                             _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                             //on remplace la variable de l'agent choisis par l'agent actuel
                             _chosenAgent = _agentPosition;
+                            _chosenPosition = _agentPosition.transform.position;
                         }
                     }
                 }
@@ -268,6 +279,7 @@ public class AgentToTrace : MonoBehaviour
                 _chosenAgent.SetDestination(_pointPosition);
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _dictionnaireAgent[_chosenAgent] = false;
+                _chosenAgent.GetComponent<RecognizeItsSelf>()._launchTimer = true;
                 _chosenAgentsList.Add(_chosenAgent);
                 //on passe aussi le booléen de la position en false, ce qui signifie qu'il n'est plus disponible
                 _dictionnairePositionTrace[_chosenPosition] = false;
@@ -275,7 +287,10 @@ public class AgentToTrace : MonoBehaviour
         }
         //on appelle la fonction de comptage d'agent disponible pour mettre à jour la variable
         CountNumberAgentAvailable();
-        _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_listePositionTrace));
+        if(_listePositionTrace.Count > 0)
+        {
+            _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_listePositionTrace));
+        }
     }
     
     //détecte la forme que le groupe d'agent a pris, 0 pour un trait et 1 pour un cercle

@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91e11b7e2f07324686b3d1871f8b2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _basePosition: {x: 0, y: 0, z: 0}
   _TraceScript: {fileID: 0}
   _selfAgent: {fileID: 3167649932413595886}
 --- !u!1 &8691348546057371621
