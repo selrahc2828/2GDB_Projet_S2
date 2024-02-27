@@ -35,7 +35,7 @@ public class HeathTowerScript : MonoBehaviour
         // Update The Current Healt 
         GetCurrentHealth();
         // Change the text 
-        _HealtHp.text = "HP : " + _CurrentHealth;
+        // _HealtHp.text = "HP : " + _CurrentHealth;
 
         // DEFEAT
         if (_CurrentHealth <= 0 )
