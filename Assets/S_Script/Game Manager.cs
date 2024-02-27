@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public float _AccelerationAgent;
     public float _resetTime;
 
+    [Header("Agent Health")]
+    public int _HealthAgent;
+
 
     [Header("Enemy Heath Parameter")]
     public int _HeathEnemy;

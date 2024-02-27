@@ -6,6 +6,7 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
@@ -32,6 +33,7 @@ public class AgentToTrace : MonoBehaviour
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
+    public Text _AgentTextAvailable;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +98,8 @@ public class AgentToTrace : MonoBehaviour
         {
             testIfItWork();
         }
+
+        _AgentTextAvailable.text = "Agent Disponible : " + _numberAgentAvailable;
     }
 
     //outil de debug

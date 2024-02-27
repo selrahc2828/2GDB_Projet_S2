@@ -1435,6 +1435,7 @@ MonoBehaviour:
   espaceEntreAgentPourCercle: 0
   _parentAgent: {fileID: 1115029160}
   _gameManager: {fileID: 436205468}
+  _AgentTextAvailable: {fileID: 1255312958}
 --- !u!114 &179187613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3775,6 +3776,7 @@ MonoBehaviour:
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
   _resetTime: 15
+  _HealthAgent: 100
   _HeathEnemy: 100
   _SpawnRate: 2
   _SpeedEnemy: 5
@@ -7670,7 +7672,6 @@ GameObject:
   - component: {fileID: 1043113280}
   - component: {fileID: 1043113279}
   - component: {fileID: 1043113282}
-  - component: {fileID: 1043113283}
   - component: {fileID: 1043113284}
   m_Layer: 0
   m_Name: Main Camera
@@ -7797,21 +7798,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &1043113283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043113278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6da1d5e1dc483f64188488ac8c3c8893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Camera: {fileID: 1043113280}
-  _slowMo: 0
-  _gameManager: {fileID: 436205468}
 --- !u!114 &1043113284
 MonoBehaviour:
   m_ObjectHideFlags: 0

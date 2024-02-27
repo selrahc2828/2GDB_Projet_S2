@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 3901414477671127009}
   - component: {fileID: 8227076938818039178}
   - component: {fileID: 3565522453470937995}
+  - component: {fileID: 1663607461151521719}
   m_Layer: 10
   m_Name: Agent
   m_TagString: Agent
@@ -263,7 +264,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -318,6 +319,21 @@ MonoBehaviour:
   _resetTimer: 0
   _launchTimer: 0
   _gameManager: {fileID: 0}
+--- !u!114 &1663607461151521719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086990296516066630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355235db2141deb4eb3e0e6f66e9ef2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _GameManagerScript: {fileID: 0}
+  _MaxHealth: 0
+  _CurrentHealth: 0
 --- !u!1 &8691348546057371621
 GameObject:
   m_ObjectHideFlags: 0
