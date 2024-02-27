@@ -12,6 +12,11 @@ public class DamageToAgent : MonoBehaviour
     public float _cooldown = 1f;
     private bool _canDamage = true;
 
+    private void Awake()
+    {
+        _GameManager = FindAnyObjectByType<GameManager>();
+    }
+
 
     private void Start()
     {

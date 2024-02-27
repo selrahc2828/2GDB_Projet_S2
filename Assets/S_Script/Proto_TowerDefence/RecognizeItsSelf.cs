@@ -15,11 +15,12 @@ public class RecognizeItsSelf : MonoBehaviour
     private float _timer;
 
 
+
     private void Awake()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
-        _gameManager = GameObject.FindObjectOfType<GameManager>();
+
     }
     private void Start()
     {
@@ -58,6 +59,7 @@ public class RecognizeItsSelf : MonoBehaviour
             if(_selfAgent.remainingDistance < 5)
             {
                 ResetPositionInTimer();
+
             }
         }
     }
@@ -104,7 +106,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void ResetPositionInTimer()
     {
-        if(_timer >= _resetTimer)
+        if (_timer >= _resetTimer)
         {
             _selfAgent.SetDestination(_basePosition);
             _launchTimer = false;
