@@ -3782,6 +3782,7 @@ MonoBehaviour:
   _SpeedEnemy: 5
   _AngularSpeedEnemy: 180
   _AccelerationEnemy: 30
+  _DamageAmoutToAgent: 50
   _HeathTower: 500
   _slowMo: 0.3
 --- !u!4 &436205469

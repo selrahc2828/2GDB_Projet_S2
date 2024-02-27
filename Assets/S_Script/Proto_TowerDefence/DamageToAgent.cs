@@ -6,11 +6,17 @@ public class DamageToAgent : MonoBehaviour
 {
     [Header("Reference")]
     public HeathAgent _HealtAgent;
-
+    public GameManager _GameManager;
 
     public int _damageAmount = 10;
     public float _cooldown = 1f;
     private bool _canDamage = true;
+
+
+    private void Start()
+    {
+        _damageAmount = _GameManager._DamageAmoutToAgent;
+    }
 
 
     private void OnCollisionEnter(Collision collision)

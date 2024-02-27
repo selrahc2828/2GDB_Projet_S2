@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     public float _AngularSpeedEnemy;
     public float _AccelerationEnemy;
 
+    [Header("Enemy damage")]
+    public int _DamageAmoutToAgent;
+
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
