@@ -294,8 +294,12 @@ MonoBehaviour:
   _TraceScript: {fileID: 0}
   _selfAgent: {fileID: 3167649932413595886}
   _resetTime: 0
-  _launchTimer: 0
   _gameManager: {fileID: 0}
+  _initialMaterial: {fileID: 0}
+  _exaustedMaterial: {fileID: 0}
+  _meshRenderer: {fileID: 0}
+  _exaustionLevel: 0
+  _aviability: 0
 --- !u!1 &8691348546057371621
 GameObject:
   m_ObjectHideFlags: 0

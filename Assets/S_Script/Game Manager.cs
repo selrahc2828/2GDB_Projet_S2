@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public float _AccelerationAgent;
     public float _resetTime;//pour le reset apres un timer (il n'est pas actif actuellement)
 
+    [Header("Agent Health")]
+    public int _HealthAgent;
+
 
     [Header("Enemy Heath Parameter")]
     public int _HeathEnemy;
@@ -36,6 +39,9 @@ public class GameManager : MonoBehaviour
     public float _SpeedEnemy;
     public float _AngularSpeedEnemy;
     public float _AccelerationEnemy;
+
+    [Header("Enemy damage")]
+    public int _DamageAmoutToAgent;
 
 
     [Header("Tower Heath & Parameter")]
