@@ -48,7 +48,7 @@ public class HeathEnemy : MonoBehaviour
     {
         // Take the current Health and substract the damage amount 
         _CurrentHealth -= damageAmount;
-        Debug.Log(gameObject.name + " took damage: " + damageAmount);
+        //Debug.Log(gameObject.name + " took damage: " + damageAmount);
 
         if (_CurrentHealth < 0)
         {

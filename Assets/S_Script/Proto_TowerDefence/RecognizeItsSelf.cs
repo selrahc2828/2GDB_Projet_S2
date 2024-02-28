@@ -1,3 +1,4 @@
+using FMOD;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,84 +13,37 @@ public class RecognizeItsSelf : MonoBehaviour
     public NavMeshAgent _selfAgent;
     public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
     public float _resetTime;
-    public bool _launchTimer;
     public GameManager _gameManager;
     public Material _initialMaterial;
-    public Material _tiredMaterial;
-
-    public float _lerpDuration = 15f;
+    public Material _exaustedMaterial;
     public MeshRenderer _meshRenderer;
-    public float _lerpAmount;
+
+    public float _exaustionLevel;
+    private float _exaustionTrueLevel;
+    private float _exaustionMaxLevel;
+    public bool _aviability;
 
 
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        //_initialMaterial = GetComponent<MeshRenderer>().material;
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
     }
     private void Start()
     {
-        _lerpDuration = _gameManager._fatigueDuration;
-        _lerpAmount = 0f;
+        _exaustionMaxLevel = _gameManager._maxFatigue;
+        _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
-        _launchTimer = false;
+        _aviability = true;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            // Create a ray from the mouse cursor position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            // Create a RaycastHit variable to store information about the raycast hit
-            RaycastHit hit;
-
-            // Perform the raycast
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Check if the collider hit is attached to the object you're interested in
-                if (hit.collider.gameObject == gameObject)
-                {
-                    // The object is clicked
-                    //Debug.Log(IsAvailable());
-                    //Debug.Log(IsInShape());
-                    //Debug.Log(WitchListIsIt().Count);
-                }
-            }
-        }
-
-        if(_launchTimer)
-        {
-            if(_selfAgent.remainingDistance < 5)
-            {
-                //ExaustAgent();
-                // Calculate lerpAmount based on elapsed time and lerp duration
-                
-                _lerpAmount += Time.deltaTime;
-                if (_lerpAmount > _lerpDuration)
-                {
-                    _lerpAmount = _lerpDuration;
-                }
-
-                float perc = _lerpAmount / _lerpDuration;
-                // Lerp between color1 and color2 based on lerpAmount
-                UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _tiredMaterial.color, perc);
-
-                // Apply the lerped color to the renderer's material
-                _meshRenderer.material.color = lerpedColor;
-                Debug.Log(_lerpAmount);
-                // If lerp is complete, reset the elapsed time and stop lerp
-                if (_lerpAmount >= 15f)
-                {
-                    _launchTimer = false;
-                }
-            }
-        }
+        CalculateExaustion();
+        UpdateExaustionMeter();
     }
 
     IEnumerator ResetPositionInTimer()
@@ -97,6 +51,38 @@ public class RecognizeItsSelf : MonoBehaviour
         yield return new WaitForSeconds(_resetTime);
 
         ResetPosition();
+    }
+
+    public void CalculateExaustion()
+    {
+
+        if (_selfAgent.remainingDistance < 0.5)
+        {
+            if (_aviability)
+            {
+                if (_exaustionTrueLevel >= 0)
+                {
+                    _exaustionTrueLevel = 0;
+                }
+            }
+            else
+            {
+                if (_exaustionTrueLevel <= _exaustionMaxLevel)
+                {
+                    _exaustionTrueLevel += Time.deltaTime;
+                }
+            }
+        }
+        _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
+    }
+
+    public void UpdateExaustionMeter()
+    {
+        // Lerp between color1 and color2 based on lerpAmount
+        UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _exaustedMaterial.color, _exaustionLevel);
+
+        // Apply the lerped color to the renderer's material
+        _meshRenderer.material.color = lerpedColor;
     }
 
     public List<NavMeshAgent> WitchListIsIt()
@@ -113,7 +99,6 @@ public class RecognizeItsSelf : MonoBehaviour
         }
         return null;
     }
-
 
     public bool IsAvailable()
     {
@@ -143,7 +128,6 @@ public class RecognizeItsSelf : MonoBehaviour
     public void ResetPosition()
     {
         _selfAgent.SetDestination(_basePosition);
-        _launchTimer = false;
         ResetAllAgentData();
     }
 
@@ -157,6 +141,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;
+        _aviability = true;
 
     }
 }

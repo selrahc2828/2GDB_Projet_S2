@@ -27,10 +27,12 @@ public class ResetAgent : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("Agent"))
                     {
                         List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
-                        foreach(NavMeshAgent _agent in _itsList)
+                        if( _itsList != null )
                         {
-                            _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
-                            Debug.Log("là connard faudra coder ton truc pour rechanger la couleur");
+                            foreach (NavMeshAgent _agent in _itsList)
+                            {
+                                _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
+                            }
                         }
                     }
                 }
