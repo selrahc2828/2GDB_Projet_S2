@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeathEnemy : MonoBehaviour
+public class HeathAgent : MonoBehaviour
 {
     [Header("Reference")]
     public GameManager _GameManagerScript;
@@ -25,7 +25,7 @@ public class HeathEnemy : MonoBehaviour
     {
         
 
-        _MaxHealth = _GameManagerScript._HeathEnemy;
+        _MaxHealth = _GameManagerScript._HealthAgent;
 
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
@@ -43,7 +43,7 @@ public class HeathEnemy : MonoBehaviour
         }
     }
 
-    // Fonction is called in DamageToTower Script 
+   
     public void TakeDamage(int damageAmount)
     {
         // Take the current Health and substract the damage amount 

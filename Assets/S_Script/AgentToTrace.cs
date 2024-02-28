@@ -12,23 +12,28 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class AgentToTrace : MonoBehaviour
 {
+    [Header("Layer")]
     public LayerMask _affectedLayer;
 
+    [Header("Dictionnaires")]
     Dictionary<Vector3, bool> _dictionnairePositionTrace;
     public  Dictionary<NavMeshAgent, bool> _dictionnaireAgent;
+    public Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
 
-    public List<Dictionary<Vector3, bool>> _listeOfListePositionTrace;
-    Dictionary<List<NavMeshAgent>, int> _dictionnaireOfListeAgent;
+    [Header("Listes")]
+    public List<List<Vector3>> _listeOfListePositionTrace;
+    List<Vector3> _listePositionTrace;
+
+    [Header("Variables utiles")]
     public int _numberAgentAvailable;
-    public GameObject _parentAgent;
     public float espaceEntreAgentPourCercle;
 
-    public NavMeshAgent _chosenAgent;
+    public GameObject _parentAgent;
+    public GameManager _gameManager;
+    private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
-
-    public Text _AgentDispo;
-
+    public Text _AgentTextAvailable;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +45,8 @@ public class AgentToTrace : MonoBehaviour
         //Dictionnaire dans lequel je stoque tout les agents et un booléen par agent
         _dictionnaireAgent = new Dictionary<NavMeshAgent, bool>();
         //Liste dans laquelle je stoque les dictionnaires de position
-        _listeOfListePositionTrace = new List<Dictionary<Vector3, bool>>();
+        _listeOfListePositionTrace = new List<List<Vector3>>();
+        _listePositionTrace = new List<Vector3>();
         _dictionnaireOfListeAgent = new Dictionary<List<NavMeshAgent>, int>();
 
         // Vérifier si l'objet parent a été attribué
@@ -69,6 +75,7 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Check du click gauche de la souris
         if (Input.GetMouseButton(0))
         {
@@ -78,15 +85,21 @@ public class AgentToTrace : MonoBehaviour
         //Test si le bouton gauche de la souris est relevé
         if (Input.GetMouseButtonUp(0))
         {
-            //Ajout du dictionnaire de position qui viens d'être créer dans la liste de dictionnaire
-            _listeOfListePositionTrace.Add(_dictionnairePositionTrace);
+            //Ajout de la liste de position qui viens d'être créer dans la liste de liste
+            _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
+            StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
             //Appel de la fonction pour changer la destination des agents
             ComeToPoint();
-            //On vide la liste de position pour pouvoir s'en resservir au prochain tracé
+            //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
             _dictionnairePositionTrace.Clear();
+            _listePositionTrace.Clear();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            testIfItWork();
         }
 
-        _AgentDispo.text = "Agent Disponible : " + _numberAgentAvailable;
+        _AgentTextAvailable.text = "Agent Disponible : " + _numberAgentAvailable;
     }
 
     //outil de debug
@@ -94,12 +107,20 @@ public class AgentToTrace : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        foreach (Vector3 _position in _listePositionTrace.Keys)
+        foreach (Vector3 _position in _listePositionTrace)
         {
             Gizmos.DrawWireSphere(_position, 5);
             Gizmos.DrawWireSphere(_position, 0.5f);
         }
     }*/
+
+
+    IEnumerator DeleteWithDelay(List<Vector3> _liste)
+    {
+        yield return new WaitForSeconds(10f);
+
+        _listeOfListePositionTrace.Remove(_liste);
+    }
 
     void CountNumberAgentAvailable()
     {
@@ -123,7 +144,6 @@ public class AgentToTrace : MonoBehaviour
         //si le raycast a touché quelque chose dans le layer _affectedLayer (ici le terrain)
         if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
         {
-            Debug.Log(CheckIfPointAlreadyExistHere(hit.point, _dictionnairePositionTrace));
             //test sur le booleen de la fonction qui check s'il n'existe pas de point déja présent à cet emplacement
             if (!CheckIfPointAlreadyExistHere(hit.point, _dictionnairePositionTrace))
             {
@@ -132,15 +152,9 @@ public class AgentToTrace : MonoBehaviour
                 {
                     //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
                     InterpolateNewPointInBetween(hit.point, _dictionnairePositionTrace.Last());
-                    //On ajoute le point trouvé par le raycast dans le dictionnaire de points avec le booléen en true
-                    _dictionnairePositionTrace.Add(hit.point, true);
                 }
-                //Si le dictionnaire de position est vide
-                else
-                {
-                    //On ajoute le point trouvé par le raycast dans le dictionnaire de point avec le booléen en true
-                    _dictionnairePositionTrace.Add(hit.point, true);
-                }
+                _dictionnairePositionTrace.Add(hit.point, true);
+                _listePositionTrace.Add(hit.point);
             }
         }
     }
@@ -150,14 +164,14 @@ public class AgentToTrace : MonoBehaviour
         //Si la liste de dictionnaire de position n'est pas vide
         if(_listeOfListePositionTrace.Count > 0)
         {
-            //parcour de la liste de dictionnaire
-            foreach (Dictionary<Vector3, bool> _oldDictionary in _listeOfListePositionTrace)
+            //parcour de la liste de liste
+            foreach (List<Vector3> _oldList in _listeOfListePositionTrace)
             {
                 //parcour du dictionnaire de position
-                foreach (KeyValuePair<Vector3, bool> _oldPoint in _oldDictionary)
+                foreach (Vector3 _oldPoint in _oldList)
                 {
                     //si la distance entre la position du dictionnaire et le nouveau point est inférieur a la taille d'un agent
-                    if (Vector3.Distance(_newPoint, _oldPoint.Key) <= _sizeAgent)
+                    if (Vector3.Distance(_newPoint, _oldPoint) <= _sizeAgent)
                     {
                         return true;
                     }
@@ -252,6 +266,7 @@ public class AgentToTrace : MonoBehaviour
                                 _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                                 //on remplace la variable de l'agent choisis par l'agent actuel
                                 _chosenAgent = _agentPosition;
+                                _chosenPosition = _agentPosition.transform.position;
                             }
                         }
                         //si la variable de distance est 0
@@ -261,6 +276,7 @@ public class AgentToTrace : MonoBehaviour
                             _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
                             //on remplace la variable de l'agent choisis par l'agent actuel
                             _chosenAgent = _agentPosition;
+                            _chosenPosition = _agentPosition.transform.position;
                         }
                     }
                 }
@@ -269,6 +285,7 @@ public class AgentToTrace : MonoBehaviour
                 _chosenAgent.SetDestination(_pointPosition);
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _dictionnaireAgent[_chosenAgent] = false;
+                _chosenAgent.GetComponent<RecognizeItsSelf>()._launchTimer = true;
                 _chosenAgentsList.Add(_chosenAgent);
                 //on passe aussi le booléen de la position en false, ce qui signifie qu'il n'est plus disponible
                 _dictionnairePositionTrace[_chosenPosition] = false;
@@ -276,15 +293,47 @@ public class AgentToTrace : MonoBehaviour
         }
         //on appelle la fonction de comptage d'agent disponible pour mettre à jour la variable
         CountNumberAgentAvailable();
-        _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_chosenAgentsList));
+        if(_listePositionTrace.Count > 0)
+        {
+            _dictionnaireOfListeAgent.Add(_chosenAgentsList, TestShape(_listePositionTrace));
+        }
+    }
+    
+    //détecte la forme que le groupe d'agent a pris, 0 pour un trait et 1 pour un cercle
+    int TestShape(List<Vector3> _liste)
+    {
+        Vector3 _firstAgent = _liste[0];
+        Vector3 _lastAgent = _liste[_liste.Count-1];
+        Debug.Log(Vector3.Distance(_firstAgent, _lastAgent));
+        if(Vector3.Distance(_firstAgent, _lastAgent) < espaceEntreAgentPourCercle)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
-    int TestShape(List<NavMeshAgent> _liste)
+    void testIfItWork()
     {
-        foreach(NavMeshAgent _agent in _liste)
-        { 
-            
+        foreach(KeyValuePair<List<NavMeshAgent>, int> _dictionnaire in _dictionnaireOfListeAgent)
+        {
+            List<NavMeshAgent> _liste = _dictionnaire.Key;
+            int _forme = _dictionnaire.Value;
+            switch(_forme)
+            {
+                case 0:
+
+                    Debug.Log("trait");
+                    break;
+                case 1:
+                    Debug.Log("Rond");
+                    break;
+                default:
+                    Debug.Log("wat ???");
+                    break;
+            }
         }
-        return 0;
     }
 }

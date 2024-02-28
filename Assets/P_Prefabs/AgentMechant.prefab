@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6449742924125496315}
   - component: {fileID: 7433849650085534825}
   - component: {fileID: 1328995347982363316}
-  - component: {fileID: 9046493430345479124}
   m_Layer: 11
   m_Name: Visor
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9046493430345479124
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766051559147324048}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4308968867366325615
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,8 +98,9 @@ GameObject:
   - component: {fileID: 1864077767445566511}
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 9073641381630960508}
-  - component: {fileID: 2463424206290343736}
   - component: {fileID: 8239917148519635375}
+  - component: {fileID: 2463424206290343736}
+  - component: {fileID: -7459695874861643661}
   m_Layer: 11
   m_Name: AgentMechant
   m_TagString: AgentMechant
@@ -282,6 +261,22 @@ MonoBehaviour:
   _NavMeshAgent: {fileID: 2756122981986454792}
   _TowerToDestroy: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
+  _GameManagerScript: {fileID: 0}
+--- !u!114 &8239917148519635375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11c0aa794e5b634fa8f7cbeeb99ccb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _GameManagerScript: {fileID: 0}
+  _MaxHealth: 50
+  _CurrentHealth: 0
 --- !u!114 &2463424206290343736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +293,7 @@ MonoBehaviour:
   _Tower: {fileID: 0}
   _damageAmount: 10
   _cooldown: 1
---- !u!114 &8239917148519635375
+--- !u!114 &-7459695874861643661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,8 +302,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308968867366325615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11c0aa794e5b634fa8f7cbeeb99ccb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c3aef9ba98a9247a5df8bed5f3e858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MaxHealth: 50
-  _CurrentHealth: 0
+  _HealtAgent: {fileID: 0}
+  _damageAmount: 50
+  _cooldown: 1

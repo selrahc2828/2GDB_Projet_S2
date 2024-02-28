@@ -38,9 +38,13 @@ public class AgentChoise : MonoBehaviour
         {
             if (_scroll > 0f)
             {
-                _AgentComportements[i]._ShootEnemy = true;
-                _AgentComportements[i]._SlowEnemy = false;
-                Debug.Log(_AgentComportements[i]._ShootEnemy);
+                if (IsAgentUsable(_AgentComportements[i].GetComponent<NavMeshAgent>()))
+                {
+                    _AgentComportements[i]._ShootEnemy = true;
+                    _AgentComportements[i]._SlowEnemy = false;
+                    Debug.Log(_AgentComportements[i]._ShootEnemy);
+                }
+               
             }
 
             if (_scroll < 0f)
@@ -55,32 +59,32 @@ public class AgentChoise : MonoBehaviour
             }
         }
 
-        // Update scale Ui
-        UpdateImageScales();
+        //// Update scale Ui
+        //UpdateImageScales();
     }
 
-    void UpdateImageScales()
-    {
+    //void UpdateImageScales()
+    //{
        
-        if (_AgentComportements.Any(agent => IsAgentUsable(agent.GetComponent<NavMeshAgent>()) && !agent._ShootEnemy))
-        {
-            _Shoot.transform.localScale = initialScale * 0.5f; 
-        }
-        else
-        {
-            _Shoot.transform.localScale = initialScale; 
-        }
+    //    if (_AgentComportements.Any(agent => IsAgentUsable(agent.GetComponent<NavMeshAgent>()) && !agent._ShootEnemy))
+    //    {
+    //        _Shoot.transform.localScale = initialScale * 0.5f; 
+    //    }
+    //    else
+    //    {
+    //        _Shoot.transform.localScale = initialScale; 
+    //    }
 
       
-        if (_AgentComportements.Any(agent => IsAgentUsable(agent.GetComponent<NavMeshAgent>()) && !agent._SlowEnemy))
-        {
-            _Slow.transform.localScale = initialScale * 0.5f; 
-        }
-        else
-        {
-            _Slow.transform.localScale = initialScale; 
-        }
-    }
+    //    if (_AgentComportements.Any(agent => IsAgentUsable(agent.GetComponent<NavMeshAgent>()) && !agent._SlowEnemy))
+    //    {
+    //        _Slow.transform.localScale = initialScale * 0.5f; 
+    //    }
+    //    else
+    //    {
+    //        _Slow.transform.localScale = initialScale; 
+    //    }
+    //}
 
 
     public bool IsAgentUsable(NavMeshAgent agent)
