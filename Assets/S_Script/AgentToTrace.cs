@@ -6,7 +6,6 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
@@ -27,17 +26,19 @@ public class AgentToTrace : MonoBehaviour
     [Header("Variables utiles")]
     public int _numberAgentAvailable;
     public float espaceEntreAgentPourCercle;
+    public float _slowMo;
+    public int _numberAgentNeeded;
 
     public GameObject _parentAgent;
     public GameManager _gameManager;
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
-    public Text _AgentTextAvailable;
 
     // Start is called before the first frame update
     void Start()
     {
+        _slowMo = _gameManager._slowMo;
         // taille de l'agennt (diametre)
         _sizeAgent = 1f;
         //Dictionnaire dans lequel je stoque des position et un booléen par position
@@ -75,6 +76,11 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Reset the time scale to normal
+            Time.timeScale = _slowMo;
+        }
 
         // Check du click gauche de la souris
         if (Input.GetMouseButton(0))
@@ -85,6 +91,8 @@ public class AgentToTrace : MonoBehaviour
         //Test si le bouton gauche de la souris est relevé
         if (Input.GetMouseButtonUp(0))
         {
+            // Reset the time scale to normal
+            Time.timeScale = 1f;
             //Ajout de la liste de position qui viens d'être créer dans la liste de liste
             _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
             StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
@@ -98,8 +106,6 @@ public class AgentToTrace : MonoBehaviour
         {
             testIfItWork();
         }
-
-        _AgentTextAvailable.text = "Agent Disponible : " + _numberAgentAvailable;
     }
 
     //outil de debug
@@ -137,6 +143,7 @@ public class AgentToTrace : MonoBehaviour
 
     void MakeTrace()
     {
+        _numberAgentNeeded = 0;
         //on tire le raycast là ou pointe la souris
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -153,6 +160,7 @@ public class AgentToTrace : MonoBehaviour
                     //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
                     InterpolateNewPointInBetween(hit.point, _dictionnairePositionTrace.Last());
                 }
+                _numberAgentNeeded++;
                 _dictionnairePositionTrace.Add(hit.point, true);
                 _listePositionTrace.Add(hit.point);
             }
@@ -221,6 +229,7 @@ public class AgentToTrace : MonoBehaviour
                     Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
                     //on ajoute la nouvelle position dans le dictionnaire de position avec le booléen a True
                     _dictionnairePositionTrace.Add(_interpolatedPosition, true);
+                    _numberAgentNeeded++;
                 }
             }
         }
@@ -285,7 +294,7 @@ public class AgentToTrace : MonoBehaviour
                 _chosenAgent.SetDestination(_pointPosition);
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _dictionnaireAgent[_chosenAgent] = false;
-                _chosenAgent.GetComponent<RecognizeItsSelf>()._launchTimer = true;
+                _chosenAgent.GetComponent<RecognizeItsSelf>()._aviability = false;
                 _chosenAgentsList.Add(_chosenAgent);
                 //on passe aussi le booléen de la position en false, ce qui signifie qu'il n'est plus disponible
                 _dictionnairePositionTrace[_chosenPosition] = false;
@@ -336,5 +345,4 @@ public class AgentToTrace : MonoBehaviour
             }
         }
     }
-
 }

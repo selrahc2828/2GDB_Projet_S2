@@ -121,5 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _HealtHp: {fileID: 0}
+  _GameManagerScript: {fileID: 0}
   _MaxHealth: 0
   _CurrentHealth: 0
