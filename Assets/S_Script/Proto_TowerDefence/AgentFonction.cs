@@ -83,16 +83,6 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        // change de range of the collider in fonction with booléen 
-        if (_ShootEnemy)
-        {
-            _ColliderTrigger.radius = _ShootRange;
-        }
-        
-        //if (_SlowEnemy)
-        //{
-        //    _ColliderTrigger.radius = _SlowRange;
-        //}
 
         time += Time.deltaTime;
 
@@ -107,7 +97,7 @@ public class AgentFonction : MonoBehaviour
 
 
         // Call A physics OverlapSphere to update list of agent 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _ColliderTrigger.radius, LayerMask.GetMask("AgentMechant"));
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
 
         // Add agent in the overlaps Sphere
         foreach (Collider collider in colliders)
