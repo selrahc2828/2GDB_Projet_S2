@@ -17,9 +17,9 @@ public class ResetAgent : MonoBehaviour
 
             // Create a RaycastHit variable to store information about the raycast hit
             RaycastHit hit;
-
+            float radius = 1f;
             // Perform the raycast
-            if (Physics.Raycast(ray, out hit, float.MaxValue, _affectedLayer))
+            if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
             {
                 if (!hit.collider.isTrigger)
                 {
