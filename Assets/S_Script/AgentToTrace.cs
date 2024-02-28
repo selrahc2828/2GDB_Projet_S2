@@ -27,6 +27,7 @@ public class AgentToTrace : MonoBehaviour
     public int _numberAgentAvailable;
     public float espaceEntreAgentPourCercle;
     public float _slowMo;
+    public int _numberAgentNeeded;
 
     public GameObject _parentAgent;
     public GameManager _gameManager;
@@ -142,6 +143,7 @@ public class AgentToTrace : MonoBehaviour
 
     void MakeTrace()
     {
+        _numberAgentNeeded = 0;
         //on tire le raycast là ou pointe la souris
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -158,6 +160,7 @@ public class AgentToTrace : MonoBehaviour
                     //appel de la fonction qui va créer artificiellement des points entre 2 points trop écarté
                     InterpolateNewPointInBetween(hit.point, _dictionnairePositionTrace.Last());
                 }
+                _numberAgentNeeded++;
                 _dictionnairePositionTrace.Add(hit.point, true);
                 _listePositionTrace.Add(hit.point);
             }
@@ -226,6 +229,7 @@ public class AgentToTrace : MonoBehaviour
                     Vector3 _interpolatedPosition = _lastPoint.Key + _direction * (_distanceBetweenPoints * i);
                     //on ajoute la nouvelle position dans le dictionnaire de position avec le booléen a True
                     _dictionnairePositionTrace.Add(_interpolatedPosition, true);
+                    _numberAgentNeeded++;
                 }
             }
         }

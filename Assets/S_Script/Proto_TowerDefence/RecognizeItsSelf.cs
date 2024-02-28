@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,22 +11,29 @@ public class RecognizeItsSelf : MonoBehaviour
     public AgentToTrace _TraceScript;
     public NavMeshAgent _selfAgent;
     public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
-    public float _resetTimer;
+    public float _resetTime;
     public bool _launchTimer;
     public GameManager _gameManager;
-    private float _timer;
+    public Material _initialMaterial;
+    public Material _tiredMaterial;
+
+    public float _lerpDuration = 15f;
+    public MeshRenderer _meshRenderer;
+    public float _lerpAmount;
 
 
     private void Awake()
     {
+        _meshRenderer = GetComponent<MeshRenderer>();
+        //_initialMaterial = GetComponent<MeshRenderer>().material;
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
-        _gameManager = GameObject.FindObjectOfType<GameManager>();
     }
     private void Start()
     {
-        _timer = 0f;
-        _resetTimer = _gameManager._resetTime;
+        _lerpDuration = _gameManager._fatigueDuration;
+        _lerpAmount = 0f;
+        _resetTime = _gameManager._resetTime;
         _launchTimer = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
@@ -47,8 +56,9 @@ public class RecognizeItsSelf : MonoBehaviour
                 if (hit.collider.gameObject == gameObject)
                 {
                     // The object is clicked
-                    Debug.Log(IsAvailable());
-                    Debug.Log(IsInShape());
+                    //Debug.Log(IsAvailable());
+                    //Debug.Log(IsInShape());
+                    //Debug.Log(WitchListIsIt().Count);
                 }
             }
         }
@@ -57,9 +67,36 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             if(_selfAgent.remainingDistance < 5)
             {
-                ResetPositionInTimer();
+                //ExaustAgent();
+                // Calculate lerpAmount based on elapsed time and lerp duration
+                
+                _lerpAmount += Time.deltaTime;
+                if (_lerpAmount > _lerpDuration)
+                {
+                    _lerpAmount = _lerpDuration;
+                }
+
+                float perc = _lerpAmount / _lerpDuration;
+                // Lerp between color1 and color2 based on lerpAmount
+                UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _tiredMaterial.color, perc);
+
+                // Apply the lerped color to the renderer's material
+                _meshRenderer.material.color = lerpedColor;
+                Debug.Log(_lerpAmount);
+                // If lerp is complete, reset the elapsed time and stop lerp
+                if (_lerpAmount >= 15f)
+                {
+                    _launchTimer = false;
+                }
             }
         }
+    }
+
+    IEnumerator ResetPositionInTimer()
+    {
+        yield return new WaitForSeconds(_resetTime);
+
+        ResetPosition();
     }
 
     public List<NavMeshAgent> WitchListIsIt()
@@ -76,6 +113,7 @@ public class RecognizeItsSelf : MonoBehaviour
         }
         return null;
     }
+
 
     public bool IsAvailable()
     {
@@ -102,19 +140,11 @@ public class RecognizeItsSelf : MonoBehaviour
         }
     }
 
-    public void ResetPositionInTimer()
+    public void ResetPosition()
     {
-        if(_timer >= _resetTimer)
-        {
-            _selfAgent.SetDestination(_basePosition);
-            _launchTimer = false;
-            _timer = 0;
-            ResetAllAgentData();
-        }
-        else
-        {
-            _timer += Time.deltaTime;
-        }
+        _selfAgent.SetDestination(_basePosition);
+        _launchTimer = false;
+        ResetAllAgentData();
     }
 
     public void ResetAllAgentData()

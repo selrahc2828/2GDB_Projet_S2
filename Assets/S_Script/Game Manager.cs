@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float _ShootRangeGameManager;
     public int _DamageAmount;
     public float _FireRate;
+    public float _fatigueDuration;
 
     [Header("Agent Mouvement Parameter")]
     public float _SpeedAgent;
