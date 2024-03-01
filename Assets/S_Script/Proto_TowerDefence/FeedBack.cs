@@ -22,13 +22,14 @@ public class FeedBack : MonoBehaviour
         Vector3 mouseScreenPosition = Input.mousePosition;
         _AgentUsed.transform.position = new Vector3(mouseScreenPosition.x + _OffSetX, mouseScreenPosition.y + _OffSetY, 0);
 
-        if (_AgentTraceScript._numberAgentNeeded <= 0f)
+
+        if (Input.GetMouseButton(0))
         {
-            _AgentUsed.color = new Color(_AgentUsed.color.r, _AgentUsed.color.g, _AgentUsed.color.b, 0f);
+            _AgentUsed.color = new Color(_AgentUsed.color.r, _AgentUsed.color.g, _AgentUsed.color.b, 0.8f);
         }
         else
         {
-            _AgentUsed.color = new Color(_AgentUsed.color.r, _AgentUsed.color.g, _AgentUsed.color.b, 1f);
+            _AgentUsed.color = new Color(_AgentUsed.color.r, _AgentUsed.color.g, _AgentUsed.color.b, 0f);
         }
 
 
