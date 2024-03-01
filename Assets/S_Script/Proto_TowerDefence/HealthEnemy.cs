@@ -8,23 +8,25 @@ public class HeathEnemy : MonoBehaviour
 {
     [Header("Reference")]
     public GameManager _GameManagerScript;
+    public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
 
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
+    public float _droppChance;
 
 
 
     public void Awake()
     {
+        _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
         _GameManagerScript = FindAnyObjectByType<GameManager>();
     }
 
 
     void Start()
     {
-        
-
+        _droppChance = 0.2f;
         _MaxHealth = _GameManagerScript._HeathEnemy;
 
         // Set CurrentHealth to Max Health
@@ -65,5 +67,16 @@ public class HeathEnemy : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+    }
+    private void OnDestroy()
+    {
+        // Generate a random number between 0 and 1
+        float randomValue = Random.value;
+
+        // Check if the random number is less than or equal to 0.2 (20% chance)
+        if (randomValue <= _droppChance)
+        {
+            _UpgradeAndMoneySystemScript._moneyNumber += 1;
+        }
     }
 }

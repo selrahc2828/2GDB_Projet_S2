@@ -43,6 +43,7 @@ public class AgentToTrace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _numberAgentAvailable = 0;
         _slowMo = _gameManager._slowMo;
         // taille de l'agennt (diametre)
         _sizeAgent = 1f;
@@ -107,6 +108,10 @@ public class AgentToTrace : MonoBehaviour
             _dictionnairePositionTrace.Clear();
             _listePositionTrace.Clear();
         }
+        if (Input.GetMouseButtonUp(1))
+        {
+            CountNumberAgentAvailable();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             testIfItWork();
@@ -137,15 +142,16 @@ public class AgentToTrace : MonoBehaviour
 
     void CountNumberAgentAvailable()
     {
-        _numberAgentAvailable = 0;
+        int _numberCounted = 0;
         //Parcour du dictionnaire d'agent
         foreach (KeyValuePair<NavMeshAgent, bool> _agent in _dictionnaireAgent)
         {
             if (_agent.Value)
             {
-                _numberAgentAvailable++;
+                _numberCounted++;
             }
         }
+        _numberAgentAvailable = _numberCounted;
     }
 
     void MakeTrace()
