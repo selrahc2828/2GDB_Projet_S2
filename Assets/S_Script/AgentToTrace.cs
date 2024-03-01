@@ -84,6 +84,7 @@ public class AgentToTrace : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            _numberAgentNeeded = 0;
             // Reset the time scale to normal
             Time.timeScale = _slowMo;
         }
@@ -156,7 +157,6 @@ public class AgentToTrace : MonoBehaviour
 
     void MakeTrace()
     {
-        _numberAgentNeeded = 0;
         //on tire le raycast là ou pointe la souris
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
