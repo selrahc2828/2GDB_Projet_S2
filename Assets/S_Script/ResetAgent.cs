@@ -32,6 +32,7 @@ public class ResetAgent : MonoBehaviour
                             foreach (NavMeshAgent _agent in _itsList)
                             {
                                 _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
+                                _agent.GetComponent<RecognizeItsSelf>()._canShoot = false;
                             }
                         }
                     }

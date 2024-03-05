@@ -22,6 +22,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private float _exaustionTrueLevel;
     private float _exaustionMaxLevel;
     public bool _aviability;
+    public bool _canShoot;
 
 
     private void Awake()
@@ -36,6 +37,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
         _aviability = true;
+        _canShoot = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
     }
@@ -67,6 +69,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             else
             {
+                _canShoot = true;
                 if (_exaustionTrueLevel <= _exaustionMaxLevel)
                 {
                     _exaustionTrueLevel += Time.deltaTime;
