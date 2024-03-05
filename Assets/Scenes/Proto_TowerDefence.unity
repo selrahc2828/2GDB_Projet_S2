@@ -1846,6 +1846,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyNumber: 0
+  _allAgents: []
+  _ActualDamage: {fileID: 1525364864}
+  _FireRate: {fileID: 942075429}
+  _Range: {fileID: 1588049832}
+  _MaxValue: 50
+  _MinValue: 0.5
 --- !u!114 &179187616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4529,14 +4535,14 @@ MonoBehaviour:
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
   _DamageAmount: 5
-  _FireRate: 3
+  _FireRate: 2
   _maxFatigue: 10
   _SpeedAgent: 15
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
-  _HeathEnemy: 100
+  _HeathEnemy: 500
   _SpawnRate: 2
   _SpeedEnemy: 5
   _AngularSpeedEnemy: 180
@@ -5280,8 +5286,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1214000205}
-        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+      - m_Target: {fileID: 179187615}
+        m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootFireRate1
         m_Mode: 1
         m_Arguments:
@@ -11183,8 +11189,6 @@ GameObject:
   - component: {fileID: 1214000202}
   - component: {fileID: 1214000201}
   - component: {fileID: 1214000200}
-  - component: {fileID: 1214000204}
-  - component: {fileID: 1214000205}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -11280,37 +11284,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1214000204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214000199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcea3087383198e41b3374fb54d07f45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AgentComportements: []
-  _TraceScript: {fileID: 179187612}
-  _Shoot: {fileID: 1902220191}
-  _Slow: {fileID: 585886636}
---- !u!114 &1214000205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214000199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7a06175b0d1234a941ee7c8ff56a49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allAgents: []
-  _MaxValue: 100
-  _MinValue: 0.5
 --- !u!1001 &1227023457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12036,8 +12009,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1214000205}
-        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+      - m_Target: {fileID: 179187615}
+        m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootDamage1
         m_Mode: 1
         m_Arguments:
@@ -14133,7 +14106,7 @@ GameObject:
   - component: {fileID: 1588049833}
   - component: {fileID: 1588049832}
   m_Layer: 5
-  m_Name: CurrentStatFireRate (1)
+  m_Name: CurrentStatRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17269,8 +17242,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1214000205}
-        m_TargetAssemblyTypeName: Upgrade, Assembly-CSharp
+      - m_Target: {fileID: 179187615}
+        m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootRange1
         m_Mode: 1
         m_Arguments:
