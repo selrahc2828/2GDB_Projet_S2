@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Upgrade : MonoBehaviour
 {
     [Header("Reference")]
-    public List<AgentFonction> _allAgents;
-
+    [SerializeField] private List<AgentFonction> _allAgents;
+    public Text _ActualDamage;
+    public Text _FireRate;
+    public Text _Range;
 
     [Header("Limit")]
     public int _MaxValue;
-    public int _MinValue;
+    public float _MinValue;
 
 
     void Start()
@@ -24,6 +27,7 @@ public class Upgrade : MonoBehaviour
         foreach (AgentFonction agent in _allAgents)
         {
             agent._damageAmount = Mathf.Clamp(agent._damageAmount + 5, 0, _MaxValue);
+            _ActualDamage.text = "Actual Damage = " + agent._damageAmount;
         }
     }
     #endregion
@@ -35,6 +39,7 @@ public class Upgrade : MonoBehaviour
         foreach (AgentFonction agent in _allAgents)
         {
             agent._ShootRange = Mathf.Clamp(agent._ShootRange + 5, 0, _MaxValue);
+            _Range.text = "Actual Range = " + agent._ShootRange;
         }
     }
     #endregion
@@ -46,7 +51,8 @@ public class Upgrade : MonoBehaviour
     {
         foreach (AgentFonction agent in _allAgents)
         {
-            agent._fireRate = Mathf.Clamp(agent._fireRate - 0.5f, _MinValue, _MaxValue); 
+            agent._fireRate = Mathf.Clamp(agent._fireRate - 0.5f, _MinValue, _MaxValue);
+            _FireRate.text = "Actual FireRate = " + agent._fireRate;
         }
     }
     #endregion
