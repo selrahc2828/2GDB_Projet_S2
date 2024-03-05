@@ -8,26 +8,33 @@ using UnityEngine.AI;
 
 public class RecognizeItsSelf : MonoBehaviour
 {
-    public Vector3 _basePosition;
+    [Header("Variable de Script")]
     public AgentToTrace _TraceScript;
-    public NavMeshAgent _selfAgent;
-    public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
-    public float _resetTime;
     public GameManager _gameManager;
+
+    [Header("Variable de Fatigue")]
+    public float _exaustionLevel;
+    private float _exaustionTrueLevel;
+    private float _exaustionMaxLevel;
     public Material _initialMaterial;
     public Material _exaustedMaterial;
     public MeshRenderer _meshRenderer;
 
-    public float _exaustionLevel;
-    private float _exaustionTrueLevel;
-    private float _exaustionMaxLevel;
-    public bool _aviability;
-    public bool _canShoot;
+
+    [Header("Variable de chainage des agents")]
     public int _towerProximityValue;
     public int _neighbourLowerProximityValue;
-    private int _idInMyList;
     public GameObject _tower;
     private Collider[] _neighbourAgents;
+
+
+    [Header("Autre")]
+    public bool _canShoot;
+    public bool _aviability;
+    public float _resetTime;
+    private Vector3 _basePosition;
+    private NavMeshAgent _selfAgent;
+    private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
 
 
     private void Awake()
