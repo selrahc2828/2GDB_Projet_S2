@@ -326,7 +326,6 @@ public class AgentToTrace : MonoBehaviour
     {
         Vector3 _firstAgent = _liste[0];
         Vector3 _lastAgent = _liste[_liste.Count-1];
-        Debug.Log(Vector3.Distance(_firstAgent, _lastAgent));
         if(Vector3.Distance(_firstAgent, _lastAgent) < espaceEntreAgentPourCercle)
         {
             return 1;
