@@ -41,7 +41,9 @@ public class AgentFonction : MonoBehaviour
     public int _damageAmount;
     public float _fireRate;
     private float time;
-    
+
+    private float nextFireTime = 0f;
+
 
     [Header("Particle System & Trail Renderer")]
     public ParticleSystem _projectileParticleSystem;
@@ -86,12 +88,10 @@ public class AgentFonction : MonoBehaviour
 
         time += Time.deltaTime;
 
-
-        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
+        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
         {
-
             ShootToEnemy();
-
+            nextFireTime = Time.time + (1f / _fireRate);
             time = 0;
         }
 
@@ -105,6 +105,7 @@ public class AgentFonction : MonoBehaviour
             GameObject enemy = collider.gameObject;
             if (!_EnemiesInRange.Contains(enemy))
             {
+                
                 _EnemiesInRange.Add(enemy);
                 // Remove all missing component when an other enemy overlap
                 _EnemiesInRange.RemoveAll(item => item == null);
@@ -116,7 +117,6 @@ public class AgentFonction : MonoBehaviour
                 }
             }
         }
-
     }
 
 
@@ -182,7 +182,7 @@ public class AgentFonction : MonoBehaviour
                 // Start Coroutine to lerp the position of the trail 
                 StartCoroutine(SpawnTrail(_Trail, hit));
 
-
+                #region DamageToEnemies
                 // ------ All this part to damage the enemy ------
                 HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
 
@@ -200,7 +200,7 @@ public class AgentFonction : MonoBehaviour
                         _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
                 }
-                // ------- ------
+                #endregion
             }
         }
     }
@@ -256,18 +256,5 @@ public class AgentFonction : MonoBehaviour
             return false;
         }
     }
-
-    //Gizmo Feedback
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying) return;
-
-        if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
-        }
-    }
-
 
 }

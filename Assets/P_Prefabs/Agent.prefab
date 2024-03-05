@@ -274,7 +274,7 @@ MonoBehaviour:
   _TowerPosition: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
   _damageAmount: 1
-  _fireRate: 20.7
+  _fireRate: 2
   _projectileParticleSystem: {fileID: 0}
   _TrailBullet: {fileID: 2733999121644330633, guid: 013d00decf436e14cba9bf6b1dc0ef43,
     type: 3}
