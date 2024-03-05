@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +12,7 @@ public class AgentFonction : MonoBehaviour
     public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
     public NavMeshAgent _NavMeshAgent;
+    public RecognizeItsSelf _AgentSelfScript;
 
     private GameObject currentTargetEnemy;
     [SerializeField] private List<GameObject> _EnemiesInRange = new List<GameObject>();
@@ -39,8 +41,11 @@ public class AgentFonction : MonoBehaviour
 
     [Header("Weapon Parameter")]
     public int _damageAmount;
+    public int _initialDamageAmount;
+    public float _initialFireRate;
     public float _fireRate;
     private float time;
+    public float _exaustion;
 
     private float nextFireTime = 0f;
 
@@ -59,6 +64,7 @@ public class AgentFonction : MonoBehaviour
 
     private void Start()
     {
+        _exaustion = _AgentSelfScript._exaustionLevel;
         time = 0f;
 
         // Get the script for all the agent in scene
@@ -72,8 +78,8 @@ public class AgentFonction : MonoBehaviour
 
         // Game Manager Value for Shoot
         _ShootRange = _GameManagerScript._ShootRangeGameManager;
-        _damageAmount = _GameManagerScript._DamageAmount;
-        _fireRate = _GameManagerScript._FireRate;
+        _initialDamageAmount = _GameManagerScript._DamageAmount;
+        _initialFireRate = _GameManagerScript._FireRate;
 
         // Game Manager Value For Mouvement 
         _NavMeshAgent.speed = _GameManagerScript._SpeedAgent;
@@ -85,7 +91,8 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-
+        _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
+        _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
         time += Time.deltaTime;
 
         if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
