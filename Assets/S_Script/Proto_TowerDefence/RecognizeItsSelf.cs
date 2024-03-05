@@ -23,6 +23,11 @@ public class RecognizeItsSelf : MonoBehaviour
     private float _exaustionMaxLevel;
     public bool _aviability;
     public bool _canShoot;
+    public int _towerProximityValue;
+    public int _neighbourLowerProximityValue;
+    private int _idInMyList;
+    public GameObject _tower;
+    private Collider[] _neighbourAgents;
 
 
     private void Awake()
@@ -33,6 +38,8 @@ public class RecognizeItsSelf : MonoBehaviour
     }
     private void Start()
     {
+        _neighbourLowerProximityValue = -2;
+        _towerProximityValue = -1;
         _exaustionMaxLevel = _gameManager._maxFatigue;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
@@ -55,6 +62,39 @@ public class RecognizeItsSelf : MonoBehaviour
         ResetPosition();
     }
 
+    public int getTowerProximity()
+    {
+        return _towerProximityValue;
+    }
+
+    public void CheckTowerProximity()
+    {
+        if(Vector3.Distance(transform.position, _tower.transform.position) <= 5)
+        {
+            _towerProximityValue = 0;
+        }
+        else
+        {
+            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _neighbourLowerProximityValue = -2;
+            foreach(Collider agentCollider in _neighbourAgents)
+            {
+                if(agentCollider.CompareTag("Agent"))
+                {
+                    int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
+                    if(_neighbourProximityValue > -1)
+                    {
+                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue < _neighbourLowerProximityValue)
+                        {
+                            _neighbourLowerProximityValue = _neighbourProximityValue;
+                        }
+                    }
+                }
+            }
+            _towerProximityValue = _neighbourLowerProximityValue + 1;
+        }
+    }
+
     public void CalculateExaustion()
     {
 
@@ -70,6 +110,7 @@ public class RecognizeItsSelf : MonoBehaviour
             else
             {
                 _canShoot = true;
+                CheckTowerProximity();
                 if (_exaustionTrueLevel <= _exaustionMaxLevel)
                 {
                     _exaustionTrueLevel += Time.deltaTime;
