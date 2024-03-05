@@ -5,25 +5,46 @@ using UnityEngine.UI;
 
 public class UpgradeAndMoneySystem : MonoBehaviour
 {
-    public int _moneyNumber;
+    
 
     [Header("Reference")]
     [SerializeField] private List<AgentFonction> _allAgents;
     public Text _ActualDamage;
     public Text _FireRate;
     public Text _Range;
+    public GameObject _PanelMenu;
 
     [Header("Limit")]
     public int _MaxDamageValue;
     public int _MaxFireRateValue;
     public int _MaxRangeValue;
-    public float _MinValue;
+
+
+    [Header("Money")]
+    public int _moneyNumber;
+    public Text _MoneyText;
+
+    private bool _isMenuOpen = false;
+
 
     void Start()
     {
         _moneyNumber = 0;
         _allAgents = new List<AgentFonction>(FindObjectsOfType<AgentFonction>());
     }
+
+    private void Update()
+    {
+        _MoneyText.text = "Money  : " + _moneyNumber.ToString();
+    }
+
+
+    public void OpenMenu()
+    {
+        _isMenuOpen = !_isMenuOpen;
+        _PanelMenu.SetActive(_isMenuOpen);
+    }
+
 
     #region ShootDamage
     public void UpgradeShootDamage1()
@@ -55,7 +76,7 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     {
         foreach (AgentFonction agent in _allAgents)
         {
-            agent._fireRate = Mathf.Clamp(agent._fireRate - 0.5f, _MinValue, _MaxFireRateValue);
+            agent._fireRate = Mathf.Clamp(agent._fireRate + 0.5f, 0, _MaxFireRateValue);
             _FireRate.text = "Actual FireRate = " + agent._fireRate;
         }
     }
