@@ -59,12 +59,12 @@ public class AgentFonction : MonoBehaviour
     public void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
+        _AgentSelfScript = FindAnyObjectByType<RecognizeItsSelf>();
     }
 
 
     private void Start()
     {
-        _exaustion = _AgentSelfScript._exaustionLevel;
         time = 0f;
 
         // Get the script for all the agent in scene
@@ -91,6 +91,7 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
+        _exaustion = _AgentSelfScript._exaustionLevel;
         _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
         _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
         time += Time.deltaTime;
