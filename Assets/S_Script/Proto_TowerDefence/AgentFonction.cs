@@ -117,6 +117,10 @@ public class AgentFonction : MonoBehaviour
             }
         }
 
+        Debug.Log(_damageAmount);
+        Debug.Log(_fireRate);
+        Debug.Log(_ShootRange);
+
     }
 
 
