@@ -84,7 +84,7 @@ public class RecognizeItsSelf : MonoBehaviour
                     int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
                     if(_neighbourProximityValue > -1)
                     {
-                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue < _neighbourLowerProximityValue)
+                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue <= _neighbourLowerProximityValue)
                         {
                             _neighbourLowerProximityValue = _neighbourProximityValue;
                         }
@@ -116,6 +116,10 @@ public class RecognizeItsSelf : MonoBehaviour
                     _exaustionTrueLevel += Time.deltaTime;
                 }
             }
+        }
+        else
+        {
+            _towerProximityValue = -1;
         }
         _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
     }
