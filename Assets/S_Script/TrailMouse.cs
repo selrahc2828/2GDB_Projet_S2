@@ -6,6 +6,8 @@ public class TrailMouse : MonoBehaviour
     public LayerMask _terrainLayer;
     public TrailRenderer _trailRendererPrefab;
 
+    
+
     private TrailRenderer _currentTrailRenderer;
     private bool _isTracing = false;
 
@@ -57,6 +59,9 @@ public class TrailMouse : MonoBehaviour
         {
             _currentTrailRenderer.transform.position = hit.point;
         }
+
+
+
     }
 
     private void StopTracing()
@@ -65,7 +70,7 @@ public class TrailMouse : MonoBehaviour
         {
             // Destroy the prefab 
             _isTracing = false;
-            Destroy(_currentTrailRenderer.gameObject);
+            //Destroy(_currentTrailRenderer.gameObject);
         }
     }
 }

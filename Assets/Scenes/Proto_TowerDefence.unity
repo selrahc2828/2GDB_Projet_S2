@@ -4809,7 +4809,8 @@ MonoBehaviour:
   _terrainLayer:
     serializedVersion: 2
     m_Bits: 8
-  _trailRendererPrefab: {fileID: 1028533610}
+  _trailRendererPrefab: {fileID: 6693470882298025632, guid: c93a919296c7d4743846fda352e625c3,
+    type: 3}
 --- !u!4 &439223213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
@@ -9422,12 +9423,6 @@ PrefabInstance:
 --- !u!4 &1028533609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3810626713244593360}
-  m_PrefabAsset: {fileID: 0}
---- !u!96 &1028533610 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 6693470882298025632, guid: c93a919296c7d4743846fda352e625c3,
     type: 3}
   m_PrefabInstance: {fileID: 3810626713244593360}
   m_PrefabAsset: {fileID: 0}
