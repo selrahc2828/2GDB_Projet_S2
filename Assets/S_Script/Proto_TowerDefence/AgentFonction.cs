@@ -121,6 +121,9 @@ public class AgentFonction : MonoBehaviour
                 if (currentTargetEnemy == null)
                 {
                     currentTargetEnemy = enemy;
+
+                    Vector3 directionToEnemy = (currentTargetEnemy.transform.position - transform.position).normalized;
+                    transform.LookAt(currentTargetEnemy.transform.position);
                 }
                 
             }
