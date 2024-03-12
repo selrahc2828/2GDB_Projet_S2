@@ -103,7 +103,6 @@ public class AgentFonction : MonoBehaviour
             time = 0;
         }
 
-
         // Call A physics OverlapSphere to update list of agent 
         Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
 
@@ -113,16 +112,17 @@ public class AgentFonction : MonoBehaviour
             GameObject enemy = collider.gameObject;
             if (!_EnemiesInRange.Contains(enemy))
             {
-                
                 _EnemiesInRange.Add(enemy);
                 // Remove all missing component when an other enemy overlap
                 _EnemiesInRange.RemoveAll(item => item == null);
+
 
                 // if first enemys list set it to enemy to aim 
                 if (currentTargetEnemy == null)
                 {
                     currentTargetEnemy = enemy;
                 }
+                
             }
         }
     }
@@ -178,9 +178,6 @@ public class AgentFonction : MonoBehaviour
         {
             // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
-
-            
-            _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
             
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
