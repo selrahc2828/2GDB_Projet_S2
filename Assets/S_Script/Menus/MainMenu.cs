@@ -22,11 +22,11 @@ public class MainMenu : MonoBehaviour
     }
     public void LevelSelect()
     {
-        //ceneManager.LoadScene("Level_Select");
+        SceneManager.LoadScene("Level_Select");
     }
     public void Option()
     {
-        //ceneManager.LoadScene("Option_Scene");
+        SceneManager.LoadScene("Option_Scene");
     }
     public void Quit_Game()
     {

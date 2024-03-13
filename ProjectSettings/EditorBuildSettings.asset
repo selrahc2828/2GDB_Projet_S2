@@ -5,19 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Archives/PushAnDPull/Proto_RomainPushAndPull.unity
     guid: 63b8ec30e4d154244adaa32a4c87f95b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Archives/GregAndMaggies/Proto_RomainGregAndMaggie.unity
     guid: 5b5bfc93ed7d3004fa4bb96898aff484
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Archives/GottaGoFast/Proto_RomainGottaGoFast.unity
     guid: 84a870c2e6a37c741a0978af11d72901
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Archives/AgentSpawnToMouse/Proto_RomainSpawnAgentToMouse.unity
     guid: e907bf449eba64a4ebe415890ee1b3df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Archives/LifeAndDeath/Proto_RomainLifeAndDeath.unity
     guid: 55aedee3dd8431f4c8d87947d070b1a1
+  - enabled: 1
+    path: Assets/Scenes/Menus/Main_Menu.unity
+    guid: a0afb785e7611a74dbbe89999f1752c1
+  - enabled: 1
+    path: Assets/Scenes/Menus/Level_Select.unity
+    guid: 8e2be327f482852468d4ce0213576d2d
+  - enabled: 1
+    path: Assets/Scenes/Menus/Option_Scene.unity
+    guid: fdb90ae23fa34864b964c5641d59690b
   m_configObjects: {}
