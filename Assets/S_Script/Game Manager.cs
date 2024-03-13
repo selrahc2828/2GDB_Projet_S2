@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float _ShootRangeGameManager;
     public int _DamageAmount;
     public float _FireRate;
-    public float _maxFatigue;
+    public float _maxFatigueSeconde;
     
 
     [Header("Agent Mouvement Parameter")]
@@ -50,5 +50,20 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Parameter")]
     public float _slowMo;
+    public bool _gamePaused;
+    public bool _gameLose;
 
+    private void Update()
+    {
+        CheckIfGameIsLose();
+    }
+
+
+    public void CheckIfGameIsLose()
+    {
+        if (_gameLose)
+        {
+
+        }
+    }
 }

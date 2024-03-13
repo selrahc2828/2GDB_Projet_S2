@@ -47,7 +47,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
-        _exaustionMaxLevel = _gameManager._maxFatigue;
+        _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
         _aviability = true;
@@ -58,8 +58,11 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        CalculateExaustion();
-        UpdateExaustionMeter();
+        if(_gameManager._gameLose)
+        {
+            CalculateExaustion();
+            UpdateExaustionMeter();
+        }
     }
 
     IEnumerator ResetPositionInTimer()

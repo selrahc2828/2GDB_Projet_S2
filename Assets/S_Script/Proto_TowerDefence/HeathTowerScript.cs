@@ -16,6 +16,8 @@ public class HeathTowerScript : MonoBehaviour
     public int _CurrentHealth;
 
 
+
+
     public void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
@@ -40,6 +42,7 @@ public class HeathTowerScript : MonoBehaviour
         // DEFEAT
         if (_CurrentHealth <= 0 )
         {
+            _GameManagerScript._gameLose = true;
             Debug.Log("Defeat");
         }
     }
