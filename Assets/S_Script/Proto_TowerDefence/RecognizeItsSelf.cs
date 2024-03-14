@@ -1,7 +1,5 @@
-using FMOD;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,9 +14,11 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _exaustionLevel;
     private float _exaustionTrueLevel;
     private float _exaustionMaxLevel;
-    public Material _initialMaterial;
-    public Material _exaustedMaterial;
+    public Material _MaterialEmisive;
     public MeshRenderer _meshRenderer;
+    private float _InitialIntensity;
+
+    public Color emissionColor = Color.white;
 
 
     [Header("Variable de chainage des agents")]
@@ -43,8 +43,10 @@ public class RecognizeItsSelf : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
     }
+
     private void Start()
     {
+
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _exaustionMaxLevel = _gameManager._maxFatigue;
@@ -59,7 +61,26 @@ public class RecognizeItsSelf : MonoBehaviour
     private void Update()
     {
         CalculateExaustion();
-        UpdateExaustionMeter();
+        //UpdateExaustionMeter();
+
+        float emissionIntensity = Mathf.PingPong(Time.time, 1.0f);
+        SetEmissionIntensity(emissionIntensity);
+    }
+
+    void SetEmissionIntensity(float intensity)
+    {
+        // Assurez-vous que le matériau est émissif
+        if (_MaterialEmisive != null && _MaterialEmisive.HasProperty("_EmissionColor"))
+        {
+            // Calculer la composante verte (G) en fonction de l'épuisement
+            float greenValue = Mathf.Lerp(255f, 0f, _exaustionLevel); // Utilisez Mathf.Lerp pour interpoler entre 255 (pleinement épuisé) et 0 (non épuisé)
+
+            // Créer une nouvelle couleur en utilisant la valeur verte calculée, en gardant les autres composants (rouge et bleu) inchangés
+            Color newEmissionColor = new Color(0, greenValue / 255f, 0); // Divisez par 255f pour normaliser la valeur entre 0 et 1
+
+            // Appliquer la nouvelle couleur émissive
+            _MaterialEmisive.SetColor("_EmissionColor", newEmissionColor);
+        }
     }
 
     IEnumerator ResetPositionInTimer()
@@ -130,15 +151,21 @@ public class RecognizeItsSelf : MonoBehaviour
         }
         _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
     }
+    
+    //public void UpdateExaustionMeter()
+    //{
+    //    // Assurez-vous que le matériau et le MeshRenderer sont définis
+    //    if (_MaterialEmisive != null && _meshRenderer != null)
+    //    {
+    //        // Calculez la nouvelle intensité d'émission en multipliant par le niveau d'exhaustion
+    //        float newEmissionIntensity = _InitialIntensity * _exaustionLevel;
+    //        // Appliquez la nouvelle intensité d'émission au matériau
+    //        _MaterialEmisive.SetFloat("_EmissionIntensity", newEmissionIntensity);
 
-    public void UpdateExaustionMeter()
-    {
-        // Lerp between color1 and color2 based on lerpAmount
-        UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _exaustedMaterial.color, _exaustionLevel);
-
-        // Apply the lerped color to the renderer's material
-        _meshRenderer.material.color = lerpedColor;
-    }
+    //        // Actualisez le rendu pour voir les changements
+    //        _meshRenderer.UpdateGIMaterials();
+    //    }
+    //}
 
     public List<NavMeshAgent> WitchListIsIt()
     {

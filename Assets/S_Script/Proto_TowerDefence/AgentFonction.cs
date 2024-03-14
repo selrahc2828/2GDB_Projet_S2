@@ -106,6 +106,11 @@ public class AgentFonction : MonoBehaviour
         // Call A physics OverlapSphere to update list of agent 
         Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
 
+        if (currentTargetEnemy != null)
+        {
+            transform.LookAt(currentTargetEnemy.transform.position);
+        }
+
         // Add agent in the overlaps Sphere
         foreach (Collider collider in colliders)
         {
@@ -116,20 +121,15 @@ public class AgentFonction : MonoBehaviour
                 // Remove all missing component when an other enemy overlap
                 _EnemiesInRange.RemoveAll(item => item == null);
 
-
                 // if first enemys list set it to enemy to aim 
                 if (currentTargetEnemy == null)
                 {
                     currentTargetEnemy = enemy;
-
-                    Vector3 directionToEnemy = (currentTargetEnemy.transform.position - transform.position).normalized;
-                    transform.LookAt(currentTargetEnemy.transform.position);
                 }
                 
             }
         }
     }
-
 
 
     //private void OnTriggerEnter(Collider other)
