@@ -108,7 +108,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d427f04df7d0df4ba4e859e67b1e09c, type: 2}
+      objectReference: {fileID: 2100000, guid: 912ef5be6eca6e748954cbefff26bc1d, type: 2}
     - target: {fileID: 919132149155446097, guid: b25ed652dbe1fc34498353c3c61fc4ef,
         type: 3}
       propertyPath: m_Name
@@ -281,7 +281,8 @@ MonoBehaviour:
   _TraceScript: {fileID: 0}
   _gameManager: {fileID: 0}
   _exaustionLevel: 0
-  _MaterialEmisive: {fileID: 2100000, guid: 4d427f04df7d0df4ba4e859e67b1e09c, type: 2}
+  _NotExaustMaterial: {fileID: 2100000, guid: 912ef5be6eca6e748954cbefff26bc1d, type: 2}
+  _ExaustMaterial: {fileID: 2100000, guid: f0d59dcae2d107748810b4e3c07d0d05, type: 2}
   _meshRenderer: {fileID: 0}
   _towerProximityValue: 0
   _neighbourLowerProximityValue: 0

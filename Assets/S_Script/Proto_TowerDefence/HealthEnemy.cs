@@ -52,7 +52,7 @@ public class HeathEnemy : MonoBehaviour
         _CurrentHealth -= damageAmount;
         //Debug.Log(gameObject.name + " took damage: " + damageAmount);
 
-        if (_CurrentHealth < 0)
+        if (_CurrentHealth <= 0)
         {
             Die();
         }
