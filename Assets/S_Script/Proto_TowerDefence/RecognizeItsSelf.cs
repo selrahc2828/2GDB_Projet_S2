@@ -36,7 +36,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
+
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
     }
