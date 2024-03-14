@@ -52,18 +52,27 @@ public class GameManager : MonoBehaviour
     public float _slowMo;
     public bool _gamePaused;
     public bool _gameLose;
+    public bool _gameWin;
+    public bool _gameStarted;
+    public bool _waveStarted;
+    public int _numberOfEnemyOnScreen;
+    public GameObject _gameLoseCanevas;
+    public GameObject _gameWinCanevas;
 
     private void Update()
     {
-        CheckIfGameIsLose();
+        CheckIfGameIsLoseOrWin();
     }
 
 
-    public void CheckIfGameIsLose()
+    public void CheckIfGameIsLoseOrWin()
     {
         if (_gameLose)
         {
-
+            _gameLoseCanevas.SetActive(true);
+        }else if (_gameWin) 
+        {
+            _gameWinCanevas.SetActive(true);
         }
     }
 }

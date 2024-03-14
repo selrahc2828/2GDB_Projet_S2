@@ -82,7 +82,7 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_gameManager._gameLose)
+        if(!_gameManager._gameLose)
         {
             if (Input.GetMouseButtonDown(0))
             {

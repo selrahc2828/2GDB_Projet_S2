@@ -15,38 +15,30 @@ public class ResetAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!_GameManagerScript._gameLose)
+        if(!_GameManagerScript._gameLose && Input.GetMouseButtonDown(1))
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                // Create a ray from the mouse cursor position
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Create a ray from the mouse cursor position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                // Create a RaycastHit variable to store information about the raycast hit
-                RaycastHit hit;
-                float radius = 1f;
-                // Perform the raycast
-                if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
+            // Create a RaycastHit variable to store information about the raycast hit
+            RaycastHit hit;
+            float radius = 1f;
+            // Perform the raycast
+            if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
+            {
+                if (!hit.collider.isTrigger && hit.collider.gameObject.CompareTag("Agent"))
                 {
-                    if (!hit.collider.isTrigger)
+                    List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
+                    if (_itsList != null)
                     {
-                        // Check if the collider hit is attached to the object you're interested in
-                        if (hit.collider.gameObject.CompareTag("Agent"))
+                        foreach (NavMeshAgent _agent in _itsList)
                         {
-                            List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
-                            if (_itsList != null)
-                            {
-                                foreach (NavMeshAgent _agent in _itsList)
-                                {
-                                    _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
-                                    _agent.GetComponent<RecognizeItsSelf>()._canShoot = false;
-                                }
-                            }
+                            _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
+                            _agent.GetComponent<RecognizeItsSelf>()._canShoot = false;
                         }
                     }
                 }
             }
-
         }
     }
 }

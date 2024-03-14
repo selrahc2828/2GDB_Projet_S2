@@ -26,7 +26,7 @@ public class SpawnerEnnemy : MonoBehaviour
         _spawnCooldown = _GameManagerScript._SpawnRate;
 
         // Call the IEnumerator
-        StartCoroutine(SpawnEnemies());
+        //StartCoroutine(SpawnEnemies());
     }
 
     IEnumerator SpawnEnemies()
@@ -56,5 +56,15 @@ public class SpawnerEnnemy : MonoBehaviour
         // instantiate the enemy to the spawn position 
         GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
         Instantiate(enemyPrefab, _spawnPoints[randomIndex].position, Quaternion.identity);
+    }
+
+    public void SpawnAWave(int numberOfEnemy)
+    {
+        for(int i = 0; i < numberOfEnemy; i++)
+        {
+            int randomIndex = Random.Range(0, _spawnPoints.Length);
+            GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
+            Instantiate(enemyPrefab, _spawnPoints[randomIndex].position, Quaternion.identity);
+        }
     }
 }

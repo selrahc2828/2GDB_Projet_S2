@@ -58,7 +58,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        if(_gameManager._gameLose)
+        if(!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
