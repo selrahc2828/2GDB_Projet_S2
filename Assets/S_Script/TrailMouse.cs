@@ -3,7 +3,7 @@ using UnityEngine;
 public class TrailMouse : MonoBehaviour
 {
     public LayerMask _terrainLayer;
-    public GameObject _lineRendererPrefab; // Reference to the GameObject with LineRenderer attached
+    public GameObject _lineRendererPrefab; 
 
     private LineRenderer _currentLineRenderer;
     private bool _isTracing = false;
@@ -45,7 +45,6 @@ public class TrailMouse : MonoBehaviour
         }
     }
 
-
     private void UpdateTracerPosition()
     {
         RaycastHit hit;
@@ -56,21 +55,11 @@ public class TrailMouse : MonoBehaviour
         {
             Vector3 newPosition = hit.point;
 
-            // Calculate the rotation to align with the Y axis
-            Quaternion rotation = Quaternion.LookRotation(Vector3.up);
-
-            // Set the rotation
-            _currentLineRenderer.transform.rotation = rotation;
-
-            // Adjust the position to be slightly above the ground to avoid z-fighting
-            newPosition.y += 0.01f;
-
             // Set the position
             _currentLineRenderer.positionCount++;
             _currentLineRenderer.SetPosition(_currentLineRenderer.positionCount - 1, newPosition);
         }
     }
-
 
     private void StopTracing()
     {
