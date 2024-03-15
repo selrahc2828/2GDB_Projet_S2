@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class TrailMouse : MonoBehaviour
 {
-
     public LayerMask _terrainLayer;
-    public TrailRenderer _trailRendererPrefab;
+    public GameObject _lineRendererPrefab; // Reference to the GameObject with LineRenderer attached
 
-    
-
-    private TrailRenderer _currentTrailRenderer;
+    private LineRenderer _currentLineRenderer;
     private bool _isTracing = false;
 
     private void Update()
     {
-        // Call the starting or finish fonction
+        // Call the starting or finish function
         if (Input.GetMouseButtonDown(0))
         {
             StartTracing();
@@ -23,14 +20,14 @@ public class TrailMouse : MonoBehaviour
             StopTracing();
         }
 
-        // Call Fonction to Update the position of trail 
+        // Call Function to Update the position of line
         if (_isTracing)
         {
             UpdateTracerPosition();
         }
     }
 
-    // Start The trail 
+    // Start The line 
     private void StartTracing()
     {
         // Raycast to know where we aim
@@ -39,38 +36,45 @@ public class TrailMouse : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _terrainLayer))
         {
-            // Instantiate Trail RendererPrefab 
-            GameObject tracerObject = new GameObject("TrailRenderer");
-            _currentTrailRenderer = tracerObject.AddComponent<TrailRenderer>();
-            _currentTrailRenderer = Instantiate(_trailRendererPrefab);
-            _currentTrailRenderer.transform.position = hit.point;
-            _currentTrailRenderer.Clear();
+            // Instantiate LineRendererPrefab 
+            GameObject lineObject = Instantiate(_lineRendererPrefab);
+            _currentLineRenderer = lineObject.GetComponent<LineRenderer>();
+            _currentLineRenderer.positionCount = 1; // Set initial position count
+            _currentLineRenderer.SetPosition(0, hit.point); // Set initial position
             _isTracing = true;
         }
     }
+
 
     private void UpdateTracerPosition()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        // Update the prefab 
+        // Update the line renderer
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, _terrainLayer))
         {
-            _currentTrailRenderer.transform.position = hit.point;
+            Vector3 newPosition = hit.point;
+
+            // Calculate the rotation to align with the Y axis
+            Quaternion rotation = Quaternion.LookRotation(Vector3.up);
+
+            // Set the rotation
+            _currentLineRenderer.transform.rotation = rotation;
+
+            // Adjust the position to be slightly above the ground to avoid z-fighting
+            newPosition.y += 0.01f;
+
+            // Set the position
+            _currentLineRenderer.positionCount++;
+            _currentLineRenderer.SetPosition(_currentLineRenderer.positionCount - 1, newPosition);
         }
-
-
-
     }
+
 
     private void StopTracing()
     {
-        if (_currentTrailRenderer != null)
-        {
-            // Destroy the prefab 
-            _isTracing = false;
-            //Destroy(_currentTrailRenderer.gameObject);
-        }
+        _isTracing = false;
+        _currentLineRenderer = null; // Reset the current LineRenderer reference
     }
 }
