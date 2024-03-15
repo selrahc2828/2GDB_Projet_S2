@@ -7193,10 +7193,20 @@ PrefabInstance:
       propertyPath: m_Time
       value: Infinity
       objectReference: {fileID: 0}
+    - target: {fileID: 6693470882298025632, guid: c93a919296c7d4743846fda352e625c3,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6958666524480024781, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
       propertyPath: m_Name
       value: TrailMouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958666524480024781, guid: c93a919296c7d4743846fda352e625c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
