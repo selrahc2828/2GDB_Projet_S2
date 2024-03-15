@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8811485784818922583}
   - component: {fileID: 6693470882298025632}
-  - component: {fileID: 4260348093604309946}
   m_Layer: 0
   m_Name: TrailMouse
   m_TagString: Untagged
@@ -137,16 +136,3 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!114 &4260348093604309946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6958666524480024781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1022dfb37bb6974594f66a9e71bc17d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockYAlignment: 1
