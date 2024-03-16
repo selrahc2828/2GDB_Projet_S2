@@ -44,7 +44,7 @@ public class Option : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main_Menu");
     }
     public void ApplyChange()
     {
