@@ -91,45 +91,45 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        _exaustion = _AgentSelfScript._exaustionLevel;
-        _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
-        _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
-        time += Time.deltaTime;
-
-        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
+        if(!_GameManagerScript._gameLose)
         {
-            ShootToEnemy();
-            nextFireTime = Time.time + (1f / _fireRate);
-            time = 0;
-        }
+            _exaustion = _AgentSelfScript._exaustionLevel;
+            _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
+            _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
+            time += Time.deltaTime;
 
-        // Call A physics OverlapSphere to update list of agent 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
-
-        if (currentTargetEnemy != null)
-        {
-            transform.LookAt(currentTargetEnemy.transform.position);
-        }
-
-        // Add agent in the overlaps Sphere
-        foreach (Collider collider in colliders)
-        {
-            GameObject enemy = collider.gameObject;
-            if (!_EnemiesInRange.Contains(enemy))
+            if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
             {
-                _EnemiesInRange.Add(enemy);
-                // Remove all missing component when an other enemy overlap
-                _EnemiesInRange.RemoveAll(item => item == null);
+                ShootToEnemy();
+                nextFireTime = Time.time + (1f / _fireRate);
+                time = 0;
+            }
 
-                // if first enemys list set it to enemy to aim 
-                if (currentTargetEnemy == null)
+
+            // Call A physics OverlapSphere to update list of agent 
+            Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
+
+            // Add agent in the overlaps Sphere
+            foreach (Collider collider in colliders)
+            {
+                GameObject enemy = collider.gameObject;
+                if (!_EnemiesInRange.Contains(enemy))
                 {
-                    currentTargetEnemy = enemy;
+
+                    _EnemiesInRange.Add(enemy);
+                    // Remove all missing component when an other enemy overlap
+                    _EnemiesInRange.RemoveAll(item => item == null);
+
+                    // if first enemys list set it to enemy to aim 
+                    if (currentTargetEnemy == null)
+                    {
+                        currentTargetEnemy = enemy;
+                    }
                 }
-                
             }
         }
     }
+
 
 
     //private void OnTriggerEnter(Collider other)
@@ -181,6 +181,9 @@ public class AgentFonction : MonoBehaviour
         {
             // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
+
+            
+            _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
 
             
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))

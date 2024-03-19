@@ -7,6 +7,11 @@ public class TrailMouse : MonoBehaviour
 
     private LineRenderer _currentLineRenderer;
     private bool _isTracing = false;
+    public GameManager _GameManagerScript;
+    private void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
 
     private void Update()
     {

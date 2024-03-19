@@ -1,5 +1,7 @@
+using FMOD;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -14,9 +16,10 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _exaustionLevel;
     private float _exaustionTrueLevel;
     private float _exaustionMaxLevel;
-    public Material _NotExaustMaterial;
-    public Material _ExaustMaterial;
+    public Material _initialMaterial;
+    public Material _exaustedMaterial;
     public MeshRenderer _meshRenderer;
+
 
     [Header("Variable de chainage des agents")]
     public int _towerProximityValue;
@@ -36,17 +39,15 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Awake()
     {
-
+        _meshRenderer = GetComponent<MeshRenderer>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
     }
-
     private void Start()
     {
-
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
-        _exaustionMaxLevel = _gameManager._maxFatigue;
+        _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
         _aviability = true;
@@ -57,12 +58,12 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        CalculateExaustion();
-        //UpdateExaustionMeter();
-        UpdateExaustionMeter();
+        if(!_gameManager._gameLose)
+        {
+            CalculateExaustion();
+            UpdateExaustionMeter();
+        }
     }
-
-
 
     IEnumerator ResetPositionInTimer()
     {
@@ -135,8 +136,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void UpdateExaustionMeter()
     {
-        UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_NotExaustMaterial.color, _ExaustMaterial.color, _exaustionLevel);
+        // Lerp between color1 and color2 based on lerpAmount
+        UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _exaustedMaterial.color, _exaustionLevel);
 
+        // Apply the lerped color to the renderer's material
         _meshRenderer.material.color = lerpedColor;
     }
 
