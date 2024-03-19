@@ -25,7 +25,7 @@ public class CameraRotation : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(2))
         {
             RotateCamera();
         }
