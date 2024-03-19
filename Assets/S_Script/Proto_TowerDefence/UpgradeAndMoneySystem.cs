@@ -15,9 +15,9 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     public GameObject _PanelMenu;
 
     [Header("Limit")]
-    public int _MaxDamageValue;
-    public int _MaxFireRateValue;
-    public int _MaxRangeValue;
+    public float _MaxDamageValue;
+    public float _MaxFireRateValue;
+    public float _MaxRangeValue;
 
 
     [Header("Money")]
@@ -54,7 +54,7 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     {
         foreach (AgentFonction agent in _allAgents)
         {
-            agent._damageAmount = Mathf.Clamp(agent._damageAmount + 5, 0, _MaxDamageValue);
+            agent._damageAmount = (int)Mathf.Clamp(agent._damageAmount + 5f, 0f, _MaxDamageValue);
             _ActualDamage.text = "Actual Damage = " + agent._damageAmount;
         }
     }
@@ -65,7 +65,7 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     {
         foreach (AgentFonction agent in _allAgents)
         {
-            agent._ShootRange = Mathf.Clamp(agent._ShootRange + 5, 0, _MaxRangeValue);
+            agent._ShootRange = Mathf.Clamp(agent._ShootRange + 5f, 0f, _MaxRangeValue);
             _Range.text = "Actual Range = " + agent._ShootRange;
         }
     }
@@ -76,7 +76,7 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     {
         foreach (AgentFonction agent in _allAgents)
         {
-            agent._fireRate = Mathf.Clamp(agent._fireRate + 0.5f, 0, _MaxFireRateValue);
+            agent._fireRate = Mathf.Clamp(agent._fireRate + 0.5f, 0f, _MaxFireRateValue);
             _FireRate.text = "Actual FireRate = " + agent._fireRate;
         }
     }
