@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 53232845}
   serializedVersion: 2
   m_LocalRotation: {x: 0.537552, y: -0, z: -0, w: 0.8432306}
-  m_LocalPosition: {x: -14.893135, y: 101.1237, z: -61.316788}
+  m_LocalPosition: {x: -5.1, y: 328.9, z: -153.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,7 +446,7 @@ MonoBehaviour:
   rotationSpeed: 5
   distanceFromTarget: 70
   rotationSmoothTime: 1
-  pitchMinMax: {x: 3, y: 85}
+  pitchMinMax: {x: 35, y: 35}
   zoomSpeed: 20
   minZoomDistance: 30
   maxZoomDistance: 100
@@ -536,8 +536,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 57
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1552,6 +1552,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac5de7e221c360408eb4fcf1f4b3f9c, type: 3}
+--- !u!1 &149655866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6958666524480024781, guid: c93a919296c7d4743846fda352e625c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 527020595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &150367548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4692,12 +4698,12 @@ PrefabInstance:
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
@@ -4712,7 +4718,7 @@ PrefabInstance:
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
         type: 3}
@@ -5314,12 +5320,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac5de7e221c360408eb4fcf1f4b3f9c, type: 3}
---- !u!96 &564438529 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 6693470882298025632, guid: c93a919296c7d4743846fda352e625c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 527020595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &564438530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
@@ -19948,8 +19948,7 @@ MonoBehaviour:
   _terrainLayer:
     serializedVersion: 2
     m_Bits: 8
-  _trailRendererPrefab: {fileID: 564438529}
-  _GameManagerScript: {fileID: 0}
+  _lineRendererPrefab: {fileID: 149655866}
 --- !u!4 &1958624182
 Transform:
   m_ObjectHideFlags: 0

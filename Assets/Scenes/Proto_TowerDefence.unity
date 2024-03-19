@@ -2000,6 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca8ccd179075a34e8863e8fa2707b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _GameManagerScript: {fileID: 0}
   _affectedLayer:
     serializedVersion: 2
     m_Bits: 3072
@@ -5003,6 +5004,14 @@ MonoBehaviour:
   _DamageAmoutToAgent: 0
   _HeathTower: 500
   _slowMo: 0.5
+  _gamePaused: 0
+  _gameLose: 0
+  _gameWin: 0
+  _gameStarted: 0
+  _waveStarted: 0
+  _numberOfEnemyOnScreen: 0
+  _gameLoseCanevas: {fileID: 0}
+  _gameWinCanevas: {fileID: 0}
 --- !u!4 &436205469
 Transform:
   m_ObjectHideFlags: 0
@@ -5034,7 +5043,7 @@ MonoBehaviour:
   _terrainLayer:
     serializedVersion: 2
     m_Bits: 8
-  _trailRendererPrefab: {fileID: 1028533610}
+  _lineRendererPrefab: {fileID: 779959806}
 --- !u!4 &439223213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
@@ -7142,6 +7151,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3841970586150772680, guid: bac5de7e221c360408eb4fcf1f4b3f9c,
     type: 3}
   m_PrefabInstance: {fileID: 878907292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &779959806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6958666524480024781, guid: c93a919296c7d4743846fda352e625c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3810626713244593360}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &790677110
 PrefabInstance:
@@ -9862,12 +9877,6 @@ PrefabInstance:
 --- !u!4 &1028533609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8811485784818922583, guid: c93a919296c7d4743846fda352e625c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 3810626713244593360}
-  m_PrefabAsset: {fileID: 0}
---- !u!96 &1028533610 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 6693470882298025632, guid: c93a919296c7d4743846fda352e625c3,
     type: 3}
   m_PrefabInstance: {fileID: 3810626713244593360}
   m_PrefabAsset: {fileID: 0}
