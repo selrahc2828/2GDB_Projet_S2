@@ -25,8 +25,12 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     public Text _MoneyText;
 
     private bool _isMenuOpen = false;
+    public GameManager _GameManagerScript;
 
-
+    public void Awake()
+    {
+        _GameManagerScript = FindAnyObjectByType<GameManager>();
+    }
     void Start()
     {
         _moneyNumber = 0;
@@ -38,13 +42,12 @@ public class UpgradeAndMoneySystem : MonoBehaviour
         _MoneyText.text = "Money  : " + _moneyNumber.ToString();
     }
 
-
     public void OpenMenu()
     {
         _isMenuOpen = !_isMenuOpen;
+        _GameManagerScript._gamePaused = !_GameManagerScript._gamePaused;
         _PanelMenu.SetActive(_isMenuOpen);
     }
-
 
     #region ShootDamage
     public void UpgradeShootDamage1()
@@ -57,7 +60,6 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     }
     #endregion
 
-
     #region ShootRange
     public void UpgradeShootRange1()
     {
@@ -69,8 +71,6 @@ public class UpgradeAndMoneySystem : MonoBehaviour
     }
     #endregion
 
-
-
     #region ShootCadence
     public void UpgradeShootFireRate1()
     {
@@ -81,7 +81,4 @@ public class UpgradeAndMoneySystem : MonoBehaviour
         }
     }
     #endregion
-
-
-   
 }
