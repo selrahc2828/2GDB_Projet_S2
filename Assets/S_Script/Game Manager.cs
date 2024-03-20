@@ -15,12 +15,17 @@ public class GameManager : MonoBehaviour
     public float _ShootRangeGameManager;
     public int _DamageAmount;
     public float _FireRate;
+    public float _maxFatigue;
+    
 
     [Header("Agent Mouvement Parameter")]
     public float _SpeedAgent;
     public float _AngularSpeedAgent;
     public float _AccelerationAgent;
-    public float _resetTime;
+    public float _resetTime;//pour le reset apres un timer (il n'est pas actif actuellement)
+
+    [Header("Agent Health")]
+    public int _HealthAgent;
 
 
     [Header("Enemy Heath Parameter")]
@@ -34,6 +39,9 @@ public class GameManager : MonoBehaviour
     public float _SpeedEnemy;
     public float _AngularSpeedEnemy;
     public float _AccelerationEnemy;
+
+    [Header("Enemy damage")]
+    public int _DamageAmoutToAgent;
 
 
     [Header("Tower Heath & Parameter")]

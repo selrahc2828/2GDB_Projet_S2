@@ -4,30 +4,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeathEnemy : MonoBehaviour
+public class HeathAgent : MonoBehaviour
 {
     [Header("Reference")]
     public GameManager _GameManagerScript;
-    public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
 
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
-    public float _droppChance;
 
 
 
     public void Awake()
     {
-        _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
         _GameManagerScript = FindAnyObjectByType<GameManager>();
     }
 
 
     void Start()
     {
-        _droppChance = 0.2f;
-        _MaxHealth = _GameManagerScript._HeathEnemy;
+        
+
+        _MaxHealth = _GameManagerScript._HealthAgent;
 
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
@@ -45,12 +43,12 @@ public class HeathEnemy : MonoBehaviour
         }
     }
 
-    // Fonction is called in DamageToTower Script 
+   
     public void TakeDamage(int damageAmount)
     {
         // Take the current Health and substract the damage amount 
         _CurrentHealth -= damageAmount;
-        //Debug.Log(gameObject.name + " took damage: " + damageAmount);
+        Debug.Log(gameObject.name + " took damage: " + damageAmount);
 
         if (_CurrentHealth < 0)
         {
@@ -67,16 +65,5 @@ public class HeathEnemy : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-    }
-    private void OnDestroy()
-    {
-        // Generate a random number between 0 and 1
-        float randomValue = Random.value;
-
-        // Check if the random number is less than or equal to 0.2 (20% chance)
-        if (randomValue <= _droppChance)
-        {
-            _UpgradeAndMoneySystemScript._moneyNumber += 1;
-        }
     }
 }

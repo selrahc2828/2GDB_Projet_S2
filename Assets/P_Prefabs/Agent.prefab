@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 3841970586150772680}
   - component: {fileID: 5444051248712278846}
   - component: {fileID: 7832934860235179200}
-  - component: {fileID: -4672201891972919910}
   - component: {fileID: 1659073581724347116}
   - component: {fileID: 3167649932413595886}
   - component: {fileID: 3901414477671127009}
@@ -174,27 +173,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &-4672201891972919910
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086990296516066630}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 12
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1659073581724347116
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -263,7 +241,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -282,8 +260,9 @@ MonoBehaviour:
   _AgentDispo: {fileID: 0}
   _AgentUsable: {fileID: 0}
   _GameManagerScript: {fileID: 0}
-  _ColliderTrigger: {fileID: -4672201891972919910}
+  _ColliderTrigger: {fileID: 0}
   _NavMeshAgent: {fileID: 3167649932413595886}
+  _AgentSelfScript: {fileID: 0}
   _EnemiesInRange: []
   _BulletLayer:
     serializedVersion: 2
@@ -296,7 +275,10 @@ MonoBehaviour:
   _TowerPosition: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
   _damageAmount: 1
-  _fireRate: 20.7
+  _initialDamageAmount: 0
+  _initialFireRate: 0
+  _fireRate: 2
+  _exaustion: 0
   _projectileParticleSystem: {fileID: 0}
   _TrailBullet: {fileID: 2733999121644330633, guid: 013d00decf436e14cba9bf6b1dc0ef43,
     type: 3}
@@ -312,12 +294,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91e11b7e2f07324686b3d1871f8b2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _basePosition: {x: 0, y: 0, z: 0}
   _TraceScript: {fileID: 0}
-  _selfAgent: {fileID: 3167649932413595886}
-  _resetTimer: 0
-  _launchTimer: 0
   _gameManager: {fileID: 0}
+  _exaustionLevel: 0
+  _initialMaterial: {fileID: 0}
+  _exaustedMaterial: {fileID: 0}
+  _meshRenderer: {fileID: 0}
+  _towerProximityValue: 0
+  _neighbourLowerProximityValue: 0
+  _tower: {fileID: 0}
+  _canShoot: 0
+  _aviability: 0
+  _resetTime: 0
 --- !u!1 &8691348546057371621
 GameObject:
   m_ObjectHideFlags: 0

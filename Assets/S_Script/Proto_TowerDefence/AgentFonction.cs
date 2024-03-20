@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +12,7 @@ public class AgentFonction : MonoBehaviour
     public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
     public NavMeshAgent _NavMeshAgent;
+    public RecognizeItsSelf _AgentSelfScript;
 
     private GameObject currentTargetEnemy;
     [SerializeField] private List<GameObject> _EnemiesInRange = new List<GameObject>();
@@ -39,9 +41,14 @@ public class AgentFonction : MonoBehaviour
 
     [Header("Weapon Parameter")]
     public int _damageAmount;
+    public int _initialDamageAmount;
+    public float _initialFireRate;
     public float _fireRate;
     private float time;
-    
+    public float _exaustion;
+
+    private float nextFireTime = 0f;
+
 
     [Header("Particle System & Trail Renderer")]
     public ParticleSystem _projectileParticleSystem;
@@ -52,6 +59,7 @@ public class AgentFonction : MonoBehaviour
     public void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
+        _AgentSelfScript = FindAnyObjectByType<RecognizeItsSelf>();
     }
 
 
@@ -70,8 +78,8 @@ public class AgentFonction : MonoBehaviour
 
         // Game Manager Value for Shoot
         _ShootRange = _GameManagerScript._ShootRangeGameManager;
-        _damageAmount = _GameManagerScript._DamageAmount;
-        _fireRate = _GameManagerScript._FireRate;
+        _initialDamageAmount = _GameManagerScript._DamageAmount;
+        _initialFireRate = _GameManagerScript._FireRate;
 
         // Game Manager Value For Mouvement 
         _NavMeshAgent.speed = _GameManagerScript._SpeedAgent;
@@ -83,31 +91,21 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        // change de range of the collider in fonction with booléen 
-        if (_ShootEnemy)
-        {
-            _ColliderTrigger.radius = _ShootRange;
-        }
-        
-        //if (_SlowEnemy)
-        //{
-        //    _ColliderTrigger.radius = _SlowRange;
-        //}
-
+        _exaustion = _AgentSelfScript._exaustionLevel;
+        _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
+        _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
         time += Time.deltaTime;
 
-
-        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && time >= _fireRate)
+        if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
         {
-
             ShootToEnemy();
-
+            nextFireTime = Time.time + (1f / _fireRate);
             time = 0;
         }
 
 
         // Call A physics OverlapSphere to update list of agent 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _ColliderTrigger.radius, LayerMask.GetMask("AgentMechant"));
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
 
         // Add agent in the overlaps Sphere
         foreach (Collider collider in colliders)
@@ -115,6 +113,7 @@ public class AgentFonction : MonoBehaviour
             GameObject enemy = collider.gameObject;
             if (!_EnemiesInRange.Contains(enemy))
             {
+                
                 _EnemiesInRange.Add(enemy);
                 // Remove all missing component when an other enemy overlap
                 _EnemiesInRange.RemoveAll(item => item == null);
@@ -126,7 +125,6 @@ public class AgentFonction : MonoBehaviour
                 }
             }
         }
-
     }
 
 
@@ -192,7 +190,7 @@ public class AgentFonction : MonoBehaviour
                 // Start Coroutine to lerp the position of the trail 
                 StartCoroutine(SpawnTrail(_Trail, hit));
 
-
+                #region DamageToEnemies
                 // ------ All this part to damage the enemy ------
                 HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
 
@@ -210,7 +208,7 @@ public class AgentFonction : MonoBehaviour
                         _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
                 }
-                // ------- ------
+                #endregion
             }
         }
     }
@@ -266,18 +264,5 @@ public class AgentFonction : MonoBehaviour
             return false;
         }
     }
-
-    //Gizmo Feedback
-    private void OnDrawGizmos()
-    {
-        if (!Application.isPlaying) return;
-
-        if (_ColliderTrigger != null && !IsAgentUsable(GetComponent<NavMeshAgent>()))
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position + _ColliderTrigger.center, _ColliderTrigger.radius);
-        }
-    }
-
 
 }
