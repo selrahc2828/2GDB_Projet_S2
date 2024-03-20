@@ -25,13 +25,13 @@ public class CameraRotation : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(2))
         {
             RotateCamera();
         }
 
-        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
-        distanceFromTarget = Mathf.Clamp(distanceFromTarget - scrollInput * zoomSpeed, minZoomDistance, maxZoomDistance);
+        //float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        //distanceFromTarget = Mathf.Clamp(distanceFromTarget - scrollInput * zoomSpeed, minZoomDistance, maxZoomDistance);
 
         Vector3 desiredPosition = target.position - transform.forward * distanceFromTarget;
         transform.position = Vector3.Lerp(transform.position, desiredPosition, rotationSmoothTime);

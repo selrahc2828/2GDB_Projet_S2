@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float _ShootRangeGameManager;
     public int _DamageAmount;
     public float _FireRate;
-    public float _maxFatigue;
+    public float _maxFatigueSeconde;
     
 
     [Header("Agent Mouvement Parameter")]
@@ -50,5 +50,29 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Parameter")]
     public float _slowMo;
+    public bool _gamePaused;
+    public bool _gameLose;
+    public bool _gameWin;
+    public bool _gameStarted;
+    public bool _waveStarted;
+    public int _numberOfEnemyOnScreen;
+    public GameObject _gameLoseCanevas;
+    public GameObject _gameWinCanevas;
 
+    private void Update()
+    {
+        CheckIfGameIsLoseOrWin();
+    }
+
+
+    public void CheckIfGameIsLoseOrWin()
+    {
+        if (_gameLose)
+        {
+            _gameLoseCanevas.SetActive(true);
+        }else if (_gameWin) 
+        {
+            _gameWinCanevas.SetActive(true);
+        }
+    }
 }

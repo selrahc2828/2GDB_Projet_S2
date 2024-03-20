@@ -8,20 +8,34 @@ using UnityEngine.AI;
 
 public class RecognizeItsSelf : MonoBehaviour
 {
-    public Vector3 _basePosition;
+    [Header("Variable de Script")]
     public AgentToTrace _TraceScript;
-    public NavMeshAgent _selfAgent;
-    public Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
-    public float _resetTime;
     public GameManager _gameManager;
+
+    [Header("Variable de Fatigue")]
+    public float _exaustionLevel;
+    private float _exaustionTrueLevel;
+    private float _exaustionMaxLevel;
     public Material _initialMaterial;
     public Material _exaustedMaterial;
     public MeshRenderer _meshRenderer;
 
-    public float _exaustionLevel;
-    private float _exaustionTrueLevel;
-    private float _exaustionMaxLevel;
+
+    [Header("Variable de chainage des agents")]
+    public int _towerProximityValue;
+    public float _towerProximityNormalizedValue;
+    public int _neighbourLowerProximityValue;
+    public GameObject _tower;
+    private Collider[] _neighbourAgents;
+
+
+    [Header("Autre")]
+    public bool _canShoot;
     public bool _aviability;
+    public float _resetTime;
+    private Vector3 _basePosition;
+    private NavMeshAgent _selfAgent;
+    private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
 
 
     private void Awake()
@@ -32,18 +46,25 @@ public class RecognizeItsSelf : MonoBehaviour
     }
     private void Start()
     {
-        _exaustionMaxLevel = _gameManager._maxFatigue;
+        _neighbourLowerProximityValue = -2;
+        _towerProximityValue = -1;
+        _towerProximityNormalizedValue = 1;
+        _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
         _aviability = true;
+        _canShoot = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        CalculateExaustion();
-        UpdateExaustionMeter();
+        if(!_gameManager._gameLose)
+        {
+            CalculateExaustion();
+            UpdateExaustionMeter();
+        }
     }
 
     IEnumerator ResetPositionInTimer()
@@ -51,6 +72,40 @@ public class RecognizeItsSelf : MonoBehaviour
         yield return new WaitForSeconds(_resetTime);
 
         ResetPosition();
+    }
+
+    public int getTowerProximity()
+    {
+        return _towerProximityValue;
+    }
+
+    public void CheckTowerProximity()
+    {
+        if(Vector3.Distance(transform.position, _tower.transform.position) <= 5)
+        {
+            _towerProximityValue = 0;
+        }
+        else
+        {
+            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _neighbourLowerProximityValue = -2;
+            foreach(Collider agentCollider in _neighbourAgents)
+            {
+                if(agentCollider.CompareTag("Agent"))
+                {
+                    int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
+                    if(_neighbourProximityValue > -1)
+                    {
+                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue <= _neighbourLowerProximityValue)
+                        {
+                            _neighbourLowerProximityValue = _neighbourProximityValue;
+                        }
+                    }
+                }
+            }
+            _towerProximityValue = _neighbourLowerProximityValue + 1;
+            _towerProximityNormalizedValue = _towerProximityValue / 100f;
+        }
     }
 
     public void CalculateExaustion()
@@ -67,11 +122,17 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             else
             {
+                _canShoot = true;
+                CheckTowerProximity();
                 if (_exaustionTrueLevel <= _exaustionMaxLevel)
                 {
-                    _exaustionTrueLevel += Time.deltaTime;
+                    _exaustionTrueLevel += Time.deltaTime * _towerProximityNormalizedValue;
                 }
             }
+        }
+        else
+        {
+            _towerProximityValue = -1;
         }
         _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
     }
