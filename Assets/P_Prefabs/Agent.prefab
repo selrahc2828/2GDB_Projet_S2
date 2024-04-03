@@ -297,12 +297,12 @@ MonoBehaviour:
   _TraceScript: {fileID: 0}
   _gameManager: {fileID: 0}
   _exaustionLevel: 0
-  _initialMaterial: {fileID: 0}
-  _exaustedMaterial: {fileID: 0}
-  _meshRenderer: {fileID: 0}
+  _NotExaustMaterial: {fileID: 2100000, guid: af302b13908d9e04aa4eb923d2fe2433, type: 2}
+  _ExaustMaterial: {fileID: 2100000, guid: 1090345a933936a4d8b7f134c482d8af, type: 2}
+  _meshRenderer: {fileID: 7832934860235179200}
   _towerProximityValue: 0
   _neighbourLowerProximityValue: 0
-  _tower: {fileID: 0}
+  _tower: {fileID: 8974935189288733175, guid: 483764d4427c51e489c7320d65189d66, type: 3}
   _canShoot: 0
   _aviability: 0
   _resetTime: 0

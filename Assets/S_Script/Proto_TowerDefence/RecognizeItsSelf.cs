@@ -23,6 +23,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     [Header("Variable de chainage des agents")]
     public int _towerProximityValue;
+    public float _towerProximityNormalizedValue;
     public int _neighbourLowerProximityValue;
     public GameObject _tower;
     private Collider[] _neighbourAgents;
@@ -47,7 +48,8 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
-        _exaustionMaxLevel = _gameManager._maxFatigue;
+        _towerProximityNormalizedValue = 1;
+        _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
         _aviability = true;
@@ -58,8 +60,11 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        CalculateExaustion();
-        UpdateExaustionMeter();
+        if(!_gameManager._gameLose)
+        {
+            CalculateExaustion();
+            UpdateExaustionMeter();
+        }
     }
 
     IEnumerator ResetPositionInTimer()
@@ -99,6 +104,7 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
             _towerProximityValue = _neighbourLowerProximityValue + 1;
+            _towerProximityNormalizedValue = _towerProximityValue / 100f;
         }
     }
 
@@ -120,7 +126,7 @@ public class RecognizeItsSelf : MonoBehaviour
                 CheckTowerProximity();
                 if (_exaustionTrueLevel <= _exaustionMaxLevel)
                 {
-                    _exaustionTrueLevel += Time.deltaTime;
+                    _exaustionTrueLevel += Time.deltaTime * _towerProximityNormalizedValue;
                 }
             }
         }

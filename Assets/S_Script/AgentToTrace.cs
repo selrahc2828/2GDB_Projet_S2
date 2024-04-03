@@ -82,43 +82,41 @@ public class AgentToTrace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(!_gameManager._gameLose && !_gameManager._gamePaused)
         {
-            _numberAgentNeeded = 0;
-            // Reset the time scale to normal
-            Time.timeScale = _slowMo;
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                _numberAgentNeeded = 0;
+                // Reset the time scale to normal
+                Time.timeScale = _slowMo;
+            }
 
-        // Check du click gauche de la souris
-        if (Input.GetMouseButton(0))
-        {
-            //Appel de la fonction pour créer les points de position sur le tracé de la souris
-            MakeTrace();
+            // Check du click gauche de la souris
+            if (Input.GetMouseButton(0))
+            {
+                //Appel de la fonction pour créer les points de position sur le tracé de la souris
+                MakeTrace();
+            }
+            //Test si le bouton gauche de la souris est relevé
+            if (Input.GetMouseButtonUp(0))
+            {
+                // Reset the time scale to normal
+                Time.timeScale = 1f;
+                //Ajout de la liste de position qui viens d'être créer dans la liste de liste
+                _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
+                StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
+                //Appel de la fonction pour changer la destination des agents
+                ComeToPoint();
+                //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
+                _dictionnairePositionTrace.Clear();
+                _listePositionTrace.Clear();
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                CountNumberAgentAvailable();
+            }
+            _AgentNumbertext.text = "Agent Number : " + _numberAgentAvailable;
         }
-        //Test si le bouton gauche de la souris est relevé
-        if (Input.GetMouseButtonUp(0))
-        {
-            // Reset the time scale to normal
-            Time.timeScale = 1f;
-            //Ajout de la liste de position qui viens d'être créer dans la liste de liste
-            _listeOfListePositionTrace.Add(new List<Vector3>(_listePositionTrace));
-            StartCoroutine(DeleteWithDelay(_listeOfListePositionTrace[_listeOfListePositionTrace.Count - 1]));
-            //Appel de la fonction pour changer la destination des agents
-            ComeToPoint();
-            //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
-            _dictionnairePositionTrace.Clear();
-            _listePositionTrace.Clear();
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            CountNumberAgentAvailable();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            testIfItWork();
-        }
-
-        _AgentNumbertext.text = "Agent Number : " + _numberAgentAvailable;
     }
 
     //outil de debug
@@ -333,28 +331,6 @@ public class AgentToTrace : MonoBehaviour
         else
         {
             return 0;
-        }
-    }
-
-    void testIfItWork()
-    {
-        foreach(KeyValuePair<List<NavMeshAgent>, int> _dictionnaire in _dictionnaireOfListeAgent)
-        {
-            List<NavMeshAgent> _liste = _dictionnaire.Key;
-            int _forme = _dictionnaire.Value;
-            switch(_forme)
-            {
-                case 0:
-
-                    Debug.Log("trait");
-                    break;
-                case 1:
-                    Debug.Log("Rond");
-                    break;
-                default:
-                    Debug.Log("wat ???");
-                    break;
-            }
         }
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HeathEnemy : MonoBehaviour
 {
     [Header("Reference")]
-    public GameManager _GameManagerScript;
+    public GameManager _GameManager;
     public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
 
     [Header("HealthSystem")]
@@ -20,15 +20,15 @@ public class HeathEnemy : MonoBehaviour
     public void Awake()
     {
         _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
-        _GameManagerScript = FindAnyObjectByType<GameManager>();
+        _GameManager = FindAnyObjectByType<GameManager>();
     }
 
 
     void Start()
     {
         _droppChance = 0.2f;
-        _MaxHealth = _GameManagerScript._HeathEnemy;
-
+        _MaxHealth = _GameManager._HeathEnemy;
+        _GameManager._numberOfEnemyOnScreen++;
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
     }
@@ -37,12 +37,6 @@ public class HeathEnemy : MonoBehaviour
     {
         // Update The Current Healt 
         GetCurrentHealth();
-
-        // DEFEAT
-        if (_CurrentHealth <= 0)
-        {
-            Debug.Log("Defeat");
-        }
     }
 
     // Fonction is called in DamageToTower Script 
@@ -52,8 +46,9 @@ public class HeathEnemy : MonoBehaviour
         _CurrentHealth -= damageAmount;
         //Debug.Log(gameObject.name + " took damage: " + damageAmount);
 
-        if (_CurrentHealth < 0)
+        if (_CurrentHealth <= 0)
         {
+            _GameManager._numberOfEnemyOnScreen--;
             Die();
         }
     }
