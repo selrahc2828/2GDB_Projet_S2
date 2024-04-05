@@ -80,7 +80,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckTowerProximity()
     {
-        if(Vector3.Distance(transform.position, _tower.transform.position) <= 5)
+        if(Vector3.Distance(transform.position, _tower.transform.position) <= 10)
         {
             _towerProximityValue = 0;
         }
@@ -102,10 +102,19 @@ public class RecognizeItsSelf : MonoBehaviour
                     }
                 }
             }
+
             _towerProximityValue = _neighbourLowerProximityValue + 1;
-            _towerProximityNormalizedValue = _towerProximityValue / 100f;
+            
+        }
+
+        _towerProximityNormalizedValue = _towerProximityValue / 100f;
+
+        if (_towerProximityNormalizedValue < 0)
+        {
+            _towerProximityNormalizedValue = 1;
         }
     }
+
 
     public void CalculateExaustion()
     {
@@ -133,6 +142,7 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _towerProximityValue = -1;
         }
+
         _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
     }
 
@@ -148,7 +158,7 @@ public class RecognizeItsSelf : MonoBehaviour
         Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
 
         // Définir une intensité pour la couleur finale
-        _Intensity = 4.5f + (_exaustionLevel * 10f); // Ajustez cette formule selon vos préférences pour l'intensité
+        _Intensity = 10f - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
 
        
         finalColor *= _Intensity;

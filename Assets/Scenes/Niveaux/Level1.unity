@@ -17833,6 +17833,11 @@ PrefabInstance:
       propertyPath: _tower
       value: 
       objectReference: {fileID: 196656703}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: _exaustionLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7046196874485344621, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: m_Name
