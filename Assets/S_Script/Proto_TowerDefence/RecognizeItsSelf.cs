@@ -17,6 +17,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private float _exaustionTrueLevel;
     private float _exaustionMaxLevel;
     public float _Intensity;
+    public float _threshold;
     public Material _ShaderMaterial;
     public MeshRenderer _meshRenderer;
 
@@ -158,7 +159,7 @@ public class RecognizeItsSelf : MonoBehaviour
         Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
 
         // Définir une intensité pour la couleur finale
-        _Intensity = 8f - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
+        _Intensity = _threshold - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
 
        
         finalColor *= _Intensity;
