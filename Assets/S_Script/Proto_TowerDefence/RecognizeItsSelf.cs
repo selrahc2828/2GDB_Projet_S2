@@ -158,7 +158,7 @@ public class RecognizeItsSelf : MonoBehaviour
         Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
 
         // Définir une intensité pour la couleur finale
-        _Intensity = 10f - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
+        _Intensity = 8f - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
 
        
         finalColor *= _Intensity;
