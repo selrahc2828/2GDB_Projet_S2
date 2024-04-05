@@ -16619,6 +16619,7 @@ MonoBehaviour:
   _MaxRangeValue: 50
   _moneyNumber: 0
   _MoneyText: {fileID: 495495919}
+  _GameManagerScript: {fileID: 0}
 --- !u!114 &1654960970
 MonoBehaviour:
   m_ObjectHideFlags: 0
