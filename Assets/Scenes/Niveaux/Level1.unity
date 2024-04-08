@@ -1856,6 +1856,11 @@ PrefabInstance:
       propertyPath: _BulletSpawnPosition
       value: 
       objectReference: {fileID: 136706063}
+    - target: {fileID: 5666849999247401754, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 36c0e6c192f62f94797c4887c2fe9275, type: 2}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _tower
