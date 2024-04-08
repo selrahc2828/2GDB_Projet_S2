@@ -81,8 +81,9 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckTowerProximity()
     {
-        if(Vector3.Distance(transform.position, _tower.transform.position) <= 5)
+        if (Vector3.Distance(transform.position, _tower.transform.position) <= 10)
         {
+            
             _towerProximityValue = 0;
         }
         else
@@ -104,7 +105,11 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
             _towerProximityValue = _neighbourLowerProximityValue + 1;
-            _towerProximityNormalizedValue = _towerProximityValue / 100f;
+        }
+        _towerProximityNormalizedValue = _towerProximityValue / 100f;
+        if( _towerProximityNormalizedValue < 0 )
+        {
+            _towerProximityNormalizedValue = 1;
         }
     }
 

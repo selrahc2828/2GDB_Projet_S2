@@ -48,7 +48,6 @@ public class HeathEnemy : MonoBehaviour
 
         if (_CurrentHealth <= 0)
         {
-            _GameManager._numberOfEnemyOnScreen--;
             Die();
         }
     }
@@ -67,6 +66,7 @@ public class HeathEnemy : MonoBehaviour
     {
         // Generate a random number between 0 and 1
         float randomValue = Random.value;
+        _GameManager._numberOfEnemyOnScreen--;
 
         // Check if the random number is less than or equal to 0.2 (20% chance)
         if (randomValue <= _droppChance)
