@@ -35,7 +35,6 @@ public class AgentFonction : MonoBehaviour
     //public float _InitialSpeed;
 
     [Header("Weapon Reference")]
-    public GameObject _gun;
     public Transform _BulletSpawnPosition;
     public Transform _TowerPosition;
 
@@ -182,10 +181,6 @@ public class AgentFonction : MonoBehaviour
             // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
-            
-            _gun.transform.LookAt(_BulletSpawnPosition.position + directionToEnemy);
-
-            
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
                 // Instanciate Trail for feedback 
