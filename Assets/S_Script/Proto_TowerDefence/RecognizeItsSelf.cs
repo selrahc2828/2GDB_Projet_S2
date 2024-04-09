@@ -30,6 +30,13 @@ public class RecognizeItsSelf : MonoBehaviour
     private Collider[] _neighbourAgents;
 
 
+    [Header("Variable de Pools")]
+    public GameObject _GOpool1;
+    public GameObject _GOpool2;
+    public bool _pool1;
+    public bool _pool2;
+
+
     [Header("Autre")]
     public bool _canShoot;
     public bool _aviability;
@@ -49,6 +56,10 @@ public class RecognizeItsSelf : MonoBehaviour
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
+
+        _pool1 = false;
+        _pool2 = false;
+
         _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
@@ -56,6 +67,8 @@ public class RecognizeItsSelf : MonoBehaviour
         _canShoot = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
+
+        StartCoroutine(CheckProximityFunctionsCoroutine());
     }
 
     private void Update()
@@ -72,6 +85,24 @@ public class RecognizeItsSelf : MonoBehaviour
         yield return new WaitForSeconds(_resetTime);
 
         ResetPosition();
+    }
+
+    private IEnumerator CheckProximityFunctionsCoroutine()
+    {
+        while (!_aviability)
+        {
+            // Exécuter CheckProximity()
+            CheckProximityFunctions();
+
+            // Attendre 1 seconde
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    private void CheckProximityFunctions()
+    {
+        CheckTowerProximity();
+        CheckPoolsProximity();
     }
 
     public int getTowerProximity()
@@ -116,6 +147,65 @@ public class RecognizeItsSelf : MonoBehaviour
         }
     }
 
+    #region Pools
+
+    public void CheckPoolsProximity()
+    {
+        CheckPool1Proximity();
+        CheckPool2Proximity();
+    }
+
+    public void CheckPool1Proximity()
+    {
+        if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10)
+        {
+            _pool1 = true;
+        }
+        else
+        {
+            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            bool _tempPool1 = false;
+            foreach (Collider agentCollider in _neighbourAgents)
+            {
+                if (agentCollider.CompareTag("Agent"))
+                {
+                    bool _neighbourPool1Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool1;
+                    if (_neighbourPool1Value)
+                    {
+                        _tempPool1 = true;
+                    }
+                }
+            }
+            _pool1 = _tempPool1;
+        }
+    }
+
+    public void CheckPool2Proximity()
+    {
+        if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10)
+        {
+            _pool2 = true;
+        }
+        else
+        {
+            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            bool _tempPool2 = false;
+            foreach (Collider agentCollider in _neighbourAgents)
+            {
+                if (agentCollider.CompareTag("Agent"))
+                {
+                    bool _neighbourPool1Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
+                    if (_neighbourPool1Value)
+                    {
+                        _tempPool2 = true;
+                    }
+                }
+            }
+            _pool2 = _tempPool2;
+        }
+    }
+
+    #endregion Pools
 
     public void CalculateExaustion()
     {
@@ -137,6 +227,7 @@ public class RecognizeItsSelf : MonoBehaviour
                 {
                     _exaustionTrueLevel += Time.deltaTime * _towerProximityNormalizedValue;
                 }
+                CheckPoolsProximity();
             }
         }
         else
@@ -224,6 +315,11 @@ public class RecognizeItsSelf : MonoBehaviour
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
 
+        _pool1 = false;
+        _pool2 = false;
+        _neighbourLowerProximityValue = -2;
+        _towerProximityValue = -1;
+        _towerProximityNormalizedValue = 1;
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
