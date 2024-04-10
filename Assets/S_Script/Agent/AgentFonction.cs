@@ -8,7 +8,6 @@ public class AgentFonction : MonoBehaviour
 {
     [Header("Reference")]
     public AgentToTrace _AgentDispo;
-    public AgentChoise _AgentUsable;
     public GameManager _GameManagerScript;
     public SphereCollider _ColliderTrigger;
     public NavMeshAgent _NavMeshAgent;
@@ -68,7 +67,6 @@ public class AgentFonction : MonoBehaviour
 
         // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
-        _AgentUsable = GameObject.FindObjectOfType<AgentChoise>();
         _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
 
         //// Game Manager Value for Slow
