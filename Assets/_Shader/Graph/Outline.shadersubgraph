@@ -55,9 +55,6 @@
             "m_Id": "ff9a3ce5e4d4490b9fb4f2c782297a1a"
         },
         {
-            "m_Id": "bb11eadc7d6149d2aa545bd429b9c74a"
-        },
-        {
             "m_Id": "25f03df824d44794b7f31470e83dc97d"
         },
         {
@@ -149,6 +146,9 @@
         },
         {
             "m_Id": "8a22ad67d0cc4b4398d7b57b213f6262"
+        },
+        {
+            "m_Id": "f85ce94d281b4fe08ace3f0728b8e765"
         }
     ],
     "m_GroupDatas": [],
@@ -205,9 +205,9 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "bb11eadc7d6149d2aa545bd429b9c74a"
+                    "m_Id": "f85ce94d281b4fe08ace3f0728b8e765"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 2
             }
         },
         {
@@ -493,20 +493,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "bb11eadc7d6149d2aa545bd429b9c74a"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "37f5b36cb5f14bc9bfbc0b221df1c6ad"
-                },
-                "m_SlotId": 251160050
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "c1eee5796b3941199bfbac3202447c60"
                 },
                 "m_SlotId": 0
@@ -527,9 +513,9 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "bb11eadc7d6149d2aa545bd429b9c74a"
+                    "m_Id": "f85ce94d281b4fe08ace3f0728b8e765"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
@@ -643,6 +629,20 @@
                 },
                 "m_SlotId": 1897804576
             }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "f85ce94d281b4fe08ace3f0728b8e765"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "37f5b36cb5f14bc9bfbc0b221df1c6ad"
+                },
+                "m_SlotId": 251160050
+            }
         }
     ],
     "m_VertexContext": {
@@ -667,8 +667,8 @@
         "preventRotation": false
     },
     "m_Path": "Sub Graphs",
-    "m_GraphPrecision": 1,
-    "m_PreviewMode": 2,
+    "m_GraphPrecision": 0,
+    "m_PreviewMode": 0,
     "m_OutputNode": {
         "m_Id": "ff9a3ce5e4d4490b9fb4f2c782297a1a"
     },
@@ -1047,6 +1047,21 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "_Sobel",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "24c98b7e848140d9b4431d050e917eb0",
+    "m_Id": 2,
+    "m_DisplayName": "Thickness",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Thickness",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
@@ -1889,21 +1904,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "73c7abb1ffad44d8be53359fd6586d24",
-    "m_Id": 1,
-    "m_DisplayName": "Thickness",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Thickness",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.LerpNode",
     "m_ObjectId": "743888c7b1804ec8be137bb220648758",
     "m_Group": {
@@ -1960,7 +1960,7 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1908.0001220703125,
+            "x": -1945.0,
             "y": -1144.0,
             "width": 283.0,
             "height": 302.0
@@ -2549,21 +2549,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "a13762949fbb4485816aee1ec8937be0",
-    "m_Id": 2,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
     "m_ObjectId": "a15367249b1f48ee9267f7b4fb9ad36d",
     "m_Group": {
@@ -2686,6 +2671,21 @@
     "m_Property": {
         "m_Id": "ee6c064194014720bead8fac66cadfe3"
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "a6e9747b6f0f43eb8b342381dfe6eb17",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -2853,52 +2853,6 @@
         "x": 0.0,
         "y": 1.0
     }
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.CustomFunctionNode",
-    "m_ObjectId": "bb11eadc7d6149d2aa545bd429b9c74a",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "DepthSobel (Custom Function)",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -417.0,
-            "y": -234.99998474121095,
-            "width": 220.99998474121095,
-            "height": 302.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "ce66bf63445f4a79b3e1fc468ca953e4"
-        },
-        {
-            "m_Id": "73c7abb1ffad44d8be53359fd6586d24"
-        },
-        {
-            "m_Id": "a13762949fbb4485816aee1ec8937be0"
-        }
-    ],
-    "synonyms": [
-        "code",
-        "HLSL"
-    ],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SourceType": 0,
-    "m_FunctionName": "DepthSobel",
-    "m_FunctionSource": "9a11ea2920dba8947a8f4fb8589365a9",
-    "m_FunctionBody": "Enter function body here..."
 }
 
 {
@@ -3214,27 +3168,6 @@
         "x": 0.0,
         "y": 0.0,
         "z": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
-    "m_ObjectId": "ce66bf63445f4a79b3e1fc468ca953e4",
-    "m_Id": 0,
-    "m_DisplayName": "UV",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "UV",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0
     },
     "m_Labels": []
 }
@@ -3590,6 +3523,27 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "edd8262ee69044a4bbf32cbf071be845",
+    "m_Id": 1,
+    "m_DisplayName": "UV",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "UV",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
     "m_ObjectId": "ee6c064194014720bead8fac66cadfe3",
@@ -3728,6 +3682,52 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.CustomFunctionNode",
+    "m_ObjectId": "f85ce94d281b4fe08ace3f0728b8e765",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "DepthSobel (Custom Function)",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -417.0,
+            "y": -249.0,
+            "width": 207.99998474121095,
+            "height": 244.99998474121095
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "edd8262ee69044a4bbf32cbf071be845"
+        },
+        {
+            "m_Id": "24c98b7e848140d9b4431d050e917eb0"
+        },
+        {
+            "m_Id": "a6e9747b6f0f43eb8b342381dfe6eb17"
+        }
+    ],
+    "synonyms": [
+        "code",
+        "HLSL"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SourceType": 0,
+    "m_FunctionName": "DepthSobel",
+    "m_FunctionSource": "9a11ea2920dba8947a8f4fb8589365a9",
+    "m_FunctionBody": "Enter function body here..."
 }
 
 {

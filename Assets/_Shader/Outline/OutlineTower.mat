@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1807009813775275710
+--- !u!114 &-6298313066948961606
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BasicOutline
-  m_Shader: {fileID: -6465566751694194690, guid: 12cb86724764f194f8030103a63c3dab,
+  m_Name: OutlineTower
+  m_Shader: {fileID: -6465566751694194690, guid: ae001d67e072ae741ab8b94e700380bd,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -53,7 +53,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1.2
+    - _Scale: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.4366033, b: 0, a: 0}
+    - _Color: {r: 1, g: 0.33150968, b: 0, a: 0}
   m_BuildTextureStacks: []

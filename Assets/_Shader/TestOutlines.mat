@@ -104,8 +104,12 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DecalMeshBiasType: 0
+    - _DecalMeshDepthBias: 0
+    - _DecalMeshViewBias: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DrawOrder: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -115,16 +119,16 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OutlinesAcuteDepthThreshold: 1
-    - _OutlinesAcuteStartDot: 0.9
-    - _OutlinesDepthStrength: 1.35
+    - _OutlinesAcuteStartDot: 1
+    - _OutlinesDepthStrength: 1.5
     - _OutlinesDepthThresold: 1
-    - _OutlinesDepthTightening: 9.87
+    - _OutlinesDepthTightening: 1
     - _OutlinesFarNormalEndDepth: 10
     - _OutlinesFarNormalStartDepth: 1
     - _OutlinesFarNormalThreshold: 1
-    - _OutlinesNormalThreshold: 128
-    - _OutlinesNormalTightening: 1
-    - _OutlinesNormalsStrength: 0
+    - _OutlinesNormalThreshold: 1
+    - _OutlinesNormalTightening: 128
+    - _OutlinesNormalsStrength: 1
     - _OutlinesThickness: 0.01
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -142,6 +146,6 @@ Material:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlinesColors: {r: 0.8276194, g: 0, b: 1.4980395, a: 0}
+    - _OutlinesColors: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

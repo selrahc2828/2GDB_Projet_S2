@@ -496,7 +496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AgentDispo: {fileID: 0}
-  _AgentUsable: {fileID: 0}
   _GameManagerScript: {fileID: 0}
   _ColliderTrigger: {fileID: 0}
   _NavMeshAgent: {fileID: 1071670030366889686}
@@ -535,7 +534,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _exaustionLevel: 0
   _Intensity: 0
-  _threshold: 4
+  _threshold: 10
   _ShaderMaterial: {fileID: 2100000, guid: 61c82dc2149ebcd4eb310272ca5c6993, type: 2}
   _meshRenderer: {fileID: 3118169488273763431}
   _towerProximityValue: 0
