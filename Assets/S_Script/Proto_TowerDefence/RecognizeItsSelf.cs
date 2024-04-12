@@ -1,7 +1,7 @@
 using FMOD;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
+//using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,8 +16,9 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _exaustionLevel;
     private float _exaustionTrueLevel;
     private float _exaustionMaxLevel;
-    public Material _initialMaterial;
-    public Material _exaustedMaterial;
+    public float _Intensity;
+    public float _threshold;
+    public Material _ShaderMaterial;
     public MeshRenderer _meshRenderer;
 
 
@@ -40,7 +41,6 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
     }
@@ -81,7 +81,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckTowerProximity()
     {
-        if(Vector3.Distance(transform.position, _tower.transform.position) <= 5)
+        if(Vector3.Distance(transform.position, _tower.transform.position) <= 10)
         {
             _towerProximityValue = 0;
         }
@@ -103,10 +103,19 @@ public class RecognizeItsSelf : MonoBehaviour
                     }
                 }
             }
+
             _towerProximityValue = _neighbourLowerProximityValue + 1;
-            _towerProximityNormalizedValue = _towerProximityValue / 100f;
+            
+        }
+
+        _towerProximityNormalizedValue = _towerProximityValue / 100f;
+
+        if (_towerProximityNormalizedValue < 0)
+        {
+            _towerProximityNormalizedValue = 1;
         }
     }
+
 
     public void CalculateExaustion()
     {
@@ -134,17 +143,32 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _towerProximityValue = -1;
         }
+
         _exaustionLevel = _exaustionTrueLevel / _exaustionMaxLevel;
     }
 
     public void UpdateExaustionMeter()
     {
-        // Lerp between color1 and color2 based on lerpAmount
-        UnityEngine.Color lerpedColor = UnityEngine.Color.Lerp(_initialMaterial.color, _exaustedMaterial.color, _exaustionLevel);
+        
+        Color initialColor = new Color(0f, 123f / 255f, 191f / 255f);
 
-        // Apply the lerped color to the renderer's material
-        _meshRenderer.material.color = lerpedColor;
+        
+        Color fatigueColor = new Color(0f, 15f / 255f, 24f / 255f);
+
+        // Définir une couleur finale en interpolant entre la couleur initiale et la couleur de fatigue basée sur le niveau d'épuisement
+        Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
+
+        // Définir une intensité pour la couleur finale
+        _Intensity = _threshold - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
+
+       
+        finalColor *= _Intensity;
+
+        // Appliquer la couleur calculée à la propriété FresnelColor du material
+        _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
+
+
 
     public List<NavMeshAgent> WitchListIsIt()
     {

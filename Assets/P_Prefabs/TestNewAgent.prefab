@@ -203,6 +203,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7856660840607880252}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &3118169488273763431 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -4157524182732408741, guid: a16700baf50ac4641a7101d572ec0d4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7856660840607880252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7046196874485344621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a16700baf50ac4641a7101d572ec0d4d,
@@ -333,9 +339,10 @@ MonoBehaviour:
   _TraceScript: {fileID: 0}
   _gameManager: {fileID: 0}
   _exaustionLevel: 0
-  _initialMaterial: {fileID: 2100000, guid: 50702a47ae6900f45810e44c1386fac5, type: 2}
-  _exaustedMaterial: {fileID: 2100000, guid: c89372b7589cbea4cb459847933742b6, type: 2}
-  _meshRenderer: {fileID: 2319818469665252225}
+  _Intensity: 0
+  _threshold: 8
+  _ShaderMaterial: {fileID: 2100000, guid: 61c82dc2149ebcd4eb310272ca5c6993, type: 2}
+  _meshRenderer: {fileID: 3118169488273763431}
   _towerProximityValue: 0
   _towerProximityNormalizedValue: 0
   _neighbourLowerProximityValue: 0

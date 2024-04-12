@@ -17,22 +17,22 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   threshold:
-    m_OverrideState: 1
-    m_Value: 0.2
+    m_OverrideState: 0
+    m_Value: 0.09
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 4
   scatter:
-    m_OverrideState: 0
-    m_Value: 0.477
+    m_OverrideState: 1
+    m_Value: 0.6
   clamp:
     m_OverrideState: 0
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0.35978818, b: 1, a: 1}
+    m_Value: {r: 0, g: 0.5557754, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   downscale:
     m_OverrideState: 0
