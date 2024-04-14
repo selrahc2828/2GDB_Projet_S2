@@ -145,7 +145,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
---- !u!1 &4308968867366325615
+--- !u!1 &2130501720872278286
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,53 +153,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6018833635926120512}
-  - component: {fileID: 2332092420408053218}
-  - component: {fileID: 2822297157384475250}
-  - component: {fileID: 8567408447776537908}
-  - component: {fileID: 1864077767445566511}
-  - component: {fileID: 2756122981986454792}
-  - component: {fileID: 9073641381630960508}
-  - component: {fileID: 8239917148519635375}
-  - component: {fileID: 2463424206290343736}
+  - component: {fileID: 7388391016215515944}
+  - component: {fileID: 8582242369926729698}
+  - component: {fileID: 2899989185037988577}
   m_Layer: 11
-  m_Name: AgentMechant
-  m_TagString: AgentMechant
+  m_Name: Mesh
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6018833635926120512
+--- !u!4 &7388391016215515944
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308968867366325615}
+  m_GameObject: {fileID: 2130501720872278286}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.55, y: -2.89, z: 61.44}
+  m_LocalPosition: {x: 0, y: 0.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8361203459441120187}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 6018833635926120512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2332092420408053218
+--- !u!33 &8582242369926729698
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308968867366325615}
+  m_GameObject: {fileID: 2130501720872278286}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2822297157384475250
+--- !u!23 &2899989185037988577
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308968867366325615}
+  m_GameObject: {fileID: 2130501720872278286}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -236,6 +229,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4308968867366325615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6018833635926120512}
+  - component: {fileID: 8567408447776537908}
+  - component: {fileID: 1864077767445566511}
+  - component: {fileID: 2756122981986454792}
+  - component: {fileID: 9073641381630960508}
+  - component: {fileID: 8239917148519635375}
+  - component: {fileID: 2463424206290343736}
+  m_Layer: 11
+  m_Name: AgentMechant
+  m_TagString: AgentMechant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6018833635926120512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.55, y: -2.874, z: 61.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8361203459441120187}
+  - {fileID: 7388391016215515944}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8567408447776537908
 CapsuleCollider:
   m_ObjectHideFlags: 0

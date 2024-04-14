@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Circle
+  m_Name: Circle 1
   m_Shader: {fileID: -6465566751694194690, guid: 8018de63b8aebbf4393cb632588436c5,
     type: 3}
   m_Parent: {fileID: 0}
@@ -60,13 +60,11 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _Border: 0
     - _CastShadows: 1
-    - _Circle1: 0.045
+    - _Circle1: 0.193
     - _Circle10: 0
     - _Circle11: 0
     - _Circle12: 0
-    - _Circle1_1: 0.2
-    - _Circle2: 0.1
-    - _Circle2_1: 0.3
+    - _Circle2: 0.341
     - _Circle3: 0
     - _Circle4: 0
     - _Circle5: 0
@@ -88,10 +86,8 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Color1: {r: 1, g: 0.08857537, b: 0, a: 0}
-    - _Color1_1: {r: 0.71310854, g: 0.47009614, b: 0.7169812, a: 0}
-    - _Color2: {r: 0, g: 1, b: 0.72117305, a: 0}
-    - _Color2_1: {r: 0, g: 0.46073478, b: 1, a: 0}
+    - _Color1: {r: 0.07075471, g: 1, b: 0.15697019, a: 0}
+    - _Color2: {r: 0.95666504, g: 0, b: 1, a: 0}
     - _Color3: {r: 0.29170775, g: 1, b: 0, a: 0}
     - _Color4: {r: 0, g: 1, b: 0.9284022, a: 0}
     - _Color5: {r: 0.10852003, g: 0, b: 1, a: 0}

@@ -74,4 +74,13 @@ public class HeathEnemy : MonoBehaviour
             _UpgradeAndMoneySystemScript._moneyNumber += 1;
         }
     }
+
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            Die();
+        }
+    }
 }

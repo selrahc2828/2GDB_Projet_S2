@@ -42,9 +42,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BaseGradientPower: 1
-    - _FresnelPower: 1.5
-    - _GlitterOffset: 0.8
+    - _BaseGradientPower: 1.02
+    - _FresnelPower: 1.1
+    - _GlitterOffset: 1
     - _NoiseRotationSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
