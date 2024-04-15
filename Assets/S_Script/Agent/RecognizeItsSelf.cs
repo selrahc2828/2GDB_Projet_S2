@@ -53,6 +53,8 @@ public class RecognizeItsSelf : MonoBehaviour
     }
     private void Start()
     {
+
+
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
@@ -240,22 +242,13 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void UpdateExaustionMeter()
     {
+        Color initialColor = new Color(91f / 255f, 31f / 255f, 0f);
 
-        Color initialColor = new Color(191f / 255f, 191f / 255, 191f / 255f);
+        _Intensity = _threshold - (_exaustionLevel * 5f);
 
-        Color fatigueColor = new Color(80f / 255f, 80f / 255f, 80f / 255f);
+        initialColor *= _Intensity;
 
-        // Définir une couleur finale en interpolant entre la couleur initiale et la couleur de fatigue basée sur le niveau d'épuisement
-        Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
-
-        // Définir une intensité pour la couleur finale
-        _Intensity = _threshold - (_exaustionLevel * 5f); // Ajustez cette formule selon vos préférences pour l'intensité
-
-       
-        finalColor *= _Intensity;
-
-        // Appliquer la couleur calculée à la propriété FresnelColor du material
-        _meshRenderer.material.SetColor("_FresnelColor", finalColor);
+        _meshRenderer.material.SetColor("_FresnelColor", initialColor);
     }
 
 

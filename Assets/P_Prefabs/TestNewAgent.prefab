@@ -559,7 +559,7 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _exaustionLevel: 0
   _Intensity: 0
-  _threshold: 10
+  _threshold: 22
   _ShaderMaterial: {fileID: 2100000, guid: 61c82dc2149ebcd4eb310272ca5c6993, type: 2}
   _meshRenderer: {fileID: 3118169488273763431}
   _towerProximityValue: 0
