@@ -242,13 +242,16 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void UpdateExaustionMeter()
     {
-        Color initialColor = new Color(91f / 255f, 31f / 255f, 0f);
+        Color initialColor = new Color(91f / 255f, 31f / 255, 0f / 255f);
 
-        _Intensity = _threshold - (_exaustionLevel * 5f);
+        Color fatigueColor = new Color(51f / 255f, 8f / 255f, 7f / 255f);
 
-        initialColor *= _Intensity;
+        Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
 
-        _meshRenderer.material.SetColor("_FresnelColor", initialColor);
+        _Intensity = _threshold - (_exaustionLevel * 20f); 
+
+        finalColor *= _Intensity;
+        _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
 
