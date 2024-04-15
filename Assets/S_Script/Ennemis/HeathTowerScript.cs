@@ -16,8 +16,11 @@ public class HeathTowerScript : MonoBehaviour
     public int _MaxHealth;
     public int _CurrentHealth;
 
-    public float _Intensity;
-    public float _Threshold;
+    [Header("Color")]
+    [ColorUsage(false, true)]
+    public Color _initialColor;
+    [ColorUsage(false, true)]
+    public Color _finalColor;
 
 
     public void Awake()
@@ -67,15 +70,26 @@ public class HeathTowerScript : MonoBehaviour
 
     private void ChangeColorOnHP()
     {
-        Color initialColor = new Color(91f / 255f, 31f / 255, 0f / 255f);
+        if (_MaxHealth <= 0)
+            return;
 
-        Color fatigueColor = new Color(10f / 255f, 10f / 255f, 10f / 255f);
+        float healthPercentage = (float)_CurrentHealth / _MaxHealth;
 
-        Color finalColor = Color.Lerp(initialColor, fatigueColor, _CurrentHealth);
+        Color lerpedColor;
+        float intensity;
 
-        _Intensity = _Threshold - (_CurrentHealth * 20f);
+        if (_CurrentHealth <= 0)
+        {
+            lerpedColor = _finalColor; 
+            intensity = 0f;
+        }
+        else
+        {
+            lerpedColor = Color.Lerp(_initialColor, _finalColor, healthPercentage);
+            intensity = 1f;
+        }
 
-        finalColor *= _Intensity;
-        _meshRenderer.material.SetColor("Emission", finalColor);
-    }
+        lerpedColor *= intensity;
+        _meshRenderer.material.SetColor("_EmissionColor", lerpedColor);
+    }    
 }
