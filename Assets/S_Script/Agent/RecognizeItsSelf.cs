@@ -241,7 +241,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public void UpdateExaustionMeter()
     {
 
-        Color initialColor = new Color(255f / 255f, 255f / 255, 255f / 255f);
+        Color initialColor = new Color(191f / 255f, 191f / 255, 191f / 255f);
 
         Color fatigueColor = new Color(80f / 255f, 80f / 255f, 80f / 255f);
 
