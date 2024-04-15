@@ -53,8 +53,6 @@ public class RecognizeItsSelf : MonoBehaviour
     }
     private void Start()
     {
-
-
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
@@ -79,6 +77,8 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
+           
+            
         }
     }
 
@@ -243,14 +243,25 @@ public class RecognizeItsSelf : MonoBehaviour
     public void UpdateExaustionMeter()
     {
         Color initialColor = new Color(91f / 255f, 31f / 255, 0f / 255f);
-
         Color fatigueColor = new Color(51f / 255f, 8f / 255f, 7f / 255f);
 
-        Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
+        Color finalColor;
+        float intensity;
 
-        _Intensity = _threshold - (_exaustionLevel * 20f); 
+        if (_aviability)
+        {
+            // Si l'agent est disponible, utiliser une intensité de 2
+            finalColor = initialColor;
+            intensity = 5f;
+        }
+        else
+        {
+            // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
+            finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
+            intensity = _threshold - (_exaustionLevel * 20f);
+        }
 
-        finalColor *= _Intensity;
+        finalColor *= intensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
