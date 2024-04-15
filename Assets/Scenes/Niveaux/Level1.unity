@@ -6956,6 +6956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
+      propertyPath: _meshRenderer
+      value: 
+      objectReference: {fileID: 1325268551}
+    - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
       propertyPath: _GameManagerScript
       value: 
       objectReference: {fileID: 1958624180}
@@ -14681,6 +14686,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e00ebfa6a87969e40b0e559123e2d481, type: 3}
+--- !u!23 &1325268551 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 893248469411988400, guid: 344e29f43c65e0148902c1b96ae2317e,
+    type: 3}
+  m_PrefabInstance: {fileID: 603181410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1330197378
 GameObject:
   m_ObjectHideFlags: 0

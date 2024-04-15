@@ -8,14 +8,16 @@ public class HeathTowerScript : MonoBehaviour
 {
     [Header("Reference")]
     public Text _HealtHp;
-    public GameManager _GameManagerScript; 
+    public GameManager _GameManagerScript;
+    public MeshRenderer _meshRenderer;
     
 
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
 
-
+    public float _Intensity;
+    public float _Threshold;
 
 
     public void Awake()
@@ -34,6 +36,8 @@ public class HeathTowerScript : MonoBehaviour
 
     private void Update()
     {
+        ChangeColorOnHP();
+
         // Update The Current Healt 
         GetCurrentHealth();
         // Change the text 
@@ -59,5 +63,19 @@ public class HeathTowerScript : MonoBehaviour
     public int GetCurrentHealth()
     {
         return _CurrentHealth;
+    }
+
+    private void ChangeColorOnHP()
+    {
+        Color initialColor = new Color(91f / 255f, 31f / 255, 0f / 255f);
+
+        Color fatigueColor = new Color(10f / 255f, 10f / 255f, 10f / 255f);
+
+        Color finalColor = Color.Lerp(initialColor, fatigueColor, _CurrentHealth);
+
+        _Intensity = _Threshold - (_CurrentHealth * 20f);
+
+        finalColor *= _Intensity;
+        _meshRenderer.material.SetColor("Emission", finalColor);
     }
 }
