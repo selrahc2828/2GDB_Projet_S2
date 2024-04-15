@@ -241,9 +241,9 @@ public class RecognizeItsSelf : MonoBehaviour
     public void UpdateExaustionMeter()
     {
 
-        Color initialColor = new Color(217f / 255f, 96f / 255, 0f);
+        Color initialColor = new Color(255f / 255f, 255f / 255, 255f / 255f);
 
-        Color fatigueColor = new Color(1f / 255f, 1f / 255f, 0f);
+        Color fatigueColor = new Color(80f / 255f, 80f / 255f, 80f / 255f);
 
         // Définir une couleur finale en interpolant entre la couleur initiale et la couleur de fatigue basée sur le niveau d'épuisement
         Color finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);

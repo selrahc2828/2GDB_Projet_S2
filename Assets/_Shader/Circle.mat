@@ -59,6 +59,12 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _Border: 0
+    - _Border1: 0.98
+    - _Border2: 0.98
+    - _Border3: 0.99
+    - _Border4: 0.99
+    - _Border5: 0.99
+    - _Border6: 0.99
     - _CastShadows: 1
     - _Circle1: 0.045
     - _Circle10: 0
@@ -67,10 +73,10 @@ Material:
     - _Circle1_1: 0.2
     - _Circle2: 0.1
     - _Circle2_1: 0.3
-    - _Circle3: 0
-    - _Circle4: 0
-    - _Circle5: 0
-    - _Circle6: 0
+    - _Circle3: 0.2
+    - _Circle4: 0.3
+    - _Circle5: 0.4
+    - _Circle6: 0.5
     - _Circle7: 0
     - _Circle8: 0
     - _Circle9: 0
@@ -88,12 +94,12 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Color1: {r: 1, g: 0.08857537, b: 0, a: 0}
-    - _Color1_1: {r: 0.71310854, g: 0.47009614, b: 0.7169812, a: 0}
-    - _Color2: {r: 0, g: 1, b: 0.72117305, a: 0}
-    - _Color2_1: {r: 0, g: 0.46073478, b: 1, a: 0}
-    - _Color3: {r: 0.29170775, g: 1, b: 0, a: 0}
-    - _Color4: {r: 0, g: 1, b: 0.9284022, a: 0}
-    - _Color5: {r: 0.10852003, g: 0, b: 1, a: 0}
-    - _Color6: {r: 1, g: 0, b: 0.8008418, a: 0}
+    - _Color1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color1_1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2_1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color3: {r: 1, g: 1, b: 1, a: 0}
+    - _Color4: {r: 1, g: 1, b: 1, a: 0}
+    - _Color5: {r: 1, g: 1, b: 1, a: 0}
+    - _Color6: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
