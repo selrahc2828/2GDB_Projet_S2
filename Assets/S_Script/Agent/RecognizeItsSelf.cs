@@ -33,7 +33,7 @@ public class RecognizeItsSelf : MonoBehaviour
     [Header("Variable de Pools")]
     public GameObject _GOpool1;
     public GameObject _GOpool2;
-    public bool _pool1;
+    public bool _pool1; //slow
     public bool _pool2;
 
 

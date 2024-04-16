@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
     [Header("Enemy damage")]
     public int _DamageAmoutToAgent;
 
+    [Header("Slow System")]
+    public float _slowDuration;
+    public float _slowPower;
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;

@@ -373,6 +373,11 @@ MonoBehaviour:
   _MaxHealth: 50
   _CurrentHealth: 0
   _droppChance: 0
+  _slowDuration: 5
+  _slowPower: 0.1
+  _slowTimer: 0
+  _thisAgent: {fileID: 0}
+  _thisAgentBaseSpeed: 0
 --- !u!114 &2463424206290343736
 MonoBehaviour:
   m_ObjectHideFlags: 0

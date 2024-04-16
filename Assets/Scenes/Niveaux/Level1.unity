@@ -19172,7 +19172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1600158459
 Transform:
   m_ObjectHideFlags: 0
@@ -23899,6 +23899,8 @@ MonoBehaviour:
   _AngularSpeedEnemy: 180
   _AccelerationEnemy: 30
   _DamageAmoutToAgent: 0
+  _slowDuration: 0
+  _slowPower: 0
   _HeathTower: 500
   _slowMo: 0.5
   _gamePaused: 0

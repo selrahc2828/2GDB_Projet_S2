@@ -2,41 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class HeathEnemy : MonoBehaviour
+public class HealthEnemy : MonoBehaviour
 {
     [Header("Reference")]
     public GameManager _GameManager;
     public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
 
-    [Header("HealthSystem")]
+    [Header("Health System")]
     public int _MaxHealth;
     public int _CurrentHealth;
     public float _droppChance;
 
+    [Header("Slow System")]
+    public float _slowDuration;
+    public float _slowPower;
+    public float _slowTimer;
 
+    [Header("This Agent Data")]
+    public NavMeshAgent _thisAgent;
+    public float _thisAgentBaseSpeed;
 
     public void Awake()
     {
         _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
         _GameManager = FindAnyObjectByType<GameManager>();
+        _thisAgent = this.GetComponentInParent<NavMeshAgent>();
     }
 
 
     void Start()
     {
+        _slowPower = _GameManager._slowPower;
+        _slowDuration = _GameManager._slowDuration;
         _droppChance = 0.2f;
         _MaxHealth = _GameManager._HeathEnemy;
         _GameManager._numberOfEnemyOnScreen++;
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
+        _thisAgentBaseSpeed = _thisAgent.speed;
     }
 
     private void Update()
     {
         // Update The Current Healt 
         GetCurrentHealth();
+        ApplySlow();
     }
 
     // Fonction is called in DamageToTower Script 
@@ -49,6 +62,26 @@ public class HeathEnemy : MonoBehaviour
         if (_CurrentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    public void GetSlowed()
+    {
+        Debug.Log(_thisAgent.speed);
+        _slowTimer = _slowDuration;
+        Debug.Log(_thisAgent.speed);
+    }
+
+    public void ApplySlow()
+    {
+        _slowTimer -= Time.deltaTime;
+        if(_slowTimer >= 0)
+        {
+            _thisAgent.speed = _slowPower * _thisAgentBaseSpeed;
+        }
+        else
+        {
+            _thisAgent.speed = _thisAgentBaseSpeed;
         }
     }
 

@@ -57,7 +57,7 @@ public class AgentFonction : MonoBehaviour
     public void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
-        _AgentSelfScript = FindAnyObjectByType<RecognizeItsSelf>();
+        _AgentSelfScript = this.GetComponentInParent<RecognizeItsSelf>();
     }
 
 
@@ -186,9 +186,9 @@ public class AgentFonction : MonoBehaviour
                 // Start Coroutine to lerp the position of the trail 
                 StartCoroutine(SpawnTrail(_Trail, hit));
 
-                #region DamageToEnemies
+                #region Damage And Effect To Enemies
                 // ------ All this part to damage the enemy ------
-                HeathEnemy _EnemyHealth = hit.collider.GetComponent<HeathEnemy>();
+                HealthEnemy _EnemyHealth = hit.collider.GetComponent<HealthEnemy>();
 
                 Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
 
@@ -196,6 +196,11 @@ public class AgentFonction : MonoBehaviour
                 {
                     // inflic Damage 
                     _EnemyHealth.TakeDamage(_damageAmount);
+
+                    if(_AgentSelfScript._pool1)
+                    {
+                        _EnemyHealth.GetSlowed();
+                    }
 
                     if (_EnemyHealth.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
