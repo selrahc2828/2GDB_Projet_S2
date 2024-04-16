@@ -11,6 +11,7 @@ public class RecognizeItsSelf : MonoBehaviour
     [Header("Variable de Script")]
     public AgentToTrace _TraceScript;
     public GameManager _gameManager;
+    public AgentFonction _AgentFonctionScript;
 
     [Header("Variable de Fatigue")]
     public float _exaustionLevel;
@@ -50,6 +51,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
+        _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
     }
     private void Start()
     {
@@ -77,8 +79,6 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
-           
-            
         }
     }
 
@@ -321,6 +321,7 @@ public class RecognizeItsSelf : MonoBehaviour
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
 
+        _AgentFonctionScript._mineUsed = false;
         _pool1 = false;
         _pool2 = false;
         _neighbourLowerProximityValue = -2;

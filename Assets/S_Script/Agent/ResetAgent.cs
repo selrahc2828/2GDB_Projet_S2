@@ -35,6 +35,7 @@ public class ResetAgent : MonoBehaviour
                         {
                             _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
                             _agent.GetComponent<RecognizeItsSelf>()._canShoot = false;
+                            _agent.GetComponent<AgentFonction>().LayDownMine();
                         }
                     }
                 }

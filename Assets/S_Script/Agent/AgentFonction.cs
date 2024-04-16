@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class AgentFonction : MonoBehaviour
 {
@@ -36,6 +37,13 @@ public class AgentFonction : MonoBehaviour
     [Header("Weapon Reference")]
     public Transform _BulletSpawnPosition;
     public Transform _TowerPosition;
+
+    [Header("Mine System")]
+    public int _mineDamage;
+    public bool _mineUsed;
+    public float _mineTimer;
+    public float _mineRadius;
+    public Vector3 _mineLocation;
 
     [Header("Weapon Parameter")]
     public int _damageAmount;
@@ -83,7 +91,10 @@ public class AgentFonction : MonoBehaviour
         _NavMeshAgent.angularSpeed = _GameManagerScript._AngularSpeedAgent;
         _NavMeshAgent.acceleration = _GameManagerScript._AccelerationAgent;
 
-
+        _mineDamage = _GameManagerScript._mineDamage;
+        _mineUsed = false;
+        _mineTimer = _GameManagerScript._mineTimer;
+        _mineRadius = _GameManagerScript._mineRadius;
     }
 
     private void Update()
@@ -214,6 +225,49 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
+    public void LayDownMine()
+    {
+        if(!_mineUsed)
+        {
+            _mineUsed = true;
+            _mineLocation = transform.position;
+            StartCoroutine(MineTicking(_mineLocation, _mineTimer, _mineRadius, _mineDamage));
+        }
+    }
+    private IEnumerator MineTicking(Vector3 position, float timer, float radius, int damage)
+    {
+        yield return new WaitForSeconds(timer);
+
+        Collider[] colliders = Physics.OverlapSphere(position, radius);
+        foreach (Collider collider in colliders)
+        {
+            if(collider.gameObject.GetComponent<HealthEnemy>())
+            {
+                collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+            }
+        }
+    }
+    
+    private IEnumerator DOT_Zone(Vector3 position, float timer, float radius, int damage)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < timer)
+        {
+            Collider[] colliders = Physics.OverlapSphere(position, radius);
+            foreach (Collider collider in colliders)
+            {
+                if(collider.gameObject.GetComponent<HealthEnemy>())
+                {
+                    collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+                }
+            }
+
+            yield return null; // Attendre jusqu'au prochain frame
+            elapsedTime += Time.deltaTime; // Incrémenter le temps écoulé
+        }
+    }
+
     // Get the next target
     private GameObject GetNextTarget()
     {
@@ -227,8 +281,6 @@ public class AgentFonction : MonoBehaviour
             return null;
         }
     }
-
-
 
     // Lerp the trail position | Called Line 136 in the Shoot fonction 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)

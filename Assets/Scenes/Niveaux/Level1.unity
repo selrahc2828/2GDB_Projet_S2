@@ -23901,6 +23901,9 @@ MonoBehaviour:
   _DamageAmoutToAgent: 0
   _slowDuration: 0
   _slowPower: 0
+  _mineDamage: 20
+  _mineTimer: 1
+  _mineRadius: 150
   _HeathTower: 500
   _slowMo: 0.5
   _gamePaused: 0

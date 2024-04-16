@@ -47,6 +47,11 @@ public class GameManager : MonoBehaviour
     public float _slowDuration;
     public float _slowPower;
 
+    [Header("Mine System")]
+    public int _mineDamage;
+    public float _mineTimer;
+    public float _mineRadius;
+
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
 
