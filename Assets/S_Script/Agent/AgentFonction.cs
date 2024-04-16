@@ -44,6 +44,7 @@ public class AgentFonction : MonoBehaviour
     public float _mineTimer;
     public float _mineRadius;
     public Vector3 _mineLocation;
+    public GameObject _minePrefab;
 
     [Header("Weapon Parameter")]
     public int _damageAmount;
@@ -95,6 +96,7 @@ public class AgentFonction : MonoBehaviour
         _mineUsed = false;
         _mineTimer = _GameManagerScript._mineTimer;
         _mineRadius = _GameManagerScript._mineRadius;
+        _minePrefab = _GameManagerScript._minePrefab;
     }
 
     private void Update()
@@ -236,6 +238,8 @@ public class AgentFonction : MonoBehaviour
     }
     private IEnumerator MineTicking(Vector3 position, float timer, float radius, int damage)
     {
+
+        GameObject mine = Instantiate(_minePrefab, position, Quaternion.identity);
         yield return new WaitForSeconds(timer);
 
         Collider[] colliders = Physics.OverlapSphere(position, radius);
@@ -246,6 +250,7 @@ public class AgentFonction : MonoBehaviour
                 collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
             }
         }
+        Destroy(mine);
     }
     
     private IEnumerator DOT_Zone(Vector3 position, float timer, float radius, int damage)

@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public int _mineDamage;
     public float _mineTimer;
     public float _mineRadius;
+    public GameObject _minePrefab;
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;

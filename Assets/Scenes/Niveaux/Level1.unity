@@ -23904,6 +23904,8 @@ MonoBehaviour:
   _mineDamage: 20
   _mineTimer: 1
   _mineRadius: 150
+  _minePrefab: {fileID: 5671154418134921842, guid: fbc738bc8fcc31344b18b8430514d45d,
+    type: 3}
   _HeathTower: 500
   _slowMo: 0.5
   _gamePaused: 0
