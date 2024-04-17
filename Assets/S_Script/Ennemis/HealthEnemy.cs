@@ -25,6 +25,14 @@ public class HealthEnemy : MonoBehaviour
     public NavMeshAgent _thisAgent;
     public float _thisAgentBaseSpeed;
 
+
+    [Header("HP Feedback")]
+    public MeshRenderer _meshRenderer;
+    [ColorUsage(false, true)]
+    public Color _finalColor;
+    [ColorUsage(false, true)]
+    public Color _initialColor;
+
     public void Awake()
     {
         _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
@@ -50,6 +58,7 @@ public class HealthEnemy : MonoBehaviour
         // Update The Current Healt 
         GetCurrentHealth();
         ApplySlow();
+        ChangeColorOnHP();
     }
 
     // Fonction is called in DamageToTower Script 
@@ -115,5 +124,30 @@ public class HealthEnemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    private void ChangeColorOnHP()
+    {
+        if (_MaxHealth <= 0)
+            return;
+
+        float healthPercentage = (float)_CurrentHealth / _MaxHealth;
+
+        Color lerpedColor;
+        float intensity;
+
+        if (_CurrentHealth <= 0)
+        {
+            lerpedColor = _finalColor;
+            intensity = 0f;
+        }
+        else
+        {
+            lerpedColor = Color.Lerp(_initialColor, _finalColor, healthPercentage);
+            intensity = 1f;
+        }
+
+        lerpedColor *= intensity;
+        _meshRenderer.material.SetColor("_EmissionColor", lerpedColor);
     }
 }

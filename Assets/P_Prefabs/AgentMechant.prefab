@@ -378,6 +378,9 @@ MonoBehaviour:
   _slowTimer: 0
   _thisAgent: {fileID: 0}
   _thisAgentBaseSpeed: 0
+  _meshRenderer: {fileID: 2899989185037988577}
+  _finalColor: {r: 0.75424725, g: 0.24402116, b: 2.1185474, a: 0}
+  _initialColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
 --- !u!114 &2463424206290343736
 MonoBehaviour:
   m_ObjectHideFlags: 0
