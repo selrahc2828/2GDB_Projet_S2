@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6e09aed4-50d7-4e7e-8e10-0f831a0c334e}">
+		<property name="assetPath">
+			<value>Air, Blow, Wind Tunnel, Air Vent, Start Up, Power Down, Schoeps 01 SND89338.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.800281249999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f4425e6-7a76-4fba-978c-8fd1a48a6662}</destination>
+		</relationship>
+	</object>
+</objects>

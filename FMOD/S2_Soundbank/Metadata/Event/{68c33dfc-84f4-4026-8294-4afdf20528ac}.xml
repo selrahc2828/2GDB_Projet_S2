@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{68c33dfc-84f4-4026-8294-4afdf20528ac}">
 		<property name="color">
-			<value>Red</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>agent_steps</value>
@@ -59,14 +59,25 @@
 			<destination>{29f91d8a-4f7f-42b4-98d1-833ec98ef203}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b2c2c4f0-5c20-4836-b70e-778c12f8b459}" />
+	<object class="EventAutomatableProperties" id="{b2c2c4f0-5c20-4836-b70e-778c12f8b459}">
+		<property name="maxVoices">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{5fdec008-ce7b-49fa-a069-d814cbb37d6e}" />
 	<object class="GroupTrack" id="{7dccc973-d0ca-440f-bff5-4d697ba446a5}">
+		<relationship name="modules">
+			<destination>{d08bb3a4-5dbd-42e8-a186-e1ad7d7525b7}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{85574b2b-4f96-433b-8e48-52a8fac4392f}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{22244e40-72a6-4d84-a034-d2c6de502eb3}" />
+	<object class="Timeline" id="{22244e40-72a6-4d84-a034-d2c6de502eb3}">
+		<relationship name="modules">
+			<destination>{d08bb3a4-5dbd-42e8-a186-e1ad7d7525b7}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{915ebe2e-6037-4229-b201-d0e78179d7b0}">
 		<relationship name="effectChain">
 			<destination>{c3357e73-4c5b-4b46-bcef-68c9348d1ae1}</destination>
@@ -84,7 +95,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d5158d62-4e9f-4524-a300-b02f35156c3c}" />
+	<object class="SingleSound" id="{d08bb3a4-5dbd-42e8-a186-e1ad7d7525b7}">
+		<property name="length">
+			<value>15.800281249999999</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{6e09aed4-50d7-4e7e-8e10-0f831a0c334e}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{85574b2b-4f96-433b-8e48-52a8fac4392f}">
+		<property name="volume">
+			<value>-18</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

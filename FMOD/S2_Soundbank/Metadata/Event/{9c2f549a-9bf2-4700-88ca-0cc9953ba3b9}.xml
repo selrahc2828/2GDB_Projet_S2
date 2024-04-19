@@ -59,7 +59,11 @@
 			<destination>{29f91d8a-4f7f-42b4-98d1-833ec98ef203}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{79dbb675-a926-4fbc-9ee2-66bba527f321}" />
+	<object class="EventAutomatableProperties" id="{79dbb675-a926-4fbc-9ee2-66bba527f321}">
+		<property name="maxVoices">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{bea0ea5d-fe66-415e-86f8-9e6e2b80d7e7}" />
 	<object class="GroupTrack" id="{2059bf27-f013-4502-87a4-52788aa5855f}">
 		<relationship name="modules">
@@ -92,11 +96,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{5ab9cc05-8d3f-4526-82ac-86e2fe3409c5}" />
 	<object class="SingleSound" id="{fe5a5232-85b3-4d93-a5de-b322b415de0b}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
 		<property name="length">
-			<value>0.84999999999999998</value>
+			<value>0.46434134573478347</value>
+		</property>
+		<property name="pitch">
+			<value>11.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{2ce4bfdc-efd3-4df8-b107-4b00ffdbe0f8}</destination>
@@ -138,7 +142,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>32.5</value>
+			<value>15.5</value>
 		</property>
 	</object>
 	<object class="FadeCurve" id="{9a12780e-0c22-41f9-a0f6-feb21e6d6c55}">
@@ -186,7 +190,7 @@
 	</object>
 	<object class="AutomationPoint" id="{b6f70439-1df8-4398-8823-18534264be16}">
 		<property name="position">
-			<value>0.80000000000000004</value>
+			<value>0.41434134573478343</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -197,7 +201,7 @@
 	</object>
 	<object class="AutomationPoint" id="{7da9b31d-a7a7-4d18-8b4d-542be128df71}">
 		<property name="position">
-			<value>0.84999999999999998</value>
+			<value>0.46434134573478336</value>
 		</property>
 		<property name="value">
 			<value>0</value>
