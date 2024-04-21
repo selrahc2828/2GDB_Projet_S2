@@ -92,7 +92,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 0.74935913
         value: 0
         inSlope: 0
         outSlope: 0
@@ -535,6 +535,12 @@ MonoBehaviour:
   _BulletSpawnPosition: {fileID: 8674283603985636098}
   _TowerPosition: {fileID: 22719735607737012, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
+  _mineDamage: 0
+  _mineUsed: 0
+  _mineTimer: 0
+  _mineRadius: 0
+  _mineLocation: {x: 0, y: 0, z: 0}
+  _minePrefab: {fileID: 0}
   _damageAmount: 1
   _initialDamageAmount: 0
   _initialFireRate: 0
@@ -557,9 +563,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TraceScript: {fileID: 0}
   _gameManager: {fileID: 0}
+  _AgentFonctionScript: {fileID: 0}
   _exaustionLevel: 0
   _Intensity: 0
-  _threshold: 22
+  _threshold: 8
   _ShaderMaterial: {fileID: 2100000, guid: 61c82dc2149ebcd4eb310272ca5c6993, type: 2}
   _meshRenderer: {fileID: 3118169488273763431}
   _towerProximityValue: 0
@@ -573,6 +580,8 @@ MonoBehaviour:
   _canShoot: 0
   _aviability: 0
   _resetTime: 0
+  _initialColor: {r: 0, g: 1.4980392, b: 0.14901961, a: 0}
+  _finalColor: {r: 0.55418354, g: 0.55418354, b: 0.55418354, a: 0}
 --- !u!4 &7674923304642868183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a16700baf50ac4641a7101d572ec0d4d,

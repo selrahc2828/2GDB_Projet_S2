@@ -46,6 +46,12 @@ public class RecognizeItsSelf : MonoBehaviour
     private NavMeshAgent _selfAgent;
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
 
+    [Header("Color")]
+    [ColorUsage(false, true)]
+    public Color _initialColor;
+    [ColorUsage(false, true)]
+    public Color _finalColor;
+
 
     private void Awake()
     {
@@ -242,22 +248,18 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void UpdateExaustionMeter()
     {
-        Color initialColor = new Color(91f / 255f, 31f / 255, 0f / 255f);
-        Color fatigueColor = new Color(51f / 255f, 8f / 255f, 7f / 255f);
-
         Color finalColor;
         float intensity;
 
         if (_aviability)
         {
-            // Si l'agent est disponible, utiliser une intensité de 2
-            finalColor = initialColor;
-            intensity = 5f;
+            finalColor = _initialColor;
+            intensity = 3f;  
         }
         else
         {
             // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
-            finalColor = Color.Lerp(initialColor, fatigueColor, _exaustionLevel);
+            finalColor = Color.Lerp(_initialColor, _finalColor, _exaustionLevel);
             intensity = _threshold - (_exaustionLevel * 20f);
         }
 
