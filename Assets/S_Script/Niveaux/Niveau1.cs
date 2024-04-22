@@ -49,7 +49,7 @@ public class Niveau1 : MonoBehaviour
                 _gameManager._waveStarted = false;
                 if(_currentWave == 5)
                 {
-                    _gameManager._gameWin = true;
+                    //_gameManager._gameWin = true;
                 }
                 else
                 {
@@ -88,6 +88,12 @@ public class Niveau1 : MonoBehaviour
             default: 
                 break;
         }
+
+        if (_currentWave == 5)
+        {
+            _currentWave = 1;
+        }
+
         StartCoroutine(DelayedCallWaves(_timerBetweenWave));
     }
 

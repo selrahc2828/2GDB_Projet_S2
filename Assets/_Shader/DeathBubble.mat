@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Trace
+  m_Name: DeathBubble
   m_Shader: {fileID: -6465566751694194690, guid: b3de72e849902564895066e07c6ce9c2,
     type: 3}
   m_Parent: {fileID: 0}
@@ -42,18 +42,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BaseGradientPower: 0.5
-    - _FresnelPower: 0.5
-    - _GlitterOffset: 0.42
-    - _NoiseRotationSpeed: 2.99
+    - _BaseGradientPower: 0
+    - _FresnelPower: 4
+    - _GlitterOffset: 1
+    - _NoiseRotationSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BaseColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor2: {r: 1, g: 1, b: 1, a: 1}
-    - _FresnelColor: {r: 1.8496963, g: 1.8496963, b: 1.8496963, a: 1}
+    - _BaseColor1: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColor2: {r: 0, g: 0, b: 0, a: 0}
+    - _FresnelColor: {r: 1.5942882, g: 5.992157, b: 0, a: 0}
     - _FresnelColor2: {r: 1, g: 0, b: 0, a: 0}
-    - _GlitterColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GlitterColor: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseScale: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &504371609395551475

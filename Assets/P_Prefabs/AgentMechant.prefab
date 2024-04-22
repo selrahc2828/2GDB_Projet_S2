@@ -74,7 +74,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _GameManager: {fileID: 0}
   _UpgradeAndMoneySystemScript: {fileID: 0}
+  _FeedbackScript: {fileID: 0}
   _MaxHealth: 50
   _CurrentHealth: 0
   _droppChance: 0

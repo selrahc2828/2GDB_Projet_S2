@@ -10,6 +10,7 @@ public class HealthEnemy : MonoBehaviour
     [Header("Reference")]
     public GameManager _GameManager;
     public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
+    public FeedBack _FeedbackScript;
 
     [Header("Health System")]
     public int _MaxHealth;
@@ -43,6 +44,8 @@ public class HealthEnemy : MonoBehaviour
 
     void Start()
     {
+        _FeedbackScript = FindAnyObjectByType<FeedBack>();
+
         _slowPower = _GameManager._slowPower;
         _slowDuration = _GameManager._slowDuration;
         _droppChance = 0.2f;
@@ -110,11 +113,15 @@ public class HealthEnemy : MonoBehaviour
         float randomValue = Random.value;
         _GameManager._numberOfEnemyOnScreen--;
 
+
         // Check if the random number is less than or equal to 0.2 (20% chance)
         if (randomValue <= _droppChance)
         {
             _UpgradeAndMoneySystemScript._moneyNumber += 1;
+
         }
+
+        _FeedbackScript.DeathBubble(transform);
     }
 
 
