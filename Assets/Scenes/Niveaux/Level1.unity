@@ -7502,12 +7502,12 @@ PrefabInstance:
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: _finalColor.b
-      value: 0
+      value: 1.4980392
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: _finalColor.g
-      value: 0.0627451
+      value: 1.4980392
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
