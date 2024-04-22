@@ -11,6 +11,7 @@ public class HealthEnemy : MonoBehaviour
     public GameManager _GameManager;
     public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
     public FeedBack _FeedbackScript;
+    
 
     [Header("Health System")]
     public int _MaxHealth;
@@ -21,6 +22,10 @@ public class HealthEnemy : MonoBehaviour
     public float _slowDuration;
     public float _slowPower;
     public float _slowTimer;
+    [ColorUsage(false, true)]
+    public Color _initialOutlineColor;
+    [ColorUsage(false, true)]
+    public Color _SlowedOutlineColor;
 
     [Header("This Agent Data")]
     public NavMeshAgent _thisAgent;
@@ -90,10 +95,12 @@ public class HealthEnemy : MonoBehaviour
         if(_slowTimer >= 0)
         {
             _thisAgent.speed = _slowPower * _thisAgentBaseSpeed;
+            SlowedOutlineColor();
         }
         else
         {
             _thisAgent.speed = _thisAgentBaseSpeed;
+            InitialOutlineColor();
         }
     }
 
@@ -157,4 +164,25 @@ public class HealthEnemy : MonoBehaviour
         lerpedColor *= intensity;
         _meshRenderer.material.SetColor("_EmissionColor", lerpedColor);
     }
+
+    public void SlowedOutlineColor()
+    {
+        if (_meshRenderer.materials.Length >= 2)
+        {      
+            Material outlineMaterial = _meshRenderer.materials[1]; 
+            // Changer la couleur de l'outline
+            outlineMaterial.SetColor("_Color", _SlowedOutlineColor);
+        }
+    }
+
+    public void InitialOutlineColor()
+    {
+        if (_meshRenderer.materials.Length >= 2)
+        {
+            Material outlineMaterial = _meshRenderer.materials[1];
+            // Changer la couleur de l'outline a l'état initial
+            outlineMaterial.SetColor("_Color", _initialOutlineColor);
+        }
+    }
+
 }

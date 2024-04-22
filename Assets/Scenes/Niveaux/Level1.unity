@@ -18597,7 +18597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1600158459
 Transform:
   m_ObjectHideFlags: 0
@@ -19549,11 +19549,11 @@ MonoBehaviour:
   _numberOfEnemyToCall: 0
   _actualNumberOfEnemy: 0
   _currentWave: 0
-  _numberEnemyWave1: 0
-  _numberEnemyWave2: 0
-  _numberEnemyWave3: 0
-  _numberEnemyWave4: 0
-  _numberEnemyWave5: 0
+  _numberEnemyWave1: 30
+  _numberEnemyWave2: 40
+  _numberEnemyWave3: 50
+  _numberEnemyWave4: 60
+  _numberEnemyWave5: 70
   _timerBetweenWave: 0
 --- !u!4 &1658559013 stripped
 Transform:
@@ -23117,7 +23117,7 @@ MonoBehaviour:
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
-  _HeathEnemy: 5
+  _HeathEnemy: 100
   _SpawnRate: 2
   _SpeedEnemy: 5
   _AngularSpeedEnemy: 180

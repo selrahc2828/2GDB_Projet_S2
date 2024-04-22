@@ -32,11 +32,6 @@ public class Niveau1 : MonoBehaviour
         _currentWave = 0;
         _numberOfWave = 5;
         _timerBetweenWave = 5;
-        _numberEnemyWave1 = 10;
-        _numberEnemyWave2 = 15;
-        _numberEnemyWave3 = 15;
-        _numberEnemyWave4 = 20;
-        _numberEnemyWave5 = 30;
         NextWave();
     }
 
