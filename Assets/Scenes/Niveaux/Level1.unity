@@ -18234,11 +18234,7 @@ MonoBehaviour:
   _GameManagerScript: {fileID: 0}
   _enemyPrefabs:
   - {fileID: 4308968867366325615, guid: db551d0b751431c4ba3ac12984e183e0, type: 3}
-  _spawnPoints:
-  - {fileID: 860172647}
-  - {fileID: 217665792}
-  - {fileID: 1319786127}
-  - {fileID: 1103458188}
+  _spawnPoint: {x: 0, y: 0, z: 0}
   _spawnCooldown: 2
 --- !u!4 &1566333943
 Transform:

@@ -31,31 +31,16 @@ public class Niveau1 : MonoBehaviour
         _gameManager._waveStarted = false;
         _currentWave = 0;
         _numberOfWave = 5;
-        _timerBetweenWave = 5;
         NextWave();
     }
 
     private void Update()
     {
-        if(!_gameManager._gameLose && _gameManager._gameStarted)
-        {
-            if(_gameManager._numberOfEnemyOnScreen <= 0 && _gameManager._waveStarted)
-            {
-                _gameManager._waveStarted = false;
-                if(_currentWave == 5)
-                {
-                    //_gameManager._gameWin = true;
-                }
-                else
-                {
-                    NextWave();
-                }
-            }
-        }
+
     }
     public void CallWaves(int numberOfEnemy)
     {
-        _spawnerScript.SpawnAWave(numberOfEnemy);
+        _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy));
         _gameManager._waveStarted = true;
     }
 
@@ -80,21 +65,18 @@ public class Niveau1 : MonoBehaviour
             case 5:
                 _numberOfEnemyToCall = _numberEnemyWave5;
                 break;
-            default: 
+            default:
+                _numberOfEnemyToCall = _numberEnemyWave5;
                 break;
         }
-
-        if (_currentWave == 5)
-        {
-            _currentWave = 1;
-        }
-
-        StartCoroutine(DelayedCallWaves(_timerBetweenWave));
+        CallWaves(_numberOfEnemyToCall);
     }
 
-    IEnumerator DelayedCallWaves(float delay)
+    public void CheckForNewtWave()
     {
-        yield return new WaitForSeconds(delay);
-        CallWaves(_numberOfEnemyToCall);
+        if (_gameManager._numberOfEnemyOnScreen <= 0 && !_gameManager._gameLose)
+        {
+            NextWave();
+        }
     }
 }

@@ -10,6 +10,7 @@ public class HealthEnemy : MonoBehaviour
     [Header("Reference")]
     public GameManager _GameManager;
     public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
+    public Niveau1 _Niveau1;
     public FeedBack _FeedbackScript;
     
 
@@ -41,6 +42,7 @@ public class HealthEnemy : MonoBehaviour
 
     public void Awake()
     {
+        _Niveau1 = FindAnyObjectByType<Niveau1>();
         _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
         _GameManager = FindAnyObjectByType<GameManager>();
         _thisAgent = this.GetComponentInParent<NavMeshAgent>();
@@ -55,10 +57,11 @@ public class HealthEnemy : MonoBehaviour
         _slowDuration = _GameManager._slowDuration;
         _droppChance = 0.2f;
         _MaxHealth = _GameManager._HeathEnemy;
-        _GameManager._numberOfEnemyOnScreen++;
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
         _thisAgentBaseSpeed = _thisAgent.speed;
+        
+        _GameManager._numberOfEnemyOnScreen++;
     }
 
     private void Update()
@@ -116,18 +119,8 @@ public class HealthEnemy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        // Generate a random number between 0 and 1
-        float randomValue = Random.value;
         _GameManager._numberOfEnemyOnScreen--;
-
-
-        // Check if the random number is less than or equal to 0.2 (20% chance)
-        if (randomValue <= _droppChance)
-        {
-            _UpgradeAndMoneySystemScript._moneyNumber += 1;
-
-        }
-
+        _Niveau1.CheckForNewtWave();
         _FeedbackScript.DeathBubble(transform);
     }
 

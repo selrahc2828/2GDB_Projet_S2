@@ -7,7 +7,7 @@ public class SpawnerEnnemy : MonoBehaviour
     public GameManager _GameManagerScript;
 
     public GameObject[] _enemyPrefabs;
-    public Transform[] _spawnPoints;
+    public Vector3 _spawnPoint;
     public float _spawnCooldown = 2f;
 
     private bool canSpawn = true;
@@ -50,21 +50,35 @@ public class SpawnerEnnemy : MonoBehaviour
 
     void SpawnEnemy()
     {
-        // Spawn to a random SpawnPoint
-        int randomIndex = Random.Range(0, _spawnPoints.Length);
-
+        _spawnPoint = GenerateRandomVector() * 90;
         // instantiate the enemy to the spawn position 
         GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
-        Instantiate(enemyPrefab, _spawnPoints[randomIndex].position, Quaternion.identity);
+        Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
     }
 
-    public void SpawnAWave(int numberOfEnemy)
+    public IEnumerator SpawnAWave(int numberOfEnemy)
     {
-        for(int i = 0; i < numberOfEnemy; i++)
+        for (int i = 0; i < numberOfEnemy; i++)
         {
-            int randomIndex = Random.Range(0, _spawnPoints.Length);
-            GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
-            Instantiate(enemyPrefab, _spawnPoints[randomIndex].position, Quaternion.identity);
+            yield return new WaitForSeconds(0.15f);
+            SpawnEnemy();
         }
+    }
+    public Vector3 GenerateRandomVector()
+    {
+        // Generate random x and z coordinates
+        float randomX = Random.Range(-1f, 1f);
+        float randomZ = Random.Range(-1f, 1f);
+
+        // Set y coordinate to 0
+        float y = 0f;
+
+        // Create a Vector3 with the generated coordinates
+        Vector3 randomVector = new Vector3(randomX, y, randomZ);
+
+        // Normalize the Vector3 to have a magnitude of 1
+        randomVector.Normalize();
+
+        return randomVector;
     }
 }
