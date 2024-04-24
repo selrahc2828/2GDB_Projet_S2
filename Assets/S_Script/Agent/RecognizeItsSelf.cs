@@ -1,7 +1,6 @@
 using FMOD;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -53,6 +52,13 @@ public class RecognizeItsSelf : MonoBehaviour
     public Color _finalColor;
 
 
+    public float _blinkTimerFixe;
+    public float _blinkTimerUsed;
+    private Color _linkIntensity;
+    private Color _linkIntensityMax;
+    private Color _linkIntensityMin;
+
+
     private void Awake()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -76,6 +82,11 @@ public class RecognizeItsSelf : MonoBehaviour
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
 
+        _linkIntensityMin = new Color(0f,0f,0f);
+        _linkIntensityMax = new Color(20f,20f,20f);
+        _blinkTimerUsed = 0;
+        _blinkTimerFixe = 1;
+
         StartCoroutine(CheckProximityFunctionsCoroutine());
     }
 
@@ -85,9 +96,29 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
+            AutoStartBlink();
+        }
+
+    }
+    private void OnMouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Create a ray from the mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            // Perform the raycast
+            if (Physics.Raycast(ray, out hit))
+            {
+                // Check if the object clicked has this script attached
+                if (hit.collider.gameObject == gameObject)
+                {
+                    gameObject.GetComponent<RecognizeItsSelf>().StartBlinking();
+                }
+            }
         }
     }
-
     IEnumerator ResetPositionInTimer()
     {
         yield return new WaitForSeconds(_resetTime);
@@ -154,6 +185,67 @@ public class RecognizeItsSelf : MonoBehaviour
             _towerProximityNormalizedValue = 1;
         }
     }
+    /*
+    #region Blink
+    public void AutoStartBlink()
+    {
+        if(_towerProximityValue == 0)
+        {
+            _blinkTimerUsed += Time.deltaTime;
+            if(_blinkTimerUsed > _blinkTimerFixe+1)
+            {
+                _blinkTimerUsed = 0;
+                StartBlinking();
+            }
+        }
+        else
+        {
+            _blinkTimerUsed = 0;
+        }
+    }
+    public void StartBlinking()
+    {
+        StartCoroutine(BlinkLink());
+    }
+
+    IEnumerator BlinkLink()
+    {
+        float _timer = 0;
+        float _timerMax = 3;
+        while (_timer <= 1)
+        {
+            _timer += Time.deltaTime;
+            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer/_timerMax);
+        }
+        yield return new WaitForSeconds(0.5f);
+        while (_timer >= 0)
+        {
+            _timer -= Time.deltaTime;
+            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
+        }
+        CheckLinkIntensity();
+    }
+    public void CheckLinkIntensity()
+    {
+        Collider[] _linkedAgents = new Collider[16];
+        Physics.OverlapSphereNonAlloc(transform.position, 2, _linkedAgents);
+        foreach (Collider _linkedAgent in _linkedAgents)
+        {
+
+            RecognizeItsSelf _linkedProximityValueScript = _linkedAgent.GetComponent<RecognizeItsSelf>();
+            if (_linkedProximityValueScript != null)
+            {
+                int _linkedProximityValue = _linkedProximityValueScript._towerProximityValue;
+                if (_linkedProximityValue > _towerProximityValue)
+                {
+                    _linkedAgent.GetComponent<RecognizeItsSelf>().StartBlinking();
+                }
+            }
+        }
+    }
+
+    #endregion Blink
+    */
 
     #region Pools
 
@@ -202,8 +294,8 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 if (agentCollider.CompareTag("Agent"))
                 {
-                    bool _neighbourPool1Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
-                    if (_neighbourPool1Value)
+                    bool _neighbourPool2Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
+                    if (_neighbourPool2Value)
                     {
                         _tempPool2 = true;
                     }
@@ -214,6 +306,8 @@ public class RecognizeItsSelf : MonoBehaviour
     }
 
     #endregion Pools
+
+    #region Exaustion
 
     public void CalculateExaustion()
     {
@@ -260,13 +354,15 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
             finalColor = Color.Lerp(_initialColor, _finalColor, _exaustionLevel);
-            intensity = _threshold - (_exaustionLevel * 20f);
+            intensity = _threshold - (_exaustionLevel * 10f);
         }
 
         finalColor *= intensity;
+        finalColor += _linkIntensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
+    #endregion Pools
 
 
     public List<NavMeshAgent> WitchListIsIt()
