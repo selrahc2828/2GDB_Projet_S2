@@ -19191,7 +19191,7 @@ MonoBehaviour:
   _OffSetY: -25
   _scaleDuration: 0.5
   _destroyDelay: 0.2
-  _maxScale: 50
+  _maxScale: 10
 --- !u!114 &1654960969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19330,10 +19330,10 @@ MonoBehaviour:
   _actualNumberOfEnemy: 0
   _currentWave: 0
   _numberEnemyWave1: 30
-  _numberEnemyWave2: 40
-  _numberEnemyWave3: 50
-  _numberEnemyWave4: 60
-  _numberEnemyWave5: 70
+  _numberEnemyWave2: 50
+  _numberEnemyWave3: 80
+  _numberEnemyWave4: 130
+  _numberEnemyWave5: 180
   _timerBetweenWave: 0
 --- !u!4 &1658559013 stripped
 Transform:
@@ -22905,7 +22905,7 @@ MonoBehaviour:
   _DamageAmoutToAgent: 0
   _slowDuration: 0
   _slowPower: 0
-  _mineDamage: 20
+  _mineDamage: 0
   _mineTimer: 1
   _mineRadius: 150
   _minePrefab: {fileID: 5671154418134921842, guid: fbc738bc8fcc31344b18b8430514d45d,

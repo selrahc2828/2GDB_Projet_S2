@@ -49,9 +49,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BaseColor1: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
-    - _BaseColor2: {r: 1, g: 1, b: 1, a: 1}
-    - _FresnelColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
+    - _BaseColor1: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor2: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    - _FresnelColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor2: {r: 1, g: 0, b: 0, a: 0}
     - _GlitterColor: {r: 93.75175, g: 93.75175, b: 93.75175, a: 1}
     - _NoiseScale: {r: 10, g: 10, b: 0, a: 0}

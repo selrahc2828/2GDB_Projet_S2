@@ -260,7 +260,7 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
             finalColor = Color.Lerp(_initialColor, _finalColor, _exaustionLevel);
-            intensity = _threshold - (_exaustionLevel * 20f);
+            intensity = _threshold - (_exaustionLevel * 10f);
         }
 
         finalColor *= intensity;
