@@ -43,6 +43,15 @@ public class GameManager : MonoBehaviour
     [Header("Enemy damage")]
     public int _DamageAmoutToAgent;
 
+    [Header("Slow System")]
+    public float _slowDuration;
+    public float _slowPower;
+
+    [Header("Mine System")]
+    public int _mineDamage;
+    public float _mineTimer;
+    public float _mineRadius;
+    public GameObject _minePrefab;
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
