@@ -40,7 +40,11 @@ public class Niveau1 : MonoBehaviour
     }
     public void CallWaves(int numberOfEnemy)
     {
-        _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy));
+        if (_spawnerScript!= null)
+        {
+            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy));
+        }
+        
         _gameManager._waveStarted = true;
     }
 

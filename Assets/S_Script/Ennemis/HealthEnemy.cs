@@ -115,13 +115,14 @@ public class HealthEnemy : MonoBehaviour
 
     public void Die()
     {
+        _FeedbackScript.DeathBubble(transform);
         Destroy(gameObject);
     }
     private void OnDestroy()
     {
         _GameManager._numberOfEnemyOnScreen--;
         _Niveau1.CheckForNewtWave();
-        _FeedbackScript.DeathBubble(transform);
+        
     }
 
 
