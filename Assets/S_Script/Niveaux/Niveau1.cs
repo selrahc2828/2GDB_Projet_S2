@@ -31,7 +31,7 @@ public class Niveau1 : MonoBehaviour
         _gameManager._waveStarted = false;
         _currentWave = 0;
         _numberOfWave = 5;
-        NextWave();
+        //NextWave();
     }
 
     private void Update()
@@ -42,7 +42,7 @@ public class Niveau1 : MonoBehaviour
     {
         if (_spawnerScript!= null)
         {
-            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy));
+            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy, 0, 0));
         }
         
         _gameManager._waveStarted = true;

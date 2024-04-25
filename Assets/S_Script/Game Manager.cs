@@ -29,16 +29,26 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Enemy Heath Parameter")]
-    public int _HeathEnemy;
+    public int _HeathBaseEnemy;
+    public int _HeathHomeWreaker;
+    public int _HeathBuzzKiller;
 
-
-    [Header("SpawnEnemy")]
-    public float _SpawnRate;
 
     [Header("Enemy Mouvement Parameter")]
-    public float _SpeedEnemy;
-    public float _AngularSpeedEnemy;
-    public float _AccelerationEnemy;
+    public float _SpeedBaseEnemy;
+    public float _SpeedHomeWreaker;
+    public float _SpeedBuzzKiller;
+
+    public float _AngularSpeedBaseEnemy;
+    public float _AngularSpeedHomeWreaker;
+    public float _AngularSpeedBuzzKiller;
+
+    public float _AccelerationBaseEnemy;
+    public float _AccelerationHomeWreaker;
+    public float _AccelerationBuzzKiller;
+
+    public int _tailleSegmentZigZagHomeWrecker;
+    public int _amplitudeZigZagHomeWrecker;
 
     [Header("Enemy damage")]
     public int _DamageAmoutToAgent;

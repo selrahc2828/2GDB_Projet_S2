@@ -6,9 +6,11 @@ public class SpawnerEnnemy : MonoBehaviour
     [Header("Reference")]
     public GameManager _GameManagerScript;
 
-    public GameObject[] _enemyPrefabs;
+    public GameObject[] _baseEnemyPrefabs;
+    public GameObject[] _homeWreckerPrefabs;
+    public GameObject[] _buzzKillerPrefabs;
     public Vector3 _spawnPoint;
-    public float _spawnCooldown = 2f;
+    public float _spawnCooldown = 0.15f;
 
     private bool canSpawn = true;
 
@@ -21,12 +23,7 @@ public class SpawnerEnnemy : MonoBehaviour
 
     void Start()
     {
-       
 
-        _spawnCooldown = _GameManagerScript._SpawnRate;
-
-        // Call the IEnumerator
-        //StartCoroutine(SpawnEnemies());
     }
 
     IEnumerator SpawnEnemies()
@@ -37,7 +34,7 @@ public class SpawnerEnnemy : MonoBehaviour
             if (canSpawn)
             {
                 // Call Spawn Enemy
-                SpawnEnemy();
+                SpawnBaseEnemy();
                 // change bool
                 canSpawn = false;
                 // Return to have a cooldown
@@ -48,20 +45,41 @@ public class SpawnerEnnemy : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnBaseEnemy()
     {
         _spawnPoint = GenerateRandomVector() * 90;
         // instantiate the enemy to the spawn position 
-        GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
+        GameObject enemyPrefab = _baseEnemyPrefabs[Random.Range(0, _baseEnemyPrefabs.Length)];
         Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
     }
 
-    public IEnumerator SpawnAWave(int numberOfEnemy)
+    public void SpawnHomeWrecker()
     {
-        for (int i = 0; i < numberOfEnemy; i++)
+        _spawnPoint = GenerateRandomVector() * 90;
+        // instantiate the enemy to the spawn position 
+        GameObject enemyPrefab = _homeWreckerPrefabs[Random.Range(0, _homeWreckerPrefabs.Length)];
+        Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
+    }
+
+    public void SpawnBuzzKiller()
+    {
+        _spawnPoint = GenerateRandomVector() * 90;
+        // instantiate the enemy to the spawn position 
+        GameObject enemyPrefab = _buzzKillerPrefabs[Random.Range(0, _buzzKillerPrefabs.Length)];
+        Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
+    }
+
+    public IEnumerator SpawnAWave(int numberOfBaseEnemy, int numberOfHomeBrecker, int numberOfBuzzKiller)
+    {
+        ////
+        ////
+        //// A FINIR
+        ////
+        ////
+        for (int i = 0; i < numberOfBaseEnemy; i++)
         {
-            yield return new WaitForSeconds(0.15f);
-            SpawnEnemy();
+            yield return new WaitForSeconds(_spawnCooldown);
+            SpawnBaseEnemy();
         }
     }
     public Vector3 GenerateRandomVector()

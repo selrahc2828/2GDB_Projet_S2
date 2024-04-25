@@ -5,31 +5,31 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class HealthEnemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [Header("Reference")]
     public GameManager _GameManager;
-    public UpgradeAndMoneySystem _UpgradeAndMoneySystemScript;
     public Niveau1 _Niveau1;
     public FeedBack _FeedbackScript;
-    
+    public NavMeshAgent _NavMeshAgent;
+    public Transform _TowerToDestroy;
+    public NavMeshAgent _thisAgent;
 
     [Header("Health System")]
     public int _MaxHealth;
     public int _CurrentHealth;
-    public float _droppChance;
 
     [Header("Slow System")]
     public float _slowDuration;
     public float _slowPower;
     public float _slowTimer;
+
     [ColorUsage(false, true)]
     public Color _initialOutlineColor;
     [ColorUsage(false, true)]
     public Color _SlowedOutlineColor;
 
     [Header("This Agent Data")]
-    public NavMeshAgent _thisAgent;
     public float _thisAgentBaseSpeed;
 
 
@@ -40,37 +40,6 @@ public class HealthEnemy : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _initialColor;
 
-    public void Awake()
-    {
-        _Niveau1 = FindAnyObjectByType<Niveau1>();
-        _UpgradeAndMoneySystemScript = FindAnyObjectByType<UpgradeAndMoneySystem>();
-        _GameManager = FindAnyObjectByType<GameManager>();
-        _thisAgent = this.GetComponentInParent<NavMeshAgent>();
-    }
-
-
-    void Start()
-    {
-        _FeedbackScript = FindAnyObjectByType<FeedBack>();
-
-        _slowPower = _GameManager._slowPower;
-        _slowDuration = _GameManager._slowDuration;
-        _droppChance = 0.2f;
-        _MaxHealth = _GameManager._HeathEnemy;
-        // Set CurrentHealth to Max Health
-        _CurrentHealth = _MaxHealth;
-        _thisAgentBaseSpeed = _thisAgent.speed;
-        
-        _GameManager._numberOfEnemyOnScreen++;
-    }
-
-    private void Update()
-    {
-        // Update The Current Healt 
-        GetCurrentHealth();
-        ApplySlow();
-        ChangeColorOnHP();
-    }
 
     // Fonction is called in DamageToTower Script 
     public void TakeDamage(int damageAmount)
@@ -87,9 +56,7 @@ public class HealthEnemy : MonoBehaviour
 
     public void GetSlowed()
     {
-        Debug.Log(_thisAgent.speed);
         _slowTimer = _slowDuration;
-        Debug.Log(_thisAgent.speed);
     }
 
     public void ApplySlow()
@@ -125,7 +92,6 @@ public class HealthEnemy : MonoBehaviour
         
     }
 
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tower"))
@@ -134,7 +100,7 @@ public class HealthEnemy : MonoBehaviour
         }
     }
 
-    private void ChangeColorOnHP()
+    public void ChangeColorOnHP()
     {
         if (_MaxHealth <= 0)
             return;

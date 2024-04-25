@@ -201,24 +201,24 @@ public class AgentFonction : MonoBehaviour
 
                 #region Damage And Effect To Enemies
                 // ------ All this part to damage the enemy ------
-                HealthEnemy _EnemyHealth = hit.collider.GetComponent<HealthEnemy>();
+                Enemy _Enemy = hit.collider.GetComponent<Enemy>();
 
                 Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
 
-                if (_EnemyHealth != null)
+                if (_Enemy != null)
                 {
                     // inflic Damage 
-                    _EnemyHealth.TakeDamage(_damageAmount);
+                    _Enemy.TakeDamage(_damageAmount);
 
                     if(_AgentSelfScript._pool1)
                     {
-                        _EnemyHealth.GetSlowed();
+                        _Enemy.GetSlowed();
                     }
 
-                    if (_EnemyHealth.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
+                    if (_Enemy.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
                         // kill the enemy if his current hp is <= to 0
-                        _EnemyHealth.Die();
+                        _Enemy.Die();
                         _EnemiesInRange.Remove(currentTargetEnemy); 
                     }
                 }
@@ -245,9 +245,9 @@ public class AgentFonction : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(position, radius);
         foreach (Collider collider in colliders)
         {
-            if(collider.gameObject.GetComponent<HealthEnemy>())
+            if(collider.gameObject.GetComponent<Enemy>())
             {
-                collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+                collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             }
         }
         Destroy(mine);
@@ -262,9 +262,9 @@ public class AgentFonction : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(position, radius);
             foreach (Collider collider in colliders)
             {
-                if(collider.gameObject.GetComponent<HealthEnemy>())
+                if(collider.gameObject.GetComponent<Enemy>())
                 {
-                    collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+                    collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
                 }
             }
 

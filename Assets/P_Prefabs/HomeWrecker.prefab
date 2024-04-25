@@ -242,9 +242,9 @@ GameObject:
   - component: {fileID: 1864077767445566511}
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
-  - component: {fileID: 6536687475616701843}
+  - component: {fileID: 2949359558403722072}
   m_Layer: 11
-  m_Name: AgentMechant
+  m_Name: HomeWrecker
   m_TagString: AgentMechant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,12 +351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf170324c518814da742c1a65145b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HealtTower: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
-    type: 3}
-  _Tower: {fileID: 8758404073540868529, guid: 344e29f43c65e0148902c1b96ae2317e, type: 3}
+  _HealtTower: {fileID: 0}
+  _Tower: {fileID: 0}
   _damageAmount: 10
   _cooldown: 1
---- !u!114 &6536687475616701843
+--- !u!114 &2949359558403722072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,7 +364,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4308968867366325615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49e9d908048bfd46abef776bb07d900, type: 3}
+  m_Script: {fileID: 11500000, guid: be332a62e2720a347b5d9d8c1397962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _GameManager: {fileID: 0}
@@ -386,3 +385,5 @@ MonoBehaviour:
   _meshRenderer: {fileID: 2899989185037988577}
   _finalColor: {r: 0, g: 0, b: 0, a: 0}
   _initialColor: {r: 0, g: 0, b: 0, a: 0}
+  start: {x: 0, y: 0, z: 0}
+  end: {x: 0, y: 0, z: 0}

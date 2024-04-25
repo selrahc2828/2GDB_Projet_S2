@@ -9760,6 +9760,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 318713662}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &843980689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4308968867366325615, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_Name
+      value: HomeWrecker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8cda9737f272ab439aa572018d140f1, type: 3}
 --- !u!4 &850816742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674283603985636098, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -9851,7 +9919,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654960969}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootFireRate1
         m_Mode: 1
@@ -12269,7 +12337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654960969}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootDamage1
         m_Mode: 1
@@ -13828,7 +13896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654960969}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: UpgradeShootRange1
         m_Mode: 1
@@ -18041,10 +18109,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _GameManagerScript: {fileID: 0}
-  _enemyPrefabs:
+  _baseEnemyPrefabs:
   - {fileID: 4308968867366325615, guid: db551d0b751431c4ba3ac12984e183e0, type: 3}
+  _homeWreckerPrefabs:
+  - {fileID: 4308968867366325615, guid: e8cda9737f272ab439aa572018d140f1, type: 3}
+  _buzzKillerPrefabs:
+  - {fileID: 4308968867366325615, guid: be6b41eb1eb3b0d4894a8303621d6b88, type: 3}
   _spawnPoint: {x: 0, y: 0, z: 0}
-  _spawnCooldown: 2
+  _spawnCooldown: 0.15
 --- !u!4 &1566333943
 Transform:
   m_ObjectHideFlags: 0
@@ -19182,7 +19254,6 @@ GameObject:
   - component: {fileID: 1654960972}
   - component: {fileID: 1654960971}
   - component: {fileID: 1654960970}
-  - component: {fileID: 1654960969}
   - component: {fileID: 1654960968}
   - component: {fileID: 1654960975}
   m_Layer: 0
@@ -19213,29 +19284,6 @@ MonoBehaviour:
   _scaleDuration: 0.5
   _destroyDelay: 0.2
   _maxScale: 10
---- !u!114 &1654960969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654960967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fa242e56ed9ab84eb34cb43f42988a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _allAgents: []
-  _ActualDamage: {fileID: 2030767632}
-  _FireRate: {fileID: 1652895731}
-  _Range: {fileID: 545343956}
-  _PanelMenu: {fileID: 1643993237}
-  _MaxDamageValue: 100
-  _MaxFireRateValue: 10
-  _MaxRangeValue: 50
-  _moneyNumber: 0
-  _MoneyText: {fileID: 495495919}
-  _GameManagerScript: {fileID: 0}
 --- !u!114 &1654960970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20158,7 +20206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1654960969}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradeAndMoneySystem, Assembly-CSharp
         m_MethodName: OpenMenu
         m_Mode: 1
@@ -22918,14 +22966,23 @@ MonoBehaviour:
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
-  _HeathEnemy: 10
-  _SpawnRate: 2
-  _SpeedEnemy: 5
-  _AngularSpeedEnemy: 180
-  _AccelerationEnemy: 30
+  _HeathBaseEnemy: 20
+  _HeathHomeWreaker: 100
+  _HeathBuzzKiller: 500
+  _SpeedBaseEnemy: 5
+  _SpeedHomeWreaker: 5
+  _SpeedBuzzKiller: 5
+  _AngularSpeedBaseEnemy: 30
+  _AngularSpeedHomeWreaker: 30
+  _AngularSpeedBuzzKiller: 30
+  _AccelerationBaseEnemy: 180
+  _AccelerationHomeWreaker: 180
+  _AccelerationBuzzKiller: 180
+  _tailleSegmentZigZagHomeWrecker: 0
+  _amplitudeZigZagHomeWrecker: 15
   _DamageAmoutToAgent: 0
-  _slowDuration: 0
-  _slowPower: 0
+  _slowDuration: 5
+  _slowPower: 0.9
   _mineDamage: 0
   _mineTimer: 1
   _mineRadius: 150
@@ -25430,3 +25487,4 @@ SceneRoots:
   - {fileID: 750334734}
   - {fileID: 1654960974}
   - {fileID: 582631870}
+  - {fileID: 843980689}

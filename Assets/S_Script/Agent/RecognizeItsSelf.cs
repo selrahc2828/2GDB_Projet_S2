@@ -44,6 +44,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private Vector3 _basePosition;
     private NavMeshAgent _selfAgent;
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
+    public List<NavMeshAgent> _amIFocus;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -51,12 +52,14 @@ public class RecognizeItsSelf : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _finalColor;
 
-
+    [Header("Blink")]
     public float _blinkTimerFixe;
     public float _blinkTimerUsed;
     private Color _linkIntensity;
     private Color _linkIntensityMax;
     private Color _linkIntensityMin;
+
+    public Collider[] _linkedAgents = new Collider[16];
 
 
     private void Awake()
@@ -82,8 +85,8 @@ public class RecognizeItsSelf : MonoBehaviour
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
 
-        _linkIntensityMin = new Color(0f,0f,0f);
-        _linkIntensityMax = new Color(20f,20f,20f);
+        _linkIntensityMin = new Color(0f, 0f, 0f);
+        _linkIntensityMax = new Color(20f, 20f, 20f);
         _blinkTimerUsed = 0;
         _blinkTimerFixe = 1;
 
@@ -92,32 +95,13 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        if(!_gameManager._gameLose)
+        if (!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
             AutoStartBlink();
         }
 
-    }
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Create a ray from the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Perform the raycast
-            if (Physics.Raycast(ray, out hit))
-            {
-                // Check if the object clicked has this script attached
-                if (hit.collider.gameObject == gameObject)
-                {
-                    gameObject.GetComponent<RecognizeItsSelf>().StartBlinking();
-                }
-            }
-        }
     }
     IEnumerator ResetPositionInTimer()
     {
@@ -151,7 +135,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckTowerProximity()
     {
-        if(Vector3.Distance(transform.position, _tower.transform.position) <= 10)
+        if (Vector3.Distance(transform.position, _tower.transform.position) <= 10)
         {
             _towerProximityValue = 0;
         }
@@ -159,12 +143,12 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
             _neighbourLowerProximityValue = -2;
-            foreach(Collider agentCollider in _neighbourAgents)
+            foreach (Collider agentCollider in _neighbourAgents)
             {
-                if(agentCollider.CompareTag("Agent"))
+                if (agentCollider.CompareTag("Agent"))
                 {
                     int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
-                    if(_neighbourProximityValue > -1)
+                    if (_neighbourProximityValue > -1)
                     {
                         if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue <= _neighbourLowerProximityValue)
                         {
@@ -175,7 +159,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
 
             _towerProximityValue = _neighbourLowerProximityValue + 1;
-            
+
         }
 
         _towerProximityNormalizedValue = _towerProximityValue / 100f;
@@ -185,14 +169,14 @@ public class RecognizeItsSelf : MonoBehaviour
             _towerProximityNormalizedValue = 1;
         }
     }
-    /*
+
     #region Blink
     public void AutoStartBlink()
     {
-        if(_towerProximityValue == 0)
+        if (_towerProximityValue == 0)
         {
             _blinkTimerUsed += Time.deltaTime;
-            if(_blinkTimerUsed > _blinkTimerFixe+1)
+            if (_blinkTimerUsed > _blinkTimerFixe + 1)
             {
                 _blinkTimerUsed = 0;
                 StartBlinking();
@@ -210,42 +194,33 @@ public class RecognizeItsSelf : MonoBehaviour
 
     IEnumerator BlinkLink()
     {
-        float _timer = 0;
+        float _timer = 0.1f; //Le truc le plus shlag que j'ai jamais fais de ma vie
         float _timerMax = 3;
         while (_timer <= 1)
         {
             _timer += Time.deltaTime;
-            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer/_timerMax);
+            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
         }
         yield return new WaitForSeconds(0.5f);
-        while (_timer >= 0)
+        while (_timer > 0)
         {
             _timer -= Time.deltaTime;
             _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
         }
-        CheckLinkIntensity();
+        if(_timer <= 0)
+        {
+            CheckLinkIntensity();
+        }
     }
     public void CheckLinkIntensity()
     {
-        Collider[] _linkedAgents = new Collider[16];
-        Physics.OverlapSphereNonAlloc(transform.position, 2, _linkedAgents);
-        foreach (Collider _linkedAgent in _linkedAgents)
-        {
-
-            RecognizeItsSelf _linkedProximityValueScript = _linkedAgent.GetComponent<RecognizeItsSelf>();
-            if (_linkedProximityValueScript != null)
-            {
-                int _linkedProximityValue = _linkedProximityValueScript._towerProximityValue;
-                if (_linkedProximityValue > _towerProximityValue)
-                {
-                    _linkedAgent.GetComponent<RecognizeItsSelf>().StartBlinking();
-                }
-            }
-        }
+        int _nbProximityAgents = Physics.OverlapSphereNonAlloc(transform.position, 2, _linkedAgents);
+        for (int i = 0; i < _nbProximityAgents; i++)
+            if (_linkedAgents[i].GetComponent<RecognizeItsSelf>() is RecognizeItsSelf _rs && _rs._towerProximityValue > _towerProximityValue)
+                _rs.StartBlinking();
     }
 
     #endregion Blink
-    */
 
     #region Pools
 
@@ -348,7 +323,7 @@ public class RecognizeItsSelf : MonoBehaviour
         if (_aviability)
         {
             finalColor = _initialColor;
-            intensity = 3f;  
+            intensity = 3f;
         }
         else
         {
@@ -413,12 +388,12 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void ResetAllAgentData()
     {
-        if(WitchListIsIt() != null)
+        if (WitchListIsIt() != null)
         {
             List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
-
+        _canShoot = false;
         _AgentFonctionScript._mineUsed = false;
         _pool1 = false;
         _pool2 = false;
@@ -428,6 +403,9 @@ public class RecognizeItsSelf : MonoBehaviour
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
-
+        foreach(NavMeshAgent _enemyAgent in _amIFocus)
+        {
+            _enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
+        }
     }
 }
