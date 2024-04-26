@@ -1,3 +1,4 @@
+using FMOD;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,7 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class HomeWrecker : Enemy
 {
@@ -15,6 +17,8 @@ public class HomeWrecker : Enemy
     public int _currentListDestination;
     public int _tailleSegmentZigZag;
     public int _amplitudeZigZag;
+    private bool _mouseButtonUp = false;
+    private bool _agentStarted = false;
     public void Awake()
     {
         _Niveau1 = FindAnyObjectByType<Niveau1>();
@@ -27,23 +31,25 @@ public class HomeWrecker : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        _agentStarted = false;
         _GameManager._numberOfEnemyOnScreen++;
 
-        _MaxHealth = _GameManager._HeathBuzzKiller;
+        _MaxHealth = _GameManager._HeathHomeWreaker;
         _CurrentHealth = _MaxHealth;
 
         _slowPower = _GameManager._slowPower;
         _slowDuration = _GameManager._slowDuration;
 
-        _thisAgentBaseSpeed = _GameManager._SpeedBaseEnemy;
-        _thisAgent.speed = _GameManager._SpeedBaseEnemy;
-        _thisAgent.acceleration = _GameManager._AccelerationBaseEnemy;
-        _thisAgent.angularSpeed = _GameManager._AngularSpeedBaseEnemy;
+        _thisAgentBaseSpeed = _GameManager._SpeedHomeWreaker;
+        _thisAgent.speed = _GameManager._SpeedHomeWreaker;
+        _thisAgent.acceleration = _GameManager._AccelerationHomeWreaker;
+        _thisAgent.angularSpeed = _GameManager._AngularSpeedHomeWreaker;
 
         _tailleSegmentZigZag = _GameManager._tailleSegmentZigZagHomeWrecker;
         _amplitudeZigZag = _GameManager._amplitudeZigZagHomeWrecker;
 
-        SearchNewDestination();
+        _mouseButtonUp = true;
+        StartCoroutine(DelayedSearchNewDestination(0.5f));
     }
 
     // Update is called once per frame
@@ -53,15 +59,23 @@ public class HomeWrecker : Enemy
         ApplySlow();
         if (Input.GetMouseButtonUp(0))
         {
-            SearchNewDestination();
+            _mouseButtonUp = true;
+            StartCoroutine(DelayedSearchNewDestination(0.5f));
+        }
+        if (_thisAgent.hasPath && _agentStarted)
+        {
+            if (_thisAgent.remainingDistance < 2)
+            {
+                DestinationReached();
+            }
         }
     }
 
     public void SearchNewDestination()
     {
-        _closestAgentInLineGoal = FindClosestLine();
-        if (_closestAgentInLineGoal != null)
+        if (FindClosestLine() != null)
         {
+            _closestAgentInLineGoal = FindClosestLine();
             if (_zigzagPointsList.Count > 0 && _zigzagPointsList[_zigzagPointsList.Count - 1] != _closestAgentInLineGoal.destination)
             {
                 CalculateZigZag(transform.position, _closestAgentInLineGoal.destination);
@@ -77,15 +91,15 @@ public class HomeWrecker : Enemy
         {
             _thisAgent.SetDestination(_TowerToDestroy.position);
         }
+        _agentStarted = true;
     }
 
     public NavMeshAgent FindClosestLine()
     {
         _dictionnaireAgent = _agentToTraceScript._dictionnaireAgent;
-        Debug.Log(_agentToTraceScript);
         NavMeshAgent _closestAgentInLine = null;
         float _ShortestDistance = 0;
-        /*
+
         foreach (KeyValuePair<NavMeshAgent, bool> pair in _dictionnaireAgent)
         {
             if (!pair.Value)
@@ -105,8 +119,7 @@ public class HomeWrecker : Enemy
                 }
             }
         }
-        */
-        if(!_closestAgentInLine)
+        if (_closestAgentInLine != null)
             _closestAgentInLine.GetComponent<RecognizeItsSelf>()._amIFocus.Add(_thisAgent);
         return _closestAgentInLine;
     }
@@ -135,33 +148,41 @@ public class HomeWrecker : Enemy
 
     public void DestinationReached()
     {
-        if (!_thisAgent.pathPending && _thisAgent.remainingDistance <= 0.1)
+        if (_currentListDestination != _zigzagPointsList.Count -1)
         {
-            if (_currentListDestination != _zigzagPointsList.Count - 1)
+            _currentListDestination++;
+            _thisAgent.SetDestination(_zigzagPointsList[_currentListDestination]);
+        }
+        else
+        {
+            _agentStarted = false;
+            List<NavMeshAgent> _itsList = _closestAgentInLineGoal.GetComponent<RecognizeItsSelf>().WitchListIsIt();
+            if (_itsList != null)
             {
-                _currentListDestination++;
-                _thisAgent.SetDestination(_zigzagPointsList[_currentListDestination]);
-            }
-            else
-            {
-                List<NavMeshAgent> _itsList = _closestAgentInLineGoal.GetComponent<RecognizeItsSelf>().WitchListIsIt();
-                if (_itsList != null)
+                foreach (NavMeshAgent _agent in _itsList)
                 {
-                    foreach (NavMeshAgent _agent in _itsList)
-                    {
-                        _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
-                    }
+                    _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
                 }
-                SearchNewDestination();
             }
+            Die();
+            
+        }
+    }
+    IEnumerator DelayedSearchNewDestination(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        if (_mouseButtonUp)
+        {
+            SearchNewDestination();
+            _mouseButtonUp = false; // Reset the flag
         }
     }
 
-
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         foreach (Vector3 _zigzagPoint in _zigzagPointsList)
             Gizmos.DrawWireSphere(_zigzagPoint, 5f);
-    }
+    }*/
 }

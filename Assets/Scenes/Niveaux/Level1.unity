@@ -9760,74 +9760,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 318713662}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &843980689
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4308968867366325615, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_Name
-      value: HomeWrecker
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 96
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -24.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6018833635926120512, guid: e8cda9737f272ab439aa572018d140f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e8cda9737f272ab439aa572018d140f1, type: 3}
 --- !u!4 &850816742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674283603985636098, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -22967,10 +22899,10 @@ MonoBehaviour:
   _resetTime: 15
   _HealthAgent: 0
   _HeathBaseEnemy: 20
-  _HeathHomeWreaker: 100
+  _HeathHomeWreaker: 20000
   _HeathBuzzKiller: 500
   _SpeedBaseEnemy: 5
-  _SpeedHomeWreaker: 5
+  _SpeedHomeWreaker: 20
   _SpeedBuzzKiller: 5
   _AngularSpeedBaseEnemy: 30
   _AngularSpeedHomeWreaker: 30
@@ -22978,8 +22910,8 @@ MonoBehaviour:
   _AccelerationBaseEnemy: 180
   _AccelerationHomeWreaker: 180
   _AccelerationBuzzKiller: 180
-  _tailleSegmentZigZagHomeWrecker: 0
-  _amplitudeZigZagHomeWrecker: 15
+  _tailleSegmentZigZagHomeWrecker: 15
+  _amplitudeZigZagHomeWrecker: 10
   _DamageAmoutToAgent: 0
   _slowDuration: 5
   _slowPower: 0.9
@@ -25487,4 +25419,3 @@ SceneRoots:
   - {fileID: 750334734}
   - {fileID: 1654960974}
   - {fileID: 582631870}
-  - {fileID: 843980689}

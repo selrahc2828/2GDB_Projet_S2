@@ -194,23 +194,23 @@ public class RecognizeItsSelf : MonoBehaviour
 
     IEnumerator BlinkLink()
     {
-        float _timer = 0.1f; //Le truc le plus shlag que j'ai jamais fais de ma vie
+        float _timer = 0; //Le truc le plus shlag que j'ai jamais fais de ma vie
         float _timerMax = 3;
         while (_timer <= 1)
         {
             _timer += Time.deltaTime;
             _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
+            yield return null;
         }
         yield return new WaitForSeconds(0.5f);
         while (_timer > 0)
         {
             _timer -= Time.deltaTime;
             _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
+            yield return null;
         }
-        if(_timer <= 0)
-        {
-            CheckLinkIntensity();
-        }
+        CheckLinkIntensity();
+
     }
     public void CheckLinkIntensity()
     {
@@ -403,9 +403,9 @@ public class RecognizeItsSelf : MonoBehaviour
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
-        foreach(NavMeshAgent _enemyAgent in _amIFocus)
+        foreach (NavMeshAgent _enemyAgent in _amIFocus)
         {
-            _enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
+            //_enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
         }
     }
 }
