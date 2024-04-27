@@ -22904,7 +22904,7 @@ MonoBehaviour:
   _HeathTower: 500
   _slowMo: 0.5
   _gamePaused: 0
-  _gameLose: 0
+  _gameLose: 1
   _gameWin: 0
   _gameStarted: 0
   _waveStarted: 0

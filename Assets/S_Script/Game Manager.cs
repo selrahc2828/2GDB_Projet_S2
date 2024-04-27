@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheckIfGameIsLoseOrWin();
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            Time.timeScale = 5f;
+        }
+
     }
 
 
@@ -94,4 +100,7 @@ public class GameManager : MonoBehaviour
             _gameWinCanevas.SetActive(true);
         }
     }
+
+
+
 }
