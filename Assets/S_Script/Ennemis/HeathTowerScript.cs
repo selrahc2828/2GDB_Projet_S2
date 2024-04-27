@@ -9,8 +9,11 @@ public class HeathTowerScript : MonoBehaviour
     [Header("Reference")]
     public Text _HealtHp;
     public GameManager _GameManagerScript;
-    public MeshRenderer _meshRenderer;
-    
+    public MeshRenderer _meshRenderer1;
+    public MeshRenderer _meshRenderer2;
+    public MeshRenderer _meshRenderer3;
+    public Animator _AnimationHP;
+
 
     [Header("HealthSystem")]
     public int _MaxHealth;
@@ -76,20 +79,24 @@ public class HeathTowerScript : MonoBehaviour
         float healthPercentage = (float)_CurrentHealth / _MaxHealth;
 
         Color lerpedColor;
-        float intensity;
 
         if (_CurrentHealth <= 0)
         {
             lerpedColor = _finalColor; 
-            intensity = 0f;
         }
         else
         {
             lerpedColor = Color.Lerp(_initialColor, _finalColor, healthPercentage);
-            intensity = 1f;
         }
 
-        lerpedColor *= intensity;
-        _meshRenderer.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer1.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer2.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer3.material.SetColor("_EmissionColor", lerpedColor);
+
+        _meshRenderer1.materials[1].SetColor("_Color", lerpedColor);
+        _meshRenderer2.materials[1].SetColor("_Color", lerpedColor);
+        _meshRenderer3.materials[1].SetColor("_Color", lerpedColor);
+
+        _AnimationHP.SetFloat("Blend", healthPercentage);
     }    
 }
