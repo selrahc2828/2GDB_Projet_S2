@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnnemisOutline
+  m_Name: HomeBreaker
   m_Shader: {fileID: -6465566751694194690, guid: 12cb86724764f194f8030103a63c3dab,
     type: 3}
   m_Parent: {fileID: 0}
@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1.2
+    - _Scale: 1.1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
