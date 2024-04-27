@@ -381,8 +381,8 @@ MonoBehaviour:
   _slowPower: 0
   _slowTimer: 0
   _initialOutlineColor: {r: 0, g: 0, b: 0, a: 0}
-  _SlowedOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  _SlowedOutlineColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
-  _finalColor: {r: 0, g: 0, b: 0, a: 0}
-  _initialColor: {r: 0, g: 0, b: 0, a: 0}
+  _finalColor: {r: 0, g: 0.7830189, b: 0.25702143, a: 0}
+  _initialColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
