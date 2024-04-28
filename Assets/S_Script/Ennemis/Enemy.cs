@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     [Header("HP Feedback")]
     public MeshRenderer _meshRenderer;
+    //public GameObject _deathBubblePrefab;
 
     [ColorUsage(false, true)]
     public Color _finalColor;

@@ -19189,7 +19189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AgentTraceScript: {fileID: 1654960972}
   _AgentUsed: {fileID: 698152938}
-  deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
+  _deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
     type: 3}
   _OffSetX: 220
   _OffSetY: -25
