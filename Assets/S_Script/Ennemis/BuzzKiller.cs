@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class BuzzKiller : Enemy
 {
+    
+
     public void Awake()
     {
         _Niveau1 = FindAnyObjectByType<Niveau1>();

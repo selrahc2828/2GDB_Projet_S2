@@ -173,7 +173,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.10452846, y: 0, z: 0, w: 0.9945219}
   m_LocalPosition: {x: 0, y: 0.6, z: -0.6}
-  m_LocalScale: {x: 70, y: 70, z: 70}
+  m_LocalScale: {x: 80, y: 80, z: 80}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6018833635926120512}
@@ -381,7 +381,7 @@ MonoBehaviour:
   _slowPower: 0
   _slowTimer: 0
   _initialOutlineColor: {r: 0, g: 0, b: 0, a: 0}
-  _SlowedOutlineColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0}
+  _SlowedOutlineColor: {r: 0.18039218, g: 0.6050126, b: 1.4980392, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
   _finalColor: {r: 0, g: 0.7830189, b: 0.25702143, a: 0}

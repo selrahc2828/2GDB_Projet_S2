@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     [Header("HP Feedback")]
     public MeshRenderer _meshRenderer;
+
     [ColorUsage(false, true)]
     public Color _finalColor;
     [ColorUsage(false, true)]

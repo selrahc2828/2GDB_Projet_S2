@@ -379,12 +379,12 @@ MonoBehaviour:
   _slowDuration: 0
   _slowPower: 0
   _slowTimer: 0
-  _initialOutlineColor: {r: 1, g: 1, b: 1, a: 0}
-  _SlowedOutlineColor: {r: 1, g: 1, b: 1, a: 0}
+  _initialOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  _SlowedOutlineColor: {r: 0.1882353, g: 0.6117647, b: 1.4980392, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
-  _finalColor: {r: 1, g: 1, b: 1, a: 0}
-  _initialColor: {r: 1, g: 1, b: 1, a: 0}
+  _finalColor: {r: 1.3803922, g: 0.3529412, b: 0.14117648, a: 0}
+  _initialColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0}
   _agentToTraceScript: {fileID: 0}
   _closestAgentInLineGoal: {fileID: 0}
   _currentListDestination: 0
