@@ -2839,8 +2839,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185120013}
   m_Mesh: {fileID: -5505656329704350330, guid: 360b23cd491f92541b531d2d4de99f33, type: 3}
---- !u!64 &185120017
-MeshCollider:
+--- !u!65 &185120017
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2857,10 +2857,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5505656329704350330, guid: 360b23cd491f92541b531d2d4de99f33, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.014960392, y: 0.009551602, z: 0.0021033522}
+  m_Center: {x: 0.009103194, y: 0.0036878134, z: 0.0034646406}
 --- !u!4 &190636868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674923304642868183, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -22871,7 +22870,7 @@ MonoBehaviour:
   _SlowRangeGameManager: 13
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
-  _DamageAmount: 20
+  _DamageAmount: 10
   _FireRate: 2
   _maxFatigueSeconde: 15
   _SpeedAgent: 15
@@ -22879,7 +22878,7 @@ MonoBehaviour:
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
-  _HeathBaseEnemy: 20
+  _HeathBaseEnemy: 50
   _HeathHomeWreaker: 20000
   _HeathBuzzKiller: 500
   _SpeedBaseEnemy: 5
@@ -22895,7 +22894,7 @@ MonoBehaviour:
   _amplitudeZigZagHomeWrecker: 10
   _DamageAmoutToAgent: 0
   _slowDuration: 5
-  _slowPower: 0.9
+  _slowPower: 10.39
   _mineDamage: 0
   _mineTimer: 1
   _mineRadius: 150

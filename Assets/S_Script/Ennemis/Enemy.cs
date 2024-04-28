@@ -128,7 +128,7 @@ public class Enemy : MonoBehaviour
 
     public void SlowedOutlineColor()
     {
-        if (_meshRenderer.materials.Length >= 2)
+        if (_meshRenderer.materials.Length >= 0)
         {      
             Material outlineMaterial = _meshRenderer.materials[1]; 
             // Changer la couleur de l'outline
@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
 
     public void InitialOutlineColor()
     {
-        if (_meshRenderer.materials.Length >= 2)
+        if (_meshRenderer.materials.Length >= 0)
         {
             Material outlineMaterial = _meshRenderer.materials[1];
             // Changer la couleur de l'outline a l'état initial

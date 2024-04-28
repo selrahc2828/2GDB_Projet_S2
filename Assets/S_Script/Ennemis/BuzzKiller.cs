@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BuzzKiller : Enemy
 {
-    
+
 
     public void Awake()
     {

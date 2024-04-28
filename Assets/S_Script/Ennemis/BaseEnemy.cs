@@ -18,7 +18,7 @@ public class BaseEnemy : Enemy
     {
         _GameManager._numberOfEnemyOnScreen++;
 
-        _MaxHealth = _GameManager._HeathBuzzKiller;
+        _MaxHealth = _GameManager._HeathBaseEnemy;
         _CurrentHealth = _MaxHealth;
 
         _slowPower = _GameManager._slowPower;
