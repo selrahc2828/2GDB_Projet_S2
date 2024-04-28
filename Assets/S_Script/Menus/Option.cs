@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Option : MonoBehaviour
+public class Option : MainMenu
 {
     public UnityEngine.UI.Toggle _muteSoundButton;
     public UnityEngine.UI.Slider _sliderUI;
@@ -44,10 +44,7 @@ public class Option : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Main_Menu");
+        _PanelOption.SetActive(false);
     }
-    public void ApplyChange()
-    {
-
-    }
+   
 }
