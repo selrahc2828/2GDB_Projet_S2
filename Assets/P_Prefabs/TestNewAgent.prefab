@@ -74,7 +74,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.4
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -592,26 +592,7 @@ MonoBehaviour:
   _resetTime: 0
   _amIFocus: []
   _initialColor: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
-  _finalColor: {r: 0, g: 0, b: 0, a: 0}
-  _blinkTimerFixe: 0
-  _blinkTimerUsed: 0
-  _linkedAgents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _finalColor: {r: 0.27450982, g: 0, b: 0, a: 0}
 --- !u!4 &7674923304642868183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a16700baf50ac4641a7101d572ec0d4d,

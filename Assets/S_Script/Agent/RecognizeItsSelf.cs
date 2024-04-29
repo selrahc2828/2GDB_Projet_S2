@@ -52,15 +52,6 @@ public class RecognizeItsSelf : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _finalColor;
 
-    [Header("Blink")]
-    public float _blinkTimerFixe;
-    public float _blinkTimerUsed;
-    private Color _linkIntensity;
-    private Color _linkIntensityMax;
-    private Color _linkIntensityMin;
-
-    public Collider[] _linkedAgents = new Collider[16];
-
 
     private void Awake()
     {
@@ -85,10 +76,6 @@ public class RecognizeItsSelf : MonoBehaviour
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
 
-        _linkIntensityMin = new Color(0f, 0f, 0f);
-        _linkIntensityMax = new Color(20f, 20f, 20f);
-        _blinkTimerUsed = 0;
-        _blinkTimerFixe = 1;
 
         StartCoroutine(CheckProximityFunctionsCoroutine());
     }
@@ -99,7 +86,6 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
-            AutoStartBlink();
         }
 
     }
@@ -170,57 +156,6 @@ public class RecognizeItsSelf : MonoBehaviour
         }
     }
 
-    #region Blink
-    public void AutoStartBlink()
-    {
-        if (_towerProximityValue == 0)
-        {
-            _blinkTimerUsed += Time.deltaTime;
-            if (_blinkTimerUsed > _blinkTimerFixe + 1)
-            {
-                _blinkTimerUsed = 0;
-                StartBlinking();
-            }
-        }
-        else
-        {
-            _blinkTimerUsed = 0;
-        }
-    }
-    public void StartBlinking()
-    {
-        StartCoroutine(BlinkLink());
-    }
-
-    IEnumerator BlinkLink()
-    {
-        float _timer = 0; //Le truc le plus shlag que j'ai jamais fais de ma vie
-        float _timerMax = 3;
-        while (_timer <= 1)
-        {
-            _timer += Time.deltaTime;
-            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
-            yield return null;
-        }
-        yield return new WaitForSeconds(0.5f);
-        while (_timer > 0)
-        {
-            _timer -= Time.deltaTime;
-            _linkIntensity = Color.Lerp(_linkIntensityMin, _linkIntensityMax, _timer / _timerMax);
-            yield return null;
-        }
-        CheckLinkIntensity();
-
-    }
-    public void CheckLinkIntensity()
-    {
-        int _nbProximityAgents = Physics.OverlapSphereNonAlloc(transform.position, 2, _linkedAgents);
-        for (int i = 0; i < _nbProximityAgents; i++)
-            if (_linkedAgents[i].GetComponent<RecognizeItsSelf>() is RecognizeItsSelf _rs && _rs._towerProximityValue > _towerProximityValue)
-                _rs.StartBlinking();
-    }
-
-    #endregion Blink
 
     #region Pools
 
@@ -333,7 +268,6 @@ public class RecognizeItsSelf : MonoBehaviour
         }
 
         finalColor *= intensity;
-        finalColor += _linkIntensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 

@@ -871,7 +871,7 @@ Camera:
   far clip plane: 1000
   field of view: 47
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 53
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7285,17 +7285,17 @@ PrefabInstance:
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: _finalColor.b
-      value: 1.5617898
+      value: 1.4980394
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: _finalColor.g
-      value: 1.5617898
+      value: 1.4980394
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
       propertyPath: _finalColor.r
-      value: 1.5617898
+      value: 1.4980394
       objectReference: {fileID: 0}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
@@ -8237,10 +8237,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -22894,7 +22894,7 @@ MonoBehaviour:
   _amplitudeZigZagHomeWrecker: 10
   _DamageAmoutToAgent: 0
   _slowDuration: 5
-  _slowPower: 10.39
+  _slowPower: 0.2
   _mineDamage: 0
   _mineTimer: 1
   _mineRadius: 150

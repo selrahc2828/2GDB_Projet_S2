@@ -383,9 +383,7 @@ MonoBehaviour:
   _SlowedOutlineColor: {r: 0.18823528, g: 0.61176467, b: 1.4980391, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
-  _ParticulSysteme: {fileID: 7722437765618562983, guid: fdf5d566f584a47408f633123dac2143,
-    type: 3}
-  _finalColor: {r: 0.48584905, g: 1.0516984, b: 1.9433962, a: 0}
+  _finalColor: {r: 1.4980392, g: 0, b: 0.2717032, a: 0}
   _initialColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
 --- !u!1 &5473619328206195172
 GameObject:
@@ -610,7 +608,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 1, b: 0.9771781, a: 1}
+      maxColor: {r: 0.8, g: 0, b: 0.2297577, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
