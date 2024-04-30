@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class BuzzKiller : Enemy
 {
-
+    public GameObject[] _pools;
+    public float _closestPoolDistance;
+    public GameObject _closestPool;
 
     public void Awake()
     {
@@ -26,16 +28,42 @@ public class BuzzKiller : Enemy
         _slowPower = _GameManager._slowPower;
         _slowDuration = _GameManager._slowDuration;
 
-        _thisAgentBaseSpeed = _GameManager._SpeedBaseEnemy;
-        _thisAgent.speed = _GameManager._SpeedBaseEnemy;
-        _thisAgent.acceleration = _GameManager._AccelerationBaseEnemy;
-        _thisAgent.angularSpeed = _GameManager._AngularSpeedBaseEnemy;
+        _thisAgentBaseSpeed = _GameManager._SpeedBuzzKiller;
+        _thisAgent.speed = _GameManager._SpeedBuzzKiller;
+        _thisAgent.acceleration = _GameManager._AccelerationBuzzKiller;
+        _thisAgent.angularSpeed = _GameManager._AngularSpeedBuzzKiller;
+
+        _closestPoolDistance = float.MaxValue;
+        SeekPool();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         ChangeColorOnHP();
-        ApplySlow();
+        ApplySlow(); 
+    }
+
+    public void SeekPool()
+    {
+        if(_pools.Length > 0)
+        {
+            foreach(GameObject pool in _pools)
+            {
+                if(Vector3.Distance(transform.position, pool.transform.position) < _closestPoolDistance)
+                {
+                    _closestPoolDistance = Vector3.Distance(transform.position, pool.transform.position);
+                    _closestPool = pool;
+                }
+            }
+            _thisAgent.SetDestination(_closestPool.transform.position);
+        }
+    }
+
+    public override void Die()
+    {
+        _closestPool.GetComponent<PoolScript>().CheckSurrounding();
+        base.Die();
     }
 }

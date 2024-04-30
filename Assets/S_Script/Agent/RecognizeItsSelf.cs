@@ -91,6 +91,10 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(CheckProximityFunctionsCoroutine());
+            }
         }
 
         if (_exaustionLevel >= 0.8f)
@@ -114,11 +118,11 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         while (!_aviability)
         {
-            // Exécuter CheckProximity()
-            CheckProximityFunctions();
 
             // Attendre 1 seconde
             yield return new WaitForSeconds(1f);
+            // Exécuter CheckProximity()
+            CheckProximityFunctions();
         }
     }
 
@@ -183,7 +187,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckPool1Proximity()
     {
-        if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10)
+        if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10 && _GOpool1.tag != "Infected")
         {
             _pool1 = true;
             _Pool1Anime.SetFloat("blend", _poolProximity);
@@ -209,7 +213,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckPool2Proximity()
     {
-        if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10)
+        if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10 && _GOpool1.tag != "Infected")
         {
             _pool2 = true;
         }

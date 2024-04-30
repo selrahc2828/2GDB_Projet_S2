@@ -82,7 +82,7 @@ public class Enemy : MonoBehaviour
         return _CurrentHealth;
     }
 
-    public void Die()
+    public virtual void Die()
     {
         _FeedbackScript.DeathBubble(transform);
         Destroy(gameObject);

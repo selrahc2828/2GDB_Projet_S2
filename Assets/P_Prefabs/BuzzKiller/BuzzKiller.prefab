@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 5897393375208106164}
+  - component: {fileID: 3446982984748919123}
   m_Layer: 11
   m_Name: BuzzKiller
   m_TagString: AgentMechant
@@ -385,6 +386,41 @@ MonoBehaviour:
   _meshRenderer: {fileID: 2899989185037988577}
   _finalColor: {r: 1.4980392, g: 0, b: 0.2717032, a: 0}
   _initialColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
+  _pools: []
+  _closestPoolDistance: 0
+  _closestPool: {fileID: 0}
+--- !u!114 &3446982984748919123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f6e2474d283554896c93ce0afe9f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _GameManager: {fileID: 0}
+  _Niveau1: {fileID: 0}
+  _FeedbackScript: {fileID: 0}
+  _NavMeshAgent: {fileID: 0}
+  _TowerToDestroy: {fileID: 0}
+  _thisAgent: {fileID: 0}
+  _MaxHealth: 0
+  _CurrentHealth: 0
+  _slowDuration: 0
+  _slowPower: 0
+  _slowTimer: 0
+  _initialOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  _SlowedOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+  _thisAgentBaseSpeed: 0
+  _meshRenderer: {fileID: 2899989185037988577}
+  _finalColor: {r: 0, g: 0, b: 0, a: 0}
+  _initialColor: {r: 0, g: 0, b: 0, a: 0}
+  _pools: []
+  _closestPoolDistance: 0
+  _closestPool: {fileID: 0}
 --- !u!1 &5473619328206195172
 GameObject:
   m_ObjectHideFlags: 0
