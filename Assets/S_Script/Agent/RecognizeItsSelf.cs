@@ -1,7 +1,6 @@
 using FMOD;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,6 +11,9 @@ public class RecognizeItsSelf : MonoBehaviour
     public AgentToTrace _TraceScript;
     public GameManager _gameManager;
     public AgentFonction _AgentFonctionScript;
+    public GameObject _ParticulFatigue;
+    public Animator _Pool1Anime;
+
 
     [Header("Variable de Fatigue")]
     public float _exaustionLevel;
@@ -36,6 +38,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public GameObject _GOpool2;
     public bool _pool1; //slow
     public bool _pool2;
+    private float _poolProximity;
 
 
     [Header("Autre")]
@@ -45,12 +48,14 @@ public class RecognizeItsSelf : MonoBehaviour
     private Vector3 _basePosition;
     private NavMeshAgent _selfAgent;
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
+    public List<NavMeshAgent> _amIFocus;
 
     [Header("Color")]
     [ColorUsage(false, true)]
     public Color _initialColor;
     [ColorUsage(false, true)]
     public Color _finalColor;
+
 
 
     private void Awake()
@@ -76,18 +81,28 @@ public class RecognizeItsSelf : MonoBehaviour
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
 
+
         StartCoroutine(CheckProximityFunctionsCoroutine());
     }
 
     private void Update()
     {
-        if(!_gameManager._gameLose)
+        if (!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
         }
-    }
 
+        if (_exaustionLevel >= 0.8f)
+        {
+            _ParticulFatigue.SetActive(true);
+        }
+        else
+        {
+            _ParticulFatigue.SetActive(false);
+        }
+
+    }
     IEnumerator ResetPositionInTimer()
     {
         yield return new WaitForSeconds(_resetTime);
@@ -120,7 +135,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CheckTowerProximity()
     {
-        if(Vector3.Distance(transform.position, _tower.transform.position) <= 10)
+        if (Vector3.Distance(transform.position, _tower.transform.position) <= 10)
         {
             _towerProximityValue = 0;
         }
@@ -128,12 +143,12 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
             _neighbourLowerProximityValue = -2;
-            foreach(Collider agentCollider in _neighbourAgents)
+            foreach (Collider agentCollider in _neighbourAgents)
             {
-                if(agentCollider.CompareTag("Agent"))
+                if (agentCollider.CompareTag("Agent"))
                 {
                     int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
-                    if(_neighbourProximityValue > -1)
+                    if (_neighbourProximityValue > -1)
                     {
                         if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue <= _neighbourLowerProximityValue)
                         {
@@ -144,7 +159,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
 
             _towerProximityValue = _neighbourLowerProximityValue + 1;
-            
+
         }
 
         _towerProximityNormalizedValue = _towerProximityValue / 100f;
@@ -153,7 +168,10 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _towerProximityNormalizedValue = 1;
         }
+        
     }
+
+
 
     #region Pools
 
@@ -168,6 +186,7 @@ public class RecognizeItsSelf : MonoBehaviour
         if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10)
         {
             _pool1 = true;
+            _Pool1Anime.SetFloat("blend", _poolProximity);
         }
         else
         {
@@ -202,8 +221,8 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 if (agentCollider.CompareTag("Agent"))
                 {
-                    bool _neighbourPool1Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
-                    if (_neighbourPool1Value)
+                    bool _neighbourPool2Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
+                    if (_neighbourPool2Value)
                     {
                         _tempPool2 = true;
                     }
@@ -214,6 +233,8 @@ public class RecognizeItsSelf : MonoBehaviour
     }
 
     #endregion Pools
+
+    #region Exaustion
 
     public void CalculateExaustion()
     {
@@ -254,19 +275,20 @@ public class RecognizeItsSelf : MonoBehaviour
         if (_aviability)
         {
             finalColor = _initialColor;
-            intensity = 3f;  
+            intensity = 3f;
         }
         else
         {
             // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
             finalColor = Color.Lerp(_initialColor, _finalColor, _exaustionLevel);
-            intensity = _threshold - (_exaustionLevel * 20f);
+            intensity = _threshold - (_exaustionLevel * 10f);
         }
 
         finalColor *= intensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
+    #endregion Pools
 
 
     public List<NavMeshAgent> WitchListIsIt()
@@ -317,12 +339,12 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void ResetAllAgentData()
     {
-        if(WitchListIsIt() != null)
+        if (WitchListIsIt() != null)
         {
             List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
-
+        _canShoot = false;
         _AgentFonctionScript._mineUsed = false;
         _pool1 = false;
         _pool2 = false;
@@ -332,6 +354,9 @@ public class RecognizeItsSelf : MonoBehaviour
         _dictionnaireAgents = _TraceScript._dictionnaireAgent;
         _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
-
+        foreach (NavMeshAgent _enemyAgent in _amIFocus)
+        {
+            //_enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
+        }
     }
 }

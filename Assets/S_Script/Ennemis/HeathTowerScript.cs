@@ -9,8 +9,16 @@ public class HeathTowerScript : MonoBehaviour
     [Header("Reference")]
     public Text _HealtHp;
     public GameManager _GameManagerScript;
-    public MeshRenderer _meshRenderer;
-    
+    public MeshRenderer _meshRenderer1;
+    public MeshRenderer _meshRenderer2;
+    public MeshRenderer _meshRenderer3;
+    public Animator _AnimationHP;
+
+    public GameObject _ParticulUp;
+    public GameObject _ParticulMiddle;
+    public GameObject _ParticulDown;
+
+
 
     [Header("HealthSystem")]
     public int _MaxHealth;
@@ -35,6 +43,10 @@ public class HeathTowerScript : MonoBehaviour
 
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
+
+        _ParticulUp.SetActive(false);
+        _ParticulMiddle.SetActive(false);
+        _ParticulDown.SetActive(false);
     }
 
     private void Update()
@@ -51,6 +63,21 @@ public class HeathTowerScript : MonoBehaviour
         {
             _GameManagerScript._gameLose = true;
             Debug.Log("Defeat");
+        }
+
+        if (_CurrentHealth <= 400f)
+        {
+            _ParticulDown.SetActive(true);
+        }
+
+        if (_CurrentHealth <= 300f)
+        {
+            _ParticulMiddle.SetActive(true);
+        }
+
+        if (_CurrentHealth <= 200f)
+        {
+            _ParticulUp.SetActive(true);
         }
     }
 
@@ -76,20 +103,24 @@ public class HeathTowerScript : MonoBehaviour
         float healthPercentage = (float)_CurrentHealth / _MaxHealth;
 
         Color lerpedColor;
-        float intensity;
 
         if (_CurrentHealth <= 0)
         {
             lerpedColor = _finalColor; 
-            intensity = 0f;
         }
         else
         {
             lerpedColor = Color.Lerp(_initialColor, _finalColor, healthPercentage);
-            intensity = 1f;
         }
 
-        lerpedColor *= intensity;
-        _meshRenderer.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer1.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer2.material.SetColor("_EmissionColor", lerpedColor);
+        _meshRenderer3.material.SetColor("_EmissionColor", lerpedColor);
+
+        _meshRenderer1.materials[1].SetColor("_Color", lerpedColor);
+        _meshRenderer2.materials[1].SetColor("_Color", lerpedColor);
+        _meshRenderer3.materials[1].SetColor("_Color", lerpedColor);
+
+        _AnimationHP.SetFloat("Blend", healthPercentage);
     }    
 }

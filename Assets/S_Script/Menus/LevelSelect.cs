@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour
+public class LevelSelect : MainMenu
 {
     private int levelSelected = 0;
-    public GameManager _GameManagerScript;
-
+    
     private void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
@@ -70,6 +69,6 @@ public class LevelSelect : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Main_Menu");
+        _PanelLevelSelec.SetActive(false);
     }
 }

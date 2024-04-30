@@ -19,6 +19,5 @@ public class GamePage : MonoBehaviour
     {
         SceneManager.LoadScene("Main_Menu");
         _GameManagerScript._gameLose = false;
-
     }
 }

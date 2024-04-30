@@ -9,7 +9,9 @@ public class FeedBack : MonoBehaviour
     [Header("Reference")]
     public AgentToTrace _AgentTraceScript;
     public Text _AgentUsed;
-    public GameObject deathBubblePrefab;
+    public GameObject _deathBubblePrefab;
+    //public Enemy _EnemysScript;
+    
     
 
     [Header("Value")]
@@ -46,7 +48,7 @@ public class FeedBack : MonoBehaviour
     #region DeathBubble :D
     public void DeathBubble(Transform _position)
     {
-        GameObject deathBubble = Instantiate(deathBubblePrefab, _position.position, Quaternion.identity);
+        GameObject deathBubble = Instantiate(/*_EnemysScript.*/_deathBubblePrefab, _position.position, Quaternion.identity);
 
         StartCoroutine(ScaleAndDestroy(deathBubble.transform));
     }

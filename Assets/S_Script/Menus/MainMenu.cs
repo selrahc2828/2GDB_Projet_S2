@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
     public GameManager _GameManagerScript;
+    public GameObject _PanelLevelSelec;
+    public GameObject _PanelOption;
+
+
     private void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
@@ -17,11 +22,11 @@ public class MainMenu : MonoBehaviour
     }
     public void LevelSelect()
     {
-        SceneManager.LoadScene("Level_Select");
+        _PanelLevelSelec.SetActive(true);
     }
     public void Option()
     {
-        SceneManager.LoadScene("Option_Scene");
+        _PanelOption.SetActive(true);
     }
     public void Quit_Game()
     {
