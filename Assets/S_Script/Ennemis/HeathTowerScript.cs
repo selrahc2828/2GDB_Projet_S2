@@ -14,6 +14,11 @@ public class HeathTowerScript : MonoBehaviour
     public MeshRenderer _meshRenderer3;
     public Animator _AnimationHP;
 
+    public GameObject _ParticulUp;
+    public GameObject _ParticulMiddle;
+    public GameObject _ParticulDown;
+
+
 
     [Header("HealthSystem")]
     public int _MaxHealth;
@@ -38,6 +43,10 @@ public class HeathTowerScript : MonoBehaviour
 
         // Set CurrentHealth to Max Health
         _CurrentHealth = _MaxHealth;
+
+        _ParticulUp.SetActive(false);
+        _ParticulMiddle.SetActive(false);
+        _ParticulDown.SetActive(false);
     }
 
     private void Update()
@@ -54,6 +63,21 @@ public class HeathTowerScript : MonoBehaviour
         {
             _GameManagerScript._gameLose = true;
             Debug.Log("Defeat");
+        }
+
+        if (_CurrentHealth <= 400f)
+        {
+            _ParticulDown.SetActive(true);
+        }
+
+        if (_CurrentHealth <= 300f)
+        {
+            _ParticulMiddle.SetActive(true);
+        }
+
+        if (_CurrentHealth <= 200f)
+        {
+            _ParticulUp.SetActive(true);
         }
     }
 

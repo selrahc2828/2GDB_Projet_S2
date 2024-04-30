@@ -593,6 +593,9 @@ MonoBehaviour:
   _amIFocus: []
   _initialColor: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
   _finalColor: {r: 0.27450982, g: 0, b: 0, a: 0}
+  trailPrefab: {fileID: 8699307770515160642, guid: b347597af5ce0f545bc0734191ebd596,
+    type: 3}
+  hasReceivedTrail: 0
 --- !u!4 &7674923304642868183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a16700baf50ac4641a7101d572ec0d4d,

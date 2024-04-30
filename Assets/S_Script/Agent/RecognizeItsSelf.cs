@@ -53,6 +53,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public Color _finalColor;
 
 
+
     private void Awake()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -154,7 +155,9 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _towerProximityNormalizedValue = 1;
         }
+        
     }
+
 
 
     #region Pools
