@@ -11,8 +11,7 @@ public class FeedBack : MonoBehaviour
     public Text _AgentUsed;
     public GameObject _deathBubblePrefab;
     //public Enemy _EnemysScript;
-    
-    
+
 
     [Header("Value")]
     public float _OffSetX;
@@ -39,8 +38,6 @@ public class FeedBack : MonoBehaviour
         {
             _AgentUsed.color = new Color(_AgentUsed.color.r, _AgentUsed.color.g, _AgentUsed.color.b, 0f);
         }
-
-
 
         _AgentUsed.text = " Agent Used : " + _AgentTraceScript._numberAgentNeeded;
     }
