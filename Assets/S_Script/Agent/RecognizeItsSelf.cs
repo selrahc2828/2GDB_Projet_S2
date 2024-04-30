@@ -11,6 +11,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public AgentToTrace _TraceScript;
     public GameManager _gameManager;
     public AgentFonction _AgentFonctionScript;
+    public GameObject _ParticulFatigue;
 
     [Header("Variable de Fatigue")]
     public float _exaustionLevel;
@@ -87,6 +88,15 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
+        }
+
+        if (_exaustionLevel >= 0.8f)
+        {
+            _ParticulFatigue.SetActive(true);
+        }
+        else
+        {
+            _ParticulFatigue.SetActive(false);
         }
 
     }
