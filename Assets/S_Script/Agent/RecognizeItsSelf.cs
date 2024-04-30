@@ -12,6 +12,8 @@ public class RecognizeItsSelf : MonoBehaviour
     public GameManager _gameManager;
     public AgentFonction _AgentFonctionScript;
     public GameObject _ParticulFatigue;
+    public Animator _Pool1Anime;
+
 
     [Header("Variable de Fatigue")]
     public float _exaustionLevel;
@@ -36,6 +38,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public GameObject _GOpool2;
     public bool _pool1; //slow
     public bool _pool2;
+    private float _poolProximity;
 
 
     [Header("Autre")]
@@ -183,6 +186,7 @@ public class RecognizeItsSelf : MonoBehaviour
         if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10)
         {
             _pool1 = true;
+            _Pool1Anime.SetFloat("blend", _poolProximity);
         }
         else
         {
