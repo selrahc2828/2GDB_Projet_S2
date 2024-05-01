@@ -11345,7 +11345,7 @@ MonoBehaviour:
   - {fileID: 394211365}
   - {fileID: 652177010}
   - {fileID: 1130370859}
-  speed: 5
+  speed: 30
 --- !u!96 &929503964
 TrailRenderer:
   serializedVersion: 3

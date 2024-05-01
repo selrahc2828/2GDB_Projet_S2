@@ -45,6 +45,14 @@ public class Option : MainMenu
     public void BackToMenu()
     {
         _PanelOption.SetActive(false);
+
+        PlayButton.SetActive(true);
+        LevelSelectButton.SetActive(true);
+        QuitButton.SetActive(true);
+        OptionSelectButton.SetActive(true);
+
+        _TraceScript.enabled = true;
+        _RendererTrail.SetActive(true);
     }
    
 }

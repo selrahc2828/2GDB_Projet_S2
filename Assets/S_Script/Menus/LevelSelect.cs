@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,5 +71,14 @@ public class LevelSelect : MainMenu
     public void BackToMenu()
     {
         _PanelLevelSelec.SetActive(false);
+
+        PlayButton.SetActive(true);
+        LevelSelectButton.SetActive(true);
+        QuitButton.SetActive(true);
+        OptionSelectButton.SetActive(true);
+
+
+        _TraceScript.enabled = true;
+        _RendererTrail.SetActive(true);
     }
 }
