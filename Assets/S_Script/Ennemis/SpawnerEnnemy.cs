@@ -85,6 +85,7 @@ public class SpawnerEnnemy : MonoBehaviour
             SpawnBaseEnemy();
         }
     }
+
     public Vector3 GenerateRandomVector()
     {
         // Generate random x and z coordinates

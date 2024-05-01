@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -42,6 +43,8 @@ public class Enemy : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _initialColor;
 
+    
+
 
     // Fonction is called in DamageToTower Script 
     public void TakeDamage(int damageAmount)
@@ -53,6 +56,7 @@ public class Enemy : MonoBehaviour
         if (_CurrentHealth <= 0)
         {
             Die();
+            _GameManager.IncreaseEnemyKilledCount();
         }
     }
 

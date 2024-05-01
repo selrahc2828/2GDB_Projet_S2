@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Niveau1 : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class Niveau1 : MonoBehaviour
     public int _numberEnemyWave4;
     public int _numberEnemyWave5;
     public int _timerBetweenWave;
+
+    [Header("TextInfo")]
+    public Text _TextNumberOfWave;
 
     private void Awake()
     {
@@ -38,8 +42,10 @@ public class Niveau1 : MonoBehaviour
 
     private void Update()
     {
-
+        _TextNumberOfWave.text = "Wave : " + _displayedWave;
     }
+
+
     public void CallWaves(int numberOfEnemy)
     {
         if (_spawnerScript!= null)

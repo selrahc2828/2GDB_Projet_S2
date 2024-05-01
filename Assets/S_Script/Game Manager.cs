@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +19,7 @@ public class GameManager : MonoBehaviour
     public int _DamageAmount;
     public float _FireRate;
     public float _maxFatigueSeconde;
-    
+
 
     [Header("Agent Mouvement Parameter")]
     public float _SpeedAgent;
@@ -67,6 +70,15 @@ public class GameManager : MonoBehaviour
     public int _HeathTower;
 
 
+    [Header("UtilityVariable")]
+    public Niveau1 _LevelWaveCheck;
+    public int _NumberOfEnemyKilled = 0;
+    public TextMeshProUGUI _NumberOfEnemyText;
+    public TextMeshProUGUI _TotalWave;
+    public TextMeshProUGUI _TotalTime;
+    private float _Time;
+
+
     [Header("Game Parameter")]
     public float _slowMo;
     public bool _gamePaused;
@@ -78,6 +90,9 @@ public class GameManager : MonoBehaviour
     public GameObject _gameLoseCanevas;
     public GameObject _gameWinCanevas;
 
+
+
+
     private void Update()
     {
         CheckIfGameIsLoseOrWin();
@@ -87,6 +102,28 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 5f;
         }
 
+        if (!_gameLose)
+        {
+            _Time += Time.deltaTime;
+        }
+
+        _TotalTime.text = "Total time : " + Mathf.Floor(_Time / 60f).ToString("00") + " : " + (_Time % 60).ToString("00");
+        _TotalWave.text = "Total Wave : " + _LevelWaveCheck._displayedWave.ToString();
+
+    }
+
+    public void IncreaseEnemyKilledCount()
+    {
+        _NumberOfEnemyKilled++;
+        UpdateEnemyKilledText(); 
+    }
+
+    private void UpdateEnemyKilledText()
+    {
+        if (_NumberOfEnemyText != null)
+        {
+            _NumberOfEnemyText.text = "Total Enemy Kill :  " + _NumberOfEnemyKilled.ToString();
+        }
     }
 
 
@@ -95,12 +132,28 @@ public class GameManager : MonoBehaviour
         if (_gameLose)
         {
             _gameLoseCanevas.SetActive(true);
-        }else if (_gameWin) 
+            DestroyAllEnemies();
+        }
+        else if (_gameWin) 
         {
             _gameWinCanevas.SetActive(true);
         }
     }
 
+
+    private void DestroyAllEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("AgentMechant");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Enemy enemyComponent = enemy.GetComponent<Enemy>();
+            if (enemyComponent != null)
+            {
+                enemyComponent.Die();
+            }
+        }
+    }
 
 
 }
