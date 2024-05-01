@@ -5055,6 +5055,7 @@ GameObject:
   - component: {fileID: 8300220533944091652}
   - component: {fileID: 1476743039149597141}
   - component: {fileID: 3983711828822289832}
+  - component: {fileID: 4110584647057801772}
   m_Layer: 0
   m_Name: Pool2
   m_TagString: Untagged
@@ -5100,7 +5101,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 5
   m_Center: {x: 0, y: -2, z: 0}
 --- !u!64 &8300220533944091652
 MeshCollider:
@@ -5160,6 +5161,19 @@ MonoBehaviour:
   _ParticulSys: {fileID: 3660325762053494857}
   _animatorPool: {fileID: 1476743039149597141}
   _speed: 0.1
+--- !u!114 &4110584647057801772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883480029317667003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da60f5a8a876dd749974447ff2578285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _infected: 0
 --- !u!1001 &1457806414286894729
 PrefabInstance:
   m_ObjectHideFlags: 0
