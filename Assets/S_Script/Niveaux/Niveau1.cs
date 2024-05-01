@@ -10,6 +10,7 @@ public class Niveau1 : MonoBehaviour
     public int _numberOfEnemyToCall;
     public int _actualNumberOfEnemy;
     public int _currentWave;
+    public int _displayedWave;
     public int _numberEnemyWave1;
     public int _numberEnemyWave2;
     public int _numberEnemyWave3;
@@ -30,6 +31,7 @@ public class Niveau1 : MonoBehaviour
         _gameManager._numberOfEnemyOnScreen = 0;
         _gameManager._waveStarted = false;
         _currentWave = 0;
+        _displayedWave = 0;
         _numberOfWave = 5;
         NextWave();
     }
@@ -51,6 +53,7 @@ public class Niveau1 : MonoBehaviour
     public void NextWave()
     {
         _currentWave++;
+        _displayedWave++;
         switch (_currentWave)
         {
             case 1:
