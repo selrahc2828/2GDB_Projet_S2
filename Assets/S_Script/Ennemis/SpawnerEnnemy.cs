@@ -12,7 +12,9 @@ public class SpawnerEnnemy : MonoBehaviour
     public Vector3 _spawnPoint;
     public float _spawnCooldown = 0.15f;
 
-    private bool canSpawn = true;
+    private bool _canSpawn = true;
+
+    public GameObject[] _pools;
 
 
     public void Awake()
@@ -31,15 +33,15 @@ public class SpawnerEnnemy : MonoBehaviour
         while (true)
         {
             // if canSpawn
-            if (canSpawn)
+            if (_canSpawn)
             {
                 // Call Spawn Enemy
                 SpawnBaseEnemy();
                 // change bool
-                canSpawn = false;
+                _canSpawn = false;
                 // Return to have a cooldown
                 yield return new WaitForSeconds(_spawnCooldown);
-                canSpawn = true;
+                _canSpawn = true;
             }
             yield return null;
         }
@@ -66,7 +68,8 @@ public class SpawnerEnnemy : MonoBehaviour
         _spawnPoint = GenerateRandomVector() * 90;
         // instantiate the enemy to the spawn position 
         GameObject enemyPrefab = _buzzKillerPrefabs[Random.Range(0, _buzzKillerPrefabs.Length)];
-        Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
+        enemy.GetComponent<BuzzKiller>()._pools = _pools;
     }
 
     public IEnumerator SpawnAWave(int numberOfBaseEnemy, int numberOfHomeBrecker, int numberOfBuzzKiller)
