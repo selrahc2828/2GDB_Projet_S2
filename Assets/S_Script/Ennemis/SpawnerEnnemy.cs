@@ -83,6 +83,18 @@ public class SpawnerEnnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(_spawnCooldown);
             SpawnBaseEnemy();
+        } 
+        
+        for (int i = 0; i < numberOfHomeBrecker; i++)
+        {
+            yield return new WaitForSeconds(_spawnCooldown);
+            SpawnHomeWrecker();
+        } 
+        
+        for (int i = 0; i < numberOfBuzzKiller; i++)
+        {
+            yield return new WaitForSeconds(_spawnCooldown);
+            SpawnBuzzKiller();
         }
     }
 

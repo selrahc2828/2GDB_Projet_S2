@@ -331,7 +331,7 @@ NavMeshAgent:
   m_Speed: 5
   m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 180
+  m_AngularSpeed: 60
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -384,6 +384,8 @@ MonoBehaviour:
   _SlowedOutlineColor: {r: 0.1882353, g: 0.6117647, b: 1.4980392, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
+  _deathBubblePrefab: {fileID: 7679899219145768590, guid: 1aed2a5dc46f8ee4e8f7467c5941d3be,
+    type: 3}
   _finalColor: {r: 1.7207954, g: 0, b: 0, a: 0}
   _initialColor: {r: 0.11320752, g: 0, b: 0, a: 0}
   _agentToTraceScript: {fileID: 0}

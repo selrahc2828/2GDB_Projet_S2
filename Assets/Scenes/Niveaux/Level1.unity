@@ -20719,7 +20719,9 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _spawnerScript: {fileID: 0}
   _numberOfWave: 0
-  _numberOfEnemyToCall: 0
+  _numberOfBasicEnnemy: 0
+  _numberOfHomeWrecker: 0
+  _numberOfBuzzKiller: 0
   _actualNumberOfEnemy: 0
   _currentWave: 0
   _displayedWave: 0
@@ -24687,13 +24689,13 @@ MonoBehaviour:
   _resetTime: 15
   _HealthAgent: 0
   _HeathBaseEnemy: 50
-  _HeathHomeWreaker: 20000
+  _HeathHomeWreaker: 300
   _HeathBuzzKiller: 500
   _SpeedBaseEnemy: 5
   _SpeedHomeWreaker: 20
   _SpeedBuzzKiller: 5
   _AngularSpeedBaseEnemy: 30
-  _AngularSpeedHomeWreaker: 30
+  _AngularSpeedHomeWreaker: 300
   _AngularSpeedBuzzKiller: 30
   _AccelerationBaseEnemy: 180
   _AccelerationHomeWreaker: 180

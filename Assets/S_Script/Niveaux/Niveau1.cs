@@ -8,7 +8,9 @@ public class Niveau1 : MonoBehaviour
     public GameManager _gameManager;
     public SpawnerEnnemy _spawnerScript;
     public int _numberOfWave;
-    public int _numberOfEnemyToCall;
+    public int _numberOfBasicEnnemy;
+    public int _numberOfHomeWrecker;
+    public int _numberOfBuzzKiller;
     public int _actualNumberOfEnemy;
     public int _currentWave;
     public int _displayedWave;
@@ -46,11 +48,11 @@ public class Niveau1 : MonoBehaviour
     }
 
 
-    public void CallWaves(int numberOfEnemy)
+    public void CallWaves(int numberOfEnemy, int numberofHomeWrecker, int numberofBuzzKiller)
     {
         if (_spawnerScript!= null)
         {
-            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy, 0, 0));
+            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy, numberofHomeWrecker, numberofBuzzKiller));
         }
         
         _gameManager._waveStarted = true;
@@ -63,26 +65,38 @@ public class Niveau1 : MonoBehaviour
         switch (_currentWave)
         {
             case 1:
-                _numberOfEnemyToCall = _numberEnemyWave1;
+                _numberOfBasicEnnemy = _numberEnemyWave1;
+                _numberOfHomeWrecker = 1;
+                _numberOfBuzzKiller = 1;
                 _gameManager._gameStarted = true;
                 break;
             case 2:
-                _numberOfEnemyToCall = _numberEnemyWave2;
+                _numberOfBasicEnnemy = _numberEnemyWave2;
+                _numberOfHomeWrecker = 1;
+                _numberOfBuzzKiller = 0;
                 break;
             case 3:
-                _numberOfEnemyToCall = _numberEnemyWave3;
+                _numberOfBasicEnnemy = _numberEnemyWave3;
+                _numberOfHomeWrecker = 0;
+                _numberOfBuzzKiller = 1;
                 break;
             case 4:
-                _numberOfEnemyToCall = _numberEnemyWave4;
-                break;
+                _numberOfBasicEnnemy = _numberEnemyWave4;
+                _numberOfHomeWrecker = 1;
+                _numberOfBuzzKiller = 1;
+                break;  
             case 5:
-                _numberOfEnemyToCall = _numberEnemyWave5;
+                _numberOfBasicEnnemy = _numberEnemyWave5;
+                _numberOfHomeWrecker = 2;
+                _numberOfBuzzKiller = 1;
                 break;
             default:
-                _numberOfEnemyToCall = _numberEnemyWave5;
+                _numberOfBasicEnnemy = _numberEnemyWave5;
+                _numberOfHomeWrecker = 2;
+                _numberOfBuzzKiller = 2;
                 break;
         }
-        CallWaves(_numberOfEnemyToCall);
+        CallWaves(_numberOfBasicEnnemy, _numberOfHomeWrecker, _numberOfBuzzKiller);
     }
 
     public void CheckForNewtWave()

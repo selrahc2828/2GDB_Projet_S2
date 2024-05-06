@@ -36,14 +36,13 @@ public class Enemy : MonoBehaviour
 
     [Header("HP Feedback")]
     public MeshRenderer _meshRenderer;
-    //public GameObject _deathBubblePrefab;
+    public GameObject _deathBubblePrefab;
 
     [ColorUsage(false, true)]
     public Color _finalColor;
     [ColorUsage(false, true)]
     public Color _initialColor;
 
-    
 
 
     // Fonction is called in DamageToTower Script 
@@ -95,7 +94,6 @@ public class Enemy : MonoBehaviour
     {
         _GameManager._numberOfEnemyOnScreen--;
         _Niveau1.CheckForNewtWave();
-        
     }
 
     public void OnTriggerEnter(Collider other)
@@ -150,5 +148,4 @@ public class Enemy : MonoBehaviour
             outlineMaterial.SetColor("_Color", _initialOutlineColor);
         }
     }
-
 }

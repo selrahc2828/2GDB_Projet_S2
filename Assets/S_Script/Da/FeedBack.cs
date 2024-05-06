@@ -10,19 +10,17 @@ public class FeedBack : MonoBehaviour
     public AgentToTrace _AgentTraceScript;
     public Text _AgentUsed;
     public GameObject _deathBubblePrefab;
-    //public Enemy _EnemysScript;
-
 
     [Header("Value")]
     public float _OffSetX;
     public float _OffSetY;
 
 
-    [Header("BubbleParameter")]
-    public float _scaleDuration = 1.0f; 
-    public float _destroyDelay = 1.0f; 
-    public float _maxScale = 2.0f; 
 
+    [Header("BubbleParameter")]
+    public float _scaleDuration = 0.5f;
+    public float _destroyDelay = 0.2f;
+    public float _maxScale = 10f;
 
     void Update()
     {
@@ -45,7 +43,7 @@ public class FeedBack : MonoBehaviour
     #region DeathBubble :D
     public void DeathBubble(Transform _position)
     {
-        GameObject deathBubble = Instantiate(/*_EnemysScript.*/_deathBubblePrefab, _position.position, Quaternion.identity);
+        GameObject deathBubble = Instantiate(_deathBubblePrefab, _position.position, Quaternion.identity);
 
         StartCoroutine(ScaleAndDestroy(deathBubble.transform));
     }
@@ -88,4 +86,5 @@ public class FeedBack : MonoBehaviour
         Destroy(bubbleTransform.gameObject);
     }
     #endregion
+
 }
