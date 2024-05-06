@@ -7675,6 +7675,11 @@ PrefabInstance:
       objectReference: {fileID: 825007226}
     - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
         type: 3}
+      propertyPath: _MaxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+        type: 3}
       propertyPath: _AnimationHP
       value: 
       objectReference: {fileID: 196656711}

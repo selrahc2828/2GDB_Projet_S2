@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PoolAnim : MonoBehaviour
+public class PoolAnim : PoolScript
 {
 
     [Header("Particule")]
@@ -33,7 +33,7 @@ public class PoolAnim : MonoBehaviour
 
     private void Update()
     {
-        if (_isInTrigger)
+        if (_isInTrigger && !_infected)
         {
             _animatorPool.SetFloat("Blend", Mathf.Clamp(_animatorPool.GetFloat("Blend") + _speed * Time.deltaTime, _minValue, _maxValue));
             _ParticulSys.SetActive(true);
