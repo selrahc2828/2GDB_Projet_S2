@@ -13,6 +13,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public AgentFonction _AgentFonctionScript;
     public GameObject _ParticulFatigue;
     public Animator _Pool1Anime;
+    public ChainFeedBack _ChainFeedbackScript;
 
 
     [Header("Variable de Fatigue")]
@@ -63,6 +64,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
+        _ChainFeedbackScript = this.GetComponentInParent<ChainFeedBack>();
     }
     private void Start()
     {
@@ -163,6 +165,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
 
             _towerProximityValue = _neighbourLowerProximityValue + 1;
+            _ChainFeedbackScript.posOnLine = _towerProximityValue;
 
         }
 
@@ -289,6 +292,7 @@ public class RecognizeItsSelf : MonoBehaviour
         }
 
         finalColor *= intensity;
+        finalColor += _ChainFeedbackScript.burstIntensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
