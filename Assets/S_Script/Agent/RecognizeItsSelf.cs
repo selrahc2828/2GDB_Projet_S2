@@ -12,6 +12,8 @@ public class RecognizeItsSelf : MonoBehaviour
     public GameManager _gameManager;
     public AgentFonction _AgentFonctionScript;
     public GameObject _ParticulFatigue;
+    public Animator _Pool1Anime;
+    public ChainFeedBack _ChainFeedbackScript;
 
 
     [Header("Variable de Fatigue")]
@@ -22,7 +24,6 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _threshold;
     public Material _ShaderMaterial;
     public MeshRenderer _meshRenderer;
-
 
 
     [Header("Variable de chainage des agents")]
@@ -38,8 +39,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public GameObject _GOpool2;
     public bool _pool1; //slow
     public bool _pool2;
-
-
+    private float _poolProximity;
 
 
     [Header("Autre")]
@@ -64,6 +64,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
+        _ChainFeedbackScript = this.GetComponentInParent<ChainFeedBack>();
     }
     private void Start()
     {
@@ -73,8 +74,6 @@ public class RecognizeItsSelf : MonoBehaviour
 
         _pool1 = false;
         _pool2 = false;
-
-        //_animatorsPool = FindObjectsOfType<Animator>();
 
         _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
@@ -100,7 +99,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
         }
 
-        if (_exaustionLevel >= 0.9f)
+        if (_exaustionLevel >= 0.8f)
         {
             _ParticulFatigue.SetActive(true);
         }
@@ -166,6 +165,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
 
             _towerProximityValue = _neighbourLowerProximityValue + 1;
+            _ChainFeedbackScript.posOnLine = _towerProximityValue;
 
         }
 
@@ -193,6 +193,7 @@ public class RecognizeItsSelf : MonoBehaviour
         if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10 && _GOpool1.tag != "Infected")
         {
             _pool1 = true;
+            _Pool1Anime.SetFloat("blend", _poolProximity);
         }
         else
         {
@@ -210,7 +211,6 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
             _pool1 = _tempPool1;
-            
         }
     }
 
@@ -219,7 +219,6 @@ public class RecognizeItsSelf : MonoBehaviour
         if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10 && _GOpool1.tag != "Infected")
         {
             _pool2 = true;
-            
         }
         else
         {
@@ -237,7 +236,6 @@ public class RecognizeItsSelf : MonoBehaviour
                 }
             }
             _pool2 = _tempPool2;
-            
         }
     }
 
@@ -294,6 +292,7 @@ public class RecognizeItsSelf : MonoBehaviour
         }
 
         finalColor *= intensity;
+        finalColor += _ChainFeedbackScript.burstIntensity;
         _meshRenderer.material.SetColor("_FresnelColor", finalColor);
     }
 
