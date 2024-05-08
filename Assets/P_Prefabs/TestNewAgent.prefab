@@ -5221,6 +5221,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6512320756067665205}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a16700baf50ac4641a7101d572ec0d4d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 143301654082394424}
   m_SourcePrefab: {fileID: 100100000, guid: a16700baf50ac4641a7101d572ec0d4d, type: 3}
 --- !u!23 &3118169488273763431 stripped
 MeshRenderer:
@@ -5361,6 +5365,8 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _AgentFonctionScript: {fileID: 0}
   _ParticulFatigue: {fileID: 8415156921193952310}
+  _Pool1Anime: {fileID: 0}
+  _ChainFeedbackScript: {fileID: 0}
   _exaustionLevel: 0
   _Intensity: 0
   _threshold: 8
@@ -5380,6 +5386,74 @@ MonoBehaviour:
   _amIFocus: []
   _initialColor: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
   _finalColor: {r: 0.27450982, g: 0, b: 0, a: 0}
+--- !u!114 &143301654082394424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7046196874485344621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a91ce132825747428da4e696f344430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posOnLine: 0
+  burstDuration: 2
+  maxEntityOnLine: 50
+  burstCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.09541205
+      outSlope: 0.09541205
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.14841056
+      value: 0.014160156
+      inSlope: 0.033194445
+      outSlope: 0.033194445
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.23348114
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -1.1000845
+      outSlope: -1.1000845
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6998353
+      value: 0
+      inSlope: 0.029733317
+      outSlope: 0.029733317
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6079666
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  burst: 0
+  burstIntensity: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &7674923304642868183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a16700baf50ac4641a7101d572ec0d4d,
