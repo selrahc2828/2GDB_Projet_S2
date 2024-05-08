@@ -24700,7 +24700,7 @@ MonoBehaviour:
   _HealthAgent: 0
   _HeathBaseEnemy: 50
   _HeathHomeWreaker: 300
-  _HeathBuzzKiller: 500
+  _HeathBuzzKiller: 700
   _SpeedBaseEnemy: 5
   _SpeedHomeWreaker: 20
   _SpeedBuzzKiller: 5
