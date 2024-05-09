@@ -14819,6 +14819,8 @@ MonoBehaviour:
   _ParticulUp: {fileID: 5097463371657175798}
   _ParticulMiddle: {fileID: 4429551533199321081}
   _ParticulDown: {fileID: 1854746118798022144}
+  _ParticulRipple: {fileID: 2952668693158777361, guid: d78d8a3dddde8ba4693954b4e2c5ae1a,
+    type: 3}
   _MaxHealth: 500
   _CurrentHealth: 0
   _initialColor: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 0}

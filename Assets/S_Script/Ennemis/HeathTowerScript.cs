@@ -14,9 +14,11 @@ public class HeathTowerScript : MonoBehaviour
     public MeshRenderer _meshRenderer3;
     public Animator _AnimationHP;
 
+    [Header("Particul")]
     public GameObject _ParticulUp;
     public GameObject _ParticulMiddle;
     public GameObject _ParticulDown;
+    public GameObject _ParticulRipple;
 
 
 
@@ -38,7 +40,6 @@ public class HeathTowerScript : MonoBehaviour
 
     void Start()
     {
-
         _MaxHealth = _GameManagerScript._HeathTower;
 
         // Set CurrentHealth to Max Health
@@ -87,6 +88,10 @@ public class HeathTowerScript : MonoBehaviour
         // Take the current Health and substract the damage amount 
         _CurrentHealth -= damageAmount;
         Debug.Log(gameObject.name + " took damage: " + damageAmount);
+
+        GameObject rippleParticle = Instantiate(_ParticulRipple, transform.position, Quaternion.identity);
+        Destroy(rippleParticle, 1f);
+
     }
 
     // call update to Current Health
