@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -31,6 +32,10 @@ public class HeathTowerScript : MonoBehaviour
     public Color _initialColor;
     [ColorUsage(false, true)]
     public Color _finalColor;
+
+
+    [Header("Sound")]
+    public EventReference _FMODDamag;
 
 
     public void Awake()
@@ -91,6 +96,7 @@ public class HeathTowerScript : MonoBehaviour
 
         GameObject rippleParticle = Instantiate(_ParticulRipple, transform.position, Quaternion.identity);
         Destroy(rippleParticle, 1f);
+        FMODUnity.RuntimeManager.PlayOneShot(_FMODDamag);
 
     }
 

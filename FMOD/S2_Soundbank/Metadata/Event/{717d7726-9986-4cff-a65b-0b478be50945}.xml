@@ -3,7 +3,7 @@
 	<object class="Event" id="{717d7726-9986-4cff-a65b-0b478be50945}">
 		<property name="note" />
 		<property name="color">
-			<value>Red</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>enemy_death</value>
