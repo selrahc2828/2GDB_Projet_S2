@@ -33696,17 +33696,17 @@ MonoBehaviour:
   _SlowRangeGameManager: 13
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
-  _DamageAmount: 10
+  _DamageAmount: 3
   _FireRate: 2
   _maxFatigueSeconde: 15
-  _SpeedAgent: 15
+  _SpeedAgent: 16
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
-  _HeathBaseEnemy: 50
-  _HeathHomeWreaker: 300
-  _HeathBuzzKiller: 700
+  _HeathBaseEnemy: 60
+  _HeathHomeWreaker: 400
+  _HeathBuzzKiller: 800
   _SpeedBaseEnemy: 5
   _SpeedHomeWreaker: 20
   _SpeedBuzzKiller: 5
