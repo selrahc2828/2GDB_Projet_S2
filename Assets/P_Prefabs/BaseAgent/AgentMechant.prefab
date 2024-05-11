@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 6536687475616701843}
-  - component: {fileID: 114683880025133769}
+  - component: {fileID: 1168329159655195223}
   m_Layer: 11
   m_Name: AgentMechant
   m_TagString: AgentMechant
@@ -390,7 +390,7 @@ MonoBehaviour:
     type: 3}
   _finalColor: {r: 0.85882354, g: 0.43137255, b: 0, a: 0}
   _initialColor: {r: 0.13207549, g: 0.03551086, b: 0.03551086, a: 0}
---- !u!114 &114683880025133769
+--- !u!114 &1168329159655195223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
