@@ -20,13 +20,13 @@ MonoBehaviour:
     Data4: -1406663182
   Banks:
   - {fileID: 726601766596463733}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 15800
 --- !u!114 &-9004288776874313563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 850
+  Length: 464
 --- !u!114 &-6267160432012760165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +296,33 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 1418
+--- !u!114 &-3079920011002853504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tower/TowerDie
+  m_EditorClassIdentifier: 
+  Path: event:/Tower/TowerDie
+  Guid:
+    Data1: 1489355979
+    Data2: 1206783488
+    Data3: 1740867460
+    Data4: 162072939
+  Banks:
+  - {fileID: 726601766596463733}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0
 --- !u!114 &-982539572427678907
 MonoBehaviour:
@@ -362,12 +389,14 @@ MonoBehaviour:
   - {fileID: -3458072799863636719}
   - {fileID: -982539572427678907}
   - {fileID: -9137768692177287235}
+  - {fileID: 752570098783441350}
+  - {fileID: -3079920011002853504}
   EditorParameters: []
   MasterBanks:
   - {fileID: 726601766596463733}
   StringsBanks:
   - {fileID: 3928691873847987531}
-  cacheTime: 638506025182148861
+  cacheTime: 638510272277852857
   cacheVersion: 131609
 --- !u!114 &26793691611817546
 MonoBehaviour:
@@ -411,9 +440,36 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638506025182138860
+  lastModified: 638510272277812694
   FileSizes: []
   Exists: 1
+--- !u!114 &752570098783441350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tower/TowerGetDamaged
+  m_EditorClassIdentifier: 
+  Path: event:/Tower/TowerGetDamaged
+  Guid:
+    Data1: -1135989309
+    Data2: 1115941177
+    Data3: -236383813
+    Data4: -1936813773
+  Banks:
+  - {fileID: 726601766596463733}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1038965942836482341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,12 +491,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1590
 --- !u!114 &1259554766380741925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +550,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 334
 --- !u!114 &3265165309408869626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,10 +593,10 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638506025182148861
+  lastModified: 638510272277852857
   FileSizes:
   - Name: 
-    Value: 1798
+    Value: 1896
   Exists: 1
 --- !u!114 &3952770072570313187
 MonoBehaviour:
