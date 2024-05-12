@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0a5142d3-02eb-4dba-99c7-bac8e2d422a3}">
+		<property name="assetPath">
+			<value>Designed, Rumble, Crackle, Warble, Mid, Rocks, Sci Fi SND111783 4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.41354166666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f4425e6-7a76-4fba-978c-8fd1a48a6662}</destination>
+		</relationship>
+	</object>
+</objects>
