@@ -18,7 +18,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 			<value>Yellow</value>
 		</property>
 		<property name="name">
-			<value>enemy_death</value>
+			<value>bscEnemyDeath</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

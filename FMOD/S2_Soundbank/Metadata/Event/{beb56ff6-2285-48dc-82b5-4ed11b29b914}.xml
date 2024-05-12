@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>not_connected_tower</value>
+			<value>startL</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

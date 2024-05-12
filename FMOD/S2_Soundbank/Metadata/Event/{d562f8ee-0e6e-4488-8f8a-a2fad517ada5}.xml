@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d562f8ee-0e6e-4488-8f8a-a2fad517ada5}">
 		<property name="color">
-			<value>Yellow</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
-			<value>exaustion_full</value>
+			<value>depletedAgent</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -67,7 +67,7 @@
 	<object class="MarkerTrack" id="{c3a030ba-a363-4697-8a86-e3f69586dcba}" />
 	<object class="GroupTrack" id="{b9a44190-c00e-4288-8833-459b0f849577}">
 		<relationship name="modules">
-			<destination>{d879a335-b0ab-4c7e-b77b-141e3dedf5b3}</destination>
+			<destination>{9e4de4fd-f033-4a7c-be13-b276994861c4}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{004f3f70-017b-4ab7-a662-afc326022f8f}</destination>
@@ -75,7 +75,7 @@
 	</object>
 	<object class="Timeline" id="{10f34013-9471-4b12-a72e-5ae5a5989707}">
 		<relationship name="modules">
-			<destination>{d879a335-b0ab-4c7e-b77b-141e3dedf5b3}</destination>
+			<destination>{9e4de4fd-f033-4a7c-be13-b276994861c4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{23bedd69-94d1-4347-8871-f0deeea277b8}">
@@ -95,17 +95,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c1c7021c-e095-4855-954f-e1df1ffd87a8}" />
-	<object class="SingleSound" id="{d879a335-b0ab-4c7e-b77b-141e3dedf5b3}">
+	<object class="SingleSound" id="{9e4de4fd-f033-4a7c-be13-b276994861c4}">
 		<property name="length">
-			<value>1.4186875000000001</value>
+			<value>1.8480725623582765</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{dad5f015-8ab1-4abb-99d9-b363d793f803}</destination>
+			<destination>{d6cabdb5-dc2f-4525-9adf-d2fc7ce4e944}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{004f3f70-017b-4ab7-a662-afc326022f8f}">
 		<property name="volume">
-			<value>-31</value>
+			<value>-13.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>

@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>trace_cancel</value>
+			<value>endL</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
