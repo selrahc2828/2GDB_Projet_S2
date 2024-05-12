@@ -8,6 +8,8 @@ L'effet voulu quand un ennemis meurt est une "explosion" cependant elle doit êt
 
 J'ai pris sur soundly une première parti d'explosion qui fait le son de notre "Impacte" au moment de la mort de l'ennemis, puis je suis allez cherché un autre son d'un fade out d'explosion sci-fy pour le modifier et le rendre plus long. 
 
+L'objectif étant d'avoir un son lointain qui impacte pas la musique du jeu et nous permet tout de même d'avoir un feedback sonore sur la mort d'un ennemis 
+
 Dans les paramètre j'ai rajouté un random Volume qui vien ajouté de la "différence" entre chaque son, la reverb est la pour bien insité sur l'impacte du son, la distortion permet de modifier l'intensité de l'impacte et ça sonorité. 
 
 J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et rendre l'impact moin réaliste. 
