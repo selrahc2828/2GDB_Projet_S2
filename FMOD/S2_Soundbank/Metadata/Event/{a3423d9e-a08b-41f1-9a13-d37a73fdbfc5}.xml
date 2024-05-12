@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>enemy_get_damaged</value>
+			<value>enemyHit</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>

@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>enemy_death</value>
+			<value>bscEnemyDeath</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
