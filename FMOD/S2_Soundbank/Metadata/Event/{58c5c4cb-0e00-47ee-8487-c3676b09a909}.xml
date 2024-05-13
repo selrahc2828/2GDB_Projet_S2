@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{58c5c4cb-0e00-47ee-8487-c3676b09a909}">
+		<property name="note">
+			<value>j'ai décidé de créer un son d'explosion sourd précédé par une sorte de chargement.
+
+j'ai augmenté la réverberation car la camera se trouve loin de la tour lorsqu'elle explose et j'au augmenté certaines fréquences de basse pour augmenter l'impact de l'explosion. 
+
+L'objectif etant de donner une sensation de rassemblement d'énergie qui aboutit à une explosion.
+
+https://www.youtube.com/watch?v=xgaf1_ZB03Q
+
+https://www.youtube.com/watch?v=4GPSM8clbE0
+
+Ce sont les vidéo de chargement et d'explosion que j'ai modifié sur reaper et que j'ai assemblé pour donner le son final.
+le plus gros du travail a été de trouver des sons qui correspondaient à cet aspect énergetique, les modifications ont apres été de la réverberation et de l'équalizer.</value>
+		</property>
 		<property name="color">
-			<value>Red</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>TowerDie</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{c604375b-8387-4c42-8b95-f881b2996b52}</destination>
@@ -62,11 +76,18 @@
 	<object class="EventAutomatableProperties" id="{241a6140-bfb1-4a83-a4f2-732f358dc3e0}" />
 	<object class="MarkerTrack" id="{4401dac6-2a54-4b7f-8dfd-8e0d3eedf185}" />
 	<object class="GroupTrack" id="{ecbbf9c8-1878-405b-950a-aa970849f608}">
+		<relationship name="modules">
+			<destination>{ec02b706-1a99-4867-8d90-68baba720c50}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e65630e4-b02b-42ba-bcb7-f49228632a4e}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{242946b2-55a9-4054-addd-6abc20bfdc6f}" />
+	<object class="Timeline" id="{242946b2-55a9-4054-addd-6abc20bfdc6f}">
+		<relationship name="modules">
+			<destination>{ec02b706-1a99-4867-8d90-68baba720c50}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{f60aa342-3966-431d-94bd-384f1cba5ebc}">
 		<relationship name="effectChain">
 			<destination>{6a79cdd8-54ca-4d58-ad8e-683f3925a922}</destination>
@@ -84,7 +105,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a581b005-d8bf-4a71-ab4d-a62caedc5b4a}" />
+	<object class="SingleSound" id="{ec02b706-1a99-4867-8d90-68baba720c50}">
+		<property name="length">
+			<value>3.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{f1f242e0-3612-48b4-b73a-b645e3f50c04}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{e65630e4-b02b-42ba-bcb7-f49228632a4e}">
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
