@@ -17,7 +17,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 Étant donné que nous pouvons avoir beaucoup d'énnemis qui meurt a chaque fois ou encore au même moment, il a fallut que je cherche quelque chose qui peux se jouer a un volume assez bas mais que l'on entend malgrès tout. </value>
 		</property>
 		<property name="color">
-			<value>Green</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>bscEnemyDeath</value>

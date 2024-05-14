@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9c2f549a-9bf2-4700-88ca-0cc9953ba3b9}">
+		<property name="note">
+			<value>Quentin ZEHNACKER:
+
+Je suis parti d’un kick et d’un FX Laser trouvé sur Splice fait par DropGun Samples . Ce FX sonnait bien mais était trop aigu et ne correspondait pas au reste des sons déjà faits. 
+
+Pour apporter de la cohérence et de l’impact j’ai utilisé un compresseur et un pitch down shifter, j’ai cependant fait attention à ce que le son soit bien distinct du reste. 
+
+Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et ait ensuite rajouté un 808 kick classique de FL Studio afin d’amplifier la sensation d’impact.</value>
+		</property>
 		<property name="color">
-			<value>Green</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>shotReg</value>
