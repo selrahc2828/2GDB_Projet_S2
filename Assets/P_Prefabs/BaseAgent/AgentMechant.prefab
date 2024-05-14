@@ -243,7 +243,6 @@ GameObject:
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 6536687475616701843}
-  - component: {fileID: 1168329159655195223}
   m_Layer: 11
   m_Name: AgentMechant
   m_TagString: AgentMechant
@@ -390,37 +389,6 @@ MonoBehaviour:
     type: 3}
   _finalColor: {r: 0.85882354, g: 0.43137255, b: 0, a: 0}
   _initialColor: {r: 0.13207549, g: 0.03551086, b: 0.03551086, a: 0}
---- !u!114 &1168329159655195223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308968867366325615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1904047910
-      Data2: 1291819398
-      Data3: 1191926694
-      Data4: 1158276491
-    Path: event:/Enemy/enemy_death
-  Event: 
-  PlayEvent: 2
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &7088349779480383193
 GameObject:
   m_ObjectHideFlags: 0

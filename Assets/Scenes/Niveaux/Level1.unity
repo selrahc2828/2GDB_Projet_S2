@@ -33696,7 +33696,7 @@ MonoBehaviour:
   _SlowRangeGameManager: 13
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
-  _DamageAmount: 3
+  _DamageAmount: 50
   _FireRate: 2
   _maxFatigueSeconde: 15
   _SpeedAgent: 16
