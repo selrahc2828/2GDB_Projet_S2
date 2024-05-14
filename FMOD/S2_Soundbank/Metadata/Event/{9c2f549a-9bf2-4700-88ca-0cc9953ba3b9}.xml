@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9c2f549a-9bf2-4700-88ca-0cc9953ba3b9}">
+		<property name="note">
+			<value>Je suis parti d’un kick et d’un FX Laser trouvé sur Splice fait par DropGun Samples. Ce FX sonnait bien mais était trop aigu et ne correspondait pas au reste des sons déjà faits. 
+
+Pour apporter de la cohérence et de l’impact j’ai utilisé un compresseur et un pitch down shifter, j’ai cependant fait attention à ce que le son soit bien distinct du reste. 
+
+Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et ait ensuite rajouté un 808 kick classique de FL Studio afin d’amplifier la sensation d’impact. </value>
+		</property>
 		<property name="color">
 			<value>Yellow</value>
 		</property>
@@ -67,7 +74,7 @@
 	<object class="MarkerTrack" id="{bea0ea5d-fe66-415e-86f8-9e6e2b80d7e7}" />
 	<object class="GroupTrack" id="{2059bf27-f013-4502-87a4-52788aa5855f}">
 		<relationship name="modules">
-			<destination>{fe5a5232-85b3-4d93-a5de-b322b415de0b}</destination>
+			<destination>{190bae07-ccec-4488-b8c4-f6dfdd677b8f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{a3f0ecd3-06cb-4812-9be6-7f98929d68b4}</destination>
@@ -75,7 +82,7 @@
 	</object>
 	<object class="Timeline" id="{7fcd5b7b-ffdb-4473-a6c1-6773464ed169}">
 		<relationship name="modules">
-			<destination>{fe5a5232-85b3-4d93-a5de-b322b415de0b}</destination>
+			<destination>{190bae07-ccec-4488-b8c4-f6dfdd677b8f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b3ad813e-8c91-4899-90dd-2751f64007bc}">
@@ -95,24 +102,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5ab9cc05-8d3f-4526-82ac-86e2fe3409c5}" />
-	<object class="SingleSound" id="{fe5a5232-85b3-4d93-a5de-b322b415de0b}">
+	<object class="SingleSound" id="{190bae07-ccec-4488-b8c4-f6dfdd677b8f}">
 		<property name="length">
-			<value>0.46434134573478347</value>
+			<value>0.18077097505668935</value>
 		</property>
-		<property name="pitch">
-			<value>11.5</value>
-		</property>
-		<relationship name="modulators">
-			<destination>{2ce4bfdc-efd3-4df8-b107-4b00ffdbe0f8}</destination>
-		</relationship>
-		<relationship name="fadeInCurve">
-			<destination>{9a12780e-0c22-41f9-a0f6-feb21e6d6c55}</destination>
-		</relationship>
-		<relationship name="fadeOutCurve">
-			<destination>{2bc52656-06d4-48cb-adef-f0305c9bb732}</destination>
-		</relationship>
 		<relationship name="audioFile">
-			<destination>{6296acfc-babf-4620-b254-8bcb47904f18}</destination>
+			<destination>{8c188fa3-30e0-44b4-8687-1eeb96033aca}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a3f0ecd3-06cb-4812-9be6-7f98929d68b4}">
@@ -137,30 +132,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{6814af84-7f2d-4fff-b1c2-9c102aeac24f}" />
 	<object class="MixerBusFader" id="{f983cffe-7776-4fbc-9634-20e083efee15}" />
-	<object class="RandomizerModulator" id="{2ce4bfdc-efd3-4df8-b107-4b00ffdbe0f8}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="amount">
-			<value>15.5</value>
-		</property>
-	</object>
-	<object class="FadeCurve" id="{9a12780e-0c22-41f9-a0f6-feb21e6d6c55}">
-		<relationship name="startPoint">
-			<destination>{9030977a-5567-4d8b-9f31-bd2df7d6c4f5}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{32b67436-d1cb-4dc6-b104-ec9cfc4b2940}</destination>
-		</relationship>
-	</object>
-	<object class="FadeCurve" id="{2bc52656-06d4-48cb-adef-f0305c9bb732}">
-		<relationship name="startPoint">
-			<destination>{b6f70439-1df8-4398-8823-18534264be16}</destination>
-		</relationship>
-		<relationship name="endPoint">
-			<destination>{7da9b31d-a7a7-4d18-8b4d-542be128df71}</destination>
-		</relationship>
-	</object>
 	<object class="MixerBusEffectChain" id="{ddd93520-3378-41bd-ac11-6c97e860a3ea}">
 		<relationship name="effects">
 			<destination>{f7040053-8b8f-42d8-a207-fe43bf4cd0bf}</destination>
@@ -169,43 +140,5 @@
 	<object class="MixerBusPanner" id="{ecccf6c0-704f-4733-9426-ac6f86c83bba}" />
 	<object class="MixerBusFader" id="{2c8a77f5-290d-4f12-a9ef-c45ca2838748}" />
 	<object class="SpatialiserEffect" id="{56add175-55b2-44e7-9cf2-0b4f59fa4e9e}" />
-	<object class="AutomationPoint" id="{9030977a-5567-4d8b-9f31-bd2df7d6c4f5}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>-0.2547189</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{32b67436-d1cb-4dc6-b104-ec9cfc4b2940}">
-		<property name="position">
-			<value>0.20000000000000001</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{b6f70439-1df8-4398-8823-18534264be16}">
-		<property name="position">
-			<value>0.41434134573478343</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-		<property name="curveShape">
-			<value>0.25471893</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{7da9b31d-a7a7-4d18-8b4d-542be128df71}">
-		<property name="position">
-			<value>0.46434134573478336</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-	</object>
 	<object class="MixerBusFader" id="{f7040053-8b8f-42d8-a207-fe43bf4cd0bf}" />
 </objects>
