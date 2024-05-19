@@ -108,7 +108,7 @@ public class AgentFonction : MonoBehaviour
             _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
             time += Time.deltaTime;
 
-            if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime)
+            if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime && _AgentSelfScript._canShoot == true)
             {
                 ShootToEnemy();
                 nextFireTime = Time.time + (1f / _fireRate);

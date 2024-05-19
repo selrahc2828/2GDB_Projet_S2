@@ -29,8 +29,18 @@ public class RecognizeItsSelf : MonoBehaviour
     public int _towerProximityValue;
     public float _towerProximityNormalizedValue;
     public int _neighbourLowerProximityValue;
+    public int _pool1ProximityValue;
+    public float _pool1ProximityNormalizedValue;
+    public int _pool1NeighbourLowerProximityValue;
+    public int _pool2ProximityValue;
+    public float _pool2ProximityNormalizedValue;
+    public int _pool2NeighbourLowerProximityValue;
+
+    public float _proximityTimer;
     public GameObject _tower;
     private Collider[] _neighbourAgents;
+    private Collider[] _pool1NeighbourAgents;
+    private Collider[] _pool2NeighbourAgents;
 
 
     [Header("Variable de Pools")]
@@ -71,8 +81,15 @@ public class RecognizeItsSelf : MonoBehaviour
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
 
-        _pool1 = false;
-        _pool2 = false;
+        _pool1ProximityValue = -2;
+        _pool1ProximityNormalizedValue = -1;
+        _pool1NeighbourLowerProximityValue = 1;
+
+        _pool2ProximityValue = -2;
+        _pool2ProximityNormalizedValue = -1;
+        _pool2NeighbourLowerProximityValue = 1;
+
+        _proximityTimer = 0;
 
         _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
@@ -81,7 +98,6 @@ public class RecognizeItsSelf : MonoBehaviour
         _canShoot = false;
         _basePosition = transform.position;
         _selfAgent = GetComponent<NavMeshAgent>();
-
 
         StartCoroutine(CheckProximityFunctionsCoroutine());
     }
@@ -92,7 +108,17 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             CalculateExaustion();
             UpdateExaustionMeter();
+            _proximityTimer += Time.deltaTime;
+            if (_proximityTimer > 1)
+            {
+                StartCoroutine(CheckProximityFunctionsCoroutine());
+                _proximityTimer = 0;
+            }
             if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(CheckProximityFunctionsCoroutine());
+            }
+            if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(CheckProximityFunctionsCoroutine());
             }
@@ -119,7 +145,17 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         while (!_aviability)
         {
+            _neighbourLowerProximityValue = -2;
+            _towerProximityValue = -1;
+            _towerProximityNormalizedValue = 1;
 
+            _pool1ProximityValue = -2;
+            _pool1ProximityNormalizedValue = -1;
+            _pool1NeighbourLowerProximityValue = 1;
+
+            _pool2ProximityValue = -2;
+            _pool2ProximityNormalizedValue = -1;
+            _pool2NeighbourLowerProximityValue = 1;
             // Attendre 1 seconde
             yield return new WaitForSeconds(1f);
             // Exécuter CheckProximity()
@@ -148,6 +184,7 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
             _neighbourLowerProximityValue = -2;
+            bool lowerNeighbour = false;
             foreach (Collider agentCollider in _neighbourAgents)
             {
                 if (agentCollider.CompareTag("Agent"))
@@ -155,15 +192,23 @@ public class RecognizeItsSelf : MonoBehaviour
                     int _neighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._towerProximityValue;
                     if (_neighbourProximityValue > -1)
                     {
-                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue <= _neighbourLowerProximityValue)
+                        if (_neighbourLowerProximityValue == -2 || _neighbourProximityValue < _neighbourLowerProximityValue)
                         {
                             _neighbourLowerProximityValue = _neighbourProximityValue;
+                            lowerNeighbour = true;
                         }
+
                     }
                 }
             }
-
-            _towerProximityValue = _neighbourLowerProximityValue + 1;
+            if(lowerNeighbour)
+            {
+                _towerProximityValue = _neighbourLowerProximityValue + 1;
+            }
+            else
+            {
+                _towerProximityValue = -1;
+            }
             _ChainFeedbackScript.posOnLine = _towerProximityValue;
 
         }
@@ -177,8 +222,6 @@ public class RecognizeItsSelf : MonoBehaviour
         
     }
 
-
-
     #region Pools
 
     public void CheckPoolsProximity()
@@ -191,49 +234,91 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, _GOpool1.transform.position) <= 10 && _GOpool1.tag != "Infected")
         {
-            _pool1 = true;
+            _pool1ProximityValue = 0;
         }
         else
         {
-            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
-            bool _tempPool1 = false;
-            foreach (Collider agentCollider in _neighbourAgents)
+            _pool1NeighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _pool1NeighbourLowerProximityValue = -2;
+            bool lowerPool1Neighbour = false;
+            foreach (Collider agentCollider in _pool1NeighbourAgents)
             {
                 if (agentCollider.CompareTag("Agent"))
                 {
-                    bool _neighbourPool1Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool1;
-                    if (_neighbourPool1Value)
+                    int _pool1NeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._pool1ProximityValue;
+                    if (_pool1NeighbourProximityValue > -1)
                     {
-                        _tempPool1 = true;
+                        if (_pool1NeighbourLowerProximityValue == -2 || _pool1NeighbourProximityValue <= _pool1NeighbourLowerProximityValue)
+                        {
+                            _pool1NeighbourLowerProximityValue = _pool1NeighbourProximityValue;
+                            lowerPool1Neighbour = true;
+                        }
                     }
                 }
             }
-            _pool1 = _tempPool1;
+            if (lowerPool1Neighbour)
+            {
+                _pool1ProximityValue = _pool1NeighbourLowerProximityValue + 1;
+            }
+            else
+            {
+                _pool1ProximityValue = -1;
+            }
+            //_ChainFeedbackScript.posOnLine = _pool1ProximityValue; // ligne pour le feedback lumineux
+
+        }
+
+        _pool1ProximityNormalizedValue = _pool1ProximityValue / 100f;
+
+        if (_pool1ProximityNormalizedValue < 0)
+        {
+            _pool1ProximityNormalizedValue = 1;
         }
     }
 
     public void CheckPool2Proximity()
     {
-        if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10 && _GOpool1.tag != "Infected")
+        if (Vector3.Distance(transform.position, _GOpool2.transform.position) <= 10 && _GOpool2.tag != "Infected")
         {
-            _pool2 = true;
+            _pool2ProximityValue = 0;
         }
         else
         {
-            _neighbourAgents = Physics.OverlapSphere(transform.position, 2);
-            bool _tempPool2 = false;
-            foreach (Collider agentCollider in _neighbourAgents)
+            _pool2NeighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _pool2NeighbourLowerProximityValue = -2;
+            bool lowerPool2Neighbour = false;
+            foreach (Collider agentCollider in _pool2NeighbourAgents)
             {
                 if (agentCollider.CompareTag("Agent"))
                 {
-                    bool _neighbourPool2Value = agentCollider.GetComponent<RecognizeItsSelf>()._pool2;
-                    if (_neighbourPool2Value)
+                    int _pool2NeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._pool2ProximityValue;
+                    if (_pool2NeighbourProximityValue > -1)
                     {
-                        _tempPool2 = true;
+                        if (_pool2NeighbourLowerProximityValue == -2 || _pool2NeighbourProximityValue <= _pool2NeighbourLowerProximityValue)
+                        {
+                            _pool2NeighbourLowerProximityValue = _pool2NeighbourProximityValue;
+                            lowerPool2Neighbour = true;
+                        }
                     }
                 }
             }
-            _pool2 = _tempPool2;
+            if (lowerPool2Neighbour)
+            {
+                _pool2ProximityValue = _pool2NeighbourLowerProximityValue + 1;
+            }
+            else
+            {
+                _pool2ProximityValue = -1;
+            }
+            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+
+        }
+
+        _pool2ProximityNormalizedValue = _pool2ProximityValue / 100f;
+
+        if (_pool2ProximityNormalizedValue < 0)
+        {
+            _pool2ProximityNormalizedValue = 1;
         }
     }
 
