@@ -81,13 +81,13 @@ public class RecognizeItsSelf : MonoBehaviour
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
 
-        _pool1ProximityValue = -2;
-        _pool1ProximityNormalizedValue = -1;
-        _pool1NeighbourLowerProximityValue = 1;
+        _pool1NeighbourLowerProximityValue = -2;
+        _pool1ProximityValue = -1;
+        _pool1ProximityNormalizedValue = 1;
 
-        _pool2ProximityValue = -2;
-        _pool2ProximityNormalizedValue = -1;
-        _pool2NeighbourLowerProximityValue = 1;
+        _pool2NeighbourLowerProximityValue = -2;
+        _pool2ProximityValue = -1;
+        _pool2ProximityNormalizedValue = 1;
 
         _proximityTimer = 0;
 
@@ -149,13 +149,13 @@ public class RecognizeItsSelf : MonoBehaviour
             _towerProximityValue = -1;
             _towerProximityNormalizedValue = 1;
 
-            _pool1ProximityValue = -2;
-            _pool1ProximityNormalizedValue = -1;
-            _pool1NeighbourLowerProximityValue = 1;
+            _pool1NeighbourLowerProximityValue = -2;
+            _pool1ProximityValue = -1;
+            _pool1ProximityNormalizedValue = 1;
 
-            _pool2ProximityValue = -2;
-            _pool2ProximityNormalizedValue = -1;
-            _pool2NeighbourLowerProximityValue = 1;
+            _pool2NeighbourLowerProximityValue = -2;
+            _pool2ProximityValue = -1;
+            _pool2ProximityNormalizedValue = 1;
             // Attendre 1 seconde
             yield return new WaitForSeconds(1f);
             // Exécuter CheckProximity()

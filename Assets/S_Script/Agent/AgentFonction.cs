@@ -207,10 +207,14 @@ public class AgentFonction : MonoBehaviour
 
                 if (_Enemy != null)
                 {
+                    if(_AgentSelfScript._pool2ProximityValue > -1)
+                    {
+                        _damageAmount += 2;
+                    }
                     // inflic Damage 
                     _Enemy.TakeDamage(_damageAmount);
 
-                    if(_AgentSelfScript._pool1)
+                    if(_AgentSelfScript._pool1ProximityValue > -1)
                     {
                         _Enemy.GetSlowed();
                     }
