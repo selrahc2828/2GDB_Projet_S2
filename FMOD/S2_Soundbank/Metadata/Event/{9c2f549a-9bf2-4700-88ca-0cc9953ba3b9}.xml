@@ -2,14 +2,16 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9c2f549a-9bf2-4700-88ca-0cc9953ba3b9}">
 		<property name="note">
-			<value>Je suis parti d’un kick et d’un FX Laser trouvé sur Splice fait par DropGun Samples. Ce FX sonnait bien mais était trop aigu et ne correspondait pas au reste des sons déjà faits. 
+			<value>Quentin ZEHNACKER:
+
+Je suis parti d’un kick et d’un FX Laser trouvé sur Splice fait par DropGun Samples . Ce FX sonnait bien mais était trop aigu et ne correspondait pas au reste des sons déjà faits. 
 
 Pour apporter de la cohérence et de l’impact j’ai utilisé un compresseur et un pitch down shifter, j’ai cependant fait attention à ce que le son soit bien distinct du reste. 
 
-Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et ait ensuite rajouté un 808 kick classique de FL Studio afin d’amplifier la sensation d’impact. </value>
+Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et ait ensuite rajouté un 808 kick classique de FL Studio afin d’amplifier la sensation d’impact.</value>
 		</property>
 		<property name="color">
-			<value>Yellow</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>shotReg</value>
@@ -74,7 +76,7 @@ Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et 
 	<object class="MarkerTrack" id="{bea0ea5d-fe66-415e-86f8-9e6e2b80d7e7}" />
 	<object class="GroupTrack" id="{2059bf27-f013-4502-87a4-52788aa5855f}">
 		<relationship name="modules">
-			<destination>{190bae07-ccec-4488-b8c4-f6dfdd677b8f}</destination>
+			<destination>{673cb239-60a3-48e7-a37f-49dee2ed4f84}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{a3f0ecd3-06cb-4812-9be6-7f98929d68b4}</destination>
@@ -82,7 +84,7 @@ Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et 
 	</object>
 	<object class="Timeline" id="{7fcd5b7b-ffdb-4473-a6c1-6773464ed169}">
 		<relationship name="modules">
-			<destination>{190bae07-ccec-4488-b8c4-f6dfdd677b8f}</destination>
+			<destination>{673cb239-60a3-48e7-a37f-49dee2ed4f84}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b3ad813e-8c91-4899-90dd-2751f64007bc}">
@@ -102,12 +104,12 @@ Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et 
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5ab9cc05-8d3f-4526-82ac-86e2fe3409c5}" />
-	<object class="SingleSound" id="{190bae07-ccec-4488-b8c4-f6dfdd677b8f}">
+	<object class="SingleSound" id="{673cb239-60a3-48e7-a37f-49dee2ed4f84}">
 		<property name="length">
 			<value>0.18077097505668935</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{8c188fa3-30e0-44b4-8687-1eeb96033aca}</destination>
+			<destination>{f991abac-b69e-4135-98b1-f42c89d878c4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{a3f0ecd3-06cb-4812-9be6-7f98929d68b4}">

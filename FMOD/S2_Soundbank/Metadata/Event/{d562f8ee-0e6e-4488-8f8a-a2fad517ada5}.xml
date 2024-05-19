@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d562f8ee-0e6e-4488-8f8a-a2fad517ada5}">
+		<property name="note">
+			<value>Ivan ARANDA:
+
+from this sound:
+https://www.youtube.com/watch?v=wTWEdFtyiuk
+
+... I applied multiple effects to achieve a really lowsounding "whoosh" that represents our agent being drained from its energy. We have around 150 agents on scene, so this sound tries to be subtle yet present.
+
+by design, our agents grow tired over time, until they reach their maximum fatigue and are at their weakest. This sound is supposed to represent the agent effectively reaching this state, so although important, it has to be subtle but evident, and limited in its instances.
+
+This effect has a classic reverb with medium wetness to represent our void, while the fact that its a sizzling electrical surge allows it to be associated with the light that our agents emit.
+
+Additionally, a lowpass EQ was applied to reduce the high pitched sounds of electricity, as our DA is very representative of outerspace.
+
+Finally, the low volume of the sound is, as mentioned previously, to avoid it from clashing with itself as well as with the soundtrack which is our </value>
+		</property>
 		<property name="color">
-			<value>Green</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>depletedAgent</value>
@@ -67,7 +83,7 @@
 	<object class="MarkerTrack" id="{c3a030ba-a363-4697-8a86-e3f69586dcba}" />
 	<object class="GroupTrack" id="{b9a44190-c00e-4288-8833-459b0f849577}">
 		<relationship name="modules">
-			<destination>{9e4de4fd-f033-4a7c-be13-b276994861c4}</destination>
+			<destination>{7fe65adc-d922-4390-9777-8511c525234a}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{004f3f70-017b-4ab7-a662-afc326022f8f}</destination>
@@ -75,7 +91,7 @@
 	</object>
 	<object class="Timeline" id="{10f34013-9471-4b12-a72e-5ae5a5989707}">
 		<relationship name="modules">
-			<destination>{9e4de4fd-f033-4a7c-be13-b276994861c4}</destination>
+			<destination>{7fe65adc-d922-4390-9777-8511c525234a}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{23bedd69-94d1-4347-8871-f0deeea277b8}">
@@ -95,18 +111,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c1c7021c-e095-4855-954f-e1df1ffd87a8}" />
-	<object class="SingleSound" id="{9e4de4fd-f033-4a7c-be13-b276994861c4}">
+	<object class="SingleSound" id="{7fe65adc-d922-4390-9777-8511c525234a}">
 		<property name="length">
-			<value>1.8480725623582765</value>
+			<value>1.09375</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{16c00c1c-6a87-4b9e-a4a5-bc175fa21fc3}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{d6cabdb5-dc2f-4525-9adf-d2fc7ce4e944}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{004f3f70-017b-4ab7-a662-afc326022f8f}">
-		<property name="volume">
-			<value>-13.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -128,6 +144,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{39fc7cb8-b60c-4626-a5d4-263a6e141a74}" />
 	<object class="MixerBusFader" id="{d7c98ac1-ef07-4a23-9d96-788973ccbc3e}" />
+	<object class="RandomizerModulator" id="{16c00c1c-6a87-4b9e-a4a5-bc175fa21fc3}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>18</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{7675d214-0508-4641-a39e-09ae72ecb805}">
 		<relationship name="effects">
 			<destination>{579c8d24-1b28-4f01-ba1e-0b2be573319e}</destination>

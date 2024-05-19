@@ -96,7 +96,7 @@ public class HeathTowerScript : MonoBehaviour
 
         GameObject rippleParticle = Instantiate(_ParticulRipple, transform.position, Quaternion.identity);
         Destroy(rippleParticle, 1f);
-        FMODUnity.RuntimeManager.PlayOneShot(_FMODDamag);
+        //FMODUnity.RuntimeManager.PlayOneShot(_FMODDamag);
 
     }
 

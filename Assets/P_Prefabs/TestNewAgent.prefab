@@ -399,7 +399,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5566038, g: 0, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.30879685, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -463,7 +463,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5365,7 +5365,6 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _AgentFonctionScript: {fileID: 0}
   _ParticulFatigue: {fileID: 8415156921193952310}
-  _Pool1Anime: {fileID: 0}
   _ChainFeedbackScript: {fileID: 0}
   _exaustionLevel: 0
   _Intensity: 0

@@ -8,7 +8,7 @@ L'effet voulu quand un ennemis meurt est une "explosion" cependant elle doit êt
 
 J'ai pris sur soundly une première parti d'explosion qui fait le son de notre "Impacte" au moment de la mort de l'ennemis, puis je suis allez cherché un autre son d'un fade out d'explosion sci-fy pour le modifier et le rendre plus long. 
 
-L'objectif étant d'avoir un son lointain qui impacte pas la musique du jeu et nous permet tout de même d'avoir un feedback sonore sur la mort d'un ennemis 
+L'objectif étant d'avoir un son lointain qui vien impacté avec des bass la musique du jeu  et d'avoir un feedback sonore sur la mort d'un ennemis 
 
 Dans les paramètre j'ai rajouté un random Volume qui vien ajouté de la "différence" entre chaque son, la reverb est la pour bien insité sur l'impacte du son, la distortion permet de modifier l'intensité de l'impacte et ça sonorité. 
 
@@ -17,7 +17,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 Étant donné que nous pouvons avoir beaucoup d'énnemis qui meurt a chaque fois ou encore au même moment, il a fallut que je cherche quelque chose qui peux se jouer a un volume assez bas mais que l'on entend malgrès tout. </value>
 		</property>
 		<property name="color">
-			<value>Yellow</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>bscEnemyDeath</value>
@@ -74,7 +74,11 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 			<destination>{29f91d8a-4f7f-42b4-98d1-833ec98ef203}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{9196c105-c803-4279-b6a2-6c23f5babd7c}" />
+	<object class="EventAutomatableProperties" id="{9196c105-c803-4279-b6a2-6c23f5babd7c}">
+		<property name="maxVoices">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{f2f1632d-ea84-4b7c-a4b2-5d828b449997}" />
 	<object class="GroupTrack" id="{e54d226a-d65c-4b69-96c8-6e6e0f3bd991}">
 		<relationship name="modules">
@@ -144,7 +148,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 	</object>
 	<object class="EventMixerGroup" id="{9cec7f09-d5cf-4c43-ab71-0c676bd34ff9}">
 		<property name="volume">
-			<value>-80</value>
+			<value>-5.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -280,14 +284,26 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 		<property name="earlyDelay">
 			<value>11</value>
 		</property>
+		<property name="lateDelay">
+			<value>50</value>
+		</property>
+		<property name="HFReference">
+			<value>850</value>
+		</property>
 		<property name="HFDecayRatio">
 			<value>27</value>
 		</property>
 		<property name="density">
-			<value>28.5</value>
+			<value>19</value>
+		</property>
+		<property name="lowShelfFrequency">
+			<value>410</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-30</value>
 		</property>
 		<property name="highCut">
-			<value>4600</value>
+			<value>60</value>
 		</property>
 	</object>
 	<object class="PitchShifterEffect" id="{3647ac8d-ab33-4bf9-924d-ba4aeb9a73a9}">

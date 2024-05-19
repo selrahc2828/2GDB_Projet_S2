@@ -2,7 +2,9 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{58c5c4cb-0e00-47ee-8487-c3676b09a909}">
 		<property name="note">
-			<value>j'ai décidé de créer un son d'explosion sourd précédé par une sorte de chargement.
+			<value>Charles PANET:
+
+j'ai décidé de créer un son d'explosion sourd précédé par une sorte de chargement.
 
 j'ai augmenté la réverberation car la camera se trouve loin de la tour lorsqu'elle explose et j'au augmenté certaines fréquences de basse pour augmenter l'impact de l'explosion. 
 
@@ -16,7 +18,7 @@ Ce sont les vidéo de chargement et d'explosion que j'ai modifié sur reaper et 
 le plus gros du travail a été de trouver des sons qui correspondaient à cet aspect énergetique, les modifications ont apres été de la réverberation et de l'équalizer.</value>
 		</property>
 		<property name="color">
-			<value>Green</value>
+			<value>Purple</value>
 		</property>
 		<property name="name">
 			<value>TowerDie</value>
