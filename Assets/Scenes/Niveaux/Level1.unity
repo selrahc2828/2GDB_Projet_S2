@@ -26860,6 +26860,13 @@ MonoBehaviour:
   - {fileID: 4308968867366325615, guid: e8cda9737f272ab439aa572018d140f1, type: 3}
   _buzzKillerPrefabs:
   - {fileID: 4308968867366325615, guid: be6b41eb1eb3b0d4894a8303621d6b88, type: 3}
+  _PaternPrefab:
+  - {fileID: 5093585963777268270, guid: 884c7c78faf20d247a3927f7bf758cf9, type: 3}
+  - {fileID: 2921909616343306578, guid: 34e1a74961aca52488d1823d51b66612, type: 3}
+  - {fileID: 373465790301859461, guid: 01958e6dd0374054bbc6fbfb2595005c, type: 3}
+  - {fileID: 8442127899824067176, guid: 7ae03d00e9351b24e9ac79aaea5226ad, type: 3}
+  - {fileID: 5441040564343125711, guid: 386092bcf6eaaca43a0158e79999bdd8, type: 3}
+  - {fileID: 2645038700178362187, guid: b0f0f4f6a48791a4cbfd022abedb4596, type: 3}
   _spawnPoint: {x: 0, y: 0, z: 0}
   _spawnCooldown: 0.15
   _pools:
@@ -28553,6 +28560,9 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _spawnerScript: {fileID: 0}
   _poolSpots: {fileID: 1509839070}
+  _pools: {fileID: 2125345414}
+  _spotList: []
+  _poolList: []
   _numberOfWave: 0
   _numberOfBasicEnnemy: 0
   _numberOfHomeWrecker: 0
@@ -38283,6 +38293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125345415}
+  - component: {fileID: 2125345416}
   m_Layer: 0
   m_Name: Pools
   m_TagString: Untagged
@@ -38307,6 +38318,18 @@ Transform:
   - {fileID: 1222381089}
   m_Father: {fileID: 1494657459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125345416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125345414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8206d278dda84348aa92ac4361c9328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2126716051
 PrefabInstance:
   m_ObjectHideFlags: 0

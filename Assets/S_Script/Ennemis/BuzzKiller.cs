@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class BuzzKiller : Enemy
 {
-    public GameObject[] _pools;
+    public PorteurDePool _porteurDePool;
+    public List<GameObject> _poolList;
     public float _closestPoolDistance;
     public GameObject _closestPool;
 
     public void Awake()
     {
+        _porteurDePool = FindAnyObjectByType<PorteurDePool>();
         _Niveau1 = FindAnyObjectByType<Niveau1>();
         _GameManager = FindAnyObjectByType<GameManager>();
         _thisAgent = this.GetComponentInParent<NavMeshAgent>();
@@ -20,6 +22,11 @@ public class BuzzKiller : Enemy
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Transform t in _porteurDePool.transform)
+        {
+            _poolList.Add(t.gameObject);
+        }
+
         _GameManager._numberOfEnemyOnScreen++;
 
         _MaxHealth = _GameManager._HeathBuzzKiller;
@@ -35,7 +42,6 @@ public class BuzzKiller : Enemy
 
         _closestPoolDistance = float.MaxValue;
         SeekPool();
-        
     }
 
     // Update is called once per frame
@@ -47,9 +53,9 @@ public class BuzzKiller : Enemy
 
     public void SeekPool()
     {
-        if(_pools.Length > 0)
+        if(_poolList.Count > 0)
         {
-            foreach(GameObject pool in _pools)
+            foreach(GameObject pool in _poolList)
             {
                 if(Vector3.Distance(transform.position, pool.transform.position) < _closestPoolDistance)
                 {

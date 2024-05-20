@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine.PlayerLoop;
 
 public class SpawnerEnnemy : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class SpawnerEnnemy : MonoBehaviour
     public GameObject[] _baseEnemyPrefabs;
     public GameObject[] _homeWreckerPrefabs;
     public GameObject[] _buzzKillerPrefabs;
+    public GameObject[] _PaternPrefab;
     public Vector3 _spawnPoint;
     public float _spawnCooldown = 0.15f;
 
@@ -22,11 +25,6 @@ public class SpawnerEnnemy : MonoBehaviour
         _GameManagerScript = FindAnyObjectByType<GameManager>();
     }
 
-
-    void Start()
-    {
-
-    }
 
     IEnumerator SpawnEnemies()
     {
@@ -45,6 +43,15 @@ public class SpawnerEnnemy : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    public void SpawnPattern()
+    {
+        _spawnPoint = GenerateRandomVector() * 90;
+        // instantiate the enemy to the spawn position 
+        GameObject PaternPrefab = _PaternPrefab[Random.Range(0, _PaternPrefab.Length)];
+        Vector3 directionToOrigin = (Vector3.zero - _spawnPoint).normalized;
+        Instantiate(PaternPrefab, _spawnPoint, Quaternion.LookRotation(directionToOrigin));
     }
 
     public void SpawnBaseEnemy()
@@ -68,8 +75,7 @@ public class SpawnerEnnemy : MonoBehaviour
         _spawnPoint = GenerateRandomVector() * 90;
         // instantiate the enemy to the spawn position 
         GameObject enemyPrefab = _buzzKillerPrefabs[Random.Range(0, _buzzKillerPrefabs.Length)];
-        GameObject enemy = Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
-        enemy.GetComponent<BuzzKiller>()._pools = _pools;
+        Instantiate(enemyPrefab, _spawnPoint, Quaternion.identity);
     }
 
     public IEnumerator SpawnAWave(int numberOfBaseEnemy, int numberOfHomeBrecker, int numberOfBuzzKiller)
