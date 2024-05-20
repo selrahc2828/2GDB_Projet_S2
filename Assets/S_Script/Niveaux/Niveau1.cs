@@ -7,6 +7,10 @@ public class Niveau1 : MonoBehaviour
 {
     public GameManager _gameManager;
     public SpawnerEnnemy _spawnerScript;
+    public GameObject _poolSpots;
+    public GameObject _pools;
+    public List<Transform> _spotList;
+    public List<GameObject> _poolList;
     public int _numberOfWave;
     public int _numberOfBasicEnnemy;
     public int _numberOfHomeWrecker;
@@ -32,6 +36,14 @@ public class Niveau1 : MonoBehaviour
 
     private void Start()
     {
+        foreach (Transform spotTransform in _poolSpots.transform)
+        {
+            _spotList.Add(spotTransform);
+        }
+        foreach (Transform poolTransform in _pools.transform)
+        {
+            _poolList.Add(poolTransform.gameObject);
+        }
         _gameManager._gameLose = false;
         _gameManager._gameWin = false;
         _gameManager._numberOfEnemyOnScreen = 0;
@@ -50,11 +62,11 @@ public class Niveau1 : MonoBehaviour
 
     public void CallWaves(int numberOfEnemy, int numberofHomeWrecker, int numberofBuzzKiller)
     {
-        if (_spawnerScript!= null)
+        if (_spawnerScript != null)
         {
             _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy, numberofHomeWrecker, numberofBuzzKiller));
         }
-        
+
         _gameManager._waveStarted = true;
     }
 
@@ -62,6 +74,10 @@ public class Niveau1 : MonoBehaviour
     {
         _currentWave++;
         _displayedWave++;
+        if (_currentWave / 5 == (int)(_currentWave % 5))
+        {
+            ChangePoolSpot();
+        }
         switch (_currentWave)
         {
             case 1:
@@ -84,7 +100,7 @@ public class Niveau1 : MonoBehaviour
                 _numberOfBasicEnnemy = _numberEnemyWave4;
                 _numberOfHomeWrecker = 1;
                 _numberOfBuzzKiller = 1;
-                break;  
+                break;
             case 5:
                 _numberOfBasicEnnemy = _numberEnemyWave5;
                 _numberOfHomeWrecker = 2;
@@ -97,6 +113,15 @@ public class Niveau1 : MonoBehaviour
                 break;
         }
         CallWaves(_numberOfBasicEnnemy, _numberOfHomeWrecker, _numberOfBuzzKiller);
+    }
+
+    public void ChangePoolSpot()
+    {
+        foreach(GameObject _poolGameObject in _poolList)
+        {
+            int SpotNumber = Random.Range(0, _spotList.Count);
+            _poolGameObject.transform.position = _spotList[SpotNumber].position;
+        }
     }
 
     public void CheckForNewtWave()
