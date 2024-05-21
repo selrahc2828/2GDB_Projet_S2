@@ -12,7 +12,7 @@ public class HeathTowerScript : MonoBehaviour
     public MeshRenderer _meshRenderer2;
     public MeshRenderer _meshRenderer3;
     public Animator _AnimationHP;
-    public Text _healthPercentage;
+    public Text _healthPercentageText;
 
     [Header("Particul")]
     public GameObject _ParticulUp;
@@ -25,7 +25,7 @@ public class HeathTowerScript : MonoBehaviour
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
-    public float healthPercentage;
+    public float healthPercentageVariable;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -86,8 +86,8 @@ public class HeathTowerScript : MonoBehaviour
             _ParticulUp.SetActive(true);
         }
 
-        healthPercentage = (float)_CurrentHealth / _MaxHealth * 100;
-        _healthPercentage.text = "HP : " + Mathf.RoundToInt(healthPercentage) + "%";
+        //healthPercentageVariable = (float)_CurrentHealth / _MaxHealth * 100;
+        _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariable) + "%";
     }
 
     // Fonction is called in DamageToTower Script 
@@ -113,6 +113,8 @@ public class HeathTowerScript : MonoBehaviour
     {
         if (_MaxHealth <= 0)
             return;
+
+        float healthPercentage = (float)_CurrentHealth / _MaxHealth;
 
         Color lerpedColor;
 
