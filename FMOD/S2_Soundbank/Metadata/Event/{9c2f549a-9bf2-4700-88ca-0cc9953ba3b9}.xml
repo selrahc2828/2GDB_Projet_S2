@@ -14,7 +14,7 @@ Une fois avoir joué avec les différents paramètres, j’ai mixé le laser et 
 			<value>Purple</value>
 		</property>
 		<property name="name">
-			<value>shotReg</value>
+			<value>shotReg (deprec)</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
