@@ -105,13 +105,13 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _Border1: 0.88
     - _Border2: 0.98
-    - _Border3: 0.99
+    - _Border3: 0.98
     - _Border4: 0.99
     - _Border5: 0.99
     - _Border6: 0.99
     - _BumpScale: 1
     - _CastShadows: 0
-    - _Circle1: 0.045
+    - _Circle1: 0.05
     - _Circle2: 0.1
     - _Circle3: 0.2
     - _Circle4: 0.3
