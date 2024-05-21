@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PoolAnim : PoolScript
 {
-
     [Header("Particule")]
     public GameObject _ParticulSys;
 
@@ -13,7 +12,7 @@ public class PoolAnim : PoolScript
     private float _maxValue = 1.0f;
     private float _minValue = 0.0f;
 
-    private bool _isInTrigger = false;
+    public bool _isInTrigger = false;
 
     private void OnTriggerStay(Collider other)
     {

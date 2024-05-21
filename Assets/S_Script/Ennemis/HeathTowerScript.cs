@@ -1,19 +1,18 @@
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HeathTowerScript : MonoBehaviour
 {
     [Header("Reference")]
-    public Text _HealtHp;
     public GameManager _GameManagerScript;
     public MeshRenderer _meshRenderer1;
     public MeshRenderer _meshRenderer2;
     public MeshRenderer _meshRenderer3;
     public Animator _AnimationHP;
+    public Text _healthPercentage;
 
     [Header("Particul")]
     public GameObject _ParticulUp;
@@ -26,6 +25,7 @@ public class HeathTowerScript : MonoBehaviour
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
+    public float healthPercentage;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -85,6 +85,9 @@ public class HeathTowerScript : MonoBehaviour
         {
             _ParticulUp.SetActive(true);
         }
+
+        healthPercentage = (float)_CurrentHealth / _MaxHealth * 100;
+        _healthPercentage.text = "HP : " + Mathf.RoundToInt(healthPercentage) + "%";
     }
 
     // Fonction is called in DamageToTower Script 
@@ -96,7 +99,7 @@ public class HeathTowerScript : MonoBehaviour
 
         GameObject rippleParticle = Instantiate(_ParticulRipple, transform.position, Quaternion.identity);
         Destroy(rippleParticle, 1f);
-        //FMODUnity.RuntimeManager.PlayOneShot(_FMODDamag);
+
 
     }
 
@@ -110,8 +113,6 @@ public class HeathTowerScript : MonoBehaviour
     {
         if (_MaxHealth <= 0)
             return;
-
-        float healthPercentage = (float)_CurrentHealth / _MaxHealth;
 
         Color lerpedColor;
 
