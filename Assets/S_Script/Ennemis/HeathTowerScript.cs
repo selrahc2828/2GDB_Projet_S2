@@ -86,7 +86,7 @@ public class HeathTowerScript : MonoBehaviour
             _ParticulUp.SetActive(true);
         }
 
-        //healthPercentageVariable = (float)_CurrentHealth / _MaxHealth * 100;
+        healthPercentageVariable = (float)_CurrentHealth / _MaxHealth * 100;
         _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariable) + "%";
     }
 
