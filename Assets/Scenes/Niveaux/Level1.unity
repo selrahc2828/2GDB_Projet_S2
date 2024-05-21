@@ -28599,6 +28599,35 @@ MonoBehaviour:
   _numberEnemyWave4: 130
   _numberEnemyWave5: 180
   _timerBetweenWave: 0
+  _timerBetweenSegment: 0
+  _startSpawning: 0
+  _timerForSpawn: 0
+  _wave_1_A: {fileID: 9101553456532050526, guid: 0264422bbec8b0d47833b6b194a0d1bf,
+    type: 3}
+  _wave_1_B: {fileID: 0}
+  _wave_1_C: {fileID: 0}
+  _wave_1_D: {fileID: 0}
+  _wave_2_A: {fileID: 6988637767290966020, guid: 14adae2bc4c6033459bb24f358991918,
+    type: 3}
+  _wave_2_B: {fileID: 0}
+  _wave_2_C: {fileID: 0}
+  _wave_2_D: {fileID: 0}
+  _wave_3_A: {fileID: 0}
+  _wave_3_B: {fileID: 0}
+  _wave_3_C: {fileID: 0}
+  _wave_3_D: {fileID: 0}
+  _wave_4_A: {fileID: 0}
+  _wave_4_B: {fileID: 0}
+  _wave_4_C: {fileID: 0}
+  _wave_4_D: {fileID: 0}
+  _segmentA: {fileID: 0}
+  _ASpawned: 0
+  _segmentB: {fileID: 0}
+  _BSpawned: 0
+  _segmentC: {fileID: 0}
+  _CSpawned: 0
+  _segmentD: {fileID: 0}
+  _DSpawned: 0
   _TextNumberOfWave: {fileID: 2026522288}
 --- !u!4 &1658559013 stripped
 Transform:
@@ -38785,6 +38814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wave2_A_60_8_0_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6988637767290966020, guid: 14adae2bc4c6033459bb24f358991918,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
