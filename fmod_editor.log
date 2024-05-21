@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.67ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000217753E81C8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000218A69C62B8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,10 +18,134 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000021B867F2ED8, queue head = 0000021AA97101D8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021B867F2ED8
+[LOG] SystemI::createSound                     : filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021B867F24B8, queue head = 0000021AA97101D8, queue count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSound                     :     filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021B867F2818, queue head = 0000021AA97101D8, queue count = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021B79D8BAA0
+[LOG] SystemI::createSound                     :     filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021B867F2158, queue head = 0000021AA97101D8, queue count = 2
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021AA0FB5638, queue head = 0000021AA97101D8, queue count = 3
+[LOG] SystemI::createSound                     :     filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021AA0FB5128, queue head = 0000021AA97101D8, queue count = 4
+[LOG] SystemI::createSound                     :     filename = FMOD/S2_Soundbank/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 0000021AA0FB5998, queue head = 0000021AA97101D8, queue count = 5
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PercussionVeryLowHP', format=5, channels=2, frequency=48000, lengthbytes=180768, lengthpcm=731428, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.195669.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021B867F2ED8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021B867F24B8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021B79D8BFA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='2_Agents Engaged', format=5, channels=2, frequency=48000, lengthbytes=137152, lengthpcm=822822, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.066592.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021B867F24B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021B867F2818
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021B79D8B1E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PercussionDyingAdd', format=5, channels=2, frequency=48000, lengthbytes=186688, lengthpcm=731428, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.099781.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021B867F2818
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021B867F2158
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021B79D8B460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='3_GameplayBass', format=5, channels=2, frequency=48000, lengthbytes=163680, lengthpcm=822822, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.331054.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021B867F2158
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021AA0FB5638
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021A9F6A6C50
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='1_Agents Pooled', format=5, channels=2, frequency=48000, lengthbytes=157888, lengthpcm=731428, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.084324.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021AA0FB5638
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021AA0FB5128
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021AA0FB6DA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='PercussionBase', format=5, channels=2, frequency=48000, lengthbytes=195328, lengthpcm=731428, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.861877.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021AA0FB5128
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000021AA0FB5998
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD/S2_Soundbank/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3192960
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 21536
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000021AA0FB69E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='4_Enemies close', format=5, channels=2, frequency=48000, lengthbytes=180928, lengthpcm=822822, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.045402.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000021AA0FB5998
+[LOG] SoundI::release                          : 4_Enemies close (0000021AA0FB5998)
+[LOG] SoundI::release                          :     4_Enemies close (0000021ADE732B78)
+[LOG] SoundI::release                          :     4_Enemies close (0000021B8DDC75A8)
+[LOG] SoundI::release                          : PercussionBase (0000021AA0FB5128)
+[LOG] SoundI::release                          :     PercussionBase (0000021ADE7317F8)
+[LOG] SoundI::release                          :     PercussionBase (0000021B8DDC7908)
+[LOG] SoundI::release                          : 1_Agents Pooled (0000021AA0FB5638)
+[LOG] SoundI::release                          :     1_Agents Pooled (0000021ADE72EF58)
+[LOG] SoundI::release                          :     1_Agents Pooled (0000021B8DDC7098)
+[LOG] SoundI::release                          : 3_GameplayBass (0000021B867F2158)
+[LOG] SoundI::release                          :     3_GameplayBass (0000021ADE72DA38)
+[LOG] SoundI::release                          :     3_GameplayBass (0000021B8E936AB8)
+[LOG] SoundI::release                          : PercussionDyingAdd (0000021B867F2818)
+[LOG] SoundI::release                          :     PercussionDyingAdd (0000021A78BC1A88)
+[LOG] SoundI::release                          :     PercussionDyingAdd (0000021B8E936908)
+[LOG] SoundI::release                          : 2_Agents Engaged (0000021B867F24B8)
+[LOG] SoundI::release                          :     2_Agents Engaged (0000021A78BC0BE8)
+[LOG] SoundI::release                          :     2_Agents Engaged (0000021B8E936FC8)
+[LOG] SoundI::release                          : PercussionVeryLowHP (0000021B867F2ED8)
+[LOG] SoundI::release                          :     PercussionVeryLowHP (0000021A78BC5D28)
+[LOG] SoundI::release                          :     PercussionVeryLowHP (0000021B8E936758)

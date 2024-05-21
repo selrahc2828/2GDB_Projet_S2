@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8737220776702458349
+--- !u!114 &-8897413476848300501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/bscEnemyDeath
+  m_Name: event:/Enemy (probably deprec)/enemyHit
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/bscEnemyDeath
+  Path: event:/Enemy (probably deprec)/enemyHit
   Guid:
-    Data1: 1904047910
-    Data2: 1291819398
-    Data3: 1191926694
-    Data4: 1158276491
+    Data1: -1555939938
+    Data2: 1106354315
+    Data3: 2060653466
+    Data4: -977273485
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
@@ -26,8 +26,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1590
---- !u!114 &-8184802440405046296
+  Length: 0
+--- !u!114 &-5727026769493423392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,14 +37,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotReg
+  m_Name: event:/Agent/shotSlo (deprec)
   m_EditorClassIdentifier: 
-  Path: event:/Agent/shotReg
+  Path: event:/Agent/shotSlo (deprec)
   Guid:
-    Data1: -1674619750
-    Data2: 1191222258
-    Data3: -921908600
-    Data4: -1180484715
+    Data1: -402474503
+    Data2: 1295638249
+    Data3: 2068531899
+    Data4: -1451047625
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 464
---- !u!114 &-6892387755985358016
+  Length: 0
+--- !u!114 &-5512234528821661185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,14 +64,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotPrc
+  m_Name: event:/Enemy (probably deprec)/spdEnemyDeath
   m_EditorClassIdentifier: 
-  Path: event:/Agent/shotPrc
+  Path: event:/Enemy (probably deprec)/spdEnemyDeath
   Guid:
-    Data1: -1247151839
-    Data2: 1075032435
-    Data3: 501405351
-    Data4: 2054709242
+    Data1: 850402012
+    Data2: 1252928521
+    Data3: 1888909711
+    Data4: 1938853257
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1848
+  Length: 1093
 --- !u!114 &-4528688591135457420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,114 +162,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 228
---- !u!114 &-4332944025725036324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/credits_music
-  m_EditorClassIdentifier: 
-  Path: event:/OST/credits_music
-  Guid:
-    Data1: 510596507
-    Data2: 1334755342
-    Data3: 845502398
-    Data4: 1869298621
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4061843775037979320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotSlo
-  m_EditorClassIdentifier: 
-  Path: event:/Agent/shotSlo
-  Guid:
-    Data1: -402474503
-    Data2: 1295638249
-    Data3: 2068531899
-    Data4: -1451047625
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3653273268081544983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/enemyHit
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/enemyHit
-  Guid:
-    Data1: -1555939938
-    Data2: 1106354315
-    Data3: 2060653466
-    Data4: -977273485
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3640394705426407008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Pools/towerEngage
-  m_EditorClassIdentifier: 
-  Path: event:/Pools/towerEngage
-  Guid:
-    Data1: -1392186090
-    Data2: 1238630613
-    Data3: -141426036
-    Data4: 1324898731
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-3490175425252969556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,14 +182,14 @@ MonoBehaviour:
     Data4: -1366353347
   Banks:
   - {fileID: 726601766596463733}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-1868992136523730400
+  Length: 146729
+--- !u!114 &-2890132559977670709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,25 +198,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/bzkEnemyDeath
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level_music/Hit Points
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/bzkEnemyDeath
-  Guid:
-    Data1: -138642516
-    Data2: 1157380602
-    Data3: 1116715943
-    Data4: -1314003483
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-837130970409974901
+  Name: Hit Points
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 360245812
+    data2: 1557013661
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2424303278217686854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -333,51 +222,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Assignment Line/drawLine
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level_music/Enemy_to_tower_distance
   m_EditorClassIdentifier: 
-  Path: event:/Assignment Line/drawLine
-  Guid:
-    Data1: 846107316
-    Data2: 1223549754
-    Data3: -1137840196
-    Data4: 1687113597
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-351412616074738286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Assignment Line/endL
-  m_EditorClassIdentifier: 
-  Path: event:/Assignment Line/endL
-  Guid:
-    Data1: 1205330960
-    Data2: 1208624379
-    Data3: -897339005
-    Data4: -642824986
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Enemy_to_tower_distance
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 2131750415
+    data2: 2858731938
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,31 +254,27 @@ MonoBehaviour:
   - {fileID: 726601766596463733}
   EditorEvents:
   - {fileID: -3490175425252969556}
-  - {fileID: -4332944025725036324}
   - {fileID: 26793691611817546}
   - {fileID: -5510053001531937784}
   - {fileID: 3265165309408869626}
-  - {fileID: -351412616074738286}
-  - {fileID: -3640394705426407008}
-  - {fileID: -6892387755985358016}
-  - {fileID: -8737220776702458349}
-  - {fileID: 2907333063854835619}
-  - {fileID: -8184802440405046296}
-  - {fileID: -3653273268081544983}
-  - {fileID: -1868992136523730400}
-  - {fileID: -837130970409974901}
   - {fileID: -4528688591135457420}
   - {fileID: 6337445852243717988}
-  - {fileID: 5768074105961874173}
   - {fileID: -5399318692655804939}
-  - {fileID: 2271580312445196306}
-  - {fileID: -4061843775037979320}
-  EditorParameters: []
+  - {fileID: 141730880966783809}
+  - {fileID: 2847158094350493920}
+  - {fileID: 351403183328607743}
+  - {fileID: 3340523732035361329}
+  - {fileID: -8897413476848300501}
+  - {fileID: 8908889016037031503}
+  - {fileID: -5512234528821661185}
+  - {fileID: -5727026769493423392}
+  EditorParameters:
+  - {fileID: 2961561850475295879}
   MasterBanks:
   - {fileID: 726601766596463733}
   StringsBanks:
   - {fileID: 3928691873847987531}
-  cacheTime: 638512994380185048
+  cacheTime: 638519050432735950
   cacheVersion: 131609
 --- !u!114 &26793691611817546
 MonoBehaviour:
@@ -441,13 +296,70 @@ MonoBehaviour:
     Data4: -818959673
   Banks:
   - {fileID: 726601766596463733}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6877034748305448493}
+  - {fileID: -2424303278217686854}
+  - {fileID: -2890132559977670709}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15238
+--- !u!114 &141730880966783809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/OST/towerEngage
+  m_EditorClassIdentifier: 
+  Path: event:/OST/towerEngage
+  Guid:
+    Data1: -1392186090
+    Data2: 1238630613
+    Data3: -141426036
+    Data4: 1324898731
+  Banks:
+  - {fileID: 726601766596463733}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &351403183328607743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy (probably deprec)/bscEnemyDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy (probably deprec)/bscEnemyDeath
+  Guid:
+    Data1: 1904047910
+    Data2: 1291819398
+    Data3: 1191926694
+    Data4: 1158276491
+  Banks:
+  - {fileID: 726601766596463733}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1590
 --- !u!114 &726601766596463733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,10 +375,10 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638512994380185048
+  lastModified: 638519050432720926
   FileSizes: []
   Exists: 1
---- !u!114 &2271580312445196306
+--- !u!114 &2847158094350493920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -476,24 +388,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Assignment Line/startL
+  m_Name: event:/Agent/shotPrc (deprec)
   m_EditorClassIdentifier: 
-  Path: event:/Assignment Line/startL
+  Path: event:/Agent/shotPrc (deprec)
   Guid:
-    Data1: -1095405578
-    Data2: 1222386309
-    Data3: -783370878
-    Data4: 347679003
+    Data1: -1247151839
+    Data2: 1075032435
+    Data3: 501405351
+    Data4: 2054709242
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2907333063854835619
+--- !u!114 &2961561850475295879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,24 +414,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Assignment Line/ingL
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Engagement
   m_EditorClassIdentifier: 
-  Path: event:/Assignment Line/ingL
-  Guid:
-    Data1: -899238556
-    Data2: 1106522903
-    Data3: 1427410621
-    Data4: 1964628284
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Engagement
+  StudioPath: parameter:/Engagement
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2981337647
+    data2: 279194470
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - NotEngaged
+  - Engaged
+  - Pooled
+  Exists: 1
 --- !u!114 &3265165309408869626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,6 +459,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3340523732035361329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agent/shotReg (deprec)
+  m_EditorClassIdentifier: 
+  Path: event:/Agent/shotReg (deprec)
+  Guid:
+    Data1: -1674619750
+    Data2: 1191222258
+    Data3: -921908600
+    Data4: -1180484715
+  Banks:
+  - {fileID: 726601766596463733}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 180
 --- !u!114 &3928691873847987531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,38 +501,11 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638512994380185048
+  lastModified: 638519050432735950
   FileSizes:
   - Name: 
-    Value: 1680
+    Value: 1658
   Exists: 1
---- !u!114 &5768074105961874173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/spdEnemyDeath
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/spdEnemyDeath
-  Guid:
-    Data1: 850402012
-    Data2: 1252928521
-    Data3: 1888909711
-    Data4: 1938853257
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6337445852243717988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,6 +528,60 @@ MonoBehaviour:
   - {fileID: 726601766596463733}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &6877034748305448493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/level_music/Engagement
+  m_EditorClassIdentifier: 
+  Name: Engagement
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2981337647
+    data2: 279194470
+  Type: 2
+  IsGlobal: 1
+  Labels:
+  - NotEngaged
+  - Engaged
+  - Pooled
+  Exists: 1
+--- !u!114 &8908889016037031503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy (probably deprec)/bzkEnemyDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy (probably deprec)/bzkEnemyDeath
+  Guid:
+    Data1: -138642516
+    Data2: 1157380602
+    Data3: 1116715943
+    Data4: -1314003483
+  Banks:
+  - {fileID: 726601766596463733}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
