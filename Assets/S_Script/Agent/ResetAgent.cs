@@ -22,7 +22,7 @@ public class ResetAgent : MonoBehaviour
 
             // Create a RaycastHit variable to store information about the raycast hit
             RaycastHit hit;
-            float radius = 2f;
+            float radius = 2.5f;
             // Perform the raycast
             if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
             {

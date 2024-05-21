@@ -16458,6 +16458,7 @@ GameObject:
   - component: {fileID: 956128765}
   - component: {fileID: 956128767}
   - component: {fileID: 956128766}
+  - component: {fileID: 956128768}
   m_Layer: 3
   m_Name: Mesh
   m_TagString: Untagged
@@ -16529,6 +16530,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956128764}
+  m_Mesh: {fileID: 2534964839176971238, guid: 607c73c8991180a45a387625a71fde39, type: 3}
+--- !u!64 &956128768
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956128764}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 607c73c8991180a45a387625a71fde39, type: 3}
 --- !u!4 &960123960 stripped
 Transform:
@@ -24269,8 +24292,8 @@ Transform:
   m_GameObject: {fileID: 1418326721}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -79, z: 0}
-  m_LocalScale: {x: 41.5, y: 41.5, z: 400}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalScale: {x: 41.5, y: 41.5, z: 23.854763}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1939578054}
@@ -33985,7 +34008,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939578054}
-  - component: {fileID: 1939578051}
   m_Layer: 3
   m_Name: Sol
   m_TagString: Untagged
@@ -33993,27 +34015,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1939578051
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939578050}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 300, y: 1, z: 300}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1939578054
 Transform:
   m_ObjectHideFlags: 0
