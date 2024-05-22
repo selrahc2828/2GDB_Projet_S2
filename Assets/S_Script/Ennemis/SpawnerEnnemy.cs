@@ -44,6 +44,10 @@ public class SpawnerEnnemy : MonoBehaviour
             yield return null;
         }
     }
+    public void SpawnAWaveSegment(GameObject _segmentX)
+    {
+        Instantiate(_segmentX, Vector3.zero, Quaternion.identity);
+    }
 
     public void SpawnPattern()
     {
