@@ -5374,6 +5374,13 @@ MonoBehaviour:
   _towerProximityValue: 0
   _towerProximityNormalizedValue: 0
   _neighbourLowerProximityValue: 0
+  _pool1ProximityValue: 0
+  _pool1ProximityNormalizedValue: 0
+  _pool1NeighbourLowerProximityValue: 0
+  _pool2ProximityValue: 0
+  _pool2ProximityNormalizedValue: 0
+  _pool2NeighbourLowerProximityValue: 0
+  _proximityTimer: 0
   _tower: {fileID: 0}
   _GOpool1: {fileID: 0}
   _GOpool2: {fileID: 0}
@@ -5383,8 +5390,9 @@ MonoBehaviour:
   _aviability: 0
   _resetTime: 0
   _amIFocus: []
-  _initialColor: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 0}
+  _initialColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0}
   _finalColor: {r: 0.27450982, g: 0, b: 0, a: 0}
+  _AvailabilityColor: {r: 0.16181986, g: 0.745283, b: 0.14530668, a: 0}
 --- !u!114 &143301654082394424
 MonoBehaviour:
   m_ObjectHideFlags: 0

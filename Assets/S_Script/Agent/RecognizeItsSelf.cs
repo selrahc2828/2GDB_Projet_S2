@@ -65,6 +65,8 @@ public class RecognizeItsSelf : MonoBehaviour
     public Color _initialColor;
     [ColorUsage(false, true)]
     public Color _finalColor;
+    [ColorUsage(false, true)]
+    public Color _AvailabilityColor;
 
 
 
@@ -364,7 +366,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
         if (_aviability)
         {
-            finalColor = _initialColor;
+            finalColor = _AvailabilityColor;
             intensity = 3f;
         }
         else
