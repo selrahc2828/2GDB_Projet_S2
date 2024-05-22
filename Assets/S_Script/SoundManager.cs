@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class SoundManager : MonoBehaviour
 {
     
     //Call scripts
-    public HeathTowerScript TowerLifeScript;
+    public HeathTowerScript towerLifeScript;
     public PoolAnim poolEngage;
-    public RecognizeItsSelf activeAgent;
+    public AgentToTrace activeAgentInformation;
+    public GameManager gameManager;
     
     
     
     //Internal variables
     public float engagement;
-    public int hitPoints;
-    public bool isEngaged;
-    public int distanceToTower;
+    public float hitPoints;
+    public float pooled;
+    public float homewrecker;
+    public float buzzkiller;
+    public float distanceToTower;
     
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
@@ -31,48 +35,48 @@ public class SoundManager : MonoBehaviour
     }
     void Update()
     {
-        //Variable setup
+        // Agents engaged
+
+        engagement = activeAgentInformation._proportionOfAgentAssigned;
         
-        //Hit Points
-        hitPoints = TowerLifeScript._CurrentHealth / TowerLifeScript._MaxHealth;
-        Debug.Log(hitPoints);
+        // Hit Points
         
-        // Engagement
-        switch (activeAgent._aviability)
+        hitPoints = towerLifeScript.healthPercentageVariable;
+        
+        // Pooled Agents
+        pooled = 0f;
+        
+        // homewrecker
+
+        if (gameManager._numberOfHomeWreckerOnScreen == 0)
         {
-            case true:
-                isEngaged = false;
-                break;
-            case false:
-                isEngaged = true;
-                break;
-        }
-        
-        if (isEngaged)
-        {
-            switch (poolEngage._isInTrigger)
-            {
-             case true:
-                 engagement = 2f;
-                 break;
-             case false:
-                 engagement = 1f;
-                 break;
-            }
+            homewrecker = 0f;
         }
         else
         {
-            engagement = 0f;
+            homewrecker = 1f;
         }
         
-        //Distance to Tower
+        //buzzkiller
+
+        if (gameManager._numberOfBuzzKillerOnScreen == 0)
+        {
+            buzzkiller = 0f;
+        }
+        else
+        {
+            buzzkiller = 1f;
+        }
         
+        //distance to tower
         
-        // Music Manager
         levelMusic.setParameterByName("Engagement", engagement);
         levelMusic.setParameterByName("Hit Points", hitPoints);
+        levelMusic.setParameterByName("Pooled", pooled);
+        levelMusic.setParameterByName("Homewrecker", homewrecker);
+        levelMusic.setParameterByName("Buzzkiller", buzzkiller);
+        levelMusic.setParameterByName("DistanceToTower", distanceToTower);
         
-        //levelMusic.setParameterByName("Enemy_to_tower_distance",)
 
 
     }
