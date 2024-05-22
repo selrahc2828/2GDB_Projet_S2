@@ -25,6 +25,7 @@ public class HeathTowerScript : MonoBehaviour
     [Header("HealthSystem")]
     public int _MaxHealth;
     public int _CurrentHealth;
+    public float healthPercentageVariabletext;
     public float healthPercentageVariable;
 
     [Header("Color")]
@@ -85,8 +86,9 @@ public class HeathTowerScript : MonoBehaviour
             _ParticulUp.SetActive(true);
         }
 
-        healthPercentageVariable = (float)_CurrentHealth / _MaxHealth * 100;
-        _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariable) + "%";
+        healthPercentageVariabletext = (float)_CurrentHealth / _MaxHealth * 100;
+        healthPercentageVariable = (float)_CurrentHealth / _MaxHealth;
+        _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariabletext) + "%";
     }
 
     // Fonction is called in DamageToTower Script 
