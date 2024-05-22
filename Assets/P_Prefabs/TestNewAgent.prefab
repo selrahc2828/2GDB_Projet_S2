@@ -5416,6 +5416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posOnLine: 0
+  _burstRate: 3
   burstDuration: 2
   maxEntityOnLine: 50
   burstCurve:
