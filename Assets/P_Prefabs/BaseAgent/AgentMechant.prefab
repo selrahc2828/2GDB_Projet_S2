@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1531559480297579034
+--- !u!1 &1622893910572473833
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8361203459441120187}
-  - component: {fileID: 7332710508031488489}
-  m_Layer: 11
-  m_Name: Trail/particule
+  - component: {fileID: 2837477826026328661}
+  - component: {fileID: 3746499900494048832}
+  m_Layer: 0
+  m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8361203459441120187
+--- !u!4 &2837477826026328661
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531559480297579034}
+  m_GameObject: {fileID: 1622893910572473833}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.02, y: 0.383, z: -0.433}
@@ -32,14 +32,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6018833635926120512}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!96 &7332710508031488489
+--- !u!96 &3746499900494048832
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531559480297579034}
+  m_GameObject: {fileID: 1622893910572473833}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 6536687475616701843}
+  - component: {fileID: 9010189055856738781}
   m_Layer: 11
   m_Name: AgentMechant
   m_TagString: AgentMechant
@@ -263,9 +264,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8361203459441120187}
   - {fileID: 7388391016215515944}
   - {fileID: 1100069607919387299}
+  - {fileID: 2837477826026328661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2793508319794462047
@@ -389,6 +390,27 @@ MonoBehaviour:
     type: 3}
   _finalColor: {r: 0.85882354, g: 0.43137255, b: 0, a: 0}
   _initialColor: {r: 0.13207549, g: 0.03551086, b: 0.03551086, a: 0}
+--- !u!95 &9010189055856738781
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b0df76623ba3fd4c9c9b8d04aa437a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7088349779480383193
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,13 +437,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7088349779480383193}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: 0.98998713, y: -0, z: -0, w: -0.1411578}
   m_LocalPosition: {x: 0.06414771, y: 0.20651416, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6018833635926120512}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 196.23, y: 0, z: 0}
 --- !u!198 &8498904227976099708
 ParticleSystem:
   m_ObjectHideFlags: 0

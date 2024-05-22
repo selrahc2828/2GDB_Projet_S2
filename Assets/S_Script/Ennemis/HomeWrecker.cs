@@ -19,6 +19,7 @@ public class HomeWrecker : Enemy
     public int _amplitudeZigZag;
     private bool _mouseButtonUp = false;
     private bool _agentStarted = false;
+
     public void Awake()
     {
         _Niveau1 = FindAnyObjectByType<Niveau1>();
@@ -69,6 +70,7 @@ public class HomeWrecker : Enemy
                 DestinationReached();
             }
         }
+
     }
 
     public void SearchNewDestination()

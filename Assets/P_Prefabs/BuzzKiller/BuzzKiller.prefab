@@ -383,9 +383,12 @@ MonoBehaviour:
   _SlowedOutlineColor: {r: 0.18823528, g: 0.61176467, b: 1.4980391, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
+  _deathBubblePrefab: {fileID: 7679899219145768590, guid: b2ce07afd1057184eb2032909c650d38,
+    type: 3}
   _finalColor: {r: 1.4980392, g: 0, b: 0.2717032, a: 0}
   _initialColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
-  _pools: []
+  _porteurDePool: {fileID: 0}
+  _poolList: []
   _closestPoolDistance: 0
   _closestPool: {fileID: 0}
 --- !u!1 &5473619328206195172
