@@ -68,7 +68,6 @@ public class HeathTowerScript : MonoBehaviour
         if (_CurrentHealth <= 0 )
         {
             _GameManagerScript._gameLose = true;
-            Debug.Log("Defeat");
         }
 
         if (_CurrentHealth <= 400f)
@@ -95,7 +94,6 @@ public class HeathTowerScript : MonoBehaviour
     {
         // Take the current Health and substract the damage amount 
         _CurrentHealth -= damageAmount;
-        Debug.Log(gameObject.name + " took damage: " + damageAmount);
 
         GameObject rippleParticle = Instantiate(_ParticulRipple, transform.position, Quaternion.identity);
         Destroy(rippleParticle, 1f);

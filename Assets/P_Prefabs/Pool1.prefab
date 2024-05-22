@@ -4837,8 +4837,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5888672369204667169}
+  - component: {fileID: 533067641622841128}
   - component: {fileID: 4055113611000154674}
-  - component: {fileID: 6308031680817663069}
   - component: {fileID: 8667292262229117239}
   - component: {fileID: 273766024043299433}
   - component: {fileID: 2058521897298035472}
@@ -4868,6 +4868,29 @@ Transform:
   - {fileID: 426907301788687402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &533067641622841128
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404914015157129681}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.0845757
+  m_Height: 10.928513
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5339842, z: 0}
 --- !u!135 &4055113611000154674
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4889,28 +4912,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: -2, z: 0}
---- !u!64 &6308031680817663069
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3404914015157129681}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!95 &8667292262229117239
 Animator:
   serializedVersion: 5
@@ -4944,9 +4945,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b6ef25e1b789a45801a55e95a2f985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _infected: 0
   _ParticulSys: {fileID: 45264855612667634}
   _animatorPool: {fileID: 8667292262229117239}
   _speed: 0.1
+  _isInTrigger: 0
 --- !u!114 &2058521897298035472
 MonoBehaviour:
   m_ObjectHideFlags: 0

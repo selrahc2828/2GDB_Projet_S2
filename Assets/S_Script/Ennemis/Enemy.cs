@@ -88,12 +88,6 @@ public class Enemy : MonoBehaviour
         _FeedbackScript.DeathBubble(transform);
         Destroy(gameObject);
     }
-    private void OnDestroy()
-    {
-        _GameManager._numberOfEnemyOnScreen--;
-        _Niveau1.CheckForNewtWave();
-    }
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Tower"))
