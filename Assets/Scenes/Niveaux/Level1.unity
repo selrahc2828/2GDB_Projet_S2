@@ -12271,18 +12271,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 196656711}
   m_SourcePrefab: {fileID: 100100000, guid: 344e29f43c65e0148902c1b96ae2317e, type: 3}
---- !u!114 &603181411 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
-    type: 3}
-  m_PrefabInstance: {fileID: 603181410}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196656703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7b89e6af6ab7046a20f316646848a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &606107431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21525,7 +21513,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1158978105}
-  - component: {fileID: 1158978106}
   m_Layer: 13
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -21549,25 +21536,6 @@ Transform:
   - {fileID: 53232846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1158978106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158978104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788f1f07c8925f24bbc6262d77806fe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TowerLifeScript: {fileID: 196656712}
-  poolEngage: {fileID: 1600158463}
-  activeAgent: {fileID: 1683865784}
-  engagement: 0
-  hitPoints: 0
-  isEngaged: 0
-  distanceToTower: 0
 --- !u!4 &1160621023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8674283603985636098, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -29585,18 +29553,6 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 872624247423615908}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1600158463 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 273766024043299433, guid: 4f407417de5779842bc580a8552cc83e,
-    type: 3}
-  m_PrefabInstance: {fileID: 872624247423615908}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600158458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7b6ef25e1b789a45801a55e95a2f985, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1600726009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674923304642868183, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -31576,7 +31532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788f1f07c8925f24bbc6262d77806fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerLifeScript: {fileID: 603181411}
+  towerLifeScript: {fileID: 196656712}
   activeAgentInformation: {fileID: 1654960972}
   gameManager: {fileID: 1958624180}
   engagement: 0
@@ -31741,18 +31697,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 159231082}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1683865784 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
-    type: 3}
-  m_PrefabInstance: {fileID: 4008651886754694209}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91e11b7e2f07324686b3d1871f8b2b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1686266544
 PrefabInstance:
   m_ObjectHideFlags: 0

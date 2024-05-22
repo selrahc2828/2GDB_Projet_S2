@@ -64,7 +64,7 @@ public class BuzzKiller : Enemy
                     _closestPool = pool;
                 }
             }
-            _thisAgent.SetDestination(_closestPool.GetComponent<MeshCollider>.ClosestPoint);
+            _thisAgent.SetDestination(_closestPool.transform.position);
         }
     }
     private void OnDestroy()

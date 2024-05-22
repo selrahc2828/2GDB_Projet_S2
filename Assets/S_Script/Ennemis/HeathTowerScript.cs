@@ -89,7 +89,7 @@ public class HeathTowerScript : MonoBehaviour
 
         healthPercentageVariabletext = (float)_CurrentHealth / _MaxHealth * 100;
         healthPercentageVariable = (float)_CurrentHealth / _MaxHealth;
-        _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariable) + "%";
+        _healthPercentageText.text = "HP : " + Mathf.RoundToInt(healthPercentageVariabletext) + "%";
     }
 
     // Fonction is called in DamageToTower Script 
