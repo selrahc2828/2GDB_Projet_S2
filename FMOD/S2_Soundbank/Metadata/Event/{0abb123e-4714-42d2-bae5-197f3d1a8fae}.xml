@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0abb123e-4714-42d2-bae5-197f3d1a8fae}">
 		<property name="color">
-			<value>Red</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>menu_music</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8ce500b4-3ba4-444b-93b5-b1f315ac995e}</destination>
@@ -62,11 +62,18 @@
 	<object class="EventAutomatableProperties" id="{3ac42c15-069d-4d82-bb73-2e25683e28e4}" />
 	<object class="MarkerTrack" id="{b443f2da-5db3-472b-bd3d-a21e189dc11e}" />
 	<object class="GroupTrack" id="{73177dab-e94d-4269-a89d-d3ed97628ebc}">
+		<relationship name="modules">
+			<destination>{8e31fd0d-62d3-4c6e-9113-d521cecca2eb}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{f36e3748-ad9d-4cab-8948-a5685875074a}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{9330c2a2-fb16-43ee-8071-53add4aadc3f}" />
+	<object class="Timeline" id="{9330c2a2-fb16-43ee-8071-53add4aadc3f}">
+		<relationship name="modules">
+			<destination>{8e31fd0d-62d3-4c6e-9113-d521cecca2eb}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{704205d9-06a0-49cd-a9d9-51cb5fea9664}">
 		<relationship name="effectChain">
 			<destination>{17e6d629-63e2-438a-bc60-a796e62f4e65}</destination>
@@ -84,6 +91,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3a82c025-27f6-48ba-af1b-bbd2ede7b24a}" />
+	<object class="SingleSound" id="{8e31fd0d-62d3-4c6e-9113-d521cecca2eb}">
+		<property name="length">
+			<value>146.72979591836736</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{41a547a1-a919-4fda-a23e-13bcbc945f8a}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{f36e3748-ad9d-4cab-8948-a5685875074a}">
 		<property name="name">
 			<value>Audio 1</value>
