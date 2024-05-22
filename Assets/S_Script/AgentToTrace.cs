@@ -34,8 +34,8 @@ public class AgentToTrace : MonoBehaviour
     private NavMeshAgent _chosenAgent;
     private Vector3 _chosenPosition;
     private float _sizeAgent;
-
-
+    public float _proportionOfAgentAssigned;
+    public int _numberTotalAgent;
     public Text _AgentNumbertext;
 
 
@@ -76,6 +76,7 @@ public class AgentToTrace : MonoBehaviour
         }
         //Appel de la fonction pour créer la variable du nombre d'agent disponible à un instant T
         CountNumberAgentAvailable();
+        _numberTotalAgent = _dictionnaireAgent.Count();
     }
 
     // Update is called once per frame
@@ -83,6 +84,7 @@ public class AgentToTrace : MonoBehaviour
     {
         if(!_gameManager._gameLose && !_gameManager._gamePaused)
         {
+            ProportionOfEngagedAgent();
             if (Input.GetMouseButtonDown(0))
             {
                 _numberAgentNeeded = 0;
@@ -137,7 +139,11 @@ public class AgentToTrace : MonoBehaviour
 
         _listeOfListePositionTrace.Remove(_liste);
     }
+    void ProportionOfEngagedAgent()
+    {
+        _proportionOfAgentAssigned = _numberAgentAvailable / _numberTotalAgent;
 
+    }
     void CountNumberAgentAvailable()
     {
         int _numberCounted = 0;

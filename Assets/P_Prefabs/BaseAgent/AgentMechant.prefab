@@ -385,7 +385,7 @@ MonoBehaviour:
   _SlowedOutlineColor: {r: 0, g: 0.18092245, b: 1.4980392, a: 0}
   _thisAgentBaseSpeed: 0
   _meshRenderer: {fileID: 2899989185037988577}
-  _deathBubblePrefab: {fileID: 7679899219145768590, guid: 1aed2a5dc46f8ee4e8f7467c5941d3be,
+  _deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
     type: 3}
   _finalColor: {r: 0.85882354, g: 0.43137255, b: 0, a: 0}
   _initialColor: {r: 0.13207549, g: 0.03551086, b: 0.03551086, a: 0}

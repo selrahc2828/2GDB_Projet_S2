@@ -24,7 +24,7 @@ public class Niveau1 : MonoBehaviour
     public int _numberEnemyWave4;
     public int _numberEnemyWave5;
     public int _timerBetweenWave;
-    public int _timerBetweenSegment;
+    public float _timerBetweenSegment;
     public bool _startSpawning = false;
     public float _timerForSpawn;
 
@@ -77,7 +77,7 @@ public class Niveau1 : MonoBehaviour
         _gameManager._gameWin = false;
         _gameManager._numberOfEnemyOnScreen = 0;
         _gameManager._waveStarted = false;
-        _timerBetweenSegment = 10; 
+        _timerBetweenSegment = _gameManager._timeBetweenSegment; 
         _startSpawning = false;
         _ASpawned = false;
         _BSpawned = false;
@@ -86,6 +86,7 @@ public class Niveau1 : MonoBehaviour
         _currentWave = 0;
         _displayedWave = 0;
         _numberOfWave = 5;
+        _timerForSpawn = 0;
         NextWave();
     }
 
@@ -94,22 +95,22 @@ public class Niveau1 : MonoBehaviour
         _TextNumberOfWave.text = "Wave : " + _displayedWave;
         if(_startSpawning)
         {
+            _timerForSpawn += Time.deltaTime;
             SpawnTheWave();
         }
     }
 
     public void SpawnTheWave()
     {
-        _timerForSpawn += Time.deltaTime;
         if (_ASpawned == false) 
         {
             _ASpawned = true;
-            SpawnSegmentA(); 
+            SpawnSegmentA();
         }
         if (_timerForSpawn > _timerBetweenSegment && _BSpawned == false) 
         {
             _BSpawned = true;
-            SpawnSegmentB(); 
+            SpawnSegmentB();
         }
         if (_timerForSpawn > _timerBetweenSegment*2 && _CSpawned == false) 
         {
@@ -142,16 +143,6 @@ public class Niveau1 : MonoBehaviour
         _spawnerScript.SpawnAWaveSegment(_segmentD);
     }
 
-    public void CallWaves(int numberOfEnemy, int numberofHomeWrecker, int numberofBuzzKiller)
-    {
-        if (_spawnerScript != null)
-        {
-            _spawnerScript.StartCoroutine(_spawnerScript.SpawnAWave(numberOfEnemy, numberofHomeWrecker, numberofBuzzKiller));
-        }
-
-        _gameManager._waveStarted = true;
-    }
-
     public void NextWave()
     {
         _currentWave++;
@@ -171,46 +162,29 @@ public class Niveau1 : MonoBehaviour
                 _segmentB = _wave_1_B;
                 _segmentC = _wave_1_C;
                 _segmentD = _wave_1_D;
-                _numberOfBasicEnnemy = _numberEnemyWave1;
-                _numberOfHomeWrecker = 1;
-                _numberOfBuzzKiller = 1;
                 _gameManager._gameStarted = true;
+                _gameManager._waveStarted = true;
                 break;
             case 2:
                 _segmentA = _wave_2_A;
                 _segmentB = _wave_2_B;
                 _segmentC = _wave_2_C;
                 _segmentD = _wave_2_D;
-                _numberOfBasicEnnemy = _numberEnemyWave2;
-                _numberOfHomeWrecker = 1;
-                _numberOfBuzzKiller = 0;
                 break;
             case 3:
                 _segmentA = _wave_3_A;
                 _segmentB = _wave_3_B;
                 _segmentC = _wave_3_C;
                 _segmentD = _wave_3_D;
-                _numberOfBasicEnnemy = _numberEnemyWave3;
-                _numberOfHomeWrecker = 0;
-                _numberOfBuzzKiller = 1;
                 break;
             case 4:
                 _segmentA = _wave_4_A;
                 _segmentB = _wave_4_B;
                 _segmentC = _wave_4_C;
                 _segmentD = _wave_4_D;
-                _numberOfBasicEnnemy = _numberEnemyWave4;
-                _numberOfHomeWrecker = 1;
-                _numberOfBuzzKiller = 1;
-                break;
-            default:
-                _numberOfBasicEnnemy = _numberEnemyWave5;
-                _numberOfHomeWrecker = 2;
-                _numberOfBuzzKiller = 2;
                 break;
         }
         _startSpawning = true;
-        CallWaves(_numberOfBasicEnnemy, _numberOfHomeWrecker, _numberOfBuzzKiller);
     }
 
     public void ChangePoolSpot()

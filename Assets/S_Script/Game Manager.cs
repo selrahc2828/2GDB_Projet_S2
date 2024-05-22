@@ -13,13 +13,11 @@ public class GameManager : MonoBehaviour
     public float _SlowRangeGameManager;
     public float _SlowdownSpeedGameManager;
 
-
     [Header("Shoot Agent Parameter")]
     public float _ShootRangeGameManager;
     public int _DamageAmount;
     public float _FireRate;
     public float _maxFatigueSeconde;
-
 
     [Header("Agent Mouvement Parameter")]
     public float _SpeedAgent;
@@ -89,6 +87,7 @@ public class GameManager : MonoBehaviour
     public int _numberOfEnemyOnScreen;
     public GameObject _gameLoseCanevas;
     public GameObject _gameWinCanevas;
+    public float _timeBetweenSegment;
 
 
 

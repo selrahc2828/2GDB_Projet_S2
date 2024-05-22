@@ -21,8 +21,6 @@ public class MainMenu : MonoBehaviour
     public GameObject OptionSelectButton;
     public GameObject QuitButton;
 
-
-
     private void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
