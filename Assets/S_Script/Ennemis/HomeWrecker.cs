@@ -174,6 +174,8 @@ public class HomeWrecker : Enemy
     private void OnDestroy()
     {
         _GameManager._numberOfHomeWreckerOnScreen--;
+        _GameManager._numberOfEnemyOnScreen--;
+        _Niveau1.CheckForNextWave();
     }
     IEnumerator DelayedSearchNewDestination(float delayTime)
     {

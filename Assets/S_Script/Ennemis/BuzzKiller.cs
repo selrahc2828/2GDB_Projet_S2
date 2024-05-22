@@ -64,12 +64,14 @@ public class BuzzKiller : Enemy
                     _closestPool = pool;
                 }
             }
-            _thisAgent.SetDestination(_closestPool.transform.position);
+            _thisAgent.SetDestination(_closestPool.GetComponent<CapsuleCollider>().ClosestPoint(transform.position));
         }
     }
     private void OnDestroy()
     {
         _GameManager._numberOfBuzzKillerOnScreen--;
+        _GameManager._numberOfEnemyOnScreen--;
+        _Niveau1.CheckForNextWave();
     }
     public override void Die()
     {
