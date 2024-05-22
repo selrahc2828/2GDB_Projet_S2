@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PoolAnim : PoolScript
 {
-
     [Header("Particule")]
     public GameObject _ParticulSys;
 
