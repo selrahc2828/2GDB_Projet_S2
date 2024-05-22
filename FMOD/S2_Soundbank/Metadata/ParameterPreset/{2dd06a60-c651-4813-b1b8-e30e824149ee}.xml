@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{2dd06a60-c651-4813-b1b8-e30e824149ee}">
 		<property name="name">
-			<value>DistanceToTower</value>
+			<value>EnemyQuantity</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b674bfbb-37e5-493f-a96c-1e129d6a5b31}</destination>
@@ -12,17 +12,11 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{b0f56003-ff92-4403-b6cc-130458c15dbe}">
-		<property name="parameterType">
-			<value>10</value>
-		</property>
 		<property name="initialValue">
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
 			<value>0.61000001430511475</value>
-		</property>
-		<property name="isExposedRecursively">
-			<value>false</value>
 		</property>
 	</object>
 </objects>

@@ -260,7 +260,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{9b2e0c14-14c2-4243-9a7a-99e3044f4b79}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Bass</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{3214f7a2-6a09-4837-8500-ec31ac74179b}</destination>
@@ -318,7 +318,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{aef92739-7261-4925-acdd-7ced0bf7a397}">
 		<property name="name">
-			<value>Approaching Enemy</value>
+			<value>enemyquantity</value>
 		</property>
 		<relationship name="automators">
 			<destination>{4abd6ee7-20f2-4348-81bd-4b072b456d66}</destination>
@@ -776,7 +776,6 @@
 		<relationship name="automationPoints">
 			<destination>{7e120b2e-79d5-4a7d-883d-78a5cd5e55db}</destination>
 			<destination>{55be616b-4a5a-4673-93a2-825aee1acf0d}</destination>
-			<destination>{ececea25-3277-430d-a1c8-9ff8e46bfd7c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1ac711e8-cd9c-45ec-866c-b8dba279cee3}" />
@@ -874,10 +873,10 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-80</value>
 		</property>
 		<property name="curveShape">
-			<value>1</value>
+			<value>-0.177534834</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{55be616b-4a5a-4673-93a2-825aee1acf0d}">
@@ -885,15 +884,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{ececea25-3277-430d-a1c8-9ff8e46bfd7c}">
-		<property name="position">
-			<value>0.41999999999999998</value>
-		</property>
-		<property name="value">
-			<value>-80</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{475d34b8-d60f-45d8-bd44-ec4c7a3bfbd8}">

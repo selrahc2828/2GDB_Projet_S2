@@ -9,7 +9,6 @@ public class SoundManager : MonoBehaviour
     
     //Call scripts
     public HeathTowerScript towerLifeScript;
-    public PoolAnim poolEngage;
     public AgentToTrace activeAgentInformation;
     public GameManager gameManager;
     
@@ -21,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public float pooled;
     public float homewrecker;
     public float buzzkiller;
-    public float distanceToTower;
+    public float enemyQuanity;
     
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
@@ -37,7 +36,7 @@ public class SoundManager : MonoBehaviour
     {
         // Agents engaged
 
-        engagement = activeAgentInformation._proportionOfAgentAssigned;
+        engagement = 1 - activeAgentInformation._proportionOfAgentAssigned;
         
         // Hit Points
         
@@ -69,13 +68,23 @@ public class SoundManager : MonoBehaviour
         }
         
         //distance to tower
+
+        if (gameManager._numberOfBaseEnemyOnScreen == 0)
+        {
+            enemyQuanity = 0f;
+        }
+        else
+        {
+            enemyQuanity = 1f;
+        }
+        
         
         levelMusic.setParameterByName("Engagement", engagement);
         levelMusic.setParameterByName("Hit Points", hitPoints);
         levelMusic.setParameterByName("Pooled", pooled);
         levelMusic.setParameterByName("Homewrecker", homewrecker);
         levelMusic.setParameterByName("Buzzkiller", buzzkiller);
-        levelMusic.setParameterByName("DistanceToTower", distanceToTower);
+        levelMusic.setParameterByName("EnemyQuantity", enemyQuanity);
         
 
 

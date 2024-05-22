@@ -11327,6 +11327,18 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 196656711}
   m_SourcePrefab: {fileID: 100100000, guid: 344e29f43c65e0148902c1b96ae2317e, type: 3}
+--- !u!114 &603181411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
+    type: 3}
+  m_PrefabInstance: {fileID: 603181410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196656703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7b89e6af6ab7046a20f316646848a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &606107431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29141,6 +29153,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 379551243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1679443070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679443072}
+  - component: {fileID: 1679443071}
+  m_Layer: 0
+  m_Name: SOUNDMANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1679443071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679443070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788f1f07c8925f24bbc6262d77806fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerLifeScript: {fileID: 603181411}
+  activeAgentInformation: {fileID: 1654960972}
+  gameManager: {fileID: 1958624180}
+  engagement: 0
+  hitPoints: 0
+  pooled: 0
+  homewrecker: 0
+  buzzkiller: 0
+  enemyQuanity: 0
+--- !u!4 &1679443072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679443070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.70319, y: -108.119354, z: 205.0456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1679846215
 GameObject:
   m_ObjectHideFlags: 0
@@ -34597,6 +34662,9 @@ MonoBehaviour:
   _gameStarted: 0
   _waveStarted: 0
   _numberOfEnemyOnScreen: 0
+  _numberOfBaseEnemyOnScreen: 0
+  _numberOfBuzzKillerOnScreen: 0
+  _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
   _timeBetweenSegment: 15
@@ -39019,3 +39087,4 @@ SceneRoots:
   - {fileID: 750334734}
   - {fileID: 1654960974}
   - {fileID: 582631870}
+  - {fileID: 1679443072}
