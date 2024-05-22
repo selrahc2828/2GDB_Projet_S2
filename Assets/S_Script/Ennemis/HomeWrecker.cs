@@ -166,7 +166,6 @@ public class HomeWrecker : Enemy
                 }
             }
             Die();
-            
         }
     }
 
