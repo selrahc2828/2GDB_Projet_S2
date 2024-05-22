@@ -28531,6 +28531,8 @@ MonoBehaviour:
   _numberAgentNeeded: 0
   _parentAgent: {fileID: 383768785}
   _gameManager: {fileID: 1958624180}
+  _proportionOfAgentAssigned: 0
+  _numberTotalAgent: 0
   _AgentNumbertext: {fileID: 1907649335}
 --- !u!114 &1654960973
 MonoBehaviour:
@@ -34597,6 +34599,7 @@ MonoBehaviour:
   _numberOfEnemyOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
+  _timeBetweenSegment: 15
 --- !u!114 &1958624181
 MonoBehaviour:
   m_ObjectHideFlags: 0

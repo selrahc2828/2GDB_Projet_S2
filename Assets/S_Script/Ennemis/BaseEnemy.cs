@@ -17,6 +17,7 @@ public class BaseEnemy : Enemy
     void Start()
     {
         _GameManager._numberOfEnemyOnScreen++;
+        _GameManager._numberOfBaseEnemyOnScreen++;
 
         _MaxHealth = _GameManager._HeathBaseEnemy;
         _CurrentHealth = _MaxHealth;
@@ -30,6 +31,10 @@ public class BaseEnemy : Enemy
         _thisAgent.angularSpeed = _GameManager._AngularSpeedBaseEnemy;
 
         _thisAgent.SetDestination(_TowerToDestroy.position);
+    }
+    private void OnDestroy()
+    {
+        _GameManager._numberOfBaseEnemyOnScreen--;
     }
 
     // Update is called once per frame
