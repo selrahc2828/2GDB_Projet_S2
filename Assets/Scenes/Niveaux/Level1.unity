@@ -31003,9 +31003,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.6666667
+  m_VoxelSize: 1.3333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 990930e9101b749429ba3141a3de2205, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1658559013 stripped
 Transform:
@@ -37394,7 +37394,7 @@ MonoBehaviour:
   _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
-  _timeBetweenSegment: 15
+  _timeBetweenSegment: 5
 --- !u!114 &1958624181
 MonoBehaviour:
   m_ObjectHideFlags: 0
