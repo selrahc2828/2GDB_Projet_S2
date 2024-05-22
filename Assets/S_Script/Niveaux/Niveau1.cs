@@ -92,6 +92,7 @@ public class Niveau1 : MonoBehaviour
 
     private void Update()
     {
+        CheckForNextWave();
         _TextNumberOfWave.text = "Wave : " + _displayedWave;
         if(_startSpawning)
         {
@@ -196,8 +197,12 @@ public class Niveau1 : MonoBehaviour
         }
     }
 
-    public void CheckForNewtWave()
+    public void CheckForNextWave()
     {
+        /*
+        Debug.Log(_gameManager._numberOfEnemyOnScreen);
+        Debug.Log("L"+_gameManager._gameLose);
+        Debug.Log("D"+_DSpawned);*/
         if (_gameManager._numberOfEnemyOnScreen <= 0 && !_gameManager._gameLose && _DSpawned == true)
         {
             _ASpawned = false;

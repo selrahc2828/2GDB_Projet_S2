@@ -35,6 +35,8 @@ public class BaseEnemy : Enemy
     private void OnDestroy()
     {
         _GameManager._numberOfBaseEnemyOnScreen--;
+        _GameManager._numberOfEnemyOnScreen--;
+        _Niveau1.CheckForNextWave();
     }
 
     // Update is called once per frame

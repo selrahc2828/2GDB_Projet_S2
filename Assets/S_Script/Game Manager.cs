@@ -103,7 +103,10 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 5f;
         }
-
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            DestroyAllEnemies();
+        }
         if (!_gameLose)
         {
             _Time += Time.deltaTime;
