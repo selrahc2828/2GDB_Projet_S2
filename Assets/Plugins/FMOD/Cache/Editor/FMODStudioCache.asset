@@ -212,7 +212,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 146729
+  Length: 0
 --- !u!114 &-3382967069616227071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +308,6 @@ MonoBehaviour:
   - {fileID: -4528688591135457420}
   - {fileID: 6337445852243717988}
   - {fileID: -5399318692655804939}
-  - {fileID: 141730880966783809}
   - {fileID: 2847158094350493920}
   - {fileID: 351403183328607743}
   - {fileID: 3340523732035361329}
@@ -321,7 +320,7 @@ MonoBehaviour:
   - {fileID: 726601766596463733}
   StringsBanks:
   - {fileID: 3928691873847987531}
-  cacheTime: 638519867440620316
+  cacheTime: 638519886606097315
   cacheVersion: 131609
 --- !u!114 &26793691611817546
 MonoBehaviour:
@@ -355,34 +354,7 @@ MonoBehaviour:
   - {fileID: -3382967069616227071}
   MinDistance: 1
   MaxDistance: 20
-  Length: 17142
---- !u!114 &141730880966783809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/OST/towerEngage
-  m_EditorClassIdentifier: 
-  Path: event:/OST/towerEngage
-  Guid:
-    Data1: -1392186090
-    Data2: 1238630613
-    Data3: -141426036
-    Data4: 1324898731
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 17995
 --- !u!114 &351403183328607743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +397,7 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638519867440595146
+  lastModified: 638519886606071941
   FileSizes: []
   Exists: 1
 --- !u!114 &2847158094350493920
@@ -524,10 +496,10 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638519867440620316
+  lastModified: 638519886606097315
   FileSizes:
   - Name: 
-    Value: 1780
+    Value: 1738
   Exists: 1
 --- !u!114 &6014999584474664192
 MonoBehaviour:
@@ -596,7 +568,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 1
+  Default: 0
   ID:
     data1: 2981337647
     data2: 279194470
