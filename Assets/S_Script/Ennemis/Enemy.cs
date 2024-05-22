@@ -43,8 +43,6 @@ public class Enemy : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _initialColor;
 
-
-
     // Fonction is called in DamageToTower Script 
     public void TakeDamage(int damageAmount)
     {

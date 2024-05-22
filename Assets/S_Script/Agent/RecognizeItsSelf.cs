@@ -35,20 +35,31 @@ public class RecognizeItsSelf : MonoBehaviour
     public int _pool2ProximityValue;
     public float _pool2ProximityNormalizedValue;
     public int _pool2NeighbourLowerProximityValue;
+    public int _pool3ProximityValue;
+    public float _pool3ProximityNormalizedValue;
+    public int _pool3NeighbourLowerProximityValue;
+    public int _pool4ProximityValue;
+    public float _pool4ProximityNormalizedValue;
+    public int _pool4NeighbourLowerProximityValue;
 
     public float _proximityTimer;
     public GameObject _tower;
     private Collider[] _neighbourAgents;
     private Collider[] _pool1NeighbourAgents;
     private Collider[] _pool2NeighbourAgents;
+    private Collider[] _pool3NeighbourAgents;
+    private Collider[] _pool4NeighbourAgents;
 
 
     [Header("Variable de Pools")]
     public GameObject _GOpool1;
     public GameObject _GOpool2;
+    public GameObject _GOpool3;
+    public GameObject _GOpool4;
     public bool _pool1; //slow
-    public bool _pool2;
-    private float _poolProximity;
+    public bool _pool2; //dmg
+    public bool _pool3; //dmg
+    public bool _pool4; //dmg
 
 
     [Header("Autre")]
@@ -90,6 +101,14 @@ public class RecognizeItsSelf : MonoBehaviour
         _pool2NeighbourLowerProximityValue = -2;
         _pool2ProximityValue = -1;
         _pool2ProximityNormalizedValue = 1;
+
+        _pool3NeighbourLowerProximityValue = -2;
+        _pool3ProximityValue = -1;
+        _pool3ProximityNormalizedValue = 1;
+
+        _pool4NeighbourLowerProximityValue = -2;
+        _pool4ProximityValue = -1;
+        _pool4ProximityNormalizedValue = 1;
 
         _proximityTimer = 0;
 
@@ -158,6 +177,14 @@ public class RecognizeItsSelf : MonoBehaviour
             _pool2NeighbourLowerProximityValue = -2;
             _pool2ProximityValue = -1;
             _pool2ProximityNormalizedValue = 1;
+
+            _pool3NeighbourLowerProximityValue = -2;
+            _pool3ProximityValue = -1;
+            _pool3ProximityNormalizedValue = 1;
+
+            _pool4NeighbourLowerProximityValue = -2;
+            _pool4ProximityValue = -1;
+            _pool4ProximityNormalizedValue = 1;
             // Attendre 1 seconde
             yield return new WaitForSeconds(1f);
             // Exécuter CheckProximity()
@@ -230,6 +257,8 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         CheckPool1Proximity();
         CheckPool2Proximity();
+        CheckPool3Proximity();
+        CheckPool4Proximity();
     }
 
     public void CheckPool1Proximity()
@@ -321,6 +350,98 @@ public class RecognizeItsSelf : MonoBehaviour
         if (_pool2ProximityNormalizedValue < 0)
         {
             _pool2ProximityNormalizedValue = 1;
+        }
+    }
+    
+    public void CheckPool3Proximity()
+    {
+        if (Vector3.Distance(transform.position, _GOpool3.transform.position) <= 10 && _GOpool3.tag != "Infected")
+        {
+            _pool3ProximityValue = 0;
+        }
+        else
+        {
+            _pool3NeighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _pool3NeighbourLowerProximityValue = -2;
+            bool lowerPool3Neighbour = false;
+            foreach (Collider agentCollider in _pool3NeighbourAgents)
+            {
+                if (agentCollider.CompareTag("Agent"))
+                {
+                    int _pool3NeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._pool3ProximityValue;
+                    if (_pool3NeighbourProximityValue > -1)
+                    {
+                        if (_pool3NeighbourLowerProximityValue == -2 || _pool3NeighbourProximityValue <= _pool3NeighbourLowerProximityValue)
+                        {
+                            _pool3NeighbourLowerProximityValue = _pool3NeighbourProximityValue;
+                            lowerPool3Neighbour = true;
+                        }
+                    }
+                }
+            }
+            if (lowerPool3Neighbour)
+            {
+                _pool3ProximityValue = _pool3NeighbourLowerProximityValue + 1;
+            }
+            else
+            {
+                _pool3ProximityValue = -1;
+            }
+            //_ChainFeedbackScript.posOnLine = _pool3ProximityValue; // ligne pour le feedback lumineux
+
+        }
+
+        _pool3ProximityNormalizedValue = _pool3ProximityValue / 100f;
+
+        if (_pool3ProximityNormalizedValue < 0)
+        {
+            _pool3ProximityNormalizedValue = 1;
+        }
+    }
+
+    public void CheckPool4Proximity()
+    {
+        if (Vector3.Distance(transform.position, _GOpool4.transform.position) <= 10 && _GOpool4.tag != "Infected")
+        {
+            _pool4ProximityValue = 0;
+        }
+        else
+        {
+            _pool4NeighbourAgents = Physics.OverlapSphere(transform.position, 2);
+            _pool4NeighbourLowerProximityValue = -2;
+            bool lowerPool4Neighbour = false;
+            foreach (Collider agentCollider in _pool4NeighbourAgents)
+            {
+                if (agentCollider.CompareTag("Agent"))
+                {
+                    int _pool4NeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>()._pool4ProximityValue;
+                    if (_pool4NeighbourProximityValue > -1)
+                    {
+                        if (_pool4NeighbourLowerProximityValue == -2 || _pool4NeighbourProximityValue <= _pool4NeighbourLowerProximityValue)
+                        {
+                            _pool4NeighbourLowerProximityValue = _pool4NeighbourProximityValue;
+                            lowerPool4Neighbour = true;
+                        }
+                    }
+                }
+            }
+            if (lowerPool4Neighbour)
+            {
+                _pool4ProximityValue = _pool4NeighbourLowerProximityValue + 1;
+            }
+            else
+            {
+                _pool4ProximityValue = -1;
+            }
+            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+
+        }
+
+        _pool4ProximityNormalizedValue = _pool4ProximityValue / 100f;
+
+        if (_pool4ProximityNormalizedValue < 0)
+        {
+            _pool4ProximityNormalizedValue = 1;
         }
     }
 

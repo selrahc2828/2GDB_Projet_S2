@@ -28,6 +28,7 @@ public class BuzzKiller : Enemy
         }
 
         _GameManager._numberOfEnemyOnScreen++;
+        _GameManager._numberOfBuzzKillerOnScreen++;
 
         _MaxHealth = _GameManager._HeathBuzzKiller;
         _CurrentHealth = _MaxHealth;
@@ -63,13 +64,17 @@ public class BuzzKiller : Enemy
                     _closestPool = pool;
                 }
             }
-            _thisAgent.SetDestination(_closestPool.transform.position);
+            _thisAgent.SetDestination(_closestPool.GetComponent<MeshCollider>.ClosestPoint);
         }
     }
-
+    private void OnDestroy()
+    {
+        _GameManager._numberOfBuzzKillerOnScreen--;
+    }
     public override void Die()
     {
         _closestPool.GetComponent<PoolScript>().CheckSurrounding();
+
         base.Die();
     }
 }
