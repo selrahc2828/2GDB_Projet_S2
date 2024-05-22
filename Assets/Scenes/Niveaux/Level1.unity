@@ -28642,9 +28642,9 @@ MonoBehaviour:
     type: 3}
   _wave_4_C: {fileID: 8903530390870754048, guid: 1269e73d5f2f9a44e8ac05e1b87ab033,
     type: 3}
-  _wave_4_D: {fileID: 0}
-  _segmentA: {fileID: 8903530390870754048, guid: 1269e73d5f2f9a44e8ac05e1b87ab033,
+  _wave_4_D: {fileID: 8903530390870754048, guid: 1269e73d5f2f9a44e8ac05e1b87ab033,
     type: 3}
+  _segmentA: {fileID: 0}
   _ASpawned: 0
   _segmentB: {fileID: 0}
   _BSpawned: 0
