@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2756122981986454792}
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 2949359558403722072}
+  - component: {fileID: 8825654060386409921}
   m_Layer: 11
   m_Name: HomeWrecker
   m_TagString: AgentMechant
@@ -265,7 +266,7 @@ Transform:
   m_Children:
   - {fileID: 8361203459441120187}
   - {fileID: 7388391016215515944}
-  - {fileID: 5157762934949974719}
+  - {fileID: 7622369928099330255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2793508319794462047
@@ -386,13 +387,34 @@ MonoBehaviour:
   _meshRenderer: {fileID: 2899989185037988577}
   _deathBubblePrefab: {fileID: 7679899219145768590, guid: 1aed2a5dc46f8ee4e8f7467c5941d3be,
     type: 3}
-  _finalColor: {r: 1.7207954, g: 0, b: 0, a: 0}
+  _finalColor: {r: 0.6603774, g: 0, b: 0, a: 0}
   _initialColor: {r: 0.11320752, g: 0, b: 0, a: 0}
   _agentToTraceScript: {fileID: 0}
   _closestAgentInLineGoal: {fileID: 0}
   _currentListDestination: 0
   _tailleSegmentZigZag: 0
   _amplitudeZigZag: 0
+--- !u!95 &8825654060386409921
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be719a1d63016af4b8c97684b86a7bb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5037202296468772818
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,12 +441,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5037202296468772818}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.67, z: -1.195}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: 0.091778755, y: 0.9849148, z: 0.055000067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6018833635926120512}
+  m_Father: {fileID: 7622369928099330255}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!198 &983844123496555621
 ParticleSystem:
@@ -499,7 +521,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -509,7 +531,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1.09
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -562,7 +584,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 7.7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1058,10 +1080,10 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 6.13
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -1144,7 +1166,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.15
       mode: 0
       spread: 0
       speed:
@@ -5221,3 +5243,35 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6582385705268561002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7622369928099330255}
+  m_Layer: 0
+  m_Name: ParticulHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7622369928099330255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582385705268561002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.091778755, y: 0.73508525, z: -1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5157762934949974719}
+  m_Father: {fileID: 6018833635926120512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
