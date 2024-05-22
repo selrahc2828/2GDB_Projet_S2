@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Option : MonoBehaviour
+public class Option : MainMenu
 {
     public UnityEngine.UI.Toggle _muteSoundButton;
     public UnityEngine.UI.Slider _sliderUI;
@@ -44,10 +44,15 @@ public class Option : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("Main_Menu");
-    }
-    public void ApplyChange()
-    {
+        _PanelOption.SetActive(false);
 
+        PlayButton.SetActive(true);
+        LevelSelectButton.SetActive(true);
+        QuitButton.SetActive(true);
+        OptionSelectButton.SetActive(true);
+
+        _TraceScript.enabled = true;
+        _RendererTrail.SetActive(true);
     }
+   
 }

@@ -12,6 +12,7 @@ TagManager:
   - Maggie
   - AgentMechant
   - Tower
+  - Infected
   layers:
   - Default
   - TransparentFX

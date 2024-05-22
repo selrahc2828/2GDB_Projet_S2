@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4980c2e2-be55-4fa3-a4cc-a1ab8ca2da46}">
+		<property name="name">
+			<value>Hit Points</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b674bfbb-37e5-493f-a96c-1e129d6a5b31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e8cb3747-8006-49eb-9ba5-f40a31924fef}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e8cb3747-8006-49eb-9ba5-f40a31924fef}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.25999999046325684</value>
+		</property>
+	</object>
+</objects>
