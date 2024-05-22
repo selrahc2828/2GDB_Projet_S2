@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3c6490cc-b734-4a7e-8503-c32616622e2c}">
+		<property name="name">
+			<value>Buzzkiller</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b674bfbb-37e5-493f-a96c-1e129d6a5b31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f25f29ba-5320-4cfb-939d-1cf3b7d97729}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f25f29ba-5320-4cfb-939d-1cf3b7d97729}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.099999994039535522</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>

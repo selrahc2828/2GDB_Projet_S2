@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7a85d4f7-af7d-4629-8cb7-19e065119b71}">
+		<property name="name">
+			<value>Pooled</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b674bfbb-37e5-493f-a96c-1e129d6a5b31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fa23a407-2936-47b1-a74a-823d606356d1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fa23a407-2936-47b1-a74a-823d606356d1}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.19999998807907104</value>
+		</property>
+	</object>
+</objects>

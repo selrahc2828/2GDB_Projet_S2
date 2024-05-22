@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{fd94c7f8-bfb3-46d5-b251-e0688cb70dee}">
+		<property name="name">
+			<value>Homewrecker</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b674bfbb-37e5-493f-a96c-1e129d6a5b31}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{61a3b397-aa52-40a0-a945-8b90709249f2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{61a3b397-aa52-40a0-a945-8b90709249f2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.099999994039535522</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
