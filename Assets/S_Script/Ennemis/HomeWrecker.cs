@@ -33,6 +33,7 @@ public class HomeWrecker : Enemy
     {
         _agentStarted = false;
         _GameManager._numberOfEnemyOnScreen++;
+        _GameManager._numberOfHomeWreckerOnScreen++;
 
         _MaxHealth = _GameManager._HeathHomeWreaker;
         _CurrentHealth = _MaxHealth;
@@ -167,6 +168,11 @@ public class HomeWrecker : Enemy
             Die();
             
         }
+    }
+
+    private void OnDestroy()
+    {
+        _GameManager._numberOfHomeWreckerOnScreen--;
     }
     IEnumerator DelayedSearchNewDestination(float delayTime)
     {

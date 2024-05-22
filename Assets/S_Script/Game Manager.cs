@@ -85,6 +85,9 @@ public class GameManager : MonoBehaviour
     public bool _gameStarted;
     public bool _waveStarted;
     public int _numberOfEnemyOnScreen;
+    public int _numberOfBaseEnemyOnScreen;
+    public int _numberOfBuzzKillerOnScreen;
+    public int _numberOfHomeWreckerOnScreen;
     public GameObject _gameLoseCanevas;
     public GameObject _gameWinCanevas;
     public float _timeBetweenSegment;
