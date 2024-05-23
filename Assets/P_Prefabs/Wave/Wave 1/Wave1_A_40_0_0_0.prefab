@@ -99,7 +99,11 @@ PrefabInstance:
       value: PaterneTraitSimple (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2202325558278306740, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5831413705934060199, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 170890948318602911, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5742027452581700180, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
@@ -173,7 +177,11 @@ PrefabInstance:
       value: PaterneTraitSimple (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2202325558278306740, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5831413705934060199, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 170890948318602911, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5742027452581700180, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
@@ -247,7 +255,11 @@ PrefabInstance:
       value: PaterneTraitSimple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2202325558278306740, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5831413705934060199, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 170890948318602911, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5742027452581700180, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
@@ -321,7 +333,11 @@ PrefabInstance:
       value: PaterneTraitSimple (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2202325558278306740, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5831413705934060199, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 170890948318602911, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
+    - {fileID: 5742027452581700180, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e50b44fc0dbd746a0eb34e2f448546, type: 3}

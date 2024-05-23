@@ -39641,7 +39641,7 @@ MonoBehaviour:
   _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
-  _timeBetweenSegment: 5
+  _timeBetweenSegment: 10
 --- !u!114 &1958624181
 MonoBehaviour:
   m_ObjectHideFlags: 0

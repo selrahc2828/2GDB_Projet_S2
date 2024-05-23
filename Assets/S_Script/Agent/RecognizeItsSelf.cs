@@ -87,6 +87,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
         _ChainFeedbackScript = this.GetComponentInParent<ChainFeedBack>();
+
     }
     private void Start()
     {
@@ -145,7 +146,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
         }
 
-        if (_exaustionLevel >= 0.8f)
+        if (_exaustionLevel >= 0.9f)
         {
             _ParticulFatigue.SetActive(true);
         }
@@ -153,6 +154,15 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _ParticulFatigue.SetActive(false);
         }
+
+        //if(_aviability)
+        //{
+        //    _meshRenderer.enabled = false;
+        //}
+        //else
+        //{
+        //    _meshRenderer.enabled = true;
+        //}
 
     }
     IEnumerator ResetPositionInTimer()
