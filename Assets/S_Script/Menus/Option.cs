@@ -1,47 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class Option : MainMenu
 {
     public UnityEngine.UI.Toggle _muteSoundButton;
     public UnityEngine.UI.Slider _sliderUI;
-    public bool _mute;
-    public float _soundVolume;
+    private bool _mute;
+    public float _soundVolume = 1.0f; 
+
+    [Header("FMOD")]
+    private FMOD.Studio.Bus masterBus;
 
     private void Start()
     {
-        _sliderUI.onValueChanged.AddListener(delegate { ChangeSondVolume(); });
-        _muteSoundButton.onValueChanged.AddListener(delegate { ChangeSoundMute(); });
-    }
-    public void ChangeSoundMute()
-    {
-        _mute = _muteSoundButton.isOn;
-        if (_mute)
-        {
-            AudioListener.volume = 0.0f;
-        }
-        else
-        {
-            AudioListener.volume = 1.0f;
-        }
+        masterBus = RuntimeManager.GetBus("bus:/");
+
+        _muteSoundButton.isOn = false; 
+        _sliderUI.value = _soundVolume;
     }
 
-    public void ChangeSondVolume()
+    public void ChangeSoundVolume()
     {
+        _soundVolume = _sliderUI.value; 
 
-        // Update the sound value whenever the slider value changes
-        _soundVolume = _sliderUI.value;
-        // You can use this sound value to control the volume of your audio
-        Debug.Log("Sound Value: " + _soundVolume);
         if (!_mute)
         {
-            AudioListener.volume = _soundVolume;
+            masterBus.setVolume(_soundVolume);
         }
     }
+
     public void BackToMenu()
     {
         _PanelOption.SetActive(false);
@@ -54,5 +43,4 @@ public class Option : MainMenu
         _TraceScript.enabled = true;
         _RendererTrail.SetActive(true);
     }
-   
 }
