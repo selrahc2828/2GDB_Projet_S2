@@ -399,7 +399,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.30879685, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.11707889, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5416,7 +5416,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posOnLine: 0
-  _burstRate: 3
   burstDuration: 2
   maxEntityOnLine: 50
   burstCurve:
@@ -5481,6 +5480,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   burst: 0
   burstIntensity: {r: 0, g: 0, b: 0, a: 0}
+  _PoolSlowColor: {r: 0, g: 0, b: 0, a: 0}
+  "_PoolD\xE9gatsColor": {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &7674923304642868183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a16700baf50ac4641a7101d572ec0d4d,
