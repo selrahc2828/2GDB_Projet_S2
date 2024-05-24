@@ -462,6 +462,7 @@ public class RecognizeItsSelf : MonoBehaviour
                 {
                     _exaustionTrueLevel = 0;
                     _dictionnaireAgents[_selfAgent] = true;
+                    _TraceScript.CountNumberAgentAvailable();
                 }
             }
             else
