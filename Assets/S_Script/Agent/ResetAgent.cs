@@ -26,7 +26,7 @@ public class ResetAgent : MonoBehaviour
             // Perform the raycast
             if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
             {
-                if (!hit.collider.isTrigger && hit.collider.gameObject.CompareTag("Agent") && hit.collider.gameObject.GetComponent<RecognizeItsSelf>()._aviability)
+                if (!hit.collider.isTrigger && hit.collider.gameObject.CompareTag("Agent") && hit.collider.gameObject.GetComponent<RecognizeItsSelf>()._aviability == false)
                 {
                     List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
                     if (_itsList != null)
