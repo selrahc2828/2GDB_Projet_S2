@@ -111,6 +111,7 @@ public class AgentToTrace : MonoBehaviour
                 //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
                 _dictionnairePositionTrace.Clear();
                 _listePositionTrace.Clear();
+                CountNumberAgentAvailable();
             }
             if (Input.GetMouseButtonUp(1))
             {
@@ -144,7 +145,8 @@ public class AgentToTrace : MonoBehaviour
         _proportionOfAgentAssigned = _numberAgentAvailable / _numberTotalAgent;
 
     }
-    void CountNumberAgentAvailable()
+
+    public void CountNumberAgentAvailable()
     {
         int _numberCounted = 0;
         //Parcour du dictionnaire d'agent

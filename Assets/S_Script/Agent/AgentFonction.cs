@@ -51,7 +51,6 @@ public class AgentFonction : MonoBehaviour
     public int _initialDamageAmount;
     public float _initialFireRate;
     public float _fireRate;
-    private float time;
     public float _exaustion;
 
     private float nextFireTime = 0f;
@@ -72,7 +71,6 @@ public class AgentFonction : MonoBehaviour
 
     private void Start()
     {
-        time = 0f;
 
         // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
@@ -92,11 +90,6 @@ public class AgentFonction : MonoBehaviour
         _NavMeshAgent.angularSpeed = _GameManagerScript._AngularSpeedAgent;
         _NavMeshAgent.acceleration = _GameManagerScript._AccelerationAgent;
 
-        _mineDamage = _GameManagerScript._mineDamage;
-        _mineUsed = false;
-        _mineTimer = _GameManagerScript._mineTimer;
-        _mineRadius = _GameManagerScript._mineRadius;
-        _minePrefab = _GameManagerScript._minePrefab;
     }
 
     private void Update()
@@ -106,13 +99,11 @@ public class AgentFonction : MonoBehaviour
             _exaustion = _AgentSelfScript._exaustionLevel;
             _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
             _damageAmount = (int)Mathf.Lerp(_initialDamageAmount * 1.1f, _initialDamageAmount * 0.3f, _exaustion);
-            time += Time.deltaTime;
 
             if (currentTargetEnemy != null && _ShootEnemy == true && !IsAgentUsable(GetComponent<NavMeshAgent>()) && Time.time >= nextFireTime && _AgentSelfScript._canShoot == true)
             {
                 ShootToEnemy();
                 nextFireTime = Time.time + (1f / _fireRate);
-                time = 0;
             }
 
 
@@ -141,32 +132,8 @@ public class AgentFonction : MonoBehaviour
     }
 
 
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    // slow Enemy en trigger enter and fix it to _SlowSpeed
-    //    if (_SlowEnemy && other.CompareTag("AgentMechant"))
-    //    {
-    //        NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-    //        if (enemyAgent != null)
-    //        {
-    //            enemyAgent.speed = _slowdownSpeed;
-    //        }
-    //    }
-    //}
-
-
     private void OnTriggerExit(Collider other)
     {
-        //// reset Agent Speed when exit the trigger when _SlowEnemy is true
-        //if (!_SlowEnemy && other.CompareTag("AgentMechant"))
-        //{
-        //    NavMeshAgent enemyAgent = other.GetComponent<NavMeshAgent>();
-        //    if (enemyAgent != null)
-        //    {
-        //        enemyAgent.speed = _InitialSpeed;
-        //    }
-        //}
 
         // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
@@ -231,51 +198,6 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-    public void LayDownMine()
-    {
-        if(!_mineUsed)
-        {
-            _mineUsed = true;
-            _mineLocation = transform.position;
-            StartCoroutine(MineTicking(_mineLocation, _mineTimer, _mineRadius, _mineDamage));
-        }
-    }
-    private IEnumerator MineTicking(Vector3 position, float timer, float radius, int damage)
-    {
-
-        GameObject mine = Instantiate(_minePrefab, position, Quaternion.identity);
-        yield return new WaitForSeconds(timer);
-
-        Collider[] colliders = Physics.OverlapSphere(position, radius);
-        foreach (Collider collider in colliders)
-        {
-            if(collider.gameObject.GetComponent<Enemy>())
-            {
-                collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-            }
-        }
-        Destroy(mine);
-    }
-    
-    private IEnumerator DOT_Zone(Vector3 position, float timer, float radius, int damage)
-    {
-        float elapsedTime = 0f;
-
-        while (elapsedTime < timer)
-        {
-            Collider[] colliders = Physics.OverlapSphere(position, radius);
-            foreach (Collider collider in colliders)
-            {
-                if(collider.gameObject.GetComponent<Enemy>())
-                {
-                    collider.gameObject.GetComponent<Enemy>().TakeDamage(damage);
-                }
-            }
-
-            yield return null; // Attendre jusqu'au prochain frame
-            elapsedTime += Time.deltaTime; // Incrémenter le temps écoulé
-        }
-    }
 
     // Get the next target
     private GameObject GetNextTarget()

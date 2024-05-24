@@ -12,10 +12,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Slow Agent Parameter")]
-    public float _SlowRangeGameManager;
-    public float _SlowdownSpeedGameManager;
-
     [Header("Shoot Agent Parameter")]
     public float _ShootRangeGameManager;
     public int _DamageAmount;
@@ -60,12 +56,6 @@ public class GameManager : MonoBehaviour
     [Header("Slow System")]
     public float _slowDuration;
     public float _slowPower;
-
-    [Header("Mine System")]
-    public int _mineDamage;
-    public float _mineTimer;
-    public float _mineRadius;
-    public GameObject _minePrefab;
 
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
