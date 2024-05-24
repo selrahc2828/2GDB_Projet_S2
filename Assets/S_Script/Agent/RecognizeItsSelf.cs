@@ -113,7 +113,6 @@ public class RecognizeItsSelf : MonoBehaviour
         _pool4ProximityNormalizedValue = 1;
 
         _proximityTimer = 0;
-
         _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
@@ -454,14 +453,15 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CalculateExaustion()
     {
-
         if (_selfAgent.remainingDistance < 0.5)
         {
             if (_aviability)
             {
-                if (_exaustionTrueLevel >= 0)
+                _dictionnaireAgents = _TraceScript._dictionnaireAgent;
+                if (_exaustionTrueLevel >= 0 && _dictionnaireAgents[_selfAgent] == false)
                 {
                     _exaustionTrueLevel = 0;
+                    _dictionnaireAgents[_selfAgent] = true;
                 }
             }
             else
@@ -569,13 +569,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
-        _dictionnaireAgents = _TraceScript._dictionnaireAgent;
-        _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
-        foreach (NavMeshAgent _enemyAgent in _amIFocus)
-        {
-            //_enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
-        }
         
     }
 }

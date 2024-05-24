@@ -268,8 +268,6 @@ public class AgentToTrace : MonoBehaviour
             //si le booléen  de la position est True
             if (_value)
             {
-                //on initialise la variable distance minimum a 0
-                float _distanceMin = 0;
                 //pour chaque agent de la liste d'agent
                 for (int j = 0; j < _keysAgent.Count; j++)
                 {
@@ -280,33 +278,12 @@ public class AgentToTrace : MonoBehaviour
                     //si le booléen de l'agent est true
                     if (_agentValue)
                     {
-                        //si la variable distance n'est pas 0
-                        if (_distanceMin != 0)
-                        {
-                            //si la distance entre la position du point et le position de l'agent
-                            //est inférieur à la variable distance actuelle
-                            if (Vector3.Distance(_pointPosition, _agentPosition.transform.position) < _distanceMin)
-                            {
-                                //On remplace la variable distance par la distance qu'on viens de calculer
-                                _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
-                                //on remplace la variable de l'agent choisis par l'agent actuel
-                                _chosenAgent = _agentPosition;
-                                _chosenPosition = _agentPosition.transform.position;
-                            }
-                        }
-                        //si la variable de distance est 0
-                        else
-                        {
-                            //On remplace la variable distance par la distance qu'on viens de calculer
-                            _distanceMin = Vector3.Distance(_pointPosition, _agentPosition.transform.position);
-                            //on remplace la variable de l'agent choisis par l'agent actuel
-                            _chosenAgent = _agentPosition;
-                            _chosenPosition = _agentPosition.transform.position;
-                        }
+                        //on remplace la variable de l'agent choisis par l'agent actuel
+                        _chosenAgent = _agentPosition;
+                        _chosenPosition = _agentPosition.transform.position;
                     }
                 }
-                //Une fois tout les test effectué, la variable distance est la plus petite possible et l'agent choisi est
-                //le plus proche de cette position. Du coup on change la destination de l'agent
+                //Une fois tout les test effectué, on change la destination de l'agent
                 _chosenAgent.SetDestination(_pointPosition);
                 //On passe donc le booléen de l'agent en false, cela signale qu'il n'est plus disponible
                 _dictionnaireAgent[_chosenAgent] = false;
