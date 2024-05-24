@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class BuzzKiller : Enemy
 {
@@ -9,6 +10,7 @@ public class BuzzKiller : Enemy
     public List<GameObject> _poolList;
     public float _closestPoolDistance;
     public GameObject _closestPool;
+    public UnityEvent CheckInfectionSurrounding;
 
     public void Awake()
     {
@@ -76,7 +78,7 @@ public class BuzzKiller : Enemy
     public override void Die()
     {
         _closestPool.GetComponent<PoolScript>().CheckSurrounding();
-
+        CheckInfectionSurrounding.Invoke();
         base.Die();
     }
 }
