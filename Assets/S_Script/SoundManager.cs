@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
     
     //Transition Timer
     private float _transTimer = 0f;
-    private float _beat = 2f;
+    private float _beat = 3f;
     private bool _isTransitioning = false;
     
     void Start()
@@ -70,6 +70,7 @@ public class SoundManager : MonoBehaviour
 
         if (_transTimer >= _beat)
         {
+            _isTransitioning = false;
             songstate = 0;
             _transTimer = 0;
             Debug.Log(songstate);
@@ -90,7 +91,7 @@ public class SoundManager : MonoBehaviour
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log(songstate);
+        Debug.Log("half life"+songstate);
 
     }
 
@@ -98,27 +99,27 @@ public class SoundManager : MonoBehaviour
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log(songstate);
+        Debug.Log("enter buzz"+songstate);
     }
 
     public void ExitBuzzkill()
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log(songstate);
+        Debug.Log("exit buzz"+songstate);
     }
 
     public void EnterHomewreck()
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log(songstate);
+        Debug.Log("enter HW"+songstate);
     }
 
     public void ExitHomewreck()
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log(songstate);
+        Debug.Log("exit HW"+songstate);
     }
 }

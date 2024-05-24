@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
             _signalBuzzGoneSent = false;
             BuzzKillerPresent.Invoke();
         }
-        else
+        else if ( _numberOfEnemyOnScreen <= 0 && _signalBuzzGoneSent == false)
         {
             _signalBuzzPresentSent = false;
             _signalBuzzGoneSent = true;
@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
             _signalHomeGoneSent = false;
             HomeWreckerPresent.Invoke();
         }
-        else
+        else if (_numberOfHomeWreckerOnScreen <= 0 && _signalHomeGoneSent == false)
         {
             _signalHomePresentSent = false;
             _signalHomeGoneSent = true;
