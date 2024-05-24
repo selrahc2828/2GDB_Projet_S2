@@ -72,6 +72,7 @@ public class SoundManager : MonoBehaviour
         {
             songstate = 0;
             _transTimer = 0;
+            Debug.Log(songstate);
         }
         
         
@@ -87,29 +88,37 @@ public class SoundManager : MonoBehaviour
 
     public void halfLife()
     {
-        Debug.Log("ta mere");
         songstate = 1;
         _isTransitioning = true;
+        Debug.Log(songstate);
 
     }
 
     public void EnterBuzzkill()
     {
-        
+        songstate = 1;
+        _isTransitioning = true;
+        Debug.Log(songstate);
     }
 
     public void ExitBuzzkill()
     {
-        
+        songstate = 1;
+        _isTransitioning = true;
+        Debug.Log(songstate);
     }
 
     public void EnterHomewreck()
     {
-        
+        songstate = 1;
+        _isTransitioning = true;
+        Debug.Log(songstate);
     }
 
     public void ExitHomewreck()
     {
-        
+        songstate = 1;
+        _isTransitioning = true;
+        Debug.Log(songstate);
     }
 }
