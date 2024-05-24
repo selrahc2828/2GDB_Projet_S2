@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.Events;
 
 public class SoundManager : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class SoundManager : MonoBehaviour
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
     
-
+    //Transition Timer
+    private float _transTimer = 0f;
+    private float _beat = 2f;
+    private bool _isTransitioning = false;
     
     void Start()
     {
@@ -59,11 +63,53 @@ public class SoundManager : MonoBehaviour
         }
         
         //manage transitions
-            
+        if (_isTransitioning)
+        {
+            _transTimer += Time.deltaTime;
+        }
+
+        if (_transTimer >= _beat)
+        {
+            songstate = 0;
+            _transTimer = 0;
+        }
+        
+        
+        // set parameters
         levelMusic.setParameterByName("Hit Points", hitPoints);
         levelMusic.setParameterByName("Homewrecker", homewrecker);
         levelMusic.setParameterByName("Buzzkiller", buzzkiller);
         levelMusic.setParameterByName("Songstate", songstate);
+        
+        
+        
+    }
 
+    public void halfLife()
+    {
+        Debug.Log("ta mere");
+        songstate = 1;
+        _isTransitioning = true;
+
+    }
+
+    public void EnterBuzzkill()
+    {
+        
+    }
+
+    public void ExitBuzzkill()
+    {
+        
+    }
+
+    public void EnterHomewreck()
+    {
+        
+    }
+
+    public void ExitHomewreck()
+    {
+        
     }
 }
