@@ -70,6 +70,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private NavMeshAgent _selfAgent;
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
     public List<NavMeshAgent> _amIFocus;
+    public ParticleSystem _ParticulResetPosition;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -87,7 +88,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
         _ChainFeedbackScript = this.GetComponentInParent<ChainFeedBack>();
-
+        _ParticulResetPosition.Stop();
     }
     private void Start()
     {
@@ -155,14 +156,6 @@ public class RecognizeItsSelf : MonoBehaviour
             _ParticulFatigue.SetActive(false);
         }
 
-        //if(_aviability)
-        //{
-        //    _meshRenderer.enabled = false;
-        //}
-        //else
-        //{
-        //    _meshRenderer.enabled = true;
-        //}
 
     }
     IEnumerator ResetPositionInTimer()
@@ -305,7 +298,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool1ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool1ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool1 = _pool1ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -351,7 +344,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool2ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool2 = _pool2ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -397,7 +390,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool3ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool3ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool3 = _pool3ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -443,7 +436,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool4ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool4 = _pool4ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -559,6 +552,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         _selfAgent.SetDestination(_basePosition);
         ResetAllAgentData();
+        _ParticulResetPosition.Play();
     }
 
     public void ResetAllAgentData()
@@ -582,5 +576,6 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             //_enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
         }
+        
     }
 }
