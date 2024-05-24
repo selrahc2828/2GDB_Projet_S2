@@ -1090,6 +1090,9 @@
 		<relationship name="destination">
 			<destination>{6d8c5151-50aa-4926-b73c-641af343fc48}</destination>
 		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{15b03d64-1dce-4c86-8d7c-3d1829d187aa}</destination>
+		</relationship>
 	</object>
 	<object class="TransitionMarker" id="{bb092ca9-6e0c-4e34-bdc0-c310ea8da74c}">
 		<property name="position">
@@ -1303,6 +1306,20 @@
 			<destination>{f9882ae4-d81a-4484-a1f1-27b6be3cc2ef}</destination>
 			<destination>{ef03d4c9-dd33-4bc6-aa37-179045098095}</destination>
 			<destination>{d155c543-f87f-426e-9c29-dbbe1c085c34}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{15b03d64-1dce-4c86-8d7c-3d1829d187aa}">
+		<property name="minimum">
+			<value>0</value>
+		</property>
+		<property name="maximum">
+			<value>0</value>
+		</property>
+		<property name="isInverted">
+			<value>true</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{e8cb3747-8006-49eb-9ba5-f40a31924fef}</destination>
 		</relationship>
 	</object>
 	<object class="TransitionTimeline" id="{e781a27b-8419-4010-be0f-f09a1fb87397}">
