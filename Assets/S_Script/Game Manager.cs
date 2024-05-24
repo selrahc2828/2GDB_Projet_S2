@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -93,6 +95,14 @@ public class GameManager : MonoBehaviour
     public float _timeBetweenSegment;
 
 
+    [Header("FMOD")]
+    private FMOD.Studio.Bus masterBus;
+
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+        masterBus = RuntimeManager.GetBus("bus:/");
+    }
 
 
     private void Update()
@@ -138,6 +148,7 @@ public class GameManager : MonoBehaviour
         {
             _gameLoseCanevas.SetActive(true);
             DestroyAllEnemies();
+            masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
         else if (_gameWin) 
         {

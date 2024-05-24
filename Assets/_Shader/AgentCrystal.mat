@@ -42,16 +42,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BaseGradientPower: 0.5
+    - _BaseGradientPower: 2
     - _FresnelPower: 1.1
     - _GlitterOffset: 1
     - _NoiseRotationSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _BaseColor1: {r: 1, g: 0, b: 0, a: 1}
-    - _BaseColor2: {r: 0.27450982, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 4, g: 4, b: 4, a: 1}
+    - _BaseColor1: {r: 0.8301887, g: 0, b: 0, a: 1}
+    - _BaseColor2: {r: 0.6037736, g: 0.33321467, b: 0.33321467, a: 1}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _FresnelColor2: {r: 1, g: 0, b: 0, a: 0}
     - _GlitterColor: {r: 93.75175, g: 93.75175, b: 93.75175, a: 1}
     - _NoiseScale: {r: 10, g: 10, b: 0, a: 0}

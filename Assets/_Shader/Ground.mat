@@ -111,7 +111,7 @@ Material:
     - _Border6: 0.99
     - _BumpScale: 1
     - _CastShadows: 0
-    - _Circle1: 0.05
+    - _Circle1: 0.048
     - _Circle2: 0.1
     - _Circle3: 0.2
     - _Circle4: 0.3
@@ -141,7 +141,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Timer: 0.08
+    - _Timer: 0.05
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
@@ -149,7 +149,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 0.49019608}
+    - _Color1: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0.49019608}
     - _Color2: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0}
     - _Color3: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0}
     - _Color4: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 0}

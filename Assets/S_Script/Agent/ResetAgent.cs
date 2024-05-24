@@ -15,14 +15,14 @@ public class ResetAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!_GameManagerScript._gameLose && Input.GetMouseButtonDown(1))
+        if(!_GameManagerScript._gameLose && Input.GetMouseButton(1))
         {
             // Create a ray from the mouse cursor position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             // Create a RaycastHit variable to store information about the raycast hit
             RaycastHit hit;
-            float radius = 2.5f;
+            float radius = 2f;
             // Perform the raycast
             if (Physics.SphereCast(ray, radius, out hit, float.MaxValue, _affectedLayer))
             {

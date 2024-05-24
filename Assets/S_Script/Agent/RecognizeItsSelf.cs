@@ -70,6 +70,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private NavMeshAgent _selfAgent;
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
     public List<NavMeshAgent> _amIFocus;
+    public ParticleSystem _ParticulResetPosition;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -87,6 +88,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _TraceScript = GameObject.FindObjectOfType<AgentToTrace>();
         _AgentFonctionScript = this.GetComponentInParent<AgentFonction>();
         _ChainFeedbackScript = this.GetComponentInParent<ChainFeedBack>();
+        _ParticulResetPosition.Stop();
     }
     private void Start()
     {
@@ -111,7 +113,6 @@ public class RecognizeItsSelf : MonoBehaviour
         _pool4ProximityNormalizedValue = 1;
 
         _proximityTimer = 0;
-
         _exaustionMaxLevel = _gameManager._maxFatigueSeconde;
         _exaustionLevel = 0;
         _resetTime = _gameManager._resetTime;
@@ -145,7 +146,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
         }
 
-        if (_exaustionLevel >= 0.8f)
+        if (_exaustionLevel >= 0.9f)
         {
             _ParticulFatigue.SetActive(true);
         }
@@ -153,6 +154,7 @@ public class RecognizeItsSelf : MonoBehaviour
         {
             _ParticulFatigue.SetActive(false);
         }
+
 
     }
     IEnumerator ResetPositionInTimer()
@@ -295,7 +297,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool1ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool1ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool1 = _pool1ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -341,7 +343,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool2ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool2 = _pool2ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -387,7 +389,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool3ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool3ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool3 = _pool3ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -433,7 +435,7 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 _pool4ProximityValue = -1;
             }
-            //_ChainFeedbackScript.posOnLine = _pool2ProximityValue; // ligne pour le feedback lumineux
+            _ChainFeedbackScript.posOnLinePool4 = _pool4ProximityValue; // ligne pour le feedback lumineux
 
         }
 
@@ -451,14 +453,15 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public void CalculateExaustion()
     {
-
         if (_selfAgent.remainingDistance < 0.5)
         {
             if (_aviability)
             {
-                if (_exaustionTrueLevel >= 0)
+                _dictionnaireAgents = _TraceScript._dictionnaireAgent;
+                if (_exaustionTrueLevel >= 0 && _dictionnaireAgents[_selfAgent] == false)
                 {
                     _exaustionTrueLevel = 0;
+                    _dictionnaireAgents[_selfAgent] = true;
                 }
             }
             else
@@ -549,6 +552,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         _selfAgent.SetDestination(_basePosition);
         ResetAllAgentData();
+        _ParticulResetPosition.Play();
     }
 
     public void ResetAllAgentData()
@@ -565,12 +569,7 @@ public class RecognizeItsSelf : MonoBehaviour
         _neighbourLowerProximityValue = -2;
         _towerProximityValue = -1;
         _towerProximityNormalizedValue = 1;
-        _dictionnaireAgents = _TraceScript._dictionnaireAgent;
-        _dictionnaireAgents[_selfAgent] = true;
         _aviability = true;
-        foreach (NavMeshAgent _enemyAgent in _amIFocus)
-        {
-            //_enemyAgent.GetComponent<HomeWrecker>().SearchNewDestination();
-        }
+        
     }
 }
