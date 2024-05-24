@@ -393,6 +393,35 @@ MonoBehaviour:
   _poolList: []
   _closestPoolDistance: 0
   _closestPool: {fileID: 0}
+  CheckInfectionSurrounding:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
+          type: 3}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4110584647057801772, guid: 5699c9347e2e9d2498f6f68027dc8e0e,
+          type: 3}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4427869618226403356
 MonoBehaviour:
   m_ObjectHideFlags: 0
