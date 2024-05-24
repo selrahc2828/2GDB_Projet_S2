@@ -69,7 +69,7 @@ public class TrailMouse : MonoBehaviour
         {
             // Destroy the prefab 
             _isTracing = false;
-            //Destroy(_currentTrailRenderer.gameObject);
+            Destroy(_currentTrailRenderer.gameObject, 3f);
         }
     }
 }

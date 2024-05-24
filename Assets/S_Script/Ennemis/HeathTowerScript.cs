@@ -1,7 +1,9 @@
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HeathTowerScript : MonoBehaviour
@@ -37,6 +39,8 @@ public class HeathTowerScript : MonoBehaviour
 
     [Header("Sound")]
     public EventReference _FMODDamag;
+    public bool _signalSent = false;
+    public UnityEvent _halfHealth;
 
 
     public void Awake()
@@ -66,9 +70,14 @@ public class HeathTowerScript : MonoBehaviour
         // _HealtHp.text = "HP : " + _CurrentHealth;
 
         // DEFEAT
-        if (_CurrentHealth <= 0 )
+        if (_CurrentHealth <= 0)
         {
             _GameManagerScript._gameLose = true;
+        }
+        if (_CurrentHealth < _MaxHealth/2 && _signalSent==false)
+        {
+            _signalSent = true;
+            _halfHealth.Invoke();
         }
 
         if (_CurrentHealth <= 400f)
@@ -120,7 +129,7 @@ public class HeathTowerScript : MonoBehaviour
 
         if (_CurrentHealth <= 0)
         {
-            lerpedColor = _finalColor; 
+            lerpedColor = _finalColor;
         }
         else
         {
@@ -136,5 +145,5 @@ public class HeathTowerScript : MonoBehaviour
         _meshRenderer3.materials[1].SetColor("_Color", lerpedColor);
 
         _AnimationHP.SetFloat("Blend", healthPercentage);
-    }    
+    }
 }

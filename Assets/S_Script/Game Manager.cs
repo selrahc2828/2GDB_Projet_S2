@@ -1,9 +1,12 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -93,6 +96,23 @@ public class GameManager : MonoBehaviour
     public float _timeBetweenSegment;
 
 
+    [Header("FMOD")]
+    private FMOD.Studio.Bus masterBus;
+    public UnityEvent BuzzKillerPresent;
+    public bool _signalBuzzPresentSent;
+    public UnityEvent BuzzKillerGone;
+    public bool _signalBuzzGoneSent;
+    public UnityEvent HomeWreckerPresent;
+    public bool _signalHomePresentSent;
+    public UnityEvent HomeWreckerGone;
+    public bool _signalHomeGoneSent;
+
+
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+        masterBus = RuntimeManager.GetBus("bus:/");
+    }
 
 
     private void Update()
@@ -105,7 +125,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            DestroyAllEnemies();
+            DestroyAllEnemies();//cheat
         }
         if (!_gameLose)
         {
@@ -115,6 +135,31 @@ public class GameManager : MonoBehaviour
         _TotalTime.text = "Total time : " + Mathf.Floor(_Time / 60f).ToString("00") + " : " + (_Time % 60).ToString("00");
         _TotalWave.text = "Total Wave : " + _LevelWaveCheck._displayedWave.ToString();
 
+        if(_numberOfBuzzKillerOnScreen > 0 && _signalBuzzPresentSent == false)
+        {
+            _signalBuzzPresentSent = true;
+            _signalBuzzGoneSent = false;
+            BuzzKillerPresent.Invoke();
+        }
+        else if ( _numberOfEnemyOnScreen <= 0 && _signalBuzzGoneSent == false)
+        {
+            _signalBuzzPresentSent = false;
+            _signalBuzzGoneSent = true;
+            BuzzKillerGone.Invoke();
+        }
+        
+        if(_numberOfHomeWreckerOnScreen > 0 && _signalHomePresentSent == false)
+        {
+            _signalHomePresentSent = true;
+            _signalHomeGoneSent = false;
+            HomeWreckerPresent.Invoke();
+        }
+        else if (_numberOfHomeWreckerOnScreen <= 0 && _signalHomeGoneSent == false)
+        {
+            _signalHomePresentSent = false;
+            _signalHomeGoneSent = true;
+            HomeWreckerGone.Invoke();
+        }
     }
 
     public void IncreaseEnemyKilledCount()
@@ -131,20 +176,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void CheckIfGameIsLoseOrWin()
     {
         if (_gameLose)
         {
             _gameLoseCanevas.SetActive(true);
             DestroyAllEnemies();
+            masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
         else if (_gameWin) 
         {
             _gameWinCanevas.SetActive(true);
         }
     }
-
 
     private void DestroyAllEnemies()
     {

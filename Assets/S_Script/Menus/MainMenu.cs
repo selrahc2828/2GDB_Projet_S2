@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,15 +22,28 @@ public class MainMenu : MonoBehaviour
     public GameObject OptionSelectButton;
     public GameObject QuitButton;
 
+    [Header("FMOD")]
+    private FMOD.Studio.Bus masterBus;
+
     private void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
     }
+
+    private void Start()
+    {
+        masterBus = RuntimeManager.GetBus("bus:/");
+    }
+
     public void NewGame()
     {
         SceneManager.LoadScene("Level1");
         _GameManagerScript._gameLose = false;
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
+
+
+
     public void LevelSelect()
     {
         _PanelLevelSelec.SetActive(true);
