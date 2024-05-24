@@ -31618,6 +31618,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 872624247423615908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1600158462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
+    type: 3}
+  m_PrefabInstance: {fileID: 872624247423615908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600158458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da60f5a8a876dd749974447ff2578285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1600726009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674923304642868183, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -39751,7 +39763,7 @@ MonoBehaviour:
   _SlowRangeGameManager: 13
   _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
-  _DamageAmount: 5
+  _DamageAmount: 50
   _FireRate: 2
   _maxFatigueSeconde: 15
   _SpeedAgent: 16
@@ -39806,7 +39818,55 @@ MonoBehaviour:
   _signalBuzzPresentSent: 0
   BuzzKillerGone:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1600158462}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1222381085}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 268485680}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 182152333}
+        m_TargetAssemblyTypeName: PoolScript, Assembly-CSharp
+        m_MethodName: CheckSurrounding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _signalBuzzGoneSent: 0
   HomeWreckerPresent:
     m_PersistentCalls:
@@ -43373,6 +43433,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1509839071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2105761138
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4308968867366325615, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_Name
+      value: BuzzKiller (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 76.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.30594254
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018833635926120512, guid: be6b41eb1eb3b0d4894a8303621d6b88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be6b41eb1eb3b0d4894a8303621d6b88, type: 3}
 --- !u!1001 &2109008466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44879,3 +45007,4 @@ SceneRoots:
   - {fileID: 1654960974}
   - {fileID: 582631870}
   - {fileID: 1679443072}
+  - {fileID: 2105761138}

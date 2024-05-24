@@ -78,7 +78,6 @@ public class BuzzKiller : Enemy
     public override void Die()
     {
         _closestPool.GetComponent<PoolScript>().CheckSurrounding();
-        CheckInfectionSurrounding.Invoke();
         base.Die();
     }
 }
