@@ -74,7 +74,7 @@ public class HeathTowerScript : MonoBehaviour
         {
             _GameManagerScript._gameLose = true;
         }
-        if (_CurrentHealth < _MaxHealth/2 && _signalSent)
+        if (_CurrentHealth < _MaxHealth/2 && _signalSent==false)
         {
             _signalSent = true;
             _halfHealth.Invoke();
