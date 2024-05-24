@@ -18,6 +18,11 @@ public class PoolScript : MonoBehaviour
     private bool _isTransitioning = false;
     private bool _previousInfectedState = false;
 
+    private void Start()
+    {
+        _isTransitioning = false;
+    }
+
 
     public void CheckSurrounding()
     {
