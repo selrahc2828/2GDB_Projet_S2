@@ -121,19 +121,6 @@ public class AgentToTrace : MonoBehaviour
         }
     }
 
-    //outil de debug
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        foreach (Vector3 _position in _listePositionTrace)
-        {
-            Gizmos.DrawWireSphere(_position, 5);
-            Gizmos.DrawWireSphere(_position, 0.5f);
-        }
-    }*/
-
-
     IEnumerator DeleteWithDelay(List<Vector3> _liste)
     {
         yield return new WaitForSeconds(10f);
