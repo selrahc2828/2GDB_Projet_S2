@@ -52,7 +52,6 @@ public class PoolScript : MonoBehaviour
 
     private IEnumerator StartColorTransition()
     {
-        
 
         float transitionDuration = 1.0f;
         float startTime = Time.time;
@@ -73,8 +72,5 @@ public class PoolScript : MonoBehaviour
 
             yield return null;
         }
-
-       
     }
-
 }
