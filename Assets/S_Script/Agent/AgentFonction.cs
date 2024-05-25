@@ -169,6 +169,7 @@ public class AgentFonction : MonoBehaviour
                 #region Damage And Effect To Enemies
                 // ------ All this part to damage the enemy ------
                 Enemy _Enemy = hit.collider.GetComponent<Enemy>();
+                
 
                 Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
 

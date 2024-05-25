@@ -31,6 +31,8 @@ public class BaseEnemy : Enemy
         _thisAgent.angularSpeed = _GameManager._AngularSpeedBaseEnemy;
 
         _thisAgent.SetDestination(_TowerToDestroy.position);
+
+        _EnemyAnimator = GetComponent<Animator>();
     }
     private void OnDestroy()
     {

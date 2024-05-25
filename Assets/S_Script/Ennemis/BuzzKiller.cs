@@ -45,6 +45,8 @@ public class BuzzKiller : Enemy
 
         _closestPoolDistance = float.MaxValue;
         SeekPool();
+
+        _EnemyAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

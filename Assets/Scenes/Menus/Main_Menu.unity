@@ -18729,7 +18729,6 @@ MonoBehaviour:
   LevelSelectButton: {fileID: 60503477}
   OptionSelectButton: {fileID: 1408520381}
   QuitButton: {fileID: 1433634242}
-  _muteSoundButton: {fileID: 0}
   _sliderUI: {fileID: 1962474034}
   _soundVolume: 1
 --- !u!4 &1022068501 stripped

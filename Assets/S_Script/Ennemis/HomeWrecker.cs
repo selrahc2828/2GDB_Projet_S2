@@ -52,6 +52,8 @@ public class HomeWrecker : Enemy
 
         _mouseButtonUp = true;
         StartCoroutine(DelayedSearchNewDestination(0.5f));
+
+        _EnemyAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
