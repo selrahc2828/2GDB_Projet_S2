@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         masterBus = RuntimeManager.GetBus("bus:/");
+        _gameLoseCanevas.transform.localScale = new Vector3(1, 0, 1);
     }
 
 
@@ -173,6 +174,7 @@ public class GameManager : MonoBehaviour
             _gameLoseCanevas.SetActive(true);
             DestroyAllEnemies();
             masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            StartCoroutine(ScaleUpPanel(_gameLoseCanevas.transform));
         }
         else if (_gameWin) 
         {
@@ -194,5 +196,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator ScaleUpPanel(Transform panelTransform)
+    {
+        float duration = 0.5f; 
+        float elapsedTime = 0f;
+        Vector3 initialScale = new Vector3(1, 0, 1);
+        Vector3 finalScale = new Vector3(1, 1, 1);
+
+        while (elapsedTime < duration)
+        {
+            panelTransform.localScale = Vector3.Lerp(initialScale, finalScale, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        panelTransform.localScale = finalScale;
+    }
 
 }
