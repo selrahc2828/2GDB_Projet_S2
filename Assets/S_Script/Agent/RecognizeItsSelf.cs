@@ -120,24 +120,25 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Time.time >= _nextExecutionTime && check == true)
         {
             check = false;
-            CheckProximityFunctions();
+            //CheckProximityFunctions();
         }
-
+        */
         if (!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
-
+            /*
             if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
             {
                 check = true;
                 CheckProximityFunctions();
                 _nextExecutionTime = Time.time + 1f;
 
-            }
+            }*/
         }
 
         if (_exaustionLevel >= 0.9f)
@@ -165,7 +166,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         if (!_aviability)
         {
-            /*
+            
             _towerProximityValue = -1;
             _towerProximityNormalizedValue = 1;
 
@@ -180,7 +181,7 @@ public class RecognizeItsSelf : MonoBehaviour
 
             _pool4ProximityValue = -1;
             _pool4ProximityNormalizedValue = 1;
-            */
+            
 
             CheckPoolsProximity();
 
@@ -265,6 +266,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
         _towerProximityValue = GetPoolProximity(_tower, hits);
         _pool1ProximityValue = GetPoolProximity(_GOpool1, hits);
+        if( _pool1ProximityValue > 300)
+        {
+            _pool1ProximityValue = -1;
+        }
         _pool2ProximityValue = GetPoolProximity(_GOpool2, hits);
         _pool3ProximityValue = GetPoolProximity(_GOpool3, hits);
         _pool4ProximityValue = GetPoolProximity(_GOpool4, hits);
@@ -298,7 +303,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             if(getPoolProximityNumber(pool) > -1)
             {
-                if (lowerNeighbourFound && neighbourProximityValue < getPoolProximityNumber(pool))
+                if (lowerNeighbourFound && neighbourProximityValue < getPoolProximityNumber(pool) && neighbourProximityValue >= -1)
                 {
                     proximityValue = neighbourProximityValue + 1;
                 }
@@ -307,7 +312,7 @@ public class RecognizeItsSelf : MonoBehaviour
                     proximityValue = -1;
                 }
             }
-            else if (lowerNeighbourFound)//ptetre le reset nique tout
+            else if (lowerNeighbourFound && neighbourProximityValue >= -1)//ptetre le reset nique tout
             {
                 proximityValue = neighbourProximityValue + 1;
             }
