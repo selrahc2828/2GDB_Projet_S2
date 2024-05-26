@@ -44368,6 +44368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273766024043299433, guid: 4f407417de5779842bc580a8552cc83e,
         type: 3}
+      propertyPath: _isInTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273766024043299433, guid: 4f407417de5779842bc580a8552cc83e,
+        type: 3}
       propertyPath: _BaseMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 2b0aec048397c784cbc447978a38e3b5, type: 2}
@@ -44421,6 +44426,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc2941e9326144699d7b4bb166a591, type: 2}
+    - target: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
+        type: 3}
+      propertyPath: _infected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
         type: 3}
       propertyPath: _meshRenderer
