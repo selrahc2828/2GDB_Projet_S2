@@ -266,10 +266,6 @@ public class RecognizeItsSelf : MonoBehaviour
 
         _towerProximityValue = GetPoolProximity(_tower, hits);
         _pool1ProximityValue = GetPoolProximity(_GOpool1, hits);
-        if( _pool1ProximityValue > 300)
-        {
-            _pool1ProximityValue = -1;
-        }
         _pool2ProximityValue = GetPoolProximity(_GOpool2, hits);
         _pool3ProximityValue = GetPoolProximity(_GOpool3, hits);
         _pool4ProximityValue = GetPoolProximity(_GOpool4, hits);
@@ -323,7 +319,10 @@ public class RecognizeItsSelf : MonoBehaviour
             _ChainFeedbackScript.SetPosOnLine(pool, proximityValue);// ligne pour le feedback lumineux
         }
         SetPoolNormalizedValue(pool, proximityValue);
-
+        if (proximityValue > 300)
+        {
+            proximityValue = -1;
+        }
         return proximityValue;
     }
 
