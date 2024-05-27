@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Option : MainMenu
 {
-    public UnityEngine.UI.Toggle _muteSoundButton;
+
     public UnityEngine.UI.Slider _sliderUI;
     private bool _mute;
     public float _soundVolume = 1.0f; 
@@ -17,7 +17,7 @@ public class Option : MainMenu
     {
         masterBus = RuntimeManager.GetBus("bus:/");
 
-        _muteSoundButton.isOn = false; 
+        
         _sliderUI.value = _soundVolume;
     }
 

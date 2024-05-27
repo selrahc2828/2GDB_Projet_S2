@@ -43,6 +43,10 @@ public class Enemy : MonoBehaviour
     [ColorUsage(false, true)]
     public Color _initialColor;
 
+
+    public Animator _EnemyAnimator;
+
+
     // Fonction is called in DamageToTower Script 
     public void TakeDamage(int damageAmount)
     {
@@ -69,11 +73,14 @@ public class Enemy : MonoBehaviour
         {
             _thisAgent.speed = _slowPower * _thisAgentBaseSpeed;
             SlowedOutlineColor();
+            _EnemyAnimator.SetFloat("Speed", 0.5f);
+            
         }
         else
         {
             _thisAgent.speed = _thisAgentBaseSpeed;
             InitialOutlineColor();
+            _EnemyAnimator.SetFloat("Speed", 1f);
         }
     }
 

@@ -15,8 +15,6 @@ public class FeedBack : MonoBehaviour
     public float _OffSetX;
     public float _OffSetY;
 
-
-
     [Header("BubbleParameter")]
     public float _scaleDuration = 0.5f;
     public float _destroyDelay = 0.2f;
@@ -86,5 +84,4 @@ public class FeedBack : MonoBehaviour
         Destroy(bubbleTransform.gameObject);
     }
     #endregion
-
 }

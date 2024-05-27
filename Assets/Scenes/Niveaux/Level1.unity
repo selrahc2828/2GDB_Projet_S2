@@ -14921,14 +14921,14 @@ RectTransform:
   m_GameObject: {fileID: 698152937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49789625, y: 0.49789625, z: 0.49789625}
+  m_LocalScale: {x: 0.7749755, y: 0.7749755, z: 0.7749755}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1088441915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -351.7, y: 116.2}
+  m_AnchoredPosition: {x: -403.2, y: 65.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &700548299 stripped
@@ -17366,14 +17366,14 @@ RectTransform:
   m_GameObject: {fileID: 831327453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5565, y: 1.5565, z: 1.5565}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1088441915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.6, y: 167.0833}
+  m_AnchoredPosition: {x: -262.2, y: 140.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831327455
@@ -19137,7 +19137,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.6556604, b: 0.6556604, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.47798735, b: 0.47798735, a: 1}
     m_PressedColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -21932,7 +21932,7 @@ PrefabInstance:
     - target: {fileID: 7054240137893441964, guid: 5699c9347e2e9d2498f6f68027dc8e0e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43
+      value: -36.62
       objectReference: {fileID: 0}
     - target: {fileID: 7054240137893441964, guid: 5699c9347e2e9d2498f6f68027dc8e0e,
         type: 3}
@@ -21942,7 +21942,7 @@ PrefabInstance:
     - target: {fileID: 7054240137893441964, guid: 5699c9347e2e9d2498f6f68027dc8e0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 62.8
+      value: 26.56
       objectReference: {fileID: 0}
     - target: {fileID: 7054240137893441964, guid: 5699c9347e2e9d2498f6f68027dc8e0e,
         type: 3}
@@ -32597,7 +32597,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.6556604, b: 0.6556604, a: 1}
+    m_HighlightedColor: {r: 0.33515108, g: 0.9245283, b: 0.31108338, a: 1}
     m_PressedColor: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -32937,7 +32937,7 @@ MonoBehaviour:
   _AgentUsed: {fileID: 698152938}
   _deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
     type: 3}
-  _OffSetX: 220
+  _OffSetX: 320
   _OffSetY: -25
   _scaleDuration: 0.5
   _destroyDelay: 0.2
@@ -32955,6 +32955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _GameManagerScript: {fileID: 0}
+  _AgentToTrace: {fileID: 0}
   _affectedLayer:
     serializedVersion: 2
     m_Bits: 3072
@@ -38640,14 +38641,14 @@ RectTransform:
   m_GameObject: {fileID: 1907649333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3088919, y: 1.3088919, z: 1.3088919}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1088441915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.6, y: 196.5}
+  m_AnchoredPosition: {x: -283, y: 188.84998}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907649335
@@ -39802,11 +39803,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4ee61505d45cd4abe7c84fa63714d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SlowRangeGameManager: 13
-  _SlowdownSpeedGameManager: 2
   _ShootRangeGameManager: 10
-  _DamageAmount: 50
-  _FireRate: 2
+  _DamageAmount: 3
+  _FireRate: 1
   _maxFatigueSeconde: 15
   _SpeedAgent: 16
   _AngularSpeedAgent: 180
@@ -39817,10 +39816,10 @@ MonoBehaviour:
   _HeathHomeWreaker: 400
   _HeathBuzzKiller: 800
   _SpeedBaseEnemy: 5
-  _SpeedHomeWreaker: 20
+  _SpeedHomeWreaker: 30
   _SpeedBuzzKiller: 5
   _AngularSpeedBaseEnemy: 30
-  _AngularSpeedHomeWreaker: 300
+  _AngularSpeedHomeWreaker: 360
   _AngularSpeedBuzzKiller: 30
   _AccelerationBaseEnemy: 180
   _AccelerationHomeWreaker: 180
@@ -39828,13 +39827,8 @@ MonoBehaviour:
   _tailleSegmentZigZagHomeWrecker: 15
   _amplitudeZigZagHomeWrecker: 10
   _DamageAmoutToAgent: 0
-  _slowDuration: 5
-  _slowPower: 0.2
-  _mineDamage: 0
-  _mineTimer: 1
-  _mineRadius: 150
-  _minePrefab: {fileID: 5671154418134921842, guid: fbc738bc8fcc31344b18b8430514d45d,
-    type: 3}
+  _slowDuration: 2
+  _slowPower: 0.5
   _HeathTower: 500
   _LevelWaveCheck: {fileID: 1654960975}
   _NumberOfEnemyKilled: 0
@@ -41752,14 +41746,14 @@ RectTransform:
   m_GameObject: {fileID: 2026522284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5565, y: 1.5565, z: 1.5565}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1088441915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.6, y: 143.75}
+  m_AnchoredPosition: {x: -262.8, y: 114}
   m_SizeDelta: {x: 160, y: 17.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2026522287
@@ -44374,6 +44368,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273766024043299433, guid: 4f407417de5779842bc580a8552cc83e,
         type: 3}
+      propertyPath: _isInTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273766024043299433, guid: 4f407417de5779842bc580a8552cc83e,
+        type: 3}
       propertyPath: _BaseMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 2b0aec048397c784cbc447978a38e3b5, type: 2}
@@ -44427,6 +44426,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc2941e9326144699d7b4bb166a591, type: 2}
+    - target: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
+        type: 3}
+      propertyPath: _infected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2058521897298035472, guid: 4f407417de5779842bc580a8552cc83e,
         type: 3}
       propertyPath: _meshRenderer
