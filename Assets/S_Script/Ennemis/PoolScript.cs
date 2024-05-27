@@ -15,7 +15,7 @@ public class PoolScript : MonoBehaviour
     public MeshRenderer _meshRenderer;
     public MeshRenderer _meshRenderer2;
     
-    private bool _isTransitioning = false;
+    public bool _isTransitioning = false;
     private bool _previousInfectedState = false;
 
 

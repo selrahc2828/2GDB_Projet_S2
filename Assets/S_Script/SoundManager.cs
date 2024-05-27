@@ -27,7 +27,7 @@ public class SoundManager : MonoBehaviour
     
     //Transition Timer
     private float _transTimer = 0f;
-    private float _beat = 3f;
+    private float _beat = 2f;
     private bool _isTransitioning = false;
     
     void Start()
@@ -68,7 +68,7 @@ public class SoundManager : MonoBehaviour
             _transTimer += Time.deltaTime;
         }
 
-        if (_transTimer >= _beat)
+        if (_transTimer >= _beat & _transTimer < 0)
         {
             _isTransitioning = false;
             songstate = 0;
