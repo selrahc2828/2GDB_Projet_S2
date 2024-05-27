@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _HealtTower: {fileID: 0}
   _Tower: {fileID: 0}
-  _damageAmount: 10
+  _damageAmount: 5
   _cooldown: 1
 --- !u!114 &5897393375208106164
 MonoBehaviour:
