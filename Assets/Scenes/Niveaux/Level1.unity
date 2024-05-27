@@ -17373,7 +17373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262.2, y: 140.5}
+  m_AnchoredPosition: {x: -263.8, y: 146.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831327455
@@ -38657,7 +38657,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.3088919, y: 1.3088919, z: 1.3088919}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1088441915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -39862,7 +39862,7 @@ MonoBehaviour:
   _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
-  _timeBetweenSegment: 10
+  _timeBetweenSegment: 15
   BuzzKillerPresent:
     m_PersistentCalls:
       m_Calls:
@@ -41768,7 +41768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262.8, y: 114}
+  m_AnchoredPosition: {x: -264, y: 113.3}
   m_SizeDelta: {x: 160, y: 17.3717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2026522287
