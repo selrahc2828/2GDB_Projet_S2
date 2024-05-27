@@ -88,6 +88,7 @@ public class Niveau1 : MonoBehaviour
         _numberOfWave = 5;
         _timerForSpawn = 0;
         NextWave();
+        ChangePoolSpot();
     }
 
     private void Update()
@@ -154,7 +155,7 @@ public class Niveau1 : MonoBehaviour
         _displayedWave++;
 
         wavesSinceLastChange++;
-        if (wavesSinceLastChange >= 3)
+        if (wavesSinceLastChange >= 1)
         {
             ChangePoolSpot();
             wavesSinceLastChange = 0;
@@ -194,18 +195,37 @@ public class Niveau1 : MonoBehaviour
 
     public void ChangePoolSpot()
     {
-        foreach (GameObject _poolGameObject in _poolList)
+        List<Transform> availableSpots = new List<Transform>(_spotList);
+
+        foreach (GameObject poolGameObject in _poolList)
         {
-            StartCoroutine(ScaleDownAndChangePosition(_poolGameObject));
+            StartCoroutine(ScaleDownAndChangePosition(poolGameObject, availableSpots)); 
         }
     }
 
-    private IEnumerator ScaleDownAndChangePosition(GameObject pool)
+    private IEnumerator ScaleDownAndChangePosition(GameObject pool, List<Transform> availableSpots)
     {
         yield return StartCoroutine(ScaleDownPool(pool));
-        int SpotNumber = Random.Range(0, _spotList.Count);
-        pool.transform.position = _spotList[SpotNumber].position;
+        int SpotNumber = GetUnusedSpotIndex(availableSpots);
+
+        if (SpotNumber != -1)
+        {
+            pool.transform.position = availableSpots[SpotNumber].position;
+            availableSpots.RemoveAt(SpotNumber); 
+        }
+
         StartCoroutine(ScaleUpPool(pool));
+    }
+
+    private int GetUnusedSpotIndex(List<Transform> availableSpots)
+    {
+        if (availableSpots.Count == 0)
+        {
+            return -1; 
+        }
+
+        int SpotNumber = Random.Range(0, availableSpots.Count);
+        return SpotNumber;
     }
 
     private IEnumerator ScaleDownPool(GameObject pool)
