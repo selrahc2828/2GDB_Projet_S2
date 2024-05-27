@@ -67,6 +67,7 @@ public class RecognizeItsSelf : MonoBehaviour
     private Dictionary<NavMeshAgent, bool> _dictionnaireAgents;
     public List<NavMeshAgent> _amIFocus;
     public ParticleSystem _ParticulResetPosition;
+    public bool check;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -119,30 +120,25 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= _nextExecutionTime)
+        /*
+        if (Time.time >= _nextExecutionTime && check == true)
         {
-            _nextExecutionTime = Time.time + 1f;
-            CheckProximityFunctions();
+            check = false;
+            //CheckProximityFunctions();
         }
-
-
+        */
         if (!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
-            _proximityTimer += Time.deltaTime;
-            if (_proximityTimer > 1)
-            {
-                _nextExecutionTime = 0f;
-
-                _proximityTimer = 0;
-            }
-
+            /*
             if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
             {
-                _nextExecutionTime = 0f;
-             
-            }
+                check = true;
+                CheckProximityFunctions();
+                _nextExecutionTime = Time.time + 1f;
+
+            }*/
         }
 
         if (_exaustionLevel >= 0.9f)
@@ -164,10 +160,13 @@ public class RecognizeItsSelf : MonoBehaviour
         ResetPosition();
     }
 
+    #region Pools
+
     private void CheckProximityFunctions()
     {
         if (!_aviability)
         {
+            
             _towerProximityValue = -1;
             _towerProximityNormalizedValue = 1;
 
@@ -182,7 +181,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
             _pool4ProximityValue = -1;
             _pool4ProximityNormalizedValue = 1;
+            
+
             CheckPoolsProximity();
+
         }
     }
 
@@ -257,7 +259,6 @@ public class RecognizeItsSelf : MonoBehaviour
         }
     }
 
-    #region Pools
 
     public void CheckPoolsProximity()
     {
@@ -265,6 +266,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
         _towerProximityValue = GetPoolProximity(_tower, hits);
         _pool1ProximityValue = GetPoolProximity(_GOpool1, hits);
+        if( _pool1ProximityValue > 300)
+        {
+            _pool1ProximityValue = -1;
+        }
         _pool2ProximityValue = GetPoolProximity(_GOpool2, hits);
         _pool3ProximityValue = GetPoolProximity(_GOpool3, hits);
         _pool4ProximityValue = GetPoolProximity(_GOpool4, hits);
@@ -272,10 +277,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
     public int GetPoolProximity(GameObject pool, Collider[] hits)
     {
-        int poolProximityValue = 0;
+        int proximityValue = -1;
         if (Vector3.Distance(transform.position, pool.transform.position) <= 10 && pool.tag != "Infected")
         {
-            poolProximityValue = 0;
+            proximityValue = 0;
         }
         else
         {
@@ -288,7 +293,7 @@ public class RecognizeItsSelf : MonoBehaviour
                     int _thisNeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>().getPoolProximityNumber(pool);
                     if (_thisNeighbourProximityValue > -1)
                     {
-                        if (neighbourProximityValue == -2 || _thisNeighbourProximityValue <= neighbourProximityValue)
+                        if (neighbourProximityValue == -2 || _thisNeighbourProximityValue <= neighbourProximityValue)//c'est ptetre là // c'est pteter encore là mais pas pareil
                         {
                             neighbourProximityValue = _thisNeighbourProximityValue;
                             lowerNeighbourFound = true;
@@ -296,19 +301,30 @@ public class RecognizeItsSelf : MonoBehaviour
                     }
                 }
             }
-            if (lowerNeighbourFound)
+            if(getPoolProximityNumber(pool) > -1)
             {
-                poolProximityValue = neighbourProximityValue + 1;
+                if (lowerNeighbourFound && neighbourProximityValue < getPoolProximityNumber(pool) && neighbourProximityValue >= -1)
+                {
+                    proximityValue = neighbourProximityValue + 1;
+                }
+                else
+                {
+                    proximityValue = -1;
+                }
+            }
+            else if (lowerNeighbourFound && neighbourProximityValue >= -1)//ptetre le reset nique tout
+            {
+                proximityValue = neighbourProximityValue + 1;
             }
             else
             {
-                poolProximityValue = -1;
+                proximityValue = -1;
             }
-            _ChainFeedbackScript.SetPosOnLine(pool, poolProximityValue);// ligne pour le feedback lumineux
+            _ChainFeedbackScript.SetPosOnLine(pool, proximityValue);// ligne pour le feedback lumineux
         }
-        SetPoolNormalizedValue(pool, poolProximityValue);
+        SetPoolNormalizedValue(pool, proximityValue);
 
-        return poolProximityValue;
+        return proximityValue;
     }
 
     #endregion Pools
@@ -332,7 +348,9 @@ public class RecognizeItsSelf : MonoBehaviour
             else
             {
                 _canShoot = true;
-                CheckPoolsProximity();
+                check = true;
+                CheckProximityFunctions();
+                _nextExecutionTime = Time.time + 1f;
                 if (_exaustionTrueLevel <= _exaustionMaxLevel)
                 {
                     _exaustionTrueLevel += Time.deltaTime * _towerProximityNormalizedValue;
