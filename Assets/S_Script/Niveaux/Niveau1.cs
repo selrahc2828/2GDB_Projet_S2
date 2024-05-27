@@ -157,7 +157,7 @@ public class Niveau1 : MonoBehaviour
         _displayedWave++;
 
         wavesSinceLastChange++;
-        if (wavesSinceLastChange >= 2)
+        if (wavesSinceLastChange >= 3)
         {
             ChangePoolSpot();
             wavesSinceLastChange = 0;
