@@ -88,7 +88,6 @@ public class Niveau1 : MonoBehaviour
         _numberOfWave = 5;
         _timerForSpawn = 0;
         NextWave();
-        ChangePoolSpot();
     }
 
     private void Update()
@@ -155,7 +154,7 @@ public class Niveau1 : MonoBehaviour
         _displayedWave++;
 
         wavesSinceLastChange++;
-        if (wavesSinceLastChange >= 1)
+        if (wavesSinceLastChange >= 3)
         {
             ChangePoolSpot();
             wavesSinceLastChange = 0;
