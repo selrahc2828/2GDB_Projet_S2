@@ -23,7 +23,7 @@ public class AgentFonction : MonoBehaviour
 
     [Header("RangeShoot And Slow")]
     //public float _SlowRange;
-    public float _ShootRange; 
+    public float _ShootRange;
 
 
     [Header("Choise Comportement")]
@@ -74,7 +74,7 @@ public class AgentFonction : MonoBehaviour
 
         // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
-        _projectileParticleSystem= GetComponentInChildren<ParticleSystem>();
+        _projectileParticleSystem = GetComponentInChildren<ParticleSystem>();
 
         //// Game Manager Value for Slow
         //_SlowRange = _GameManagerScript._SlowRangeGameManager;
@@ -94,7 +94,7 @@ public class AgentFonction : MonoBehaviour
 
     private void Update()
     {
-        if(!_GameManagerScript._gameLose)
+        if (!_GameManagerScript._gameLose)
         {
             _exaustion = _AgentSelfScript._exaustionLevel;
             _fireRate = Mathf.Lerp(_initialFireRate * 1.1f, _initialFireRate * 0.3f, _exaustion);
@@ -106,25 +106,27 @@ public class AgentFonction : MonoBehaviour
                 nextFireTime = Time.time + (1f / _fireRate);
             }
 
-
-            // Call A physics OverlapSphere to update list of agent 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
-
-            // Add agent in the overlaps Sphere
-            foreach (Collider collider in colliders)
+            if (_AgentSelfScript._canShoot == true)
             {
-                GameObject enemy = collider.gameObject;
-                if (!_EnemiesInRange.Contains(enemy))
+                // Call A physics OverlapSphere to update list of agent 
+                Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
+
+                // Add agent in the overlaps Sphere
+                foreach (Collider collider in colliders)
                 {
-
-                    _EnemiesInRange.Add(enemy);
-                    // Remove all missing component when an other enemy overlap
-                    _EnemiesInRange.RemoveAll(item => item == null);
-
-                    // if first enemys list set it to enemy to aim 
-                    if (currentTargetEnemy == null)
+                    GameObject enemy = collider.gameObject;
+                    if (!_EnemiesInRange.Contains(enemy))
                     {
-                        currentTargetEnemy = enemy;
+
+                        _EnemiesInRange.Add(enemy);
+                        // Remove all missing component when an other enemy overlap
+                        _EnemiesInRange.RemoveAll(item => item == null);
+
+                        // if first enemys list set it to enemy to aim 
+                        if (currentTargetEnemy == null)
+                        {
+                            currentTargetEnemy = enemy;
+                        }
                     }
                 }
             }
@@ -174,14 +176,14 @@ public class AgentFonction : MonoBehaviour
 
                 if (_Enemy != null)
                 {
-                    if(_AgentSelfScript._pool2ProximityValue > -1)
+                    if (_AgentSelfScript._pool2ProximityValue > -1)
                     {
                         _damageAmount += 2;
                     }
                     // inflic Damage 
                     _Enemy.TakeDamage(_damageAmount);
 
-                    if(_AgentSelfScript._pool1ProximityValue > -1)
+                    if (_AgentSelfScript._pool1ProximityValue > -1)
                     {
                         _Enemy.GetSlowed();
                     }
@@ -190,7 +192,7 @@ public class AgentFonction : MonoBehaviour
                     {
                         // kill the enemy if his current hp is <= to 0
                         _Enemy.Die();
-                        _EnemiesInRange.Remove(currentTargetEnemy); 
+                        _EnemiesInRange.Remove(currentTargetEnemy);
                     }
                 }
                 #endregion
