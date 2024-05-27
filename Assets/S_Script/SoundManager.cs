@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -27,6 +29,10 @@ public class SoundManager : MonoBehaviour
     
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
+    public EventReference bkDead;
+    public EventReference hwDead;
+    
+    
     
     //Transition Timer
     private float _transTimer = 0f;
@@ -37,7 +43,9 @@ public class SoundManager : MonoBehaviour
     {
         //init music
         levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/OST/level_music");
-        
+
+        FMODUnity.RuntimeManager.CreateInstance(bkDead);
+        FMODUnity.RuntimeManager.CreateInstance(hwDead);
         levelMusic.start();
         levelMusic.release();
     }
@@ -98,8 +106,8 @@ public class SoundManager : MonoBehaviour
 
     void StopAllPlayerEvents()
     {
-        FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/player");
-        playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        // FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/player");
+        // playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
     public void halfLife()
     {
@@ -119,10 +127,10 @@ public class SoundManager : MonoBehaviour
 
     public void ExitBuzzkill()
     {
-        if (bkExisted)
-        {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/bkDeath"); 
-        }
+        // if (bkExisted)
+        // {
+        //
+        // }
     }
 
     public void EnterHomewreck()
@@ -136,9 +144,9 @@ public class SoundManager : MonoBehaviour
     public void ExitHomewreck()
     {
 
-        if (hwExisted)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/hwDeath");
-        }
+        // if (hwExisted)
+        // {
+        //     FMODUnity.RuntimeManager.PlayOneShot(hwDead);
+        // }
     }
 }

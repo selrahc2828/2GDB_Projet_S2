@@ -33818,12 +33818,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerLifeScript: {fileID: 196656712}
-  activeAgentInformation: {fileID: 1654960972}
   gameManager: {fileID: 1958624180}
   hitPoints: 0
   homewrecker: 0
+  hwExisted: 0
   buzzkiller: 0
+  bkExisted: 0
   songstate: 0
+  bkDead:
+    Guid:
+      Data1: 850402012
+      Data2: 1252928521
+      Data3: 1888909711
+      Data4: 1938853257
+    Path: event:/Enemy/bkDeath
+  hwDead:
+    Guid:
+      Data1: -138642516
+      Data2: 1157380602
+      Data3: 1116715943
+      Data4: -1314003483
+    Path: event:/Enemy/hwDeath
 --- !u!4 &1679443072
 Transform:
   m_ObjectHideFlags: 0

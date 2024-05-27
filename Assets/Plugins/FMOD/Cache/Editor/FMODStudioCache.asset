@@ -24,33 +24,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5727026769493423392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotSlo (deprec)
-  m_EditorClassIdentifier: 
-  Path: event:/Agent/shotSlo (deprec)
-  Guid:
-    Data1: -402474503
-    Data2: 1295638249
-    Data3: 2068531899
-    Data4: -1451047625
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-5510053001531937784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +151,6 @@ MonoBehaviour:
   - {fileID: 3265165309408869626}
   - {fileID: 6337445852243717988}
   - {fileID: -5399318692655804939}
-  - {fileID: 2847158094350493920}
-  - {fileID: 3340523732035361329}
-  - {fileID: -5727026769493423392}
   - {fileID: 699266516545339839}
   - {fileID: 5179445434442679532}
   - {fileID: 2759672977432266304}
@@ -189,7 +159,7 @@ MonoBehaviour:
   - {fileID: 726601766596463733}
   StringsBanks:
   - {fileID: 3928691873847987531}
-  cacheTime: 638524039505366495
+  cacheTime: 638524068303037158
   cacheVersion: 131609
 --- !u!114 &26793691611817546
 MonoBehaviour:
@@ -264,7 +234,7 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638524039505346404
+  lastModified: 638524068303011883
   FileSizes: []
   Exists: 1
 --- !u!114 &2759672977432266304
@@ -288,39 +258,12 @@ MonoBehaviour:
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 1996
---- !u!114 &2847158094350493920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotPrc (deprec)
-  m_EditorClassIdentifier: 
-  Path: event:/Agent/shotPrc (deprec)
-  Guid:
-    Data1: -1247151839
-    Data2: 1075032435
-    Data3: 501405351
-    Data4: 2054709242
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &3265165309408869626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,33 +291,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3340523732035361329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Agent/shotReg (deprec)
-  m_EditorClassIdentifier: 
-  Path: event:/Agent/shotReg (deprec)
-  Guid:
-    Data1: -1674619750
-    Data2: 1191222258
-    Data3: -921908600
-    Data4: -1180484715
-  Banks:
-  - {fileID: 726601766596463733}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 180
 --- !u!114 &3928691873847987531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,10 +306,10 @@ MonoBehaviour:
   Path: FMOD/S2_Soundbank/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638524039505366495
+  lastModified: 638524068303037158
   FileSizes:
   - Name: 
-    Value: 1524
+    Value: 1366
   Exists: 1
 --- !u!114 &5179445434442679532
 MonoBehaviour:
@@ -416,7 +332,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 726601766596463733}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
