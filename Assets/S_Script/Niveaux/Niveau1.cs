@@ -12,21 +12,14 @@ public class Niveau1 : MonoBehaviour
     public List<Transform> _spotList;
     public List<GameObject> _poolList;
     public int _numberOfWave;
-    public int _numberOfBasicEnnemy;
-    public int _numberOfHomeWrecker;
-    public int _numberOfBuzzKiller;
     public int _actualNumberOfEnemy;
     public int _currentWave;
     public int _displayedWave;
-    public int _numberEnemyWave1;
-    public int _numberEnemyWave2;
-    public int _numberEnemyWave3;
-    public int _numberEnemyWave4;
-    public int _numberEnemyWave5;
     public int _timerBetweenWave;
     public float _timerBetweenSegment;
     public bool _startSpawning = false;
     public float _timerForSpawn;
+    private int wavesSinceLastChange = 0;
 
     [Header("WavePrefab")]
     public GameObject _wave_1_A;
@@ -57,9 +50,6 @@ public class Niveau1 : MonoBehaviour
     [Header("TextInfo")]
     public Text _TextNumberOfWave;
 
-
-    private int wavesSinceLastChange = 0;
-
     private void Awake()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -80,7 +70,7 @@ public class Niveau1 : MonoBehaviour
         _gameManager._gameWin = false;
         _gameManager._numberOfEnemyOnScreen = 0;
         _gameManager._waveStarted = false;
-        _timerBetweenSegment = _gameManager._timeBetweenSegment; 
+        _timerBetweenSegment = _gameManager._timeBetweenSegment;
         _startSpawning = false;
         _ASpawned = false;
         _BSpawned = false;
@@ -97,7 +87,7 @@ public class Niveau1 : MonoBehaviour
     {
         CheckForNextWave();
         _TextNumberOfWave.text = "Wave : " + _displayedWave;
-        if(_startSpawning)
+        if (_startSpawning)
         {
             _timerForSpawn += Time.deltaTime;
             SpawnTheWave();
@@ -106,22 +96,22 @@ public class Niveau1 : MonoBehaviour
 
     public void SpawnTheWave()
     {
-        if (_ASpawned == false) 
+        if (_ASpawned == false)
         {
             _ASpawned = true;
             SpawnSegmentA();
         }
-        if (_timerForSpawn > _timerBetweenSegment && _BSpawned == false) 
+        if (_timerForSpawn > _timerBetweenSegment && _BSpawned == false)
         {
             _BSpawned = true;
             SpawnSegmentB();
         }
-        if (_timerForSpawn > _timerBetweenSegment*2 && _CSpawned == false) 
+        if (_timerForSpawn > _timerBetweenSegment * 2 && _CSpawned == false)
         {
             _CSpawned = true;
             SpawnSegmentC();
         }
-        if (_timerForSpawn > _timerBetweenSegment*3 && _DSpawned == false)
+        if (_timerForSpawn > _timerBetweenSegment * 3 && _DSpawned == false)
         {
             _DSpawned = true;
             SpawnSegmentD();
@@ -150,7 +140,7 @@ public class Niveau1 : MonoBehaviour
     public void NextWave()
     {
         _currentWave++;
-        if(_currentWave >= 5)
+        if (_currentWave >= 5)
         {
             _currentWave = 1;
         }
@@ -197,19 +187,54 @@ public class Niveau1 : MonoBehaviour
 
     public void ChangePoolSpot()
     {
-        foreach(GameObject _poolGameObject in _poolList)
+        foreach (GameObject _poolGameObject in _poolList)
         {
-            int SpotNumber = Random.Range(0, _spotList.Count);
-            _poolGameObject.transform.position = _spotList[SpotNumber].position;
+            StartCoroutine(ScaleDownAndChangePosition(_poolGameObject));
         }
+    }
+
+    private IEnumerator ScaleDownAndChangePosition(GameObject pool)
+    {
+        yield return StartCoroutine(ScaleDownPool(pool));
+        int SpotNumber = Random.Range(0, _spotList.Count);
+        pool.transform.position = _spotList[SpotNumber].position;
+        StartCoroutine(ScaleUpPool(pool));
+    }
+
+    private IEnumerator ScaleDownPool(GameObject pool)
+    {
+        Vector3 initialScale = pool.transform.localScale;
+        float duration = 0.5f;  
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            pool.transform.localScale = Vector3.Lerp(initialScale, Vector3.zero, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        pool.transform.localScale = Vector3.zero;  
+    }
+
+    private IEnumerator ScaleUpPool(GameObject pool)
+    {
+        Vector3 targetScale = pool.transform.localScale == Vector3.zero ? new Vector3(1, 1, 1) : pool.transform.localScale;
+        float duration = 0.5f;
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            pool.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        pool.transform.localScale = targetScale;
     }
 
     public void CheckForNextWave()
     {
-        /*
-        Debug.Log(_gameManager._numberOfEnemyOnScreen);
-        Debug.Log("L"+_gameManager._gameLose);
-        Debug.Log("D"+_DSpawned);*/
         if (_gameManager._numberOfEnemyOnScreen <= 0 && !_gameManager._gameLose && _DSpawned == true)
         {
             _ASpawned = false;
