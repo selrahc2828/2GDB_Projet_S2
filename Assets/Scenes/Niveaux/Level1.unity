@@ -39831,7 +39831,7 @@ MonoBehaviour:
   _HeathHomeWreaker: 400
   _HeathBuzzKiller: 800
   _SpeedBaseEnemy: 5
-  _SpeedHomeWreaker: 30
+  _SpeedHomeWreaker: 20
   _SpeedBuzzKiller: 5
   _AngularSpeedBaseEnemy: 30
   _AngularSpeedHomeWreaker: 360
