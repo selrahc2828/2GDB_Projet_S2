@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{32b01adc-2c09-4aae-8f79-9670898d9073}">
 		<property name="color">
-			<value>Red</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
-			<value>spdEnemyDeath</value>
+			<value>bkDeath</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -62,11 +62,18 @@
 	<object class="EventAutomatableProperties" id="{948bf1fc-1469-4cd4-be93-3366cac67626}" />
 	<object class="MarkerTrack" id="{45c75c7d-e483-4afe-a779-76550b19fb35}" />
 	<object class="GroupTrack" id="{949d0e98-eee9-4172-9f05-9e76d749f6d0}">
+		<relationship name="modules">
+			<destination>{d4a641e3-8d0f-4f22-b09f-b32ca4911ae3}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1e09a19a-fb19-4a84-8573-ea5e49a01b0f}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{b6614830-f707-4666-a519-0a600157b6e6}" />
+	<object class="Timeline" id="{b6614830-f707-4666-a519-0a600157b6e6}">
+		<relationship name="modules">
+			<destination>{d4a641e3-8d0f-4f22-b09f-b32ca4911ae3}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{9a0039bb-9568-441f-9333-2b558caca28c}">
 		<relationship name="effectChain">
 			<destination>{5814ab58-b80c-44df-ada2-f38193f58636}</destination>
@@ -84,6 +91,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7a5e9848-da73-460b-8bc6-ce051bfee9db}" />
+	<object class="SingleSound" id="{d4a641e3-8d0f-4f22-b09f-b32ca4911ae3}">
+		<property name="length">
+			<value>1.9969160997732427</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{fbed5588-c7a3-4c12-a3d3-9df75a9e86ab}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{1e09a19a-fb19-4a84-8573-ea5e49a01b0f}">
 		<property name="name">
 			<value>Audio 1</value>

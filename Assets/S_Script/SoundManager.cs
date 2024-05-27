@@ -11,7 +11,6 @@ public class SoundManager : MonoBehaviour
     
     //Call scripts
     public HeathTowerScript towerLifeScript;
-    public AgentToTrace activeAgentInformation;
     public GameManager gameManager;
     
     
@@ -19,7 +18,11 @@ public class SoundManager : MonoBehaviour
     //Internal variables
     public float hitPoints;
     public float homewrecker;
+    public bool hwExisted = false; //Verify if the homewrecker existed once.
+    
     public float buzzkiller;
+    public bool bkExisted = false; //Verify if the buzz killer existed once.
+    
     public int songstate = 0;
     
     //Fmod parameters
@@ -34,6 +37,7 @@ public class SoundManager : MonoBehaviour
     {
         //init music
         levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/OST/level_music");
+        
         levelMusic.start();
         levelMusic.release();
     }
@@ -68,12 +72,12 @@ public class SoundManager : MonoBehaviour
             _transTimer += Time.deltaTime;
         }
 
-        if (_transTimer >= _beat & _transTimer < 0)
+        if (_transTimer >= _beat)
         {
             _isTransitioning = false;
             songstate = 0;
             _transTimer = 0;
-            Debug.Log(songstate);
+            Debug.Log("Timer done for songstate // songstate: " + songstate);
         }
         
         
@@ -83,10 +87,20 @@ public class SoundManager : MonoBehaviour
         levelMusic.setParameterByName("Buzzkiller", buzzkiller);
         levelMusic.setParameterByName("Songstate", songstate);
         
-        
+        //EndGame
+
+        if (hitPoints <= 0)
+        {
+            StopAllPlayerEvents();
+        }
         
     }
 
+    void StopAllPlayerEvents()
+    {
+        FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/player");
+        playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
     public void halfLife()
     {
         songstate = 1;
@@ -100,13 +114,15 @@ public class SoundManager : MonoBehaviour
         songstate = 1;
         _isTransitioning = true;
         Debug.Log("enter buzz"+songstate);
+        bkExisted = true;
     }
 
     public void ExitBuzzkill()
     {
-        songstate = 1;
-        _isTransitioning = true;
-        Debug.Log("exit buzz"+songstate);
+        if (bkExisted)
+        {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/bkDeath"); 
+        }
     }
 
     public void EnterHomewreck()
@@ -114,12 +130,15 @@ public class SoundManager : MonoBehaviour
         songstate = 1;
         _isTransitioning = true;
         Debug.Log("enter HW"+songstate);
+        hwExisted = true;
     }
 
     public void ExitHomewreck()
     {
-        songstate = 1;
-        _isTransitioning = true;
-        Debug.Log("exit HW"+songstate);
+
+        if (hwExisted)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/hwDeath");
+        }
     }
 }

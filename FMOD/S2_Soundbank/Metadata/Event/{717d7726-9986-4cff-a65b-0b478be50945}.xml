@@ -17,7 +17,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 Étant donné que nous pouvons avoir beaucoup d'énnemis qui meurt a chaque fois ou encore au même moment, il a fallut que je cherche quelque chose qui peux se jouer a un volume assez bas mais que l'on entend malgrès tout. </value>
 		</property>
 		<property name="color">
-			<value>Purple</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>bscEnemyDeath</value>
@@ -94,6 +94,9 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 			<destination>{5979c1db-b28c-44da-99c8-23db0952cae6}</destination>
 			<destination>{673b5636-2931-4aea-a905-903f6d55c39e}</destination>
 		</relationship>
+		<relationship name="markers">
+			<destination>{4953513b-cfab-4394-9129-e697acf1a3d1}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{221c3a61-45bc-4c6d-94df-5e5726d18365}">
 		<relationship name="effectChain">
@@ -164,6 +167,17 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 		</relationship>
 		<relationship name="output">
 			<destination>{221c3a61-45bc-4c6d-94df-5e5726d18365}</destination>
+		</relationship>
+	</object>
+	<object class="TempoMarker" id="{4953513b-cfab-4394-9129-e697acf1a3d1}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{32cf004f-cbb0-4443-a39e-465a54d67c2f}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{f2f1632d-ea84-4b7c-a4b2-5d828b449997}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{c4796c26-5e8b-476f-b828-ad1361934509}">
