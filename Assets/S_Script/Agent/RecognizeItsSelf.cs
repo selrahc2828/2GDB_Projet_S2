@@ -166,25 +166,7 @@ public class RecognizeItsSelf : MonoBehaviour
     {
         if (!_aviability)
         {
-            
-            _towerProximityValue = -1;
-            _towerProximityNormalizedValue = 1;
-
-            _pool1ProximityValue = -1;
-            _pool1ProximityNormalizedValue = 1;
-
-            _pool2ProximityValue = -1;
-            _pool2ProximityNormalizedValue = 1;
-
-            _pool3ProximityValue = -1;
-            _pool3ProximityNormalizedValue = 1;
-
-            _pool4ProximityValue = -1;
-            _pool4ProximityNormalizedValue = 1;
-            
-
             CheckPoolsProximity();
-
         }
     }
 
@@ -316,13 +298,14 @@ public class RecognizeItsSelf : MonoBehaviour
             {
                 proximityValue = -1;
             }
-            _ChainFeedbackScript.SetPosOnLine(pool, proximityValue);// ligne pour le feedback lumineux
+            // ligne pour le feedback lumineux
         }
-        SetPoolNormalizedValue(pool, proximityValue);
         if (proximityValue > 300)
         {
             proximityValue = -1;
         }
+        _ChainFeedbackScript.SetPosOnLine(pool, proximityValue);
+        SetPoolNormalizedValue(pool, proximityValue);
         return proximityValue;
     }
 
