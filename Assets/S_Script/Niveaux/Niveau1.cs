@@ -57,6 +57,9 @@ public class Niveau1 : MonoBehaviour
     [Header("TextInfo")]
     public Text _TextNumberOfWave;
 
+
+    private int wavesSinceLastChange = 0;
+
     private void Awake()
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
@@ -152,10 +155,14 @@ public class Niveau1 : MonoBehaviour
             _currentWave = 1;
         }
         _displayedWave++;
-        if (_displayedWave / 5 == (int)(_displayedWave % 5))
+
+        wavesSinceLastChange++;
+        if (wavesSinceLastChange >= 2)
         {
             ChangePoolSpot();
+            wavesSinceLastChange = 0;
         }
+
         switch (_currentWave)
         {
             case 1:
