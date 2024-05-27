@@ -21,6 +21,8 @@ public class Niveau1 : MonoBehaviour
     public float _timerForSpawn;
     private int wavesSinceLastChange = 0;
 
+    private Dictionary<GameObject, Vector3> _initialScales;
+
     [Header("WavePrefab")]
     public GameObject _wave_1_A;
     public GameObject _wave_1_B;
@@ -58,14 +60,19 @@ public class Niveau1 : MonoBehaviour
 
     private void Start()
     {
+        _initialScales = new Dictionary<GameObject, Vector3>();
+
         foreach (Transform spotTransform in _poolSpots.transform)
         {
             _spotList.Add(spotTransform);
         }
         foreach (Transform poolTransform in _pools.transform)
         {
-            _poolList.Add(poolTransform.gameObject);
+            var poolGameObject = poolTransform.gameObject;
+            _poolList.Add(poolGameObject);
+            _initialScales[poolGameObject] = poolGameObject.transform.localScale;
         }
+
         _gameManager._gameLose = false;
         _gameManager._gameWin = false;
         _gameManager._numberOfEnemyOnScreen = 0;
@@ -204,7 +211,7 @@ public class Niveau1 : MonoBehaviour
     private IEnumerator ScaleDownPool(GameObject pool)
     {
         Vector3 initialScale = pool.transform.localScale;
-        float duration = 0.5f;  
+        float duration = 0.5f;
         float elapsedTime = 0;
 
         while (elapsedTime < duration)
@@ -214,23 +221,27 @@ public class Niveau1 : MonoBehaviour
             yield return null;
         }
 
-        pool.transform.localScale = Vector3.zero;  
+        pool.transform.localScale = Vector3.zero;
     }
 
     private IEnumerator ScaleUpPool(GameObject pool)
     {
-        Vector3 targetScale = pool.transform.localScale == Vector3.zero ? new Vector3(1, 1, 1) : pool.transform.localScale;
+        Vector3 initialScale;
+        if (!_initialScales.TryGetValue(pool, out initialScale))
+        {
+            initialScale = new Vector3(1, 1, 1);
+        }
         float duration = 0.5f;
         float elapsedTime = 0;
 
         while (elapsedTime < duration)
         {
-            pool.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, elapsedTime / duration);
+            pool.transform.localScale = Vector3.Lerp(Vector3.zero, initialScale, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        pool.transform.localScale = targetScale;
+        pool.transform.localScale = initialScale;
     }
 
     public void CheckForNextWave()
