@@ -18,7 +18,7 @@ Additionally, a lowpass EQ was applied to reduce the high pitched sounds of elec
 Finally, the low volume of the sound is, as mentioned previously, to avoid it from clashing with itself as well as with the soundtrack which is our </value>
 		</property>
 		<property name="color">
-			<value>Purple</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>depletedAgent</value>
