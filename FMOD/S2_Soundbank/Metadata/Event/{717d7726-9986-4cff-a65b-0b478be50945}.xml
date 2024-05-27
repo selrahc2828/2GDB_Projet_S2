@@ -76,7 +76,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 	</object>
 	<object class="EventAutomatableProperties" id="{9196c105-c803-4279-b6a2-6c23f5babd7c}">
 		<property name="maxVoices">
-			<value>5</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{f2f1632d-ea84-4b7c-a4b2-5d828b449997}" />

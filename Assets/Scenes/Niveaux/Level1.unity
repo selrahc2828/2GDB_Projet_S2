@@ -39975,6 +39975,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _signalHomeGoneSent: 0
+  _ingame: 1
 --- !u!114 &1958624181
 MonoBehaviour:
   m_ObjectHideFlags: 0

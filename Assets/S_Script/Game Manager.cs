@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
     public bool _signalHomePresentSent;
     public UnityEvent HomeWreckerGone;
     public bool _signalHomeGoneSent;
+    public bool _ingame = true;
 
 
     private void Start()
@@ -169,12 +170,14 @@ public class GameManager : MonoBehaviour
 
     public void CheckIfGameIsLoseOrWin()
     {
-        if (_gameLose)
+        if (_gameLose & _ingame)
         {
             _gameLoseCanevas.SetActive(true);
             DestroyAllEnemies();
             masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Tower/TowerDie");
             StartCoroutine(ScaleUpPanel(_gameLoseCanevas.transform));
+            _ingame = false;
         }
         else if (_gameWin) 
         {

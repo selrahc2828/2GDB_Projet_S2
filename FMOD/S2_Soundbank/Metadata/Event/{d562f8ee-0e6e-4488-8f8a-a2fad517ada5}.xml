@@ -24,7 +24,7 @@ Finally, the low volume of the sound is, as mentioned previously, to avoid it fr
 			<value>depletedAgent</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{85f6fca2-d04f-40ef-a51e-dc5431f727d6}</destination>
@@ -139,7 +139,6 @@ Finally, the low volume of the sound is, as mentioned previously, to avoid it fr
 	<object class="MixerBusEffectChain" id="{c12ef2f8-cdbf-412a-9b58-63b36f69532b}">
 		<relationship name="effects">
 			<destination>{233e46b2-9b93-44c6-bf20-0a07d9744b63}</destination>
-			<destination>{70896ba7-0adf-4117-85d6-39bbedeea644}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{39fc7cb8-b60c-4626-a5d4-263a6e141a74}" />
@@ -159,6 +158,5 @@ Finally, the low volume of the sound is, as mentioned previously, to avoid it fr
 	</object>
 	<object class="MixerBusPanner" id="{73bbae7a-a9e8-48fd-91c8-27b14bdd8299}" />
 	<object class="MixerBusFader" id="{233e46b2-9b93-44c6-bf20-0a07d9744b63}" />
-	<object class="SpatialiserEffect" id="{70896ba7-0adf-4117-85d6-39bbedeea644}" />
 	<object class="MixerBusFader" id="{579c8d24-1b28-4f01-ba1e-0b2be573319e}" />
 </objects>
