@@ -151,7 +151,7 @@ J'ai en plus rajouter un pitch shifter me permettant de le rendre plus aigue et 
 	</object>
 	<object class="EventMixerGroup" id="{9cec7f09-d5cf-4c43-ab71-0c676bd34ff9}">
 		<property name="volume">
-			<value>-5.5</value>
+			<value>-27.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
