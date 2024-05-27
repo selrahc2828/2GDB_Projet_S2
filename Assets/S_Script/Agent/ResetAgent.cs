@@ -33,6 +33,7 @@ public class ResetAgent : MonoBehaviour
                     List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
                     if (_itsList != null)
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
                         foreach (NavMeshAgent _agent in _itsList)
                         {
                             _agent.GetComponent<RecognizeItsSelf>().ResetPosition();

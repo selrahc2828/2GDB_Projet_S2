@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
         SceneManager.LoadScene("Level1");
         _GameManagerScript._gameLose = false;
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
@@ -46,6 +47,7 @@ public class MainMenu : MonoBehaviour
 
     public void LevelSelect()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
         _PanelLevelSelec.SetActive(true);
 
         if (_PanelLevelSelec == true)
@@ -61,6 +63,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Option()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
         _PanelOption.SetActive(true);
 
         if (_PanelOption == true)
@@ -77,6 +80,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Quit_Game()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
         Application.Quit();
     }
 }
