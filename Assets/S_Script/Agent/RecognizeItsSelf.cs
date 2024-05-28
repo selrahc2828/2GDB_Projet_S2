@@ -427,7 +427,6 @@ public class RecognizeItsSelf : MonoBehaviour
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
         _canShoot = false;
-        _AgentFonctionScript._mineUsed = false;
         _pool1 = false;
         _pool2 = false;
         _towerProximityValue = -1;

@@ -31,14 +31,6 @@ public class AgentFonction : MonoBehaviour
     public Transform _BulletSpawnPosition;
     public Transform _TowerPosition;
 
-    [Header("Mine System")]
-    public int _mineDamage;
-    public bool _mineUsed;
-    public float _mineTimer;
-    public float _mineRadius;
-    public Vector3 _mineLocation;
-    public GameObject _minePrefab;
-
     [Header("Weapon Parameter")]
     public int _damageAmount;
     public int _initialDamageAmount;
