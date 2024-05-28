@@ -10583,7 +10583,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.5
+      value: 0.6
       mode: 0
       spread: 0
       speed:
@@ -29588,7 +29588,7 @@ MonoBehaviour:
   _threshold: 8
   _ShaderMaterial: {fileID: 2100000, guid: 61c82dc2149ebcd4eb310272ca5c6993, type: 2}
   _meshRenderer: {fileID: 3118169488273763431}
-  rangeNotShoot: 15
+  rangeNotShoot: 3
   _towerProximityValue: 0
   _towerProximityNormalizedValue: 0
   _pool1ProximityValue: 0
@@ -29615,9 +29615,11 @@ MonoBehaviour:
   _amIFocus: []
   _ParticulResetPosition: {fileID: 2600879743989543577}
   check: 0
+  _particul: {fileID: 5913031513342398400}
   _initialColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0}
   _finalColor: {r: 0.27450982, g: 0, b: 0, a: 0}
   _AvailabilityColor: {r: 0.16181986, g: 0.745283, b: 0.14530668, a: 0}
+  _CannotShoot: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &143301654082394424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -259,6 +259,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -378,6 +383,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -489,6 +499,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -620,6 +635,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -759,6 +779,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -884,6 +909,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -995,6 +1025,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -1120,6 +1155,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -1434,6 +1474,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -1578,6 +1623,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -1690,6 +1740,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -1811,6 +1866,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -1928,7 +1988,7 @@ Transform:
   m_GameObject: {fileID: 100921405}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 11.024482, y: 11, z: 58.959156}
+  m_LocalPosition: {x: 11.024482, y: 0, z: 58.959156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2005,6 +2065,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -2118,6 +2183,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -2237,6 +2307,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -2485,6 +2560,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -2616,6 +2696,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -2741,6 +2826,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -2852,6 +2942,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -2974,6 +3069,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -3087,6 +3187,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -3193,6 +3298,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -3307,6 +3417,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -3432,6 +3547,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -3712,6 +3832,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -3832,6 +3957,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -3946,6 +4076,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -4057,6 +4192,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -4187,6 +4327,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -4321,6 +4466,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -4433,6 +4583,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -4578,6 +4733,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -4695,6 +4855,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -4822,6 +4987,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -4933,6 +5103,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -5280,6 +5455,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -5469,6 +5649,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -5600,6 +5785,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -5711,6 +5901,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -5838,6 +6033,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -5951,6 +6151,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -6050,7 +6255,7 @@ Transform:
   m_GameObject: {fileID: 264584272}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.6, y: 11, z: -17.9}
+  m_LocalPosition: {x: 23.6, y: 0, z: -17.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6276,6 +6481,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -6375,7 +6585,7 @@ Transform:
   m_GameObject: {fileID: 283043244}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 11, z: -45}
+  m_LocalPosition: {x: -3, y: 0, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6446,6 +6656,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -6585,6 +6800,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -6702,6 +6922,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -6841,6 +7066,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -6952,6 +7182,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -7073,6 +7308,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -7184,6 +7424,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -7299,6 +7544,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -7410,6 +7660,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -7543,6 +7798,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -7666,6 +7926,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -7793,6 +8058,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -7892,7 +8162,7 @@ Transform:
   m_GameObject: {fileID: 338310234}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.2, y: 11, z: 0.1}
+  m_LocalPosition: {x: -45.2, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7993,6 +8263,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -8106,6 +8381,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -8225,6 +8505,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -8677,6 +8962,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -8790,6 +9080,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -8901,7 +9196,7 @@ Transform:
   m_GameObject: {fileID: 396599928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -10.732859, y: 11, z: -58.950294}
+  m_LocalPosition: {x: -10.732859, y: 0, z: -58.950294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8978,6 +9273,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -9141,6 +9441,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -9266,6 +9571,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -9377,6 +9687,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -9516,6 +9831,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -9629,6 +9949,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -9740,6 +10065,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -9879,6 +10209,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10010,6 +10345,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10123,6 +10463,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10229,6 +10574,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -10345,6 +10695,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10457,6 +10812,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -10573,6 +10933,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10686,6 +11051,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -10797,7 +11167,7 @@ Transform:
   m_GameObject: {fileID: 482420634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 11, z: -29.9}
+  m_LocalPosition: {x: -0.1, y: 0, z: -29.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10875,6 +11245,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -10989,6 +11364,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -11195,6 +11575,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -11338,6 +11723,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -11461,6 +11851,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -11703,6 +12098,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -11826,6 +12226,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -12030,6 +12435,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _exaustionLevel
@@ -12273,6 +12683,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -12402,6 +12817,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -12535,6 +12955,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -12648,6 +13073,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -12754,6 +13184,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -12943,6 +13378,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -13068,6 +13508,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -13185,6 +13630,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -13728,6 +14178,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -13839,6 +14294,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -13955,6 +14415,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -14069,6 +14534,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -14180,6 +14650,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -14337,6 +14812,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -14456,6 +14936,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -14569,6 +15054,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -14680,7 +15170,7 @@ Transform:
   m_GameObject: {fileID: 656985872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.3, y: 11, z: -26.7}
+  m_LocalPosition: {x: -36.3, y: 0, z: -26.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14757,6 +15247,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -14882,6 +15377,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -15100,6 +15600,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -15237,6 +15742,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -15354,6 +15864,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -15634,6 +16149,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -15827,6 +16347,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -15932,7 +16457,7 @@ Transform:
   m_GameObject: {fileID: 756156584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -59.227646, y: 11, z: 11.367541}
+  m_LocalPosition: {x: -59.227646, y: 0, z: 11.367541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15992,6 +16517,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -16108,6 +16638,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -16214,6 +16749,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -16348,6 +16888,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -16465,6 +17010,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -16592,6 +17142,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -16705,6 +17260,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -16811,6 +17371,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -16927,6 +17492,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -17035,6 +17605,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -17141,6 +17716,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -17254,6 +17834,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -17385,6 +17970,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -17601,6 +18191,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -17887,6 +18482,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -18006,6 +18606,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -18117,6 +18722,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -18373,6 +18983,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -18493,6 +19108,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -18604,6 +19224,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -18725,6 +19350,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -18831,6 +19461,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -18965,6 +19600,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -19078,6 +19718,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -19177,7 +19822,7 @@ Transform:
   m_GameObject: {fileID: 913324024}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1, y: 11, z: 18.1}
+  m_LocalPosition: {x: -24.1, y: 0, z: 18.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19392,6 +20037,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -19533,6 +20183,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -19772,6 +20427,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -19903,6 +20563,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -20008,7 +20673,7 @@ Transform:
   m_GameObject: {fileID: 977320766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.1, y: 11, z: 0.1}
+  m_LocalPosition: {x: -30.1, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20239,6 +20904,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -20364,6 +21034,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -20475,6 +21150,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -20602,6 +21282,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -20710,6 +21395,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -20816,6 +21506,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -20929,6 +21624,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -21066,7 +21766,7 @@ Transform:
   m_GameObject: {fileID: 1028316423}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 36, y: 11, z: -47}
+  m_LocalPosition: {x: 36, y: 0, z: -47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21131,6 +21831,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -21258,6 +21963,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -21381,6 +22091,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -21647,6 +22362,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -21772,6 +22492,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -21886,6 +22611,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -21987,6 +22717,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -22254,7 +22989,7 @@ Transform:
   m_GameObject: {fileID: 1074862503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -43, y: 11, z: 42}
+  m_LocalPosition: {x: -43, y: 0, z: 42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22320,6 +23055,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -22703,6 +23443,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -22814,6 +23559,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -22953,6 +23703,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -23090,6 +23845,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -23210,6 +23970,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -23322,6 +24087,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -23533,6 +24303,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -23644,6 +24419,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -23803,6 +24583,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -23908,7 +24693,7 @@ Transform:
   m_GameObject: {fileID: 1175013054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1, y: 11, z: -18.4}
+  m_LocalPosition: {x: -24.1, y: 0, z: -18.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23973,6 +24758,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -24118,6 +24908,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -24237,6 +25032,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -24348,6 +25148,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -24469,6 +25274,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -24580,7 +25390,7 @@ Transform:
   m_GameObject: {fileID: 1212599476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.3, y: 11, z: 23.8}
+  m_LocalPosition: {x: 18.3, y: 0, z: 23.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24639,7 +25449,7 @@ Transform:
   m_GameObject: {fileID: 1215378248}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.1, y: 11, z: 36.7}
+  m_LocalPosition: {x: 26.1, y: 0, z: 36.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24877,6 +25687,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -25002,6 +25817,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -25108,6 +25928,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -25230,6 +26055,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -25341,6 +26171,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -25468,6 +26303,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -25574,6 +26414,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -25694,6 +26539,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -25846,6 +26696,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -25947,6 +26802,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -26087,6 +26947,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -26198,6 +27063,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -26319,6 +27189,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -26424,7 +27299,7 @@ Transform:
   m_GameObject: {fileID: 1310135417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 59.045822, y: 11, z: -11.16921}
+  m_LocalPosition: {x: 59.045822, y: 0, z: -11.16921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26489,6 +27364,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -26616,6 +27496,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -26727,6 +27612,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -26930,6 +27820,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27039,6 +27934,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27145,6 +28045,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -27266,6 +28171,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27377,6 +28287,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -27504,6 +28419,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27623,6 +28543,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27736,6 +28661,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -27847,7 +28777,7 @@ Transform:
   m_GameObject: {fileID: 1374331728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33, y: 11, z: -31}
+  m_LocalPosition: {x: 33, y: 0, z: -31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27900,7 +28830,7 @@ Transform:
   m_GameObject: {fileID: 1374977932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.9, y: 11, z: -0.3}
+  m_LocalPosition: {x: 44.9, y: 0, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27965,6 +28895,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -28078,6 +29013,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -28199,6 +29139,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -28310,6 +29255,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -28467,6 +29417,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -28610,6 +29565,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -28721,6 +29681,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -28937,6 +29902,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -29074,6 +30044,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -29205,6 +30180,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -29310,7 +30290,7 @@ Transform:
   m_GameObject: {fileID: 1441030022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 11, z: 29.8}
+  m_LocalPosition: {x: -0.2, y: 0, z: 29.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29375,6 +30355,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -29488,6 +30473,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -29627,6 +30617,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -29752,6 +30747,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -29870,6 +30870,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -29993,6 +30998,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -30105,6 +31115,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -30226,6 +31241,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -30337,6 +31357,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -30464,6 +31489,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -30589,6 +31619,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -30700,6 +31735,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -30846,7 +31886,7 @@ Transform:
   m_GameObject: {fileID: 1509839070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30914,6 +31954,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -31035,6 +32080,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -31147,6 +32197,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -31263,6 +32318,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -31374,6 +32434,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -31513,6 +32578,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -31618,7 +32688,7 @@ Transform:
   m_GameObject: {fileID: 1554033084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: 45, y: 11, z: 40}
+  m_LocalPosition: {x: 45, y: 0, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31809,6 +32879,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -31923,6 +32998,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -32034,6 +33114,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -32191,6 +33276,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -32302,6 +33392,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -32429,6 +33524,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -32542,6 +33642,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -32648,6 +33753,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -32770,6 +33880,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -32887,6 +34002,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -33395,7 +34515,7 @@ Transform:
   m_GameObject: {fileID: 1654422490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.7, y: 11, z: -1.2}
+  m_LocalPosition: {x: 29.7, y: 0, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33709,6 +34829,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -33834,6 +34959,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -33945,6 +35075,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -34223,6 +35358,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -34551,6 +35691,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -34682,6 +35827,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -34807,6 +35957,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -34927,6 +36082,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -35033,6 +36193,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -35166,6 +36331,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -35277,6 +36447,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -35404,6 +36579,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -35521,6 +36701,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -35776,6 +36961,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -35975,6 +37165,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -36092,6 +37287,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -36231,6 +37431,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -36354,6 +37559,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -36566,6 +37776,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _exaustionLevel
       value: 0
       objectReference: {fileID: 0}
@@ -36677,6 +37892,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -36797,6 +38017,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -36922,6 +38147,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -37055,6 +38285,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -37169,6 +38404,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -37281,6 +38521,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -37400,6 +38645,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -37533,6 +38783,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -37656,6 +38911,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -37876,6 +39136,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -38001,6 +39266,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -38120,6 +39390,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -38237,6 +39512,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -38444,6 +39724,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -38557,6 +39842,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -38676,6 +39966,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -38803,6 +40098,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -38922,6 +40222,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -39033,6 +40338,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -39338,6 +40648,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -39452,6 +40767,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -39561,6 +40881,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -39667,6 +40992,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -39834,6 +41164,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -39952,6 +41287,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -40080,6 +41420,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -40198,6 +41543,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -40520,7 +41870,7 @@ Transform:
   m_GameObject: {fileID: 1964713382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.5, y: 11, z: 26.4}
+  m_LocalPosition: {x: -36.5, y: 0, z: 26.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40591,6 +41941,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -40710,6 +42065,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -40837,6 +42197,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -40962,6 +42327,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -41075,6 +42445,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -41186,6 +42561,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -41335,6 +42715,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -41441,6 +42826,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -41554,6 +42944,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -41681,6 +43076,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -41792,6 +43192,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -41931,6 +43336,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -42042,6 +43452,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -42161,6 +43576,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -42361,6 +43781,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -42478,6 +43903,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -42678,6 +44108,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -42815,6 +44250,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -42926,6 +44366,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -43110,6 +44555,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -43470,6 +44920,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -43587,6 +45042,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -43712,6 +45172,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -43849,7 +45314,7 @@ Transform:
   m_GameObject: {fileID: 2087385623}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.13052616, z: 0, w: 0.9914449}
-  m_LocalPosition: {x: -49.39277, y: 11, z: -33.781605}
+  m_LocalPosition: {x: -49.39277, y: 0, z: -33.781605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43926,6 +45391,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -44057,7 +45527,7 @@ Transform:
   m_GameObject: {fileID: 2104378881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 11, z: 45.1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 45.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44122,6 +45592,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -44241,6 +45716,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -44366,6 +45846,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -44632,6 +46117,11 @@ PrefabInstance:
       objectReference: {fileID: 182152333}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
       propertyPath: _animatorsPool.Array.data[0]
       value: 
       objectReference: {fileID: 1600158461}
@@ -44779,6 +46269,11 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]
@@ -45491,6 +46986,26 @@ PrefabInstance:
       propertyPath: _GOpool4
       value: 
       objectReference: {fileID: 182152333}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: rangeNotShoot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: _CannotShoot.b
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: _CannotShoot.g
+      value: 0.2094469
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
+        type: 3}
+      propertyPath: _CannotShoot.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6512320756067665205, guid: e00ebfa6a87969e40b0e559123e2d481,
         type: 3}
       propertyPath: _animatorsPool.Array.data[0]

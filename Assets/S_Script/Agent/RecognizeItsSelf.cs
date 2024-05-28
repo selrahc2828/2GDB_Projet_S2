@@ -25,8 +25,6 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _threshold;
     public Material _ShaderMaterial;
     public MeshRenderer _meshRenderer;
-    [MinMax(0, 15)]
-    public float rangeNotShoot;
 
 
     [Header("Variable de chainage des agents")]
@@ -71,6 +69,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public List<NavMeshAgent> _amIFocus;
     public ParticleSystem _ParticulResetPosition;
     public bool check;
+    public GameObject _particul;
 
     [Header("Color")]
     [ColorUsage(false, true)]
@@ -79,6 +78,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public Color _finalColor;
     [ColorUsage(false, true)]
     public Color _AvailabilityColor;
+
 
 
 
@@ -259,7 +259,7 @@ public class RecognizeItsSelf : MonoBehaviour
     public int GetPoolProximity(GameObject pool, Collider[] hits)
     {
         int proximityValue = -1;
-        if (Vector3.Distance(transform.position, pool.transform.position) <= 10 && pool.tag != "Infected")
+        if (Vector3.Distance(transform.position, pool.transform.position) <= 7 && pool.tag != "Infected")
         {
             proximityValue = 0;
         }
@@ -332,14 +332,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(_tower.transform.position, _selfAgent.transform.position) < rangeNotShoot)
-                {
-                    _canShoot = false;
-                }
-                else
-                {
-                    _canShoot = true;
-                }
+                _canShoot = true;
                 check = true;
                 CheckProximityFunctions();
                 _nextExecutionTime = Time.time + 1f;
