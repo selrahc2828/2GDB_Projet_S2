@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.PostProcessing;
 using Debug = UnityEngine.Debug;
 
 public class RecognizeItsSelf : MonoBehaviour
@@ -24,6 +25,8 @@ public class RecognizeItsSelf : MonoBehaviour
     public float _threshold;
     public Material _ShaderMaterial;
     public MeshRenderer _meshRenderer;
+    [MinMax(0, 15)]
+    public float rangeNotShoot;
 
 
     [Header("Variable de chainage des agents")]
@@ -279,7 +282,7 @@ public class RecognizeItsSelf : MonoBehaviour
                     }
                 }
             }
-            if(getPoolProximityNumber(pool) > -1)
+            if (getPoolProximityNumber(pool) > -1)
             {
                 if (lowerNeighbourFound && neighbourProximityValue < getPoolProximityNumber(pool) && neighbourProximityValue >= -1)
                 {
@@ -329,7 +332,14 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             else
             {
-                _canShoot = true;
+                if (Vector3.Distance(_tower.transform.position, _selfAgent.transform.position) < rangeNotShoot)
+                {
+                    _canShoot = false;
+                }
+                else
+                {
+                    _canShoot = true;
+                }
                 check = true;
                 CheckProximityFunctions();
                 _nextExecutionTime = Time.time + 1f;
