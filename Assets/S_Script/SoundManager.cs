@@ -44,8 +44,6 @@ public class SoundManager : MonoBehaviour
         //init music
         levelMusic = FMODUnity.RuntimeManager.CreateInstance("event:/OST/level_music");
 
-        FMODUnity.RuntimeManager.CreateInstance(bkDead);
-        FMODUnity.RuntimeManager.CreateInstance(hwDead);
         levelMusic.start();
         levelMusic.release();
     }

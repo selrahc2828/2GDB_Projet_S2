@@ -31,14 +31,6 @@ public class AgentFonction : MonoBehaviour
     public Transform _BulletSpawnPosition;
     public Transform _TowerPosition;
 
-    [Header("Mine System")]
-    public int _mineDamage;
-    public bool _mineUsed;
-    public float _mineTimer;
-    public float _mineRadius;
-    public Vector3 _mineLocation;
-    public GameObject _minePrefab;
-
     [Header("Weapon Parameter")]
     public int _damageAmount;
     public int _initialDamageAmount;
@@ -92,19 +84,27 @@ public class AgentFonction : MonoBehaviour
                 nextFireTime = Time.time + (1f / _fireRate);
             }
 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
-
-            foreach (Collider collider in colliders)
+            if (_AgentSelfScript._canShoot == true)
             {
-                GameObject enemy = collider.gameObject;
-                if (!_EnemiesInRange.Contains(enemy))
-                {
-                    _EnemiesInRange.Add(enemy);
-                    _EnemiesInRange.RemoveAll(item => item == null);
+                // Call A physics OverlapSphere to update list of agent 
+                Collider[] colliders = Physics.OverlapSphere(transform.position, _ShootRange, LayerMask.GetMask("AgentMechant"));
 
-                    if (currentTargetEnemy == null)
+                // Add agent in the overlaps Sphere
+                foreach (Collider collider in colliders)
+                {
+                    GameObject enemy = collider.gameObject;
+                    if (!_EnemiesInRange.Contains(enemy))
                     {
-                        currentTargetEnemy = enemy;
+
+                        _EnemiesInRange.Add(enemy);
+                        // Remove all missing component when an other enemy overlap
+                        _EnemiesInRange.RemoveAll(item => item == null);
+
+                        // if first enemys list set it to enemy to aim 
+                        if (currentTargetEnemy == null)
+                        {
+                            currentTargetEnemy = enemy;
+                        }
                     }
                 }
             }

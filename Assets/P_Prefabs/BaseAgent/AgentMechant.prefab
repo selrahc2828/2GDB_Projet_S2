@@ -357,7 +357,7 @@ MonoBehaviour:
   _HealtTower: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
     type: 3}
   _Tower: {fileID: 8758404073540868529, guid: 344e29f43c65e0148902c1b96ae2317e, type: 3}
-  _damageAmount: 10
+  _damageAmount: 2
   _cooldown: 1
 --- !u!114 &6536687475616701843
 MonoBehaviour:
