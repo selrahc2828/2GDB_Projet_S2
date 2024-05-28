@@ -34581,8 +34581,8 @@ MonoBehaviour:
   _AgentUsed: {fileID: 698152938}
   _deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
     type: 3}
-  _OffSetX: 320
-  _OffSetY: -25
+  _OffSetX: 210
+  _OffSetY: -20
   _scaleDuration: 0.5
   _destroyDelay: 0.2
   _maxScale: 10
