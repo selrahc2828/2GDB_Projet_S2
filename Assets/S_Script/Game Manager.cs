@@ -96,12 +96,14 @@ public class GameManager : MonoBehaviour
     public bool _signalHomePresentSent;
     public UnityEvent HomeWreckerGone;
     public bool _signalHomeGoneSent;
+    public bool _ingame = true;
 
 
     private void Start()
     {
         Time.timeScale = 1.0f;
         masterBus = RuntimeManager.GetBus("bus:/");
+        _gameLoseCanevas.transform.localScale = new Vector3(1, 0, 1);
     }
 
 
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour
             _signalBuzzGoneSent = false;
             BuzzKillerPresent.Invoke();
         }
-        else
+        else if ( _numberOfEnemyOnScreen <= 0 && _signalBuzzGoneSent == false)
         {
             _signalBuzzPresentSent = false;
             _signalBuzzGoneSent = true;
@@ -144,7 +146,7 @@ public class GameManager : MonoBehaviour
             _signalHomeGoneSent = false;
             HomeWreckerPresent.Invoke();
         }
-        else
+        else if (_numberOfHomeWreckerOnScreen <= 0 && _signalHomeGoneSent == false)
         {
             _signalHomePresentSent = false;
             _signalHomeGoneSent = true;
@@ -168,11 +170,14 @@ public class GameManager : MonoBehaviour
 
     public void CheckIfGameIsLoseOrWin()
     {
-        if (_gameLose)
+        if (_gameLose & _ingame)
         {
             _gameLoseCanevas.SetActive(true);
             DestroyAllEnemies();
             masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Tower/TowerDie");
+            StartCoroutine(ScaleUpPanel(_gameLoseCanevas.transform));
+            _ingame = false;
         }
         else if (_gameWin) 
         {
@@ -194,5 +199,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator ScaleUpPanel(Transform panelTransform)
+    {
+        float duration = 0.5f; 
+        float elapsedTime = 0f;
+        Vector3 initialScale = new Vector3(1, 0, 1);
+        Vector3 finalScale = new Vector3(1, 1, 1);
+
+        while (elapsedTime < duration)
+        {
+            panelTransform.localScale = Vector3.Lerp(initialScale, finalScale, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        panelTransform.localScale = finalScale;
+    }
 
 }

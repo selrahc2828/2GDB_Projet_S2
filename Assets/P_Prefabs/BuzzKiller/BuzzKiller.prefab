@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 5897393375208106164}
   - component: {fileID: 4427869618226403356}
   - component: {fileID: 8818783348678379587}
+  - component: {fileID: -4829866915003931646}
   m_Layer: 11
   m_Name: BuzzKiller
   m_TagString: AgentMechant
@@ -356,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _HealtTower: {fileID: 0}
   _Tower: {fileID: 0}
-  _damageAmount: 10
+  _damageAmount: 5
   _cooldown: 1
 --- !u!114 &5897393375208106164
 MonoBehaviour:
@@ -389,6 +390,7 @@ MonoBehaviour:
     type: 3}
   _finalColor: {r: 1.4980392, g: 0, b: 0.2717032, a: 0}
   _initialColor: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
+  _EnemyAnimator: {fileID: 0}
   _porteurDePool: {fileID: 0}
   _poolList: []
   _closestPoolDistance: 0
@@ -456,6 +458,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4829866915003931646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 850402012
+      Data2: 1252928521
+      Data3: 1888909711
+      Data4: 1938853257
+    Path: event:/Enemy/bkDeath
+  Event: 
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5473619328206195172
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{bb9ad9c9-f9f5-4497-af5a-8c9502c95a73}">
+	<object class="AudioFile" id="{fbed5588-c7a3-4c12-a3d3-9df75a9e86ab}">
 		<property name="assetPath">
-			<value>OST/BeatMelo/1_Agents Engaged.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>OST/Beat Ends/3_The Buzzkiller.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>15.998548752834466</value>
+			<value>1.9969160997732427</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{9f4425e6-7a76-4fba-978c-8fd1a48a6662}</destination>

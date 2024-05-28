@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a548d8e8-093b-46aa-9906-c75944fb3499}">
+	<object class="AudioFile" id="{4fc995e5-c1f7-4d3f-84bb-c899574046af}">
 		<property name="assetPath">
-			<value>OST/BeatMelo/2_GameplayBass.wav</value>
+			<value>OST/BeatMelo/3_The Buzzkiller.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{6ad0db24-ca14-40ef-8ef5-e7707531352b}">
+	<object class="AudioFile" id="{7b26e4d7-9254-4997-ba1a-ffa5791f8d44}">
 		<property name="assetPath">
-			<value>OST/BeatMelo/5_The homewrecker.wav</value>
+			<value>OST/BeatMelo/2_GameplayBass.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

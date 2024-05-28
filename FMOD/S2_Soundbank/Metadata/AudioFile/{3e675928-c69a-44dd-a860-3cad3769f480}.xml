@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{d855226d-52db-47a5-b880-1ad80c96152b}">
+	<object class="AudioFile" id="{3e675928-c69a-44dd-a860-3cad3769f480}">
 		<property name="assetPath">
-			<value>OST/BeatMelo/4_Low HP.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>OST/Beat Ends/1_Agents Engaged.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -14,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>15.998548752834466</value>
+			<value>1.9969160997732427</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{9f4425e6-7a76-4fba-978c-8fd1a48a6662}</destination>

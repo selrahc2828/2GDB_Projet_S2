@@ -17,22 +17,15 @@ public class AgentFonction : MonoBehaviour
     private GameObject currentTargetEnemy;
     [SerializeField] private List<GameObject> _EnemiesInRange = new List<GameObject>();
 
-
     [Header("Layer")]
     public LayerMask _BulletLayer;
 
     [Header("RangeShoot And Slow")]
-    //public float _SlowRange;
     public float _ShootRange;
-
 
     [Header("Choise Comportement")]
     public bool _ShootEnemy;
     public bool _SlowEnemy;
-
-    //[Header("Slow Parameters")]
-    //public float _slowdownSpeed;
-    //public float _InitialSpeed;
 
     [Header("Weapon Reference")]
     public Transform _BulletSpawnPosition;
@@ -55,12 +48,13 @@ public class AgentFonction : MonoBehaviour
 
     private float nextFireTime = 0f;
 
-
     [Header("Particle System & Trail Renderer")]
     public ParticleSystem _projectileParticleSystem;
     public TrailRenderer _TrailBullet;
+    public Material _defaultTrailMaterial;
+    public Material _poolDamageTrailMaterial;
 
-
+    public bool _LinkToPoolDamage;
 
     public void Awake()
     {
@@ -68,28 +62,20 @@ public class AgentFonction : MonoBehaviour
         _AgentSelfScript = this.GetComponentInParent<RecognizeItsSelf>();
     }
 
-
     private void Start()
     {
-
-        // Get the script for all the agent in scene
         _AgentDispo = GameObject.FindObjectOfType<AgentToTrace>();
         _projectileParticleSystem = GetComponentInChildren<ParticleSystem>();
 
-        //// Game Manager Value for Slow
-        //_SlowRange = _GameManagerScript._SlowRangeGameManager;
-        //_slowdownSpeed = _GameManagerScript._SlowdownSpeedGameManager;
-
-        // Game Manager Value for Shoot
         _ShootRange = _GameManagerScript._ShootRangeGameManager;
         _initialDamageAmount = _GameManagerScript._DamageAmount;
         _initialFireRate = _GameManagerScript._FireRate;
 
-        // Game Manager Value For Mouvement 
         _NavMeshAgent.speed = _GameManagerScript._SpeedAgent;
         _NavMeshAgent.angularSpeed = _GameManagerScript._AngularSpeedAgent;
         _NavMeshAgent.acceleration = _GameManagerScript._AccelerationAgent;
 
+        _LinkToPoolDamage = false;
     }
 
     private void Update()
@@ -133,16 +119,12 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-
     private void OnTriggerExit(Collider other)
     {
-
-        // Reset the current target if enemy escape the trigger 
         if (other.gameObject == currentTargetEnemy)
         {
             _EnemiesInRange.Remove(other.gameObject);
 
-            // If enemy exit trigger change target 
             if (currentTargetEnemy == other.gameObject)
             {
                 currentTargetEnemy = GetNextTarget();
@@ -150,37 +132,57 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-
-    // Shoot Fonction  | Called Line 93 OnTriggerStay
     public void ShootToEnemy()
     {
         RaycastHit hit;
 
         if (currentTargetEnemy != null)
         {
-            // Chose Enemy direction
             Vector3 directionToEnemy = (currentTargetEnemy.transform.position - _BulletSpawnPosition.position).normalized;
 
             if (Physics.Raycast(_BulletSpawnPosition.position, directionToEnemy, out hit, _ShootRange, _BulletLayer))
             {
-                // Instanciate Trail for feedback 
                 TrailRenderer _Trail = Instantiate(_TrailBullet, _BulletSpawnPosition.position, Quaternion.identity);
-                // Start Coroutine to lerp the position of the trail 
+
                 StartCoroutine(SpawnTrail(_Trail, hit));
 
                 #region Damage And Effect To Enemies
-                // ------ All this part to damage the enemy ------
                 Enemy _Enemy = hit.collider.GetComponent<Enemy>();
 
                 Debug.DrawRay(_BulletSpawnPosition.position, hit.point - _BulletSpawnPosition.position, Color.red, 1);
 
                 if (_Enemy != null)
                 {
+                    if (_AgentSelfScript._pool4ProximityValue > -1)
+                    {
+                        _damageAmount += 2;
+                        _LinkToPoolDamage = true;
+                    }
                     if (_AgentSelfScript._pool2ProximityValue > -1)
                     {
                         _damageAmount += 2;
+                        _LinkToPoolDamage = true;
                     }
-                    // inflic Damage 
+                    if (_AgentSelfScript._pool3ProximityValue > -1)
+                    {
+                        _damageAmount += 2;
+                        _LinkToPoolDamage = true;
+                    }
+
+                    if (_AgentSelfScript._pool4ProximityValue > -1 && _AgentSelfScript._pool2ProximityValue > -1 && _AgentSelfScript._pool3ProximityValue > -1)
+                    {
+                        _LinkToPoolDamage = false;
+                    }
+
+                    if (_LinkToPoolDamage)
+                    {
+                        _Trail.material = _poolDamageTrailMaterial;
+                    }
+                    else
+                    {
+                        _Trail.material = _defaultTrailMaterial;
+                    }
+
                     _Enemy.TakeDamage(_damageAmount);
 
                     if (_AgentSelfScript._pool1ProximityValue > -1)
@@ -190,7 +192,6 @@ public class AgentFonction : MonoBehaviour
 
                     if (_Enemy.GetCurrentHealth() <= 0 && currentTargetEnemy == hit.collider.gameObject)
                     {
-                        // kill the enemy if his current hp is <= to 0
                         _Enemy.Die();
                         _EnemiesInRange.Remove(currentTargetEnemy);
                     }
@@ -200,11 +201,8 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-
-    // Get the next target
     private GameObject GetNextTarget()
     {
-        // Return actual enemy
         if (_EnemiesInRange.Count > 0)
         {
             return _EnemiesInRange[0];
@@ -215,10 +213,8 @@ public class AgentFonction : MonoBehaviour
         }
     }
 
-    // Lerp the trail position | Called Line 136 in the Shoot fonction 
     private IEnumerator SpawnTrail(TrailRenderer Trail, RaycastHit hit)
     {
-
         float time = 0;
         Vector3 startPosition = Trail.transform.position;
 
@@ -233,14 +229,10 @@ public class AgentFonction : MonoBehaviour
         Trail.transform.position = hit.point;
 
         Destroy(Trail.gameObject, Trail.time);
-
     }
 
-
-    // Agent Usable or not
     public bool IsAgentUsable(NavMeshAgent agent)
     {
-        // This check if the agent are usable or not 
         if (_AgentDispo._dictionnaireAgent.ContainsKey(agent))
         {
             return _AgentDispo._dictionnaireAgent[agent];
@@ -250,5 +242,4 @@ public class AgentFonction : MonoBehaviour
             return false;
         }
     }
-
 }
