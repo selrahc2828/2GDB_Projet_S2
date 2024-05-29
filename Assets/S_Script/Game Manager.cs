@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     [Header("Tower Heath & Parameter")]
     public int _HeathTower;
 
-
     [Header("UtilityVariable")]
     public Niveau1 _LevelWaveCheck;
     public int _NumberOfEnemyKilled = 0;
@@ -85,7 +84,6 @@ public class GameManager : MonoBehaviour
     public GameObject _gameWinCanevas;
     public float _timeBetweenSegment;
 
-
     [Header("FMOD")]
     private FMOD.Studio.Bus masterBus;
     public UnityEvent BuzzKillerPresent;
@@ -98,14 +96,12 @@ public class GameManager : MonoBehaviour
     public bool _signalHomeGoneSent;
     public bool _ingame = true;
 
-
     private void Start()
     {
         Time.timeScale = 1.0f;
         masterBus = RuntimeManager.GetBus("bus:/");
         _gameLoseCanevas.transform.localScale = new Vector3(1, 0, 1);
     }
-
 
     private void Update()
     {
@@ -152,6 +148,13 @@ public class GameManager : MonoBehaviour
             _signalHomeGoneSent = true;
             HomeWreckerGone.Invoke();
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+
     }
 
     public void IncreaseEnemyKilledCount()
@@ -166,6 +169,13 @@ public class GameManager : MonoBehaviour
         {
             _NumberOfEnemyText.text = "Total Enemy Kill :  " + _NumberOfEnemyKilled.ToString();
         }
+    }
+
+    private void TogglePause()
+    {
+        _gamePaused = !_gamePaused;
+        Time.timeScale = _gamePaused ? 0f : 1f;
+        masterBus.setPaused(_gamePaused);
     }
 
     public void CheckIfGameIsLoseOrWin()

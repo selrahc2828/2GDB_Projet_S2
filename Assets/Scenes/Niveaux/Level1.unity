@@ -20358,7 +20358,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956128764}
-  m_Mesh: {fileID: 2534964839176971238, guid: 607c73c8991180a45a387625a71fde39, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: 765629d3ba8603640a8a263e0f5e3d41, type: 3}
 --- !u!64 &956128768
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29849,7 +29849,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418326721}
-  m_Mesh: {fileID: 2534964839176971238, guid: 607c73c8991180a45a387625a71fde39, type: 3}
+  m_Mesh: {fileID: 2534964839176971238, guid: 765629d3ba8603640a8a263e0f5e3d41, type: 3}
 --- !u!4 &1424261254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674923304642868183, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -34581,8 +34581,8 @@ MonoBehaviour:
   _AgentUsed: {fileID: 698152938}
   _deathBubblePrefab: {fileID: 7679899219145768590, guid: fbe0b854505600e428dcb4cbbf144f42,
     type: 3}
-  _OffSetX: 320
-  _OffSetY: -25
+  _OffSetX: 210
+  _OffSetY: -20
   _scaleDuration: 0.5
   _destroyDelay: 0.2
   _maxScale: 10
@@ -41654,19 +41654,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ShootRangeGameManager: 10
-  _DamageAmount: 3
+  _DamageAmount: 4
   _FireRate: 1
-  _maxFatigueSeconde: 15
+  _maxFatigueSeconde: 20
   _SpeedAgent: 16
   _AngularSpeedAgent: 180
   _AccelerationAgent: 32
   _resetTime: 15
   _HealthAgent: 0
   _HeathBaseEnemy: 60
-  _HeathHomeWreaker: 400
-  _HeathBuzzKiller: 800
+  _HeathHomeWreaker: 350
+  _HeathBuzzKiller: 300
   _SpeedBaseEnemy: 5
-  _SpeedHomeWreaker: 20
+  _SpeedHomeWreaker: 18
   _SpeedBuzzKiller: 5
   _AngularSpeedBaseEnemy: 30
   _AngularSpeedHomeWreaker: 360
@@ -41697,7 +41697,7 @@ MonoBehaviour:
   _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
-  _timeBetweenSegment: 15
+  _timeBetweenSegment: 11
   BuzzKillerPresent:
     m_PersistentCalls:
       m_Calls:

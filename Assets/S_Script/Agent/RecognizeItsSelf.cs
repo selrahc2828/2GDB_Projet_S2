@@ -123,25 +123,10 @@ public class RecognizeItsSelf : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (Time.time >= _nextExecutionTime && check == true)
-        {
-            check = false;
-            //CheckProximityFunctions();
-        }
-        */
         if (!_gameManager._gameLose)
         {
             CalculateExaustion();
             UpdateExaustionMeter();
-            /*
-            if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
-            {
-                check = true;
-                CheckProximityFunctions();
-                _nextExecutionTime = Time.time + 1f;
-
-            }*/
         }
 
         if (_exaustionLevel >= 0.9f)
@@ -303,7 +288,7 @@ public class RecognizeItsSelf : MonoBehaviour
             }
             // ligne pour le feedback lumineux
         }
-        if (proximityValue > 300)
+        if (proximityValue > 200)
         {
             proximityValue = -1;
         }
@@ -429,6 +414,20 @@ public class RecognizeItsSelf : MonoBehaviour
             List<NavMeshAgent> _listeOfThisAgent = WitchListIsIt();
             _TraceScript._dictionnaireOfListeAgent.Remove(_listeOfThisAgent);
         }
+        _towerProximityValue = -1;
+        _towerProximityNormalizedValue = 1;
+
+        _pool1ProximityValue = -1;
+        _pool1ProximityNormalizedValue = 1;
+
+        _pool2ProximityValue = -1;
+        _pool2ProximityNormalizedValue = 1;
+
+        _pool3ProximityValue = -1;
+        _pool3ProximityNormalizedValue = 1;
+
+        _pool4ProximityValue = -1;
+        _pool4ProximityNormalizedValue = 1;
         _canShoot = false;
         _pool1 = false;
         _pool2 = false;
