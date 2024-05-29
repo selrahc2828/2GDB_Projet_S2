@@ -34701,6 +34701,7 @@ MonoBehaviour:
   _spawnerScript: {fileID: 1566333942}
   _poolSpots: {fileID: 1509839070}
   _pools: {fileID: 2125345414}
+  soundManager: {fileID: 0}
   _spotList: []
   _poolList: []
   _numberOfWave: 0
@@ -35477,9 +35478,7 @@ MonoBehaviour:
   gameManager: {fileID: 1958624180}
   hitPoints: 0
   homewrecker: 0
-  hwExisted: 0
   buzzkiller: 0
-  bkExisted: 0
   songstate: 0
   bkDead:
     Guid:
@@ -35495,6 +35494,7 @@ MonoBehaviour:
       Data3: 1116715943
       Data4: -1314003483
     Path: event:/Enemy/hwDeath
+  _isTransitioning: 0
 --- !u!4 &1679443072
 Transform:
   m_ObjectHideFlags: 0
@@ -41654,7 +41654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ShootRangeGameManager: 10
-  _DamageAmount: 4
+  _DamageAmount: 5
   _FireRate: 1
   _maxFatigueSeconde: 20
   _SpeedAgent: 16
