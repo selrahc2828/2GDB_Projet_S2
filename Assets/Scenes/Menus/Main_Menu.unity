@@ -6917,18 +6917,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 288957812}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &291178382 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -2962356584097200312, guid: 344e29f43c65e0148902c1b96ae2317e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1759153579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759153584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7b89e6af6ab7046a20f316646848a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &298936436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7674923304642868183, guid: e00ebfa6a87969e40b0e559123e2d481,
@@ -8695,17 +8683,9 @@ MonoBehaviour:
   _spotList: []
   _poolList: []
   _numberOfWave: 0
-  _numberOfBasicEnnemy: 0
-  _numberOfHomeWrecker: 0
-  _numberOfBuzzKiller: 0
   _actualNumberOfEnemy: 0
   _currentWave: 0
   _displayedWave: 0
-  _numberEnemyWave1: 30
-  _numberEnemyWave2: 50
-  _numberEnemyWave3: 80
-  _numberEnemyWave4: 130
-  _numberEnemyWave5: 180
   _timerBetweenWave: 0
   _timerBetweenSegment: 0
   _startSpawning: 0
@@ -35370,7 +35350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583138760}
-  - component: {fileID: 1583138759}
+  - component: {fileID: 1583138761}
   m_Layer: 0
   m_Name: SOUNDMANAGER
   m_TagString: Untagged
@@ -35378,40 +35358,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1583138759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583138758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 788f1f07c8925f24bbc6262d77806fe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerLifeScript: {fileID: 291178382}
-  gameManager: {fileID: 1707158527}
-  hitPoints: 0
-  homewrecker: 0
-  hwExisted: 0
-  buzzkiller: 0
-  bkExisted: 0
-  songstate: 0
-  bkDead:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  hwDead:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!4 &1583138760
 Transform:
   m_ObjectHideFlags: 0
@@ -35427,6 +35373,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1583138761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583138758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31db87547f8b41f40afefab37302fc64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1583308493
 GameObject:
   m_ObjectHideFlags: 0
