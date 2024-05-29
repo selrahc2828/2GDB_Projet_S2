@@ -9,6 +9,8 @@ public class Niveau1 : MonoBehaviour
     public SpawnerEnnemy _spawnerScript;
     public GameObject _poolSpots;
     public GameObject _pools;
+    public SoundManager soundManager;
+    
     public List<Transform> _spotList;
     public List<GameObject> _poolList;
     public int _numberOfWave;
@@ -56,6 +58,7 @@ public class Niveau1 : MonoBehaviour
     {
         _gameManager = GameObject.FindObjectOfType<GameManager>();
         _spawnerScript = GameObject.FindObjectOfType<SpawnerEnnemy>();
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
     }
 
     private void Start()
@@ -266,12 +269,15 @@ public class Niveau1 : MonoBehaviour
     public void CheckForNextWave()
     {
         if (_gameManager._numberOfEnemyOnScreen <= 0 && !_gameManager._gameLose && _DSpawned == true)
-        {
+        {          
+            soundManager.songstate = 1; 
+            soundManager._isTransitioning = true;
             _ASpawned = false;
             _BSpawned = false;
             _CSpawned = false;
             _DSpawned = false;
             NextWave();
+
         }
     }
 }

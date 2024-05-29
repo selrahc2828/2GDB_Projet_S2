@@ -20,14 +20,11 @@ public class SoundManager : MonoBehaviour
     //Internal variables
     public float hitPoints;
     public float homewrecker;
-    public bool hwExisted = false; //Verify if the homewrecker existed once.
     
     public float buzzkiller;
-    public bool bkExisted = false; //Verify if the buzz killer existed once.
     
     public int songstate = 0;
-
-    public float distance;
+    
     
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
@@ -39,7 +36,7 @@ public class SoundManager : MonoBehaviour
     //Transition Timer
     private float _transTimer = 0f;
     private float _beat = 2f;
-    private bool _isTransitioning = false;
+    public bool _isTransitioning = false;
     
     void Start()
     {
@@ -54,9 +51,6 @@ public class SoundManager : MonoBehaviour
         // Hit Points
         hitPoints = towerLifeScript.healthPercentageVariable;
         
-        // distance
-
-        distance = 1f;
         
         // homewrecker
         if (gameManager._numberOfHomeWreckerOnScreen == 0)
@@ -98,60 +92,9 @@ public class SoundManager : MonoBehaviour
         levelMusic.setParameterByName("Homewrecker", homewrecker);
         levelMusic.setParameterByName("Buzzkiller", buzzkiller);
         levelMusic.setParameterByName("Songstate", songstate);
-        levelMusic.setParameterByName("distance", distance);
         
-        //EndGame
-
-        if (hitPoints <= 0)
-        {
-            StopAllPlayerEvents();
-        }
         
     }
 
-    void StopAllPlayerEvents()
-    {
-        // FMOD.Studio.Bus playerBus = FMODUnity.RuntimeManager.GetBus("bus:/player");
-        // playerBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
-    }
-    public void halfLife()
-    {
-        songstate = 1;
-        _isTransitioning = true;
-        Debug.Log("half life"+songstate);
 
-    }
-
-    public void EnterBuzzkill()
-    {
-        songstate = 1;
-        _isTransitioning = true;
-        Debug.Log("enter buzz"+songstate);
-        bkExisted = true;
-    }
-
-    public void ExitBuzzkill()
-    {
-        // if (bkExisted)
-        // {
-        //
-        // }
-    }
-
-    public void EnterHomewreck()
-    {
-        songstate = 1;
-        _isTransitioning = true;
-        Debug.Log("enter HW"+songstate);
-        hwExisted = true;
-    }
-
-    public void ExitHomewreck()
-    {
-
-        // if (hwExisted)
-        // {
-        //     FMODUnity.RuntimeManager.PlayOneShot(hwDead);
-        // }
-    }
 }
