@@ -6,11 +6,13 @@ using UnityEngine.AI;
 public class ResetAgent : MonoBehaviour
 {
     public GameManager _GameManagerScript;
+    public AgentToTrace _AgentToTrace;
     public LayerMask _affectedLayer;
 
     private void Awake()
     {
         _GameManagerScript = FindAnyObjectByType<GameManager>();
+        _AgentToTrace = FindAnyObjectByType<AgentToTrace>();
     }
     // Update is called once per frame
     void Update()
@@ -31,10 +33,11 @@ public class ResetAgent : MonoBehaviour
                     List<UnityEngine.AI.NavMeshAgent> _itsList = hit.collider.gameObject.GetComponent<RecognizeItsSelf>().WitchListIsIt();
                     if (_itsList != null)
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Agent/depletedAgent");
                         foreach (NavMeshAgent _agent in _itsList)
                         {
                             _agent.GetComponent<RecognizeItsSelf>().ResetPosition();
-                            _agent.GetComponent<AgentFonction>().LayDownMine();
+                            _AgentToTrace.CountNumberAgentAvailable();
                         }
                     }
                 }

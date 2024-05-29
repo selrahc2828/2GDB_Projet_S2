@@ -15,13 +15,7 @@ public class PoolScript : MonoBehaviour
     public MeshRenderer _meshRenderer;
     public MeshRenderer _meshRenderer2;
     
-    private bool _isTransitioning = false;
     private bool _previousInfectedState = false;
-
-    private void Start()
-    {
-        _isTransitioning = false;
-    }
 
 
     public void CheckSurrounding()
@@ -58,8 +52,6 @@ public class PoolScript : MonoBehaviour
 
     private IEnumerator StartColorTransition()
     {
-        _isTransitioning = true;
-
         float transitionDuration = 1.0f;
         float startTime = Time.time;
         float elapsedTime = 0;
@@ -79,8 +71,5 @@ public class PoolScript : MonoBehaviour
 
             yield return null;
         }
-
-        _isTransitioning = false;
     }
-
 }

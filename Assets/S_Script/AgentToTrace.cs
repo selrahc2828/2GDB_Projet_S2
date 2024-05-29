@@ -111,6 +111,7 @@ public class AgentToTrace : MonoBehaviour
                 //On vide la liste et le dictionnaire de position pour pouvoir s'en resservir au prochain tracé
                 _dictionnairePositionTrace.Clear();
                 _listePositionTrace.Clear();
+                CountNumberAgentAvailable();
             }
             if (Input.GetMouseButtonUp(1))
             {
@@ -119,19 +120,6 @@ public class AgentToTrace : MonoBehaviour
             _AgentNumbertext.text = "Agent Number : " + _numberAgentAvailable;
         }
     }
-
-    //outil de debug
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        foreach (Vector3 _position in _listePositionTrace)
-        {
-            Gizmos.DrawWireSphere(_position, 5);
-            Gizmos.DrawWireSphere(_position, 0.5f);
-        }
-    }*/
-
 
     IEnumerator DeleteWithDelay(List<Vector3> _liste)
     {
@@ -144,7 +132,8 @@ public class AgentToTrace : MonoBehaviour
         _proportionOfAgentAssigned = _numberAgentAvailable / _numberTotalAgent;
 
     }
-    void CountNumberAgentAvailable()
+
+    public void CountNumberAgentAvailable()
     {
         int _numberCounted = 0;
         //Parcour du dictionnaire d'agent

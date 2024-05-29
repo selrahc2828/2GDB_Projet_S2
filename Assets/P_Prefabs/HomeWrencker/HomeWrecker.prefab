@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 2463424206290343736}
   - component: {fileID: 2949359558403722072}
   - component: {fileID: 8825654060386409921}
+  - component: {fileID: -53678921410228830}
   m_Layer: 11
   m_Name: HomeWrecker
   m_TagString: AgentMechant
@@ -340,7 +341,7 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 0
 --- !u!114 &2463424206290343736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +390,7 @@ MonoBehaviour:
     type: 3}
   _finalColor: {r: 0.6603774, g: 0, b: 0, a: 0}
   _initialColor: {r: 0.11320752, g: 0, b: 0, a: 0}
+  _EnemyAnimator: {fileID: 0}
   _agentToTraceScript: {fileID: 0}
   _closestAgentInLineGoal: {fileID: 0}
   _currentListDestination: 0
@@ -415,6 +417,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-53678921410228830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308968867366325615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1904047910
+      Data2: 1291819398
+      Data3: 1191926694
+      Data4: 1158276491
+    Path: event:/Enemy/bscEnemyDeath
+  Event: 
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5037202296468772818
 GameObject:
   m_ObjectHideFlags: 0
