@@ -73,7 +73,6 @@ public class HomeWrecker : Enemy
                 DestinationReached();
             }
         }
-
     }
 
     public void SearchNewDestination()
@@ -179,6 +178,7 @@ public class HomeWrecker : Enemy
         _GameManager._numberOfEnemyOnScreen--;
         _Niveau1.CheckForNextWave();
     }
+
     IEnumerator DelayedSearchNewDestination(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
@@ -188,12 +188,4 @@ public class HomeWrecker : Enemy
             _mouseButtonUp = false; // Reset the flag
         }
     }
-
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        foreach (Vector3 _zigzagPoint in _zigzagPointsList)
-            Gizmos.DrawWireSphere(_zigzagPoint, 5f);
-    }*/
 }

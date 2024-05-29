@@ -83,7 +83,6 @@ public class SoundManager : MonoBehaviour
             _isTransitioning = false;
             songstate = 0;
             _transTimer = 0;
-            Debug.Log("Timer done for songstate // songstate: " + songstate);
         }
         
         
@@ -111,7 +110,6 @@ public class SoundManager : MonoBehaviour
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log("half life"+songstate);
 
     }
 
@@ -119,7 +117,6 @@ public class SoundManager : MonoBehaviour
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log("enter buzz"+songstate);
         bkExisted = true;
     }
 
@@ -135,7 +132,6 @@ public class SoundManager : MonoBehaviour
     {
         songstate = 1;
         _isTransitioning = true;
-        Debug.Log("enter HW"+songstate);
         hwExisted = true;
     }
 
