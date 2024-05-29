@@ -41664,7 +41664,7 @@ MonoBehaviour:
   _HealthAgent: 0
   _HeathBaseEnemy: 60
   _HeathHomeWreaker: 350
-  _HeathBuzzKiller: 600
+  _HeathBuzzKiller: 300
   _SpeedBaseEnemy: 5
   _SpeedHomeWreaker: 18
   _SpeedBuzzKiller: 5
@@ -41697,7 +41697,7 @@ MonoBehaviour:
   _numberOfHomeWreckerOnScreen: 0
   _gameLoseCanevas: {fileID: 1143957039}
   _gameWinCanevas: {fileID: 1992971470}
-  _timeBetweenSegment: 15
+  _timeBetweenSegment: 8
   BuzzKillerPresent:
     m_PersistentCalls:
       m_Calls:
