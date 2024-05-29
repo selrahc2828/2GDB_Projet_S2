@@ -19,6 +19,7 @@ public class HomeWrecker : Enemy
     public int _amplitudeZigZag;
     private bool _mouseButtonUp = false;
     private bool _agentStarted = false;
+    private bool _agentFound = false;
 
     public void Awake()
     {
@@ -33,6 +34,7 @@ public class HomeWrecker : Enemy
     void Start()
     {
         _agentStarted = false;
+        _agentFound = false;
         _GameManager._numberOfEnemyOnScreen++;
         _GameManager._numberOfHomeWreckerOnScreen++;
 
@@ -77,9 +79,9 @@ public class HomeWrecker : Enemy
 
     public void SearchNewDestination()
     {
+        _closestAgentInLineGoal = FindClosestLine();
         if (FindClosestLine() != null)
         {
-            _closestAgentInLineGoal = FindClosestLine();
             if (_zigzagPointsList.Count > 0 && _zigzagPointsList[_zigzagPointsList.Count - 1] != _closestAgentInLineGoal.destination)
             {
                 CalculateZigZag(transform.position, _closestAgentInLineGoal.destination);
@@ -103,7 +105,7 @@ public class HomeWrecker : Enemy
         _dictionnaireAgent = _agentToTraceScript._dictionnaireAgent;
         NavMeshAgent _closestAgentInLine = null;
         float _ShortestDistance = 0;
-
+        _agentFound = false;
         foreach (KeyValuePair<NavMeshAgent, bool> pair in _dictionnaireAgent)
         {
             if (!pair.Value)
@@ -121,11 +123,17 @@ public class HomeWrecker : Enemy
                         _closestAgentInLine = pair.Key;
                     }
                 }
+                _agentFound = true;
             }
         }
-        if (_closestAgentInLine != null)
-            _closestAgentInLine.GetComponent<RecognizeItsSelf>()._amIFocus.Add(_thisAgent);
-        return _closestAgentInLine;
+        if (_agentFound == true)
+        {
+            return _closestAgentInLine;
+        }
+        else 
+        {
+            return null; 
+        }
     }
 
     public void CalculateZigZag(Vector3 _start, Vector3 _end)
@@ -152,7 +160,7 @@ public class HomeWrecker : Enemy
 
     public void DestinationReached()
     {
-        if (_currentListDestination != _zigzagPointsList.Count -1)
+        if (_currentListDestination != _zigzagPointsList.Count - 1)
         {
             _currentListDestination++;
             _thisAgent.SetDestination(_zigzagPointsList[_currentListDestination]);
