@@ -6339,7 +6339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Total Wave '
+  m_text: 'Wave Survive : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 965f630ad7df99b4eb9ceff7ce41115a, type: 2}
   m_sharedMaterial: {fileID: 7431696540395210321, guid: 965f630ad7df99b4eb9ceff7ce41115a,
@@ -35237,7 +35237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Total Time : '
+  m_text: 'Time Survive : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 965f630ad7df99b4eb9ceff7ce41115a, type: 2}
   m_sharedMaterial: {fileID: 7431696540395210321, guid: 965f630ad7df99b4eb9ceff7ce41115a,
@@ -35567,7 +35567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Total Enemy
+  m_text: 'Total Enemy killed : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 965f630ad7df99b4eb9ceff7ce41115a, type: 2}
   m_sharedMaterial: {fileID: 7431696540395210321, guid: 965f630ad7df99b4eb9ceff7ce41115a,
