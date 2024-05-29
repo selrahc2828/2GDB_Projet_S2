@@ -117,7 +117,7 @@ public class AgentToTrace : MonoBehaviour
             {
                 CountNumberAgentAvailable();
             }
-            _AgentNumbertext.text = "Agent Number : " + _numberAgentAvailable;
+            _AgentNumbertext.text = "Agent Available : " + _numberAgentAvailable;
         }
     }
 

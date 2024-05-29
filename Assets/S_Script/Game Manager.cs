@@ -120,8 +120,8 @@ public class GameManager : MonoBehaviour
             _Time += Time.deltaTime;
         }
 
-        _TotalTime.text = "Total time : " + Mathf.Floor(_Time / 60f).ToString("00") + " : " + (_Time % 60).ToString("00");
-        _TotalWave.text = "Total Wave : " + _LevelWaveCheck._displayedWave.ToString();
+        _TotalTime.text = "Time Survived : " + Mathf.Floor(_Time / 60f).ToString("00") + " : " + (_Time % 60).ToString("00");
+        _TotalWave.text = "Wave Survived : " + _LevelWaveCheck._displayedWave.ToString();
 
         if(_numberOfBuzzKillerOnScreen > 0 && _signalBuzzPresentSent == false)
         {
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
     {
         if (_NumberOfEnemyText != null)
         {
-            _NumberOfEnemyText.text = "Total Enemy Kill :  " + _NumberOfEnemyKilled.ToString();
+            _NumberOfEnemyText.text = "Total Enemy Killed :  " + _NumberOfEnemyKilled.ToString();
         }
     }
 
