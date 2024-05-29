@@ -148,6 +148,13 @@ public class GameManager : MonoBehaviour
             _signalHomeGoneSent = true;
             HomeWreckerGone.Invoke();
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+
     }
 
     public void IncreaseEnemyKilledCount()
@@ -162,6 +169,13 @@ public class GameManager : MonoBehaviour
         {
             _NumberOfEnemyText.text = "Total Enemy Kill :  " + _NumberOfEnemyKilled.ToString();
         }
+    }
+
+    private void TogglePause()
+    {
+        _gamePaused = !_gamePaused;
+        Time.timeScale = _gamePaused ? 0f : 1f;
+        masterBus.setPaused(_gamePaused);
     }
 
     public void CheckIfGameIsLoseOrWin()
