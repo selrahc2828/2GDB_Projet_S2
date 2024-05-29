@@ -26,6 +26,8 @@ public class SoundManager : MonoBehaviour
     public bool bkExisted = false; //Verify if the buzz killer existed once.
     
     public int songstate = 0;
+
+    public float distance;
     
     //Fmod parameters
     private static FMOD.Studio.EventInstance levelMusic;
@@ -51,6 +53,10 @@ public class SoundManager : MonoBehaviour
     { 
         // Hit Points
         hitPoints = towerLifeScript.healthPercentageVariable;
+        
+        // distance
+
+        distance = 1f;
         
         // homewrecker
         if (gameManager._numberOfHomeWreckerOnScreen == 0)
@@ -92,6 +98,7 @@ public class SoundManager : MonoBehaviour
         levelMusic.setParameterByName("Homewrecker", homewrecker);
         levelMusic.setParameterByName("Buzzkiller", buzzkiller);
         levelMusic.setParameterByName("Songstate", songstate);
+        levelMusic.setParameterByName("distance", distance);
         
         //EndGame
 
