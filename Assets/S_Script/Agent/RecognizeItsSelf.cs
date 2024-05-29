@@ -259,7 +259,7 @@ public class RecognizeItsSelf : MonoBehaviour
                     int _thisNeighbourProximityValue = agentCollider.GetComponent<RecognizeItsSelf>().getPoolProximityNumber(pool);
                     if (_thisNeighbourProximityValue > -1)
                     {
-                        if (neighbourProximityValue == -2 || _thisNeighbourProximityValue <= neighbourProximityValue)//c'est ptetre là // c'est pteter encore là mais pas pareil
+                        if (neighbourProximityValue == -2 || _thisNeighbourProximityValue <= neighbourProximityValue)//c'est ptetre lÃ  // c'est pteter encore lÃ  mais pas pareil
                         {
                             neighbourProximityValue = _thisNeighbourProximityValue;
                             lowerNeighbourFound = true;
@@ -347,7 +347,7 @@ public class RecognizeItsSelf : MonoBehaviour
         }
         else
         {
-            // Si l'agent n'est pas disponible, utiliser l'intensité du seuil
+            // Si l'agent n'est pas disponible, utiliser l'intensitÃ© du seuil
             finalColor = Color.Lerp(_initialColor, _finalColor, _exaustionLevel);
             intensity = _threshold - (_exaustionLevel * 10f);
         }
