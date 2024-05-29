@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0abb123e-4714-42d2-bae5-197f3d1a8fae}">
 		<property name="color">
-			<value>Yellow</value>
+			<value>Green</value>
 		</property>
 		<property name="name">
 			<value>menu_music</value>
@@ -179,6 +179,10 @@
 			<destination>{d9e9e580-dac4-4b7f-81bf-f86048dcbe83}</destination>
 			<destination>{33c011c9-815d-4893-8618-ac5a7aed5ea3}</destination>
 			<destination>{cbc4e32c-5536-4abb-9a0b-c4e9d1a89888}</destination>
+			<destination>{9b508de2-c883-4e23-ae82-1cbaeab7f870}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{369ca9ea-a9eb-412b-8310-7550b0cbfd9e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5b295322-02e1-4822-810e-a1ba0a11c23d}">
@@ -243,6 +247,15 @@
 	<object class="SingleSound" id="{cbc4e32c-5536-4abb-9a0b-c4e9d1a89888}">
 		<relationship name="audioFile">
 			<destination>{47bdc01f-21ca-4ec1-b42f-a888d6e5ebeb}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{9b508de2-c883-4e23-ae82-1cbaeab7f870}" />
+	<object class="PlayPercentage" id="{369ca9ea-a9eb-412b-8310-7550b0cbfd9e}">
+		<property name="percentage">
+			<value>20</value>
+		</property>
+		<relationship name="sound">
+			<destination>{9b508de2-c883-4e23-ae82-1cbaeab7f870}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4436f017-8395-4ffc-8c55-02dbb727054d}">

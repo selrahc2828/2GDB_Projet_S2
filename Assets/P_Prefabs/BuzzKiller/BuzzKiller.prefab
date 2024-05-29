@@ -473,11 +473,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 850402012
-      Data2: 1252928521
-      Data3: 1888909711
-      Data4: 1938853257
-    Path: event:/Enemy/bkDeath
+      Data1: 1904047910
+      Data2: 1291819398
+      Data3: 1191926694
+      Data4: 1158276491
+    Path: event:/Enemy/bscEnemyDeath
   Event: 
   PlayEvent: 2
   StopEvent: 0
